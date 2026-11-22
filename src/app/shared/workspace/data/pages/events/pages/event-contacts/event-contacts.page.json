@@ -1,0 +1,884 @@
+{
+  "entities": {
+    "AudienceContacts": {
+      "key": "AudienceContacts",
+      "label": "Event Contacts / Attendees",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "AudienceContacts-1",
+          "values": [
+            "Asha Mehta",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "First name": "Asha",
+            "Middle name": "",
+            "Last name": "Mehta",
+            "Display name": "Asha Mehta",
+            "Profile picture": "Profile picture placeholder",
+            "Preferred language": "English",
+            "Employer": "ABC Technologies",
+            "Designation": "Chief Technology Officer",
+            "Department": "IT",
+            "Industry": "Technology",
+            "Profile Level": "Functional CXO",
+            "Persona": "Decision maker",
+            "Official email": "asha@abc.example",
+            "Personal email": "asha@example.com",
+            "Primary mobile": "+91 9000000010",
+            "Secondary mobile": "",
+            "Landline": "",
+            "Preferred channel": "Email",
+            "Do not contact": "No",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Address": "Andheri, Mumbai",
+            "Postal code": "400069",
+            "Social accounts": [
+              {
+                "Platform": "LinkedIn",
+                "URL": "https://linkedin.example/asha"
+              },
+              {
+                "Platform": "Other",
+                "URL": "https://profile.example/asha"
+              }
+            ],
+            "Interests": "Cloud, AI",
+            "Dietary preference": "Vegetarian",
+            "Accessibility needs": "None",
+            "Blood group": "Not collected",
+            "Aadhaar details": "Not collected",
+            "Sensitive data consent": "Not requested",
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Contact draft status": "Draft",
+            "Registration status": "Not registered",
+            "Approval status": "Pending",
+            "Confirmation status": "Awaiting response",
+            "Attendance status": "Not checked in"
+          },
+          "flow": "AudienceContacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AudienceContacts-2",
+          "values": [
+            "Asha Mehta 2",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "First name": "Asha",
+            "Middle name": "",
+            "Last name": "Mehta",
+            "Display name": "Asha Mehta 2",
+            "Profile picture": "Profile picture placeholder",
+            "Preferred language": "English",
+            "Employer": "ABC Technologies",
+            "Designation": "Chief Technology Officer",
+            "Department": "IT",
+            "Industry": "Technology",
+            "Profile Level": "Functional CXO",
+            "Persona": "Decision maker",
+            "Official email": "asha@abc.example",
+            "Personal email": "asha@example.com",
+            "Primary mobile": "+91 9000000010",
+            "Secondary mobile": "",
+            "Landline": "",
+            "Preferred channel": "Email",
+            "Do not contact": "No",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Address": "Andheri, Mumbai",
+            "Postal code": "400069",
+            "Social accounts": [
+              {
+                "Platform": "LinkedIn",
+                "URL": "https://linkedin.example/asha"
+              },
+              {
+                "Platform": "Other",
+                "URL": "https://profile.example/asha"
+              }
+            ],
+            "Interests": "Cloud, AI",
+            "Dietary preference": "Vegetarian",
+            "Accessibility needs": "None",
+            "Blood group": "Not collected",
+            "Aadhaar details": "Not collected",
+            "Sensitive data consent": "Not requested",
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Contact draft status": "Draft",
+            "Registration status": "Not registered",
+            "Approval status": "Pending",
+            "Confirmation status": "Awaiting response",
+            "Attendance status": "Not checked in"
+          },
+          "flow": "AudienceContacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AudienceContacts-3",
+          "values": [
+            "Asha Mehta 3",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "First name": "Asha",
+            "Middle name": "",
+            "Last name": "Mehta",
+            "Display name": "Asha Mehta 3",
+            "Profile picture": "Profile picture placeholder",
+            "Preferred language": "English",
+            "Employer": "ABC Technologies",
+            "Designation": "Chief Technology Officer",
+            "Department": "IT",
+            "Industry": "Technology",
+            "Profile Level": "Functional CXO",
+            "Persona": "Decision maker",
+            "Official email": "asha@abc.example",
+            "Personal email": "asha@example.com",
+            "Primary mobile": "+91 9000000010",
+            "Secondary mobile": "",
+            "Landline": "",
+            "Preferred channel": "Email",
+            "Do not contact": "No",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Address": "Andheri, Mumbai",
+            "Postal code": "400069",
+            "Social accounts": [
+              {
+                "Platform": "LinkedIn",
+                "URL": "https://linkedin.example/asha"
+              },
+              {
+                "Platform": "Other",
+                "URL": "https://profile.example/asha"
+              }
+            ],
+            "Interests": "Cloud, AI",
+            "Dietary preference": "Vegetarian",
+            "Accessibility needs": "None",
+            "Blood group": "Not collected",
+            "Aadhaar details": "Not collected",
+            "Sensitive data consent": "Not requested",
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Contact draft status": "Draft",
+            "Registration status": "Not registered",
+            "Approval status": "Pending",
+            "Confirmation status": "Awaiting response",
+            "Attendance status": "Not checked in"
+          },
+          "flow": "AudienceContacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AudienceContacts-4",
+          "values": [
+            "Asha Mehta 4",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "First name": "Asha",
+            "Middle name": "",
+            "Last name": "Mehta",
+            "Display name": "Asha Mehta 4",
+            "Profile picture": "Profile picture placeholder",
+            "Preferred language": "English",
+            "Employer": "ABC Technologies",
+            "Designation": "Chief Technology Officer",
+            "Department": "IT",
+            "Industry": "Technology",
+            "Profile Level": "Functional CXO",
+            "Persona": "Decision maker",
+            "Official email": "asha@abc.example",
+            "Personal email": "asha@example.com",
+            "Primary mobile": "+91 9000000010",
+            "Secondary mobile": "",
+            "Landline": "",
+            "Preferred channel": "Email",
+            "Do not contact": "No",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Address": "Andheri, Mumbai",
+            "Postal code": "400069",
+            "Social accounts": [
+              {
+                "Platform": "LinkedIn",
+                "URL": "https://linkedin.example/asha"
+              },
+              {
+                "Platform": "Other",
+                "URL": "https://profile.example/asha"
+              }
+            ],
+            "Interests": "Cloud, AI",
+            "Dietary preference": "Vegetarian",
+            "Accessibility needs": "None",
+            "Blood group": "Not collected",
+            "Aadhaar details": "Not collected",
+            "Sensitive data consent": "Not requested",
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Contact draft status": "Draft",
+            "Registration status": "Not registered",
+            "Approval status": "Pending",
+            "Confirmation status": "Awaiting response",
+            "Attendance status": "Not checked in"
+          },
+          "flow": "AudienceContacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AudienceContacts-5",
+          "values": [
+            "Asha Mehta 5",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "First name": "Asha",
+            "Middle name": "",
+            "Last name": "Mehta",
+            "Display name": "Asha Mehta 5",
+            "Profile picture": "Profile picture placeholder",
+            "Preferred language": "English",
+            "Employer": "ABC Technologies",
+            "Designation": "Chief Technology Officer",
+            "Department": "IT",
+            "Industry": "Technology",
+            "Profile Level": "Functional CXO",
+            "Persona": "Decision maker",
+            "Official email": "asha@abc.example",
+            "Personal email": "asha@example.com",
+            "Primary mobile": "+91 9000000010",
+            "Secondary mobile": "",
+            "Landline": "",
+            "Preferred channel": "Email",
+            "Do not contact": "No",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Address": "Andheri, Mumbai",
+            "Postal code": "400069",
+            "Social accounts": [
+              {
+                "Platform": "LinkedIn",
+                "URL": "https://linkedin.example/asha"
+              },
+              {
+                "Platform": "Other",
+                "URL": "https://profile.example/asha"
+              }
+            ],
+            "Interests": "Cloud, AI",
+            "Dietary preference": "Vegetarian",
+            "Accessibility needs": "None",
+            "Blood group": "Not collected",
+            "Aadhaar details": "Not collected",
+            "Sensitive data consent": "Not requested",
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Contact draft status": "Draft",
+            "Registration status": "Not registered",
+            "Approval status": "Pending",
+            "Confirmation status": "Awaiting response",
+            "Attendance status": "Not checked in"
+          },
+          "flow": "AudienceContacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AudienceContacts-6",
+          "values": [
+            "Asha Mehta 6",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "First name": "Asha",
+            "Middle name": "",
+            "Last name": "Mehta",
+            "Display name": "Asha Mehta 6",
+            "Profile picture": "Profile picture placeholder",
+            "Preferred language": "English",
+            "Employer": "ABC Technologies",
+            "Designation": "Chief Technology Officer",
+            "Department": "IT",
+            "Industry": "Technology",
+            "Profile Level": "Functional CXO",
+            "Persona": "Decision maker",
+            "Official email": "asha@abc.example",
+            "Personal email": "asha@example.com",
+            "Primary mobile": "+91 9000000010",
+            "Secondary mobile": "",
+            "Landline": "",
+            "Preferred channel": "Email",
+            "Do not contact": "No",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Address": "Andheri, Mumbai",
+            "Postal code": "400069",
+            "Social accounts": [
+              {
+                "Platform": "LinkedIn",
+                "URL": "https://linkedin.example/asha"
+              },
+              {
+                "Platform": "Other",
+                "URL": "https://profile.example/asha"
+              }
+            ],
+            "Interests": "Cloud, AI",
+            "Dietary preference": "Vegetarian",
+            "Accessibility needs": "None",
+            "Blood group": "Not collected",
+            "Aadhaar details": "Not collected",
+            "Sensitive data consent": "Not requested",
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Contact draft status": "Draft",
+            "Registration status": "Not registered",
+            "Approval status": "Pending",
+            "Confirmation status": "Awaiting response",
+            "Attendance status": "Not checked in"
+          },
+          "flow": "AudienceContacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AudienceContacts-7",
+          "values": [
+            "Asha Mehta 7",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "First name": "Asha",
+            "Middle name": "",
+            "Last name": "Mehta",
+            "Display name": "Asha Mehta 7",
+            "Profile picture": "Profile picture placeholder",
+            "Preferred language": "English",
+            "Employer": "ABC Technologies",
+            "Designation": "Chief Technology Officer",
+            "Department": "IT",
+            "Industry": "Technology",
+            "Profile Level": "Functional CXO",
+            "Persona": "Decision maker",
+            "Official email": "asha@abc.example",
+            "Personal email": "asha@example.com",
+            "Primary mobile": "+91 9000000010",
+            "Secondary mobile": "",
+            "Landline": "",
+            "Preferred channel": "Email",
+            "Do not contact": "No",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Address": "Andheri, Mumbai",
+            "Postal code": "400069",
+            "Social accounts": [
+              {
+                "Platform": "LinkedIn",
+                "URL": "https://linkedin.example/asha"
+              },
+              {
+                "Platform": "Other",
+                "URL": "https://profile.example/asha"
+              }
+            ],
+            "Interests": "Cloud, AI",
+            "Dietary preference": "Vegetarian",
+            "Accessibility needs": "None",
+            "Blood group": "Not collected",
+            "Aadhaar details": "Not collected",
+            "Sensitive data consent": "Not requested",
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Contact draft status": "Draft",
+            "Registration status": "Not registered",
+            "Approval status": "Pending",
+            "Confirmation status": "Awaiting response",
+            "Attendance status": "Not checked in"
+          },
+          "flow": "AudienceContacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Manage Event Contacts",
+      "view": "View Event Contacts",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "AudienceContacts": {
+      "title": "Manage Event Contacts",
+      "entity": "AudienceContacts",
+      "steps": [
+        {
+          "label": "Basic Profile",
+          "fields": [
+            {
+              "label": "First name",
+              "value": "Asha",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Middle name",
+              "value": "",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Last name",
+              "value": "Mehta",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Display name",
+              "value": "Asha Mehta",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Profile picture",
+              "value": "Profile picture placeholder",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "image",
+              "multi": false
+            },
+            {
+              "label": "Preferred language",
+              "value": "English",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["English", "Hindi"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Employment",
+          "fields": [
+            {
+              "label": "Employer",
+              "value": "ABC Technologies",
+              "source": "FRD M22/M23",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Designation",
+              "value": "Chief Technology Officer",
+              "source": "FRD M22/M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Department",
+              "value": "IT",
+              "source": "FRD M22/M23",
+              "required": false,
+              "options": ["IT", "Finance", "HR", "Marketing", "Sales"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Industry",
+              "value": "Technology",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Technology", "Manufacturing", "Finance"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Profile Level",
+              "value": "Functional CXO",
+              "source": "FRD M11",
+              "required": false,
+              "options": ["Functional CXO", "VP Level", "Manager Level"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Persona",
+              "value": "Decision maker",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Communication",
+          "fields": [
+            {
+              "label": "Official email",
+              "value": "asha@abc.example",
+              "source": "FRD M22/M23",
+              "required": false,
+              "options": [],
+              "kind": "email",
+              "multi": false
+            },
+            {
+              "label": "Personal email",
+              "value": "asha@example.com",
+              "source": "FRD M22/M23",
+              "required": false,
+              "options": [],
+              "kind": "email",
+              "multi": false
+            },
+            {
+              "label": "Primary mobile",
+              "value": "+91 9000000010",
+              "source": "FRD M22/M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Secondary mobile",
+              "value": "",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Landline",
+              "value": "",
+              "source": "FRD M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Preferred channel",
+              "value": "Email",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Email", "WhatsApp", "SMS", "Phone"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Do not contact",
+              "value": "No",
+              "source": "FRD M15/M27",
+              "required": false,
+              "options": ["No", "Yes"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Address",
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Address",
+              "value": "Andheri, Mumbai",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Postal code",
+              "value": "400069",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Social Profiles",
+          "fields": [
+            {
+              "label": "Social accounts",
+              "value": [
+                {
+                  "Platform": "LinkedIn",
+                  "URL": "https://linkedin.example/asha"
+                },
+                {
+                  "Platform": "Other",
+                  "URL": "https://profile.example/asha"
+                }
+              ],
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "records",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Preferences & Optional",
+          "fields": [
+            {
+              "label": "Interests",
+              "value": "Cloud, AI",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Dietary preference",
+              "value": "Vegetarian",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Accessibility needs",
+              "value": "None",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Blood group",
+              "value": "Not collected",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Aadhaar details",
+              "value": "Not collected",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Sensitive data consent",
+              "value": "Not requested",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Event Participation",
+          "fields": [
+            {
+              "label": "Client",
+              "value": "Northstar Technologies",
+              "source": "FRD M06",
+              "required": true,
+              "options": ["Northstar Technologies"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Event",
+              "value": "Northstar Roadshow",
+              "source": "FRD M06",
+              "required": true,
+              "options": ["Northstar Roadshow"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Contact draft status",
+              "value": "Draft",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Draft", "New", "Active", "Archived"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Registration status",
+              "value": "Not registered",
+              "source": "FRD M24",
+              "required": false,
+              "options": ["Not registered", "Registered"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Approval status",
+              "value": "Pending",
+              "source": "FRD M25",
+              "required": false,
+              "options": ["Pending", "Approved", "On Hold", "Rejected", "Cancelled"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Confirmation status",
+              "value": "Awaiting response",
+              "source": "FRD M25",
+              "required": false,
+              "options": ["Awaiting response", "Confirmed", "Regret"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Attendance status",
+              "value": "Not checked in",
+              "source": "FRD M27",
+              "required": false,
+              "options": ["Not checked in", "Checked in", "No-show"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "Event contact CRUD and extended profile: proposed based on user feedback; M23 review still applies",
+      "identity": "Display name"
+    }
+  }
+}

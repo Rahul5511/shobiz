@@ -1,0 +1,254 @@
+{
+  "entities": {
+    "CallStatuses": {
+      "key": "CallStatuses",
+      "label": "Call Statuses",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "CallStatuses-1",
+          "values": [
+            "Example sub-status",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Active"
+          ],
+          "details": {
+            "Status name": "Example status name",
+            "Sub-status": "Example sub-status",
+            "Callback required": "Example callback required",
+            "Maximum attempts": "Example maximum attempts",
+            "Active": "Yes"
+          },
+          "flow": "CallStatuses",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallStatuses-2",
+          "values": [
+            "Example sub-status 2",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Active"
+          ],
+          "details": {
+            "Status name": "Example status name",
+            "Sub-status": "Example sub-status 2",
+            "Callback required": "Example callback required",
+            "Maximum attempts": "Example maximum attempts",
+            "Active": "Yes"
+          },
+          "flow": "CallStatuses",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallStatuses-3",
+          "values": [
+            "Example sub-status 3",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Active"
+          ],
+          "details": {
+            "Status name": "Example status name",
+            "Sub-status": "Example sub-status 3",
+            "Callback required": "Example callback required",
+            "Maximum attempts": "Example maximum attempts",
+            "Active": "Yes"
+          },
+          "flow": "CallStatuses",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallStatuses-4",
+          "values": [
+            "Example sub-status 4",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Active"
+          ],
+          "details": {
+            "Status name": "Example status name",
+            "Sub-status": "Example sub-status 4",
+            "Callback required": "Example callback required",
+            "Maximum attempts": "Example maximum attempts",
+            "Active": "Yes"
+          },
+          "flow": "CallStatuses",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallStatuses-5",
+          "values": [
+            "Example sub-status 5",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Active"
+          ],
+          "details": {
+            "Status name": "Example status name",
+            "Sub-status": "Example sub-status 5",
+            "Callback required": "Example callback required",
+            "Maximum attempts": "Example maximum attempts",
+            "Active": "Yes"
+          },
+          "flow": "CallStatuses",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallStatuses-6",
+          "values": [
+            "Example sub-status 6",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Active"
+          ],
+          "details": {
+            "Status name": "Example status name",
+            "Sub-status": "Example sub-status 6",
+            "Callback required": "Example callback required",
+            "Maximum attempts": "Example maximum attempts",
+            "Active": "Yes"
+          },
+          "flow": "CallStatuses",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallStatuses-7",
+          "values": [
+            "Example sub-status 7",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Active"
+          ],
+          "details": {
+            "Status name": "Example status name",
+            "Sub-status": "Example sub-status 7",
+            "Callback required": "Example callback required",
+            "Maximum attempts": "Example maximum attempts",
+            "Active": "Yes"
+          },
+          "flow": "CallStatuses",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Manage Call Statuses",
+      "view": "View Call Statuses",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "CallStatuses": {
+      "title": "Manage Call Statuses",
+      "entity": "CallStatuses",
+      "steps": [
+        {
+          "label": "Master Details",
+          "fields": [
+            {
+              "label": "Status name",
+              "value": "Example status name",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Sub-status",
+              "value": "Example sub-status",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Callback required",
+              "value": "Example callback required",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Maximum attempts",
+              "value": "Example maximum attempts",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Active",
+              "value": "Yes",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "Sub-status"
+    }
+  }
+}

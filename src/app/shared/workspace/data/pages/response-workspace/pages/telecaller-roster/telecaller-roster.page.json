@@ -1,0 +1,689 @@
+{
+  "entities": {
+    "Agents": {
+      "key": "Agents",
+      "label": "Telecaller roster",
+      "module": "M18",
+      "columns": ["Name", "Email", "Agent ID", "City", "Status"],
+      "seed": [
+        {
+          "id": "Agents-1",
+          "values": ["Arjun Kumar", "arjun@example.com", "AGT01", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-2",
+          "values": ["Arjun Kumar 2", "user2@example.com", "AGT01", "Mumbai", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 2",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-3",
+          "values": ["Arjun Kumar 3", "user3@example.com", "AGT01", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 3",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-4",
+          "values": ["Arjun Kumar 4", "user4@example.com", "AGT01", "Mumbai", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 4",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-5",
+          "values": ["Arjun Kumar 5", "user5@example.com", "AGT01", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 5",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-6",
+          "values": ["Arjun Kumar 6", "user6@example.com", "AGT01", "Mumbai", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 6",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-7",
+          "values": ["Arjun Kumar 7", "user7@example.com", "AGT01", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 7",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-8",
+          "values": ["Arjun Kumar 8", "user8@example.com", "AGT01", "Mumbai", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 8",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-9",
+          "values": ["Arjun Kumar 9", "user9@example.com", "AGT01", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 9",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-10",
+          "values": ["Arjun Kumar 10", "user10@example.com", "AGT01", "Mumbai", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 10",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-11",
+          "values": ["Arjun Kumar 11", "user11@example.com", "AGT01", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 11",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-12",
+          "values": ["Arjun Kumar 12", "user12@example.com", "AGT01", "Mumbai", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 12",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-13",
+          "values": ["Arjun Kumar 13", "user13@example.com", "AGT01", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 13",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-14",
+          "values": ["Arjun Kumar 14", "user14@example.com", "AGT01", "Mumbai", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 14",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-15",
+          "values": ["Arjun Kumar 15", "user15@example.com", "AGT01", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 15",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-16",
+          "values": ["Arjun Kumar 16", "user16@example.com", "AGT01", "Mumbai", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 16",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Agents-17",
+          "values": ["Arjun Kumar 17", "user17@example.com", "AGT01", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Arjun Kumar 17",
+            "Email": "neha@example.com",
+            "Mobile": "+91 9000000004",
+            "Agent ID": "AGT-001",
+            "Caller ID": "+91 1100000001",
+            "Existing Telecaller": "Create new",
+            "Profile picture": "Profile picture placeholder",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Event": "Northstar Roadshow",
+            "Assigned cities": ["Mumbai"],
+            "Daily target": "20",
+            "Target basis": "Contacts",
+            "Account status": "Active"
+          },
+          "flow": "Agents",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Assign Telecaller",
+      "view": "Telecaller roster",
+      "kind": "access"
+    }
+  },
+  "flows": {
+    "Agents": {
+      "title": "Add and Assign Telecaller",
+      "entity": "Agents",
+      "steps": [
+        {
+          "label": "Identity",
+          "fields": [
+            {
+              "label": "Name",
+              "value": "Neha Singh",
+              "source": "FRD M18",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Email",
+              "value": "neha@example.com",
+              "source": "FRD M18",
+              "required": true,
+              "options": [],
+              "kind": "email",
+              "multi": false
+            },
+            {
+              "label": "Mobile",
+              "value": "+91 9000000004",
+              "source": "FRD M18",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Agent ID",
+              "value": "AGT-001",
+              "source": "FRD M18",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Caller ID",
+              "value": "+91 1100000001",
+              "source": "FRD M18",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Existing Telecaller",
+              "value": "Create new",
+              "source": "FRD M18",
+              "required": false,
+              "options": ["Create new", "Neha Singh", "Arjun Das"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Profile picture",
+              "value": "Profile picture placeholder",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "image",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Location",
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Event & Target",
+          "fields": [
+            {
+              "label": "Event",
+              "value": "Northstar Roadshow",
+              "source": "FRD M18",
+              "required": true,
+              "options": ["Northstar Roadshow", "Cloud Leadership Summit"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Assigned cities",
+              "value": ["Mumbai"],
+              "source": "FRD M18",
+              "required": true,
+              "options": ["Mumbai", "Pune"],
+              "kind": "select",
+              "multi": true
+            },
+            {
+              "label": "Daily target",
+              "value": "20",
+              "source": "FRD M18",
+              "required": false,
+              "options": [],
+              "kind": "number",
+              "multi": false
+            },
+            {
+              "label": "Target basis",
+              "value": "Contacts",
+              "source": "FRD M18",
+              "required": false,
+              "options": ["Contacts", "Calls"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Account status",
+              "value": "Active",
+              "source": "FRD M18",
+              "required": false,
+              "options": ["Active", "Disabled"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "FRD M18 + proposed profile additions",
+      "identity": "Name"
+    }
+  }
+}

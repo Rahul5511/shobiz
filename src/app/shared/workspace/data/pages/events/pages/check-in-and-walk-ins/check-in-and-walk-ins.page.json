@@ -1,0 +1,386 @@
+{
+  "entities": {
+    "AttendanceCheckin": {
+      "key": "AttendanceCheckin",
+      "label": "Check-in & Walk-ins",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "AttendanceCheckin-1",
+          "values": ["REG-001", "Northstar Technologies", "Northstar Roadshow", "Mumbai", "Draft"],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Registration reference": "REG-001",
+            "Check-in reference": "CHK-REG-001",
+            "Lookup method": "Registration QR",
+            "Attendee": "Asha Mehta",
+            "Approval status": "Approved",
+            "Confirmation status": "Confirmed",
+            "Attendance action": "Check in",
+            "Consent recorded": "Yes",
+            "Walk-in approval": "Required if event policy requires approval",
+            "Attendance timestamp": "2026-11-20 09:05 Asia/Kolkata",
+            "Attendance status": "Checked in",
+            "Duplicate scan outcome": "Already checked in - show original timestamp"
+          },
+          "flow": "AttendanceCheckin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AttendanceCheckin-2",
+          "values": [
+            "REG-001 2",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Registration reference": "REG-001 2",
+            "Check-in reference": "CHK-REG-001",
+            "Lookup method": "Registration QR",
+            "Attendee": "Asha Mehta",
+            "Approval status": "Approved",
+            "Confirmation status": "Confirmed",
+            "Attendance action": "Check in",
+            "Consent recorded": "Yes",
+            "Walk-in approval": "Required if event policy requires approval",
+            "Attendance timestamp": "2026-11-20 09:05 Asia/Kolkata",
+            "Attendance status": "Checked in",
+            "Duplicate scan outcome": "Already checked in - show original timestamp"
+          },
+          "flow": "AttendanceCheckin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AttendanceCheckin-3",
+          "values": [
+            "REG-001 3",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Registration reference": "REG-001 3",
+            "Check-in reference": "CHK-REG-001",
+            "Lookup method": "Registration QR",
+            "Attendee": "Asha Mehta",
+            "Approval status": "Approved",
+            "Confirmation status": "Confirmed",
+            "Attendance action": "Check in",
+            "Consent recorded": "Yes",
+            "Walk-in approval": "Required if event policy requires approval",
+            "Attendance timestamp": "2026-11-20 09:05 Asia/Kolkata",
+            "Attendance status": "Checked in",
+            "Duplicate scan outcome": "Already checked in - show original timestamp"
+          },
+          "flow": "AttendanceCheckin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AttendanceCheckin-4",
+          "values": [
+            "REG-001 4",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Registration reference": "REG-001 4",
+            "Check-in reference": "CHK-REG-001",
+            "Lookup method": "Registration QR",
+            "Attendee": "Asha Mehta",
+            "Approval status": "Approved",
+            "Confirmation status": "Confirmed",
+            "Attendance action": "Check in",
+            "Consent recorded": "Yes",
+            "Walk-in approval": "Required if event policy requires approval",
+            "Attendance timestamp": "2026-11-20 09:05 Asia/Kolkata",
+            "Attendance status": "Checked in",
+            "Duplicate scan outcome": "Already checked in - show original timestamp"
+          },
+          "flow": "AttendanceCheckin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AttendanceCheckin-5",
+          "values": [
+            "REG-001 5",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Registration reference": "REG-001 5",
+            "Check-in reference": "CHK-REG-001",
+            "Lookup method": "Registration QR",
+            "Attendee": "Asha Mehta",
+            "Approval status": "Approved",
+            "Confirmation status": "Confirmed",
+            "Attendance action": "Check in",
+            "Consent recorded": "Yes",
+            "Walk-in approval": "Required if event policy requires approval",
+            "Attendance timestamp": "2026-11-20 09:05 Asia/Kolkata",
+            "Attendance status": "Checked in",
+            "Duplicate scan outcome": "Already checked in - show original timestamp"
+          },
+          "flow": "AttendanceCheckin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AttendanceCheckin-6",
+          "values": [
+            "REG-001 6",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Registration reference": "REG-001 6",
+            "Check-in reference": "CHK-REG-001",
+            "Lookup method": "Registration QR",
+            "Attendee": "Asha Mehta",
+            "Approval status": "Approved",
+            "Confirmation status": "Confirmed",
+            "Attendance action": "Check in",
+            "Consent recorded": "Yes",
+            "Walk-in approval": "Required if event policy requires approval",
+            "Attendance timestamp": "2026-11-20 09:05 Asia/Kolkata",
+            "Attendance status": "Checked in",
+            "Duplicate scan outcome": "Already checked in - show original timestamp"
+          },
+          "flow": "AttendanceCheckin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AttendanceCheckin-7",
+          "values": [
+            "REG-001 7",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Registration reference": "REG-001 7",
+            "Check-in reference": "CHK-REG-001",
+            "Lookup method": "Registration QR",
+            "Attendee": "Asha Mehta",
+            "Approval status": "Approved",
+            "Confirmation status": "Confirmed",
+            "Attendance action": "Check in",
+            "Consent recorded": "Yes",
+            "Walk-in approval": "Required if event policy requires approval",
+            "Attendance timestamp": "2026-11-20 09:05 Asia/Kolkata",
+            "Attendance status": "Checked in",
+            "Duplicate scan outcome": "Already checked in - show original timestamp"
+          },
+          "flow": "AttendanceCheckin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Event Check-in & Walk-ins",
+      "view": "View Event Check-in & Walk-ins",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "AttendanceCheckin": {
+      "title": "Event Check-in & Walk-ins",
+      "entity": "AttendanceCheckin",
+      "steps": [
+        {
+          "label": "Find Registration",
+          "fields": [
+            {
+              "label": "Event",
+              "value": "Northstar Roadshow",
+              "source": "FRD M27",
+              "required": true,
+              "options": ["Northstar Roadshow", "Cloud Leadership Summit"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Registration reference",
+              "value": "REG-001",
+              "source": "FRD M27",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Check-in reference",
+              "value": "CHK-REG-001",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Lookup method",
+              "value": "Registration QR",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Registration QR", "Email / mobile search", "Registration reference"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Verify & Check-in",
+          "fields": [
+            {
+              "label": "Attendee",
+              "value": "Asha Mehta",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Approval status",
+              "value": "Approved",
+              "source": "FRD M25",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Confirmation status",
+              "value": "Confirmed",
+              "source": "FRD M25",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Attendance action",
+              "value": "Check in",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": ["Check in", "Walk-in registration"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Consent recorded",
+              "value": "Yes",
+              "source": "FRD M02",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Walk-in approval",
+              "value": "Required if event policy requires approval",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Receipt",
+          "fields": [
+            {
+              "label": "Attendance timestamp",
+              "value": "2026-11-20 09:05 Asia/Kolkata",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Attendance status",
+              "value": "Checked in",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Duplicate scan outcome",
+              "value": "Already checked in - show original timestamp",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "FRD M27 consumes attendance; onsite check-in UI is proposed, check-in itself a separate epic",
+      "identity": "Registration reference"
+    }
+  }
+}

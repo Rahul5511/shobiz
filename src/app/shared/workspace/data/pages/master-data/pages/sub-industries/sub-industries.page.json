@@ -1,0 +1,88 @@
+{
+  "entities": {
+    "SubIndustries": {
+      "key": "SubIndustries",
+      "label": "Sub Industries",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "SubIndustries-1",
+          "values": ["Cloud Services", "Technology", "", "", "Active"],
+          "details": {
+            "Industry": "Technology",
+            "Sub-industry code": "CLOUD",
+            "Sub-industry name": "Cloud Services",
+            "Active": "Yes"
+          },
+          "flow": "SubIndustries",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Manage Sub Industries",
+      "view": "View Sub Industries",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "SubIndustries": {
+      "title": "Manage Sub Industries",
+      "entity": "SubIndustries",
+      "steps": [
+        {
+          "label": "Master Details",
+          "fields": [
+            {
+              "label": "Industry",
+              "value": "Technology",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": ["Technology", "Manufacturing"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Sub-industry code",
+              "value": "Example sub-industry code",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Sub-industry name",
+              "value": "Example sub-industry name",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Active",
+              "value": "Yes",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "Sub-industry name"
+    }
+  }
+}

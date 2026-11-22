@@ -1,0 +1,160 @@
+@if (s.view === 'account') {
+  <div class="page-title"><h1>My Profile</h1></div>
+  <section class="card padded profile-card">
+    <div class="profile-tabs" aria-label="Profile sections">
+      <button
+        [class.active]="c.profileTab === 'details'"
+        [attr.aria-pressed]="c.profileTab === 'details'"
+        (click)="c.profileTab = 'details'"
+      >
+        Profile Details</button
+      ><button
+        [class.active]="c.profileTab === 'permissions'"
+        [attr.aria-pressed]="c.profileTab === 'permissions'"
+        (click)="c.profileTab = 'permissions'"
+      >
+        Roles &amp; Permissions
+      </button>
+    </div>
+    @if (c.profileTab === 'details') {
+      <header class="profile-summary">
+        <span class="avatar">
+          @if (c.profileDraft ? c.profileDraft.photo : c.profile.photo) {
+            <img
+              [src]="c.profileDraft ? c.profileDraft.photo : c.profile.photo"
+              alt="Profile picture"
+            />
+          } @else {
+            <app-icon name="profile" />
+          }
+        </span>
+        <div>
+          <h2>{{ c.profile.name }}</h2>
+          <p>{{ c.profile.designation || s.roleName }}</p>
+        </div>
+        @if (!c.profileDraft) {
+          <button (click)="c.profileDraft = { ...c.profile }; s.notice = ''">
+            <app-icon name="edit" />Edit Profile
+          </button>
+        }
+      </header>
+      @if (c.profileDraft; as draft) {
+        <form class="profile-fields" (ngSubmit)="c.saveProfile()">
+          <label
+            >Display name<input
+              name="displayName"
+              [(ngModel)]="draft.name"
+              required
+              maxlength="100"
+          /></label>
+          <label>Sign-in email<input name="email" [value]="auth.session?.email" readonly /></label>
+          <label
+            >Mobile<input name="mobile" type="tel" [(ngModel)]="draft.mobile" maxlength="30"
+          /></label>
+          <label
+            >Designation<input name="designation" [(ngModel)]="draft.designation" maxlength="100"
+          /></label>
+          <label
+            >Profile picture<input
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              (change)="c.profilePhoto($event)"
+          /></label>
+          @if (draft.photo) {
+            <div>
+              <button type="button" (click)="draft.photo = ''">Remove picture</button>
+            </div>
+          }
+          <div class="profile-form-actions">
+            <button type="button" (click)="c.profileDraft = null; s.error = ''">Cancel</button
+            ><button type="submit" class="primary">Save Profile</button>
+          </div>
+        </form>
+      } @else {
+        <dl class="profile-fields">
+          <div>
+            <dt>Sign-in email</dt>
+            <dd>{{ auth.session?.email }}</dd>
+          </div>
+          <div>
+            <dt>Mobile</dt>
+            <dd>{{ c.profile.mobile || 'Not provided' }}</dd>
+          </div>
+          <div>
+            <dt>Designation</dt>
+            <dd>{{ c.profile.designation || 'Not provided' }}</dd>
+          </div>
+          <div>
+            <dt>Active role</dt>
+            <dd>{{ s.roleName }}</dd>
+          </div>
+        </dl>
+      }
+    }
+    @if (c.profileTab === 'permissions') {
+      <h2>{{ s.roleName }}</h2>
+      <p>
+        Assigned roles ·
+        @for (role of auth.session?.roles || [s.role]; track role; let last = $last) {
+          <span>{{ s.labelRole(role) }}{{ last ? '' : ', ' }}</span>
+        }
+      </p>
+      <h3>Module access and actions for {{ s.roleName }}</h3>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Module</th>
+              <th>Workspace</th>
+              <th>Available actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (key of s.entities; track key) {
+              <tr>
+                <td>{{ s.m.entities[key].module }}</td>
+                <td>{{ s.m.entities[key].label }}</td>
+                <td>
+                  View
+                  @for (task of s.tasks(key); track task) {
+                    <span> · {{ task.title }}</span>
+                  }
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+      @if (c.roleGrants; as grants) {
+        <h3>Configured permission settings</h3>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Module</th>
+                <th>Permission</th>
+                <th>Enabled</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (permission of s.m.permissions; track permission) {
+                <tr>
+                  <td>{{ permission.module }}</td>
+                  <td>{{ permission.label }}</td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      disabled
+                      [checked]="grants.includes(permission.code)"
+                      [attr.aria-label]="permission.label"
+                    />
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+    }
+  </section>
+}

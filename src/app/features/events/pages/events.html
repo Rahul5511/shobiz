@@ -1,0 +1,24 @@
+<p class="text-brand mb-3 text-xs font-bold tracking-widest">YOUR WORKSPACE</p>
+<h1 class="text-ink text-3xl font-semibold tracking-tight sm:text-4xl">
+  You're in, {{ session.user()?.name }}.
+</h1>
+<p class="text-muted mt-4 leading-relaxed">A fresh space for your next great event.</p>
+<section
+  class="border-line bg-surface mt-10 rounded-2xl border p-8 sm:p-12"
+  aria-labelledby="workspace-heading"
+>
+  <span
+    class="bg-brand-pale text-brand mb-6 inline-flex size-12 items-center justify-center rounded-xl text-xl"
+    aria-hidden="true"
+    >✓</span
+  >
+  <h2 id="workspace-heading" class="text-ink text-xl font-semibold">Welcome to EventFlow</h2>
+  <p class="text-muted mt-3 max-w-lg text-sm leading-7">
+    You have successfully signed in as
+    <strong class="text-ink font-medium">{{ session.user()?.email }}</strong
+    >. Your event workspace is ready for its next chapter.
+  </p>
+  <p class="text-muted border-line mt-8 border-t pt-5 text-xs leading-relaxed">
+    Demo mode · No events have been created. Your session ends on refresh or sign-out.
+  </p>
+</section>

@@ -1,0 +1,7 @@
+<app-workspace-record-list />
+<app-workspace-record-form />
+<app-workspace-record-detail>
+  @if (s.view === 'detail') {
+    <app-event-dashboard [detail]="true" />
+  }
+</app-workspace-record-detail>

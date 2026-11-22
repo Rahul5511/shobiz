@@ -1,0 +1,22 @@
+@if (s.view === 'dashboard') {
+  <div class="page-title">
+    <div>
+      <span class="eyebrow">OVERVIEW</span>
+      <h1>{{ s.roleName }} Dashboard</h1>
+      <p>Your consolidated work, progress and reports.</p>
+    </div>
+    <button (click)="s.openRoleReports()"><app-icon name="reports" />View Role Reports</button>
+  </div>
+  <app-event-dashboard />
+  <section class="card padded">
+    <h2>Quick access</h2>
+    <div class="quick-grid">
+      @for (k of s.entities; track k) {
+        <button (click)="s.nav(k)">{{ s.m.entities[k].label }} <span>→</span></button>
+      }
+    </div>
+  </section>
+  <div class="provenance">
+    FRD M04/M26 · Dashboard suggestions are demonstrated with browser-local data.
+  </div>
+}

@@ -1,0 +1,98 @@
+<main class="public-screen">
+  <section class="public-card">
+    <header
+      class="public-hero"
+      [style.background-image]="
+        s.publicBanner ? 'linear-gradient(#111a,#111a),url(' + s.publicBanner + ')' : 'none'
+      "
+    >
+      @if (s.publicLogo) {
+        <img [src]="s.publicLogo" class="client-logo" alt="Client logo" />
+      }
+      <span class="eyebrow">EVENT REGISTRATION</span>
+      <h1>{{ s.publicClient }}</h1>
+      <h2>{{ s.publicEvent }}</h2>
+    </header>
+    <div class="padded">
+      @if (!found) {
+        <div class="alert error">This event registration URL was not found.</div>
+      }
+      @if (found) {
+        @if (s.publicConfig.status === 'Closed') {
+          <div class="alert info">Registration is closed.</div>
+        }
+        @if (s.publicConfig.status !== 'Closed') {
+          @if (s.receipt) {
+            <div>
+              <div class="receipt-check">✓</div>
+              <h2>
+                {{ s.receipt.duplicate ? 'You are already registered' : 'Registration received' }}
+              </h2>
+              <p>
+                Your event reference: <b>{{ s.receipt.id }}</b>
+              </p>
+              <p>{{ s.publicConfig.message }}</p>
+              <p>
+                Approval and confirmation follow the event policy. Actual attendance will be
+                recorded at check-in. Please do not register again on arrival.
+              </p>
+            </div>
+          } @else {
+            <h2>Tell us about yourself</h2>
+            <p class="muted">Fields are configured for this client and event.</p>
+            <form #form="ngForm" (ngSubmit)="s.registerPublic(values, consent)">
+              <div class="form-grid">
+                @for (f of s.publicFields; track trackField($index, f)) {
+                  <label
+                    >{{ f.Field }}
+                    @if (f.Required) {
+                      <span class="required"> *</span>
+                    }
+                    @if (['Country', 'State', 'City'].includes(f.Field)) {
+                      <select
+                        [name]="f.Field"
+                        [attr.name]="f.Field"
+                        [ngModel]="values[f.Field]"
+                        (ngModelChange)="setLocation(f.Field, $event)"
+                        [required]="f.Required"
+                      >
+                        <option value="">Select…</option>
+                        @for (o of geoOptions(f.Field); track o) {
+                          <option>{{ o }}</option>
+                        }
+                      </select>
+                    } @else {
+                      <input
+                        [name]="f.Field"
+                        [attr.name]="f.Field"
+                        [(ngModel)]="values[f.Field]"
+                        [required]="f.Required"
+                        [type]="
+                          f.Field === 'Email' ? 'email' : f.Field === 'Mobile' ? 'tel' : 'text'
+                        "
+                      />
+                    }
+                  </label>
+                }
+              </div>
+              <label class="checkbox-label consent"
+                ><input type="checkbox" name="consent" [(ngModel)]="consent" required /><span>{{
+                  s.publicConfig.consent ||
+                    'I agree to the stated event privacy and communication terms.'
+                }}</span></label
+              >
+              @if (s.error) {
+                <div class="alert error">{{ s.error }}</div>
+              }
+              <button class="primary wide" [disabled]="!form.valid">Register</button>
+            </form>
+          }
+        }
+      }
+      <p class="auth-note">
+        Local demo only. Registration is saved in this browser. No confirmation email is sent.
+      </p>
+      <a href="/login">Staff sign in</a>
+    </div>
+  </section>
+</main>

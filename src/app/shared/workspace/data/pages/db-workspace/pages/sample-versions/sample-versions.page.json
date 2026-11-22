@@ -1,0 +1,701 @@
+{
+  "entities": {
+    "Sample": {
+      "key": "Sample",
+      "label": "Sample versions",
+      "module": "M14",
+      "columns": ["Sample", "Event", "City", "Shared on", "Status"],
+      "seed": [
+        {
+          "id": "Sample-1",
+          "values": ["Sample 2", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-2",
+          "values": ["Sample 2 2", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 2",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-3",
+          "values": ["Sample 2 3", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Changes Requested"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 3",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-4",
+          "values": ["Sample 2 4", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 4",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-5",
+          "values": ["Sample 2 5", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 5",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-6",
+          "values": ["Sample 2 6", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Changes Requested"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 6",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-7",
+          "values": ["Sample 2 7", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 7",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-8",
+          "values": ["Sample 2 8", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 8",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-9",
+          "values": ["Sample 2 9", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Changes Requested"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 9",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-10",
+          "values": ["Sample 2 10", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 10",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-11",
+          "values": ["Sample 2 11", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 11",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-12",
+          "values": ["Sample 2 12", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Changes Requested"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 12",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-13",
+          "values": ["Sample 2 13", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 13",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-14",
+          "values": ["Sample 2 14", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 14",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-15",
+          "values": ["Sample 2 15", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Changes Requested"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 15",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-16",
+          "values": ["Sample 2 16", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 16",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Sample-17",
+          "values": ["Sample 2 17", "Cloud Roadshow", "Mumbai", "07 Nov 2026", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Sample version": "Sample 2 17",
+            "Snapshot": "SN02",
+            "Current status": "Shared / Pending decision",
+            "Version": "Sample 2",
+            "Include": "Snapshot and synopsis",
+            "Channel": "Portal and email link",
+            "Recipients": "Rahul Nair"
+          },
+          "flow": "Sample",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Sample preview",
+      "view": "Approval history",
+      "kind": "immutable"
+    }
+  },
+  "flows": {
+    "Sample": {
+      "key": "Sample",
+      "title": "Share a sample version",
+      "steps": [
+        {
+          "label": "Version",
+          "sources": [],
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Sample version",
+              "value": "Sample 2",
+              "source": "FRD M14",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Snapshot",
+              "value": "SN02",
+              "source": "FRD M14",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Current status",
+              "value": "Shared / Pending decision",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Sharing",
+          "sources": ["Share sample setup"],
+          "fields": [
+            {
+              "label": "Version",
+              "value": "Sample 2",
+              "source": "FRD M14",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Include",
+              "value": "Snapshot and synopsis",
+              "source": "FRD M14",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Channel",
+              "value": "Portal and email link",
+              "source": "FRD M14",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Recipients",
+              "value": "Rahul Nair",
+              "source": "FRD M14",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "Sample",
+      "source": "FRD M14",
+      "identity": "Sample version"
+    },
+    "SampleFeedback": {
+      "key": "SampleFeedback",
+      "entity": "Sample",
+      "title": "Record sample decision",
+      "steps": [
+        {
+          "label": "Version",
+          "sources": [],
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Sample version",
+              "value": "Sample 2",
+              "source": "FRD M14",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Snapshot",
+              "value": "SN02",
+              "source": "FRD M14",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Current status",
+              "value": "Shared / Pending decision",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Decision",
+          "sources": ["Sample response draft", "Offline sample feedback"],
+          "fields": [
+            {
+              "label": "Overall decision",
+              "value": "Approve",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Row decision",
+              "value": "Request changes",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Remarks",
+              "value": "Need a senior profile",
+              "source": "FRD M14",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Outcome",
+              "value": "Changes requested",
+              "source": "FRD M14",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Decision date",
+              "value": "07 Nov 2026",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Approver",
+              "value": "Rahul Nair",
+              "source": "FRD M14",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Evidence",
+              "value": "feedback.pdf",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": ["Submit sample decision"],
+          "fields": []
+        }
+      ],
+      "source": "FRD M14",
+      "identity": "Sample version"
+    }
+  }
+}

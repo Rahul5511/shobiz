@@ -1,0 +1,78 @@
+{
+  "password": "Demo@123",
+  "verificationCode": "123456",
+  "accounts": [
+    {
+      "email": "superadmin@demo.local",
+      "name": "Platform Admin",
+      "roles": ["Super User"],
+      "method": "Email & Password"
+    },
+    {
+      "email": "accountmanager@demo.local",
+      "name": "Account Manager",
+      "roles": ["Account Manager"],
+      "method": "Email & Password"
+    },
+    {
+      "email": "csmanager@demo.local",
+      "name": "Client Servicing Manager",
+      "roles": ["Client Servicing Manager"],
+      "method": "Email & Password"
+    },
+    {
+      "email": "dbhead@demo.local",
+      "name": "DB Head",
+      "roles": ["DB Head"],
+      "method": "Email & Password"
+    },
+    {
+      "email": "dbmanager@demo.local",
+      "name": "DB Manager",
+      "roles": ["DB Manager"],
+      "method": "Email & Password"
+    },
+    {
+      "email": "responsehead@demo.local",
+      "name": "Response Head",
+      "roles": ["Response Head"],
+      "method": "Email & Password"
+    },
+    {
+      "email": "responsemanager@demo.local",
+      "name": "Response Manager",
+      "roles": ["Response Manager"],
+      "method": "Email & Password"
+    },
+    {
+      "email": "aghead@demo.local",
+      "name": "AG Head",
+      "roles": ["AG Head"],
+      "method": "Email & Password"
+    },
+    {
+      "email": "agmanager@demo.local",
+      "name": "AG Manager",
+      "roles": ["AG Manager"],
+      "method": "Email & Password"
+    },
+    {
+      "email": "eventexecutive@demo.local",
+      "name": "Event Executive",
+      "roles": ["Event Executive"],
+      "method": "Email & Password"
+    },
+    {
+      "email": "clientcontact@demo.local",
+      "name": "Client Contact",
+      "roles": ["Client Contact"],
+      "method": "Email & Password"
+    },
+    {
+      "email": "telecaller@demo.local",
+      "name": "Telecaller",
+      "roles": ["Telecaller"],
+      "method": "Email & Password"
+    }
+  ]
+}

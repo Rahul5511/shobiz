@@ -1,0 +1,533 @@
+{
+  "entities": {
+    "Assignment": {
+      "key": "Assignment",
+      "label": "Manager assignments",
+      "module": "M10",
+      "columns": ["Manager", "Branch", "Event", "City", "Status"],
+      "seed": [
+        {
+          "id": "Assignment-1",
+          "values": ["Priya Shah", "DB", "Cloud Roadshow", "Mumbai", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-2",
+          "values": ["Priya Shah 2", "DB", "Cloud Roadshow", "Mumbai", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 2",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-3",
+          "values": ["Priya Shah 3", "DB", "Cloud Roadshow", "Mumbai", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 3",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-4",
+          "values": ["Priya Shah 4", "DB", "Cloud Roadshow", "Mumbai", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 4",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-5",
+          "values": ["Priya Shah 5", "DB", "Cloud Roadshow", "Mumbai", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 5",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-6",
+          "values": ["Priya Shah 6", "DB", "Cloud Roadshow", "Mumbai", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 6",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-7",
+          "values": ["Priya Shah 7", "DB", "Cloud Roadshow", "Mumbai", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 7",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-8",
+          "values": ["Priya Shah 8", "DB", "Cloud Roadshow", "Mumbai", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 8",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-9",
+          "values": ["Priya Shah 9", "DB", "Cloud Roadshow", "Mumbai", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 9",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-10",
+          "values": ["Priya Shah 10", "DB", "Cloud Roadshow", "Mumbai", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 10",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-11",
+          "values": ["Priya Shah 11", "DB", "Cloud Roadshow", "Mumbai", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 11",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-12",
+          "values": ["Priya Shah 12", "DB", "Cloud Roadshow", "Mumbai", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 12",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-13",
+          "values": ["Priya Shah 13", "DB", "Cloud Roadshow", "Mumbai", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 13",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-14",
+          "values": ["Priya Shah 14", "DB", "Cloud Roadshow", "Mumbai", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 14",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-15",
+          "values": ["Priya Shah 15", "DB", "Cloud Roadshow", "Mumbai", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 15",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-16",
+          "values": ["Priya Shah 16", "DB", "Cloud Roadshow", "Mumbai", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 16",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assignment-17",
+          "values": ["Priya Shah 17", "DB", "Cloud Roadshow", "Mumbai", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Event": "Priya Shah 17",
+            "Assignment coverage": "Selected cities",
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": ["Mumbai Suburban"],
+            "City": ["Mumbai"],
+            "Manager role": "DB Manager",
+            "Managers": ["Priya Shah"],
+            "Remarks": "Prioritise enterprise technology accounts"
+          },
+          "flow": "Assignment",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Assign branch manager",
+      "view": "Manager remarks detail",
+      "kind": "assignment"
+    }
+  },
+  "flows": {
+    "Assignment": {
+      "title": "Assign Event or City Manager",
+      "entity": "Assignment",
+      "steps": [
+        {
+          "label": "Event & Locations",
+          "fields": [
+            {
+              "label": "Event",
+              "value": "Northstar Roadshow",
+              "source": "FRD M10",
+              "required": true,
+              "options": ["Northstar Roadshow", "Cloud Leadership Summit"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Assignment coverage",
+              "value": "Selected cities",
+              "source": "FRD M10",
+              "required": true,
+              "options": ["Whole event - all cities", "Selected cities"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "District",
+              "value": ["Mumbai Suburban"],
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Mumbai Suburban", "Pune", "Ghaziabad", "Central Delhi"],
+              "kind": "select",
+              "multi": true
+            },
+            {
+              "label": "City",
+              "value": ["Mumbai"],
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": true
+            }
+          ]
+        },
+        {
+          "label": "Managers",
+          "fields": [
+            {
+              "label": "Manager role",
+              "value": "DB Manager",
+              "source": "FRD M10",
+              "required": true,
+              "options": ["DB Manager", "Response Manager", "AG Manager"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Managers",
+              "value": ["Priya Shah"],
+              "source": "FRD M10",
+              "required": true,
+              "options": ["Priya Shah", "Rahul Sharma"],
+              "kind": "select",
+              "multi": true
+            }
+          ]
+        },
+        {
+          "label": "Instructions",
+          "fields": [
+            {
+              "label": "Remarks",
+              "value": "Prioritise enterprise technology accounts",
+              "source": "FRD M10",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "FRD M10 + proposed district selection",
+      "identity": "Event"
+    }
+  }
+}

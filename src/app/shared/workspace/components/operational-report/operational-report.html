@@ -1,0 +1,121 @@
+@if (s.view === 'report') {
+  <div class="page-title">
+    <div>
+      <span class="eyebrow">REPORTS & TRACKING</span>
+      <h1>
+        {{
+          s.reportType === 'department'
+            ? s.roleName + ' Team Reports'
+            : s.calling
+              ? 'Daily Calling Tracker'
+              : 'Registration vs Attendance'
+        }}
+      </h1>
+      <p>
+        Dashboard drill-down preserves the selected event. Personal data follows the demonstrated
+        role boundary.
+      </p>
+    </div>
+    @if (s.can('Reports')) {
+      <button (click)="s.reportList()">View saved reports</button>
+    }
+  </div>
+  <div class="card filters">
+    <label
+      >Event<select [(ngModel)]="s.event">
+        @for (n of s.eventNames; track n) {
+          <option>{{ n }}</option>
+        }
+      </select></label
+    ><label
+      >Country<select>
+        <option>India</option>
+      </select></label
+    ><label
+      >State<select>
+        <option>Maharashtra</option>
+      </select></label
+    ><label
+      >City<select>
+        <option>Mumbai</option>
+      </select></label
+    >
+  </div>
+  @if (s.reportType === 'department') {
+    <div class="metrics">
+      @for (k of ['Assignment', 'DRF', 'Extraction', 'Sample', 'Lots', 'Returns']; track k) {
+        <button [hidden]="!s.accessible(k)" class="metric" (click)="s.nav(k)">
+          {{ s.m.entities[k].label }}<strong>{{ s.rows[k].length }}</strong
+          >View records →
+        </button>
+      }
+    </div>
+    <section class="card padded">
+      <h2>Manager assignments</h2>
+      <app-data-table
+        [exportable]="true"
+        exportTitle="Manager Assignments"
+        [headers]="s.m.entities.Assignment.columns"
+        [data]="s.assignmentRows"
+      />
+    </section>
+  } @else {
+    <div class="card filters">
+      <label>Search<input [(ngModel)]="s.search" /></label
+      ><label>Additional search<input [(ngModel)]="s.search2" /></label>
+      @if (s.calling) {
+        <label>Date<input type="date" [(ngModel)]="s.date" /></label>
+      }
+      @if (s.calling) {
+        <label
+          >Telecaller<select [(ngModel)]="s.agent" [disabled]="s.role === 'Telecaller'">
+            <option>All</option>
+            <option>Neha Singh</option>
+            <option>Arjun Das</option>
+          </select></label
+        >
+      }
+    </div>
+    <div class="metrics">
+      @for (stat of s.reportStats; track stat) {
+        <div class="metric">
+          <span>{{ stat[0] }}</span
+          ><strong>{{ stat[1] }}</strong>
+        </div>
+      }
+    </div>
+    <section class="card">
+      <header class="card-header">
+        <h2>
+          Underlying records <span class="count-pill">{{ s.reportRows.length }}</span>
+        </h2>
+      </header>
+      <app-data-table
+        [exportable]="true"
+        [exportAllowed]="s.role !== 'Telecaller'"
+        exportReason="FRD M22: Telecallers cannot export contact lists."
+        exportTitle="Filtered Report"
+        [headers]="s.reportHeaders"
+        [data]="s.reportRows"
+      />
+    </section>
+    @if (s.calling && s.role !== 'Telecaller') {
+      <section class="card padded">
+        <h2>Team performance</h2>
+        <app-data-table
+          [exportable]="true"
+          exportTitle="Telecaller Team Performance"
+          [headers]="['Telecaller', 'Assigned', 'Unique called', 'Attempts', 'Pending']"
+          [data]="s.teamRows"
+        />
+      </section>
+    }
+    <div class="alert info">
+      {{
+        s.calling
+          ? 'Call attempts are different from unique contacts called.'
+          : 'Registration and confirmation do not establish attendance. Check-in/import establishes attendance; classify no-shows only after event closure.'
+      }}
+    </div>
+  }
+}

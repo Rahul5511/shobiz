@@ -1,0 +1,1249 @@
+{
+  "entities": {
+    "DRF": {
+      "key": "DRF",
+      "label": "DRF sheets",
+      "module": "M11",
+      "columns": ["Sheet ID", "Event", "City", "Revision", "Status"],
+      "seed": [
+        {
+          "id": "DRF-1",
+          "values": ["DRF-EV01-C01", "Cloud Roadshow", "Mumbai", "2", "Submitted"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-2",
+          "values": ["DRF-EV01-C01 2", "Cloud Roadshow", "Mumbai", "2", "Submitted"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 2"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-3",
+          "values": ["DRF-EV01-C01 3", "Cloud Roadshow", "Mumbai", "2", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 3"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-4",
+          "values": ["DRF-EV01-C01 4", "Cloud Roadshow", "Mumbai", "2", "Submitted"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 4"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-5",
+          "values": ["DRF-EV01-C01 5", "Cloud Roadshow", "Mumbai", "2", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 5"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-6",
+          "values": ["DRF-EV01-C01 6", "Cloud Roadshow", "Mumbai", "2", "Submitted"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 6"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-7",
+          "values": ["DRF-EV01-C01 7", "Cloud Roadshow", "Mumbai", "2", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 7"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-8",
+          "values": ["DRF-EV01-C01 8", "Cloud Roadshow", "Mumbai", "2", "Submitted"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 8"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-9",
+          "values": ["DRF-EV01-C01 9", "Cloud Roadshow", "Mumbai", "2", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 9"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-10",
+          "values": ["DRF-EV01-C01 10", "Cloud Roadshow", "Mumbai", "2", "Submitted"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 10"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-11",
+          "values": ["DRF-EV01-C01 11", "Cloud Roadshow", "Mumbai", "2", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 11"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-12",
+          "values": ["DRF-EV01-C01 12", "Cloud Roadshow", "Mumbai", "2", "Submitted"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 12"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-13",
+          "values": ["DRF-EV01-C01 13", "Cloud Roadshow", "Mumbai", "2", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 13"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-14",
+          "values": ["DRF-EV01-C01 14", "Cloud Roadshow", "Mumbai", "2", "Submitted"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 14"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-15",
+          "values": ["DRF-EV01-C01 15", "Cloud Roadshow", "Mumbai", "2", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 15"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-16",
+          "values": ["DRF-EV01-C01 16", "Cloud Roadshow", "Mumbai", "2", "Submitted"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 16"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "DRF-17",
+          "values": ["DRF-EV01-C01 17", "Cloud Roadshow", "Mumbai", "2", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign scope": "Email and calling",
+            "Database required by": "12 Nov 2026",
+            "Outreach go-live": "14 Nov 2026",
+            "Registration target": "50",
+            "Attendance target": "40",
+            "Criteria basis": "New criteria",
+            "Wishlist targeted": "Yes",
+            "Approach": "Criteria-based only",
+            "Filters": "List determines company eligibility",
+            "Industry": "Technology",
+            "Segment": "Enterprise",
+            "Turnover": "Any",
+            "Employee size": "500 to 5000",
+            "Unknown size": "Refer for approval",
+            "Location": "City plus nearby",
+            "Location basis": "Contact work city",
+            "Group scope": "Exact entity",
+            "Exclusions": "Competitors",
+            "Priority": "P1",
+            "Department": "IT",
+            "Profile": "VP and Director",
+            "Titles": "IT Director",
+            "Skills": "Cloud",
+            "Audience role": "Decision maker",
+            "Audience mix": "75 percent senior profiles",
+            "Attendees per company": "2",
+            "Contacts per account": "5",
+            "Official email": "Required",
+            "Client approval": "Yes",
+            "Source 1": "Shobiz DB",
+            "Source 2": "Client list",
+            "Receipt date": "10 Nov 2026",
+            "Earlier-event rule": "Prefer new contacts",
+            "Sheet": "DRF-EV01-C01 17"
+          },
+          "flow": "DRF",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "DRF city details",
+      "view": "DRF workspace overview",
+      "kind": "revision"
+    }
+  },
+  "flows": {
+    "DRF": {
+      "key": "DRF",
+      "title": "Prepare city DRF",
+      "steps": [
+        {
+          "label": "City Details",
+          "sources": ["DRF city details"],
+          "fields": [
+            {
+              "label": "Event",
+              "value": "Northstar Roadshow",
+              "source": "FRD M11",
+              "required": true,
+              "options": ["Northstar Roadshow"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Venue",
+              "value": "Convention Centre",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Campaign scope",
+              "value": "Email and calling",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Database required by",
+              "value": "12 Nov 2026",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Outreach go-live",
+              "value": "14 Nov 2026",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Registration target",
+              "value": "50",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Attendance target",
+              "value": "40",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Company Criteria",
+          "sources": [
+            "Part A targeting",
+            "Part A company filters",
+            "Part A location and exclusions"
+          ],
+          "fields": [
+            {
+              "label": "Criteria basis",
+              "value": "New criteria",
+              "source": "FRD M11",
+              "required": false,
+              "options": ["New criteria", "Same as another city of the event"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Wishlist targeted",
+              "value": "Yes",
+              "source": "FRD M11",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Approach",
+              "value": "Wishlist + additional companies",
+              "source": "FRD M11",
+              "required": false,
+              "options": [
+                "Criteria-based only",
+                "Wishlist only",
+                "Wishlist + additional companies"
+              ],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Filters",
+              "value": "List determines company eligibility",
+              "source": "FRD M11",
+              "required": false,
+              "options": [
+                "List determines company eligibility",
+                "Apply company filters to the wishlist too"
+              ],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Industry",
+              "value": "Technology",
+              "source": "FRD M11",
+              "required": false,
+              "options": ["Technology", "Manufacturing", "Financial Services"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Segment",
+              "value": "Enterprise",
+              "source": "FRD M11",
+              "required": false,
+              "options": [
+                "Enterprise",
+                "SMB / mid-market",
+                "Startup",
+                "GCC",
+                "Government / PSU",
+                "Other",
+                "Any"
+              ],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Turnover",
+              "value": "Any",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Employee size",
+              "value": "500 to 5000",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Unknown size",
+              "value": "Refer for approval",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Location",
+              "value": "City plus nearby",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Location basis",
+              "value": "Contact work city",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Group scope",
+              "value": "Exact entity",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Exclusions",
+              "value": "Competitors",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Priority",
+              "value": "P1",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Audience",
+          "sources": ["Part B audience", "Part B quotas and rules"],
+          "fields": [
+            {
+              "label": "Department",
+              "value": "IT",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Profile",
+              "value": "VP and Director",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Titles",
+              "value": "IT Director",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Skills",
+              "value": "Cloud",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Audience role",
+              "value": "Decision maker",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Audience mix",
+              "value": "75 percent senior profiles",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Attendees per company",
+              "value": "2",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Contacts per account",
+              "value": "5",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Official email",
+              "value": "Required",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Client approval",
+              "value": "Yes",
+              "source": "FRD M11",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Sources",
+          "sources": ["Part B sources and history"],
+          "fields": [
+            {
+              "label": "Source 1",
+              "value": "Shobiz DB",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Source 2",
+              "value": "Client list",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Receipt date",
+              "value": "10 Nov 2026",
+              "source": "FRD M11",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Earlier-event rule",
+              "value": "Prefer new contacts",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": ["DRF submission review"],
+          "fields": []
+        }
+      ],
+      "entity": "DRF",
+      "source": "FRD M11",
+      "identity": "Event"
+    }
+  }
+}

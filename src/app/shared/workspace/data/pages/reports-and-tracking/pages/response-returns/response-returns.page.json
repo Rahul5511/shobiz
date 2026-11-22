@@ -1,0 +1,942 @@
+{
+  "entities": {
+    "Returns": {
+      "key": "Returns",
+      "label": "Response returns",
+      "module": "M27",
+      "columns": ["Item", "Contact", "Source", "Stage", "Status"],
+      "seed": [
+        {
+          "id": "Returns-1",
+          "values": ["Designation update", "Sam Patel", "Calling", "DB review", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-2",
+          "values": ["Designation update 2", "Sam Patel", "Calling", "DB review", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 2",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-3",
+          "values": [
+            "Designation update 3",
+            "Sam Patel",
+            "Calling",
+            "DB review",
+            "Changes Requested"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 3",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-4",
+          "values": ["Designation update 4", "Sam Patel", "Calling", "DB review", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 4",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-5",
+          "values": ["Designation update 5", "Sam Patel", "Calling", "DB review", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 5",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-6",
+          "values": [
+            "Designation update 6",
+            "Sam Patel",
+            "Calling",
+            "DB review",
+            "Changes Requested"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 6",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-7",
+          "values": ["Designation update 7", "Sam Patel", "Calling", "DB review", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 7",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-8",
+          "values": ["Designation update 8", "Sam Patel", "Calling", "DB review", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 8",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-9",
+          "values": [
+            "Designation update 9",
+            "Sam Patel",
+            "Calling",
+            "DB review",
+            "Changes Requested"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 9",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-10",
+          "values": ["Designation update 10", "Sam Patel", "Calling", "DB review", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 10",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-11",
+          "values": ["Designation update 11", "Sam Patel", "Calling", "DB review", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 11",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-12",
+          "values": [
+            "Designation update 12",
+            "Sam Patel",
+            "Calling",
+            "DB review",
+            "Changes Requested"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 12",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-13",
+          "values": ["Designation update 13", "Sam Patel", "Calling", "DB review", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 13",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-14",
+          "values": ["Designation update 14", "Sam Patel", "Calling", "DB review", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 14",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-15",
+          "values": [
+            "Designation update 15",
+            "Sam Patel",
+            "Calling",
+            "DB review",
+            "Changes Requested"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 15",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-16",
+          "values": ["Designation update 16", "Sam Patel", "Calling", "DB review", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 16",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Returns-17",
+          "values": ["Designation update 17", "Sam Patel", "Calling", "DB review", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Contact update",
+            "Source": "Response review",
+            "Date": "07 Nov 2026",
+            "Status": "DB pending",
+            "Item": "Designation update 17",
+            "Decision": "Approve",
+            "Master record": "Matched contact",
+            "Reason": "Verified",
+            "Existing": "Sam Patel",
+            "Proposed": "Duplicate registration",
+            "Match evidence": "Email",
+            "Survivor": "Existing Master"
+          },
+          "flow": "Returns",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "DB return decision",
+      "view": "Response returns list",
+      "kind": "immutable"
+    }
+  },
+  "flows": {
+    "Returns": {
+      "key": "Returns",
+      "title": "Review returned data",
+      "steps": [
+        {
+          "label": "Return Item",
+          "sources": ["Response returns list"],
+          "fields": [
+            {
+              "label": "Type",
+              "value": "Contact update",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Source",
+              "value": "Response review",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Date",
+              "value": "07 Nov 2026",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Status",
+              "value": "DB pending",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Decision",
+          "sources": ["DB return decision", "Contact merge review"],
+          "fields": [
+            {
+              "label": "Item",
+              "value": "Designation update",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Decision",
+              "value": "Approve",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Master record",
+              "value": "Matched contact",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reason",
+              "value": "Verified",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Existing",
+              "value": "Sam Patel",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Proposed",
+              "value": "Duplicate registration",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Match evidence",
+              "value": "Email",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Survivor",
+              "value": "Existing Master",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "Returns",
+      "source": "FRD M27",
+      "identity": "Item"
+    },
+    "NextLot": {
+      "key": "NextLot",
+      "entity": "Returns",
+      "title": "Request next lot",
+      "steps": [
+        {
+          "label": "Requirements",
+          "sources": ["Request next lot"],
+          "fields": [
+            {
+              "label": "Count",
+              "value": "300",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Profile",
+              "value": "IT Director",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reason",
+              "value": "Remaining registration gap",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "source": "FRD M27",
+      "identity": "Event"
+    },
+    "CheckinPublish": {
+      "key": "CheckinPublish",
+      "entity": "Returns",
+      "title": "Publish check-in list",
+      "steps": [
+        {
+          "label": "List Criteria",
+          "sources": ["Prepare check-in list"],
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Approved registrations",
+              "value": "80",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Version",
+              "value": "3",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "QR reference",
+              "value": "Where available",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Publish Changes",
+          "sources": ["Check-in publish review"],
+          "fields": [
+            {
+              "label": "Version",
+              "value": "4",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "New approvals",
+              "value": "5",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Cancellations",
+              "value": "2",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Changes",
+              "value": "Update previous list",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "source": "FRD M27",
+      "identity": "Event"
+    },
+    "Attendance": {
+      "key": "Attendance",
+      "entity": "Returns",
+      "title": "Import attendance",
+      "steps": [
+        {
+          "label": "Attendance File",
+          "sources": ["Attendance import"],
+          "fields": [
+            {
+              "label": "Agency format",
+              "value": "Configured",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "File",
+              "value": "attendance.csv",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Matched",
+              "value": "75",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Walk-ins",
+              "value": "5",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "source": "FRD M27",
+      "identity": "File"
+    },
+    "CloseResponse": {
+      "key": "CloseResponse",
+      "entity": "Returns",
+      "title": "Close response workspace",
+      "steps": [
+        {
+          "label": "Open Items",
+          "sources": ["Close Response workspace"],
+          "fields": [
+            {
+              "label": "Open broadcasts",
+              "value": "0",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Callbacks pending",
+              "value": "2",
+              "source": "FRD M27",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "DB reviews",
+              "value": "3",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Unmatched registrations",
+              "value": "1",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": ["Workspace closure confirmation"],
+          "fields": []
+        }
+      ],
+      "source": "FRD M27",
+      "identity": "City"
+    }
+  }
+}

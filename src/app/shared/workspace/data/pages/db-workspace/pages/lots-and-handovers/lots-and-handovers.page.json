@@ -1,0 +1,1178 @@
+{
+  "entities": {
+    "Lots": {
+      "key": "Lots",
+      "label": "Lots & handovers",
+      "module": "M15",
+      "columns": ["Lot", "City", "Channel", "Records", "Status"],
+      "seed": [
+        {
+          "id": "Lots-1",
+          "values": ["Lot 1", "Mumbai", "Calling", "450", "Finalized"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-2",
+          "values": ["Lot 1 2", "Mumbai", "Calling", "450", "Finalized"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 2",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-3",
+          "values": ["Lot 1 3", "Mumbai", "Calling", "450", "Handed Over"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 3",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-4",
+          "values": ["Lot 1 4", "Mumbai", "Calling", "450", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 4",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-5",
+          "values": ["Lot 1 5", "Mumbai", "Calling", "450", "Finalized"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 5",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-6",
+          "values": ["Lot 1 6", "Mumbai", "Calling", "450", "Handed Over"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 6",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-7",
+          "values": ["Lot 1 7", "Mumbai", "Calling", "450", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 7",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-8",
+          "values": ["Lot 1 8", "Mumbai", "Calling", "450", "Finalized"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 8",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-9",
+          "values": ["Lot 1 9", "Mumbai", "Calling", "450", "Handed Over"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 9",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-10",
+          "values": ["Lot 1 10", "Mumbai", "Calling", "450", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 10",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-11",
+          "values": ["Lot 1 11", "Mumbai", "Calling", "450", "Finalized"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 11",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-12",
+          "values": ["Lot 1 12", "Mumbai", "Calling", "450", "Handed Over"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 12",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-13",
+          "values": ["Lot 1 13", "Mumbai", "Calling", "450", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 13",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-14",
+          "values": ["Lot 1 14", "Mumbai", "Calling", "450", "Finalized"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 14",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-15",
+          "values": ["Lot 1 15", "Mumbai", "Calling", "450", "Handed Over"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 15",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-16",
+          "values": ["Lot 1 16", "Mumbai", "Calling", "450", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 16",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Lots-17",
+          "values": ["Lot 1 17", "Mumbai", "Calling", "450", "Finalized"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Calling",
+            "Maximum": "500",
+            "Per company": "5",
+            "Department": "IT",
+            "Channel": "Email",
+            "Contact": "Sam Patel",
+            "Score": "92",
+            "Reason": "Hard bounce",
+            "Inputs": "Brief and past engagement",
+            "Valid": "450",
+            "Needs review": "35",
+            "Invalid": "15",
+            "Rule version": "Current",
+            "Issue": "Phone not verified",
+            "Correction": "Updated number",
+            "Removal reason": "Required if removed",
+            "Company": "Meridian Systems",
+            "Flag": "Potential competitor",
+            "Decision": "Keep after approval",
+            "Evidence": "Client approval",
+            "Source": "Provider event",
+            "Other live project": "Regional Summit",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Lot": "Lot 1 17",
+            "Approved sample": "Sample 2",
+            "Response Manager": "Neha Thomas"
+          },
+          "flow": "Lots",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Create lot limits",
+      "view": "Handover history",
+      "kind": "lot"
+    }
+  },
+  "flows": {
+    "Lots": {
+      "key": "Lots",
+      "title": "Create lot and hand over",
+      "steps": [
+        {
+          "label": "Limits",
+          "sources": ["Create lot limits"],
+          "fields": [
+            {
+              "label": "Type",
+              "value": "Calling",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Maximum",
+              "value": "500",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Per company",
+              "value": "5",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Department",
+              "value": "IT",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Channel",
+              "value": "Calling",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Selection",
+          "sources": ["Recommendation review"],
+          "fields": [
+            {
+              "label": "Contact",
+              "value": "Sam Patel",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Score",
+              "value": "92",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reason",
+              "value": "IT profile matches P1 account",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Inputs",
+              "value": "Brief and past engagement",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Validation",
+          "sources": ["Validation results", "Correct or remove record"],
+          "fields": [
+            {
+              "label": "Valid",
+              "value": "450",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Needs review",
+              "value": "35",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Invalid",
+              "value": "15",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Rule version",
+              "value": "Current",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Contact",
+              "value": "Sam Patel",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Issue",
+              "value": "Phone not verified",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Correction",
+              "value": "Updated number",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Removal reason",
+              "value": "Required if removed",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Eligibility",
+          "sources": ["Competitor flag review", "Suppression review", "Overlap decision"],
+          "fields": [
+            {
+              "label": "Company",
+              "value": "Meridian Systems",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Flag",
+              "value": "Potential competitor",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Decision",
+              "value": "Keep after approval",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Evidence",
+              "value": "Client approval",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Contact",
+              "value": "Sam Patel",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Channel",
+              "value": "Email",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reason",
+              "value": "Hard bounce",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Source",
+              "value": "Provider event",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Other live project",
+              "value": "Regional Summit",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Handover",
+          "sources": ["Handover confirmation"],
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Lot",
+              "value": "Calling lot 1",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Approved sample",
+              "value": "Sample 2",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Response Manager",
+              "value": "Neha Thomas",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": ["Finalize lot"],
+          "fields": []
+        }
+      ],
+      "entity": "Lots",
+      "source": "FRD M15",
+      "identity": "Lot"
+    },
+    "SuppressionException": {
+      "key": "SuppressionException",
+      "entity": "Lots",
+      "title": "Record suppression exception",
+      "steps": [
+        {
+          "label": "Context",
+          "sources": ["Suppression review"],
+          "fields": [
+            {
+              "label": "Contact",
+              "value": "Sam Patel",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Channel",
+              "value": "Email",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reason",
+              "value": "Hard bounce",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Source",
+              "value": "Provider event",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Exception",
+          "sources": ["Grant suppression exception"],
+          "fields": [
+            {
+              "label": "Event",
+              "value": "Northstar",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Contact",
+              "value": "Sam Patel",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Channel",
+              "value": "Email",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reason",
+              "value": "Resolved address issue",
+              "source": "FRD M15",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "source": "FRD M15",
+      "identity": "Contact"
+    }
+  }
+}

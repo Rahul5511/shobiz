@@ -1,0 +1,146 @@
+{
+  "entities": {
+    "Departments": {
+      "key": "Departments",
+      "label": "Departments",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "Departments-1",
+          "values": ["IT", "Master", "", "", "Active"],
+          "details": {
+            "Department code": "IT",
+            "Department name": "IT",
+            "Active": "Yes"
+          },
+          "flow": "Departments",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Departments-2",
+          "values": ["Finance", "Master", "", "", "Active"],
+          "details": {
+            "Department code": "FINANCE",
+            "Department name": "Finance",
+            "Active": "Yes"
+          },
+          "flow": "Departments",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Departments-3",
+          "values": ["HR", "Master", "", "", "Active"],
+          "details": {
+            "Department code": "HR",
+            "Department name": "HR",
+            "Active": "Yes"
+          },
+          "flow": "Departments",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Departments-4",
+          "values": ["Marketing", "Master", "", "", "Active"],
+          "details": {
+            "Department code": "MARKETING",
+            "Department name": "Marketing",
+            "Active": "Yes"
+          },
+          "flow": "Departments",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Departments-5",
+          "values": ["Sales", "Master", "", "", "Active"],
+          "details": {
+            "Department code": "SALES",
+            "Department name": "Sales",
+            "Active": "Yes"
+          },
+          "flow": "Departments",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Manage Departments",
+      "view": "View Departments",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "Departments": {
+      "title": "Manage Departments",
+      "entity": "Departments",
+      "steps": [
+        {
+          "label": "Master Details",
+          "fields": [
+            {
+              "label": "Department code",
+              "value": "Example department code",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Department name",
+              "value": "Example department name",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Active",
+              "value": "Yes",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "Department name"
+    }
+  }
+}

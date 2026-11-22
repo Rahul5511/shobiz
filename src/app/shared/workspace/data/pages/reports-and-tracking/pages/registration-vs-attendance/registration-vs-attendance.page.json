@@ -1,0 +1,133 @@
+{
+  "entities": {
+    "AttendanceReport": {
+      "key": "AttendanceReport",
+      "label": "Registration vs Attendance",
+      "module": "M04/M26/M27",
+      "columns": ["Name", "Event", "Assigned / Registered", "Called / Attended", "Status"],
+      "kind": "report",
+      "seed": [
+        {
+          "id": "AttendanceReport-1",
+          "values": [
+            "Registration vs Attendance",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AttendanceReport-2",
+          "values": [
+            "Registration vs Attendance 2",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AttendanceReport-3",
+          "values": [
+            "Registration vs Attendance 3",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AttendanceReport-4",
+          "values": [
+            "Registration vs Attendance 4",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AttendanceReport-5",
+          "values": [
+            "Registration vs Attendance 5",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AttendanceReport-6",
+          "values": [
+            "Registration vs Attendance 6",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "AttendanceReport-7",
+          "values": [
+            "Registration vs Attendance 7",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "flows": {}
+}

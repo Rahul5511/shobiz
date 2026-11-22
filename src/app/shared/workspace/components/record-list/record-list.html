@@ -1,0 +1,40 @@
+@if (s.view === 'list') {
+  <div class="page-title">
+    <div>
+      <span class="eyebrow">{{ s.m.entities[s.key].module }}</span>
+      <h1>{{ s.m.entities[s.key].label }}</h1>
+      <p>Search and manage records in your authorised workspace.</p>
+    </div>
+  </div>
+  @if (s.key === 'Events' && s.can('Events')) {
+    <div class="alert info">
+      Onboard the Client first, assign its users, then create the event. Key Client Contacts are
+      client representatives; event audience contacts are managed separately.
+    </div>
+  }
+  <app-record-card
+    [title]="s.m.entities[s.key].label"
+    [exportAllowed]="s.canExportList(s.key)"
+    [exportReason]="s.exportReason(s.key)"
+    [columns]="s.m.entities[s.key].columns"
+    [records]="s.listRows"
+    [editable]="s.key === 'Events' ? s.can('Events') : s.tasks().length > 0"
+    [requirements]="s.key === 'Events' && s.can('Requirements')"
+    (requirement)="s.openTask('Requirements', $event)"
+    [createLabel]="
+      s.primaryTask && s.primaryTask !== 'Requirements' ? s.actionLabel(s.primaryTask) : ''
+    "
+    [tasks]="s.tasks()"
+    [event]="s.key === 'Events'"
+    [sample]="s.key === 'Sample'"
+    [master]="s.m.masters.includes(s.key)"
+    (create)="s.openTask(s.primaryTask)"
+    (taskOpen)="s.openTask($event)"
+    (view)="s.viewRecord($event)"
+    (edit)="s.editRecord($event)"
+    (remove)="s.remove($event)"
+    (toggle)="s.toggle($event)"
+    (qr)="showQr($event)"
+    (contacts)="s.sample($event)"
+  />
+}

@@ -1,0 +1,26 @@
+@if (s.view === 'qr') {
+  <div class="page-title">
+    <div>
+      <span class="eyebrow">PUBLIC REGISTRATION</span>
+      <h1>{{ s.selected.values[0] }}</h1>
+      <p>Event registration link and QR</p>
+    </div>
+    <button (click)="s.view = 'list'">Back to events</button>
+  </div>
+  <section class="card padded qr-card">
+    @if (s.qrImage) {
+      <img [src]="s.qrImage" width="220" height="220" alt="Event registration QR" />
+    }
+    <div>
+      <h2>Register for this event</h2>
+      <p class="url">{{ s.publicUrl }}</p>
+      <a class="button primary" [href]="s.publicPath" target="_blank" rel="noopener"
+        >Open public registration</a
+      >
+      <p class="muted">
+        This QR opens registration. It is separate from an attendee's check-in reference. The URL
+        works while this local server is running on your computer.
+      </p>
+    </div>
+  </section>
+}

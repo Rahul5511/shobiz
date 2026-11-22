@@ -1,0 +1,202 @@
+{
+  "entities": {
+    "Cities": {
+      "key": "Cities",
+      "label": "Cities",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "Cities-1",
+          "values": ["Mumbai", "India", "Maharashtra", "Mumbai Suburban", "Active"],
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": "Mumbai Suburban",
+            "City code": "MUM",
+            "City name": "Mumbai",
+            "Postal code": "400069",
+            "Active": "Yes"
+          },
+          "flow": "Cities",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Cities-2",
+          "values": ["Pune", "India", "Maharashtra", "Pune", "Active"],
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "District": "Pune",
+            "City code": "PUN",
+            "City name": "Pune",
+            "Postal code": "411001",
+            "Active": "Yes"
+          },
+          "flow": "Cities",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Cities-3",
+          "values": ["Ghaziabad", "India", "Uttar Pradesh", "Ghaziabad", "Active"],
+          "details": {
+            "Country": "India",
+            "State": "Uttar Pradesh",
+            "District": "Ghaziabad",
+            "City code": "GZB",
+            "City name": "Ghaziabad",
+            "Postal code": "201001",
+            "Active": "Yes"
+          },
+          "flow": "Cities",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Cities-4",
+          "values": ["New Delhi", "India", "Delhi", "Central Delhi", "Active"],
+          "details": {
+            "Country": "India",
+            "State": "Delhi",
+            "District": "Central Delhi",
+            "City code": "DEL",
+            "City name": "New Delhi",
+            "Postal code": "110001",
+            "Active": "Yes"
+          },
+          "flow": "Cities",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Cities-5",
+          "values": ["Dubai", "United Arab Emirates", "Dubai", "", "Active"],
+          "details": {
+            "Country": "United Arab Emirates",
+            "State": "Dubai",
+            "District": "",
+            "City code": "DXB",
+            "City name": "Dubai",
+            "Postal code": "",
+            "Active": "Yes"
+          },
+          "flow": "Cities",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Manage Cities",
+      "view": "View Cities",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "Cities": {
+      "title": "Manage Cities",
+      "entity": "Cities",
+      "steps": [
+        {
+          "label": "Master Details",
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": ["Maharashtra", "Uttar Pradesh", "Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "District",
+              "value": "Mumbai Suburban",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Mumbai Suburban", "Pune", "Ghaziabad"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City code",
+              "value": "Example city code",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "City name",
+              "value": "Mumbai",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Postal code",
+              "value": "Example postal code",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Active",
+              "value": "Yes",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "City name"
+    }
+  }
+}

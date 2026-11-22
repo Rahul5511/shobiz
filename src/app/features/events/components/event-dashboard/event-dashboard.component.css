@@ -1,0 +1,108 @@
+@scope (.platform-admin) {
+  app-event-dashboard .event-portfolio-filters {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+    align-items: end;
+    gap: 16px;
+    overflow-x: auto;
+  }
+  app-event-dashboard .event-portfolio-filters > label {
+    min-width: 0;
+    margin: 0;
+  }
+  app-event-dashboard .event-portfolio-filters input,
+  app-event-dashboard .event-portfolio-filters select {
+    width: 100%;
+    margin-top: 4px;
+  }
+  app-event-dashboard .event-portfolio-open {
+    min-height: 41px;
+    margin-top: 16px;
+  }
+  app-event-dashboard .table-scroll {
+    margin-top: 12px;
+  }
+  app-event-dashboard form {
+    margin-bottom: 14px;
+  }
+  app-event-dashboard .registration-approval-analytics h2,
+  app-event-dashboard .registration-approval-analytics h3 {
+    font-weight: 650;
+  }
+  app-event-dashboard .approval-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  app-event-dashboard .approval-grid > div {
+    min-width: 0;
+  }
+  app-event-dashboard .approval-grid + .approval-grid {
+    margin-top: 16px;
+  }
+  app-event-dashboard .approval-waiting-row {
+    display: grid;
+    grid-template-columns: minmax(120px, 0.85fr) minmax(0, 1fr) 2ch;
+    align-items: center;
+    gap: 12px;
+    margin: 7px 0;
+  }
+  app-event-dashboard .approval-waiting-row meter {
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--bg);
+  }
+  app-event-dashboard .approval-waiting-row meter::-webkit-meter-bar {
+    border: 0;
+    border-radius: 999px;
+    background: var(--bg);
+  }
+  app-event-dashboard .approval-waiting-row meter::-webkit-meter-optimum-value {
+    border-radius: 999px;
+    background: var(--orange);
+  }
+  app-event-dashboard .approval-waiting-row meter::-moz-meter-bar {
+    border-radius: 999px;
+    background: var(--orange);
+  }
+  @media (max-width: 720px) {
+    app-event-dashboard .approval-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  .approval-chart {
+    display: flex;
+    gap: 20px;
+    overflow: auto;
+    padding: 8px 4px;
+  }
+  .approval-day {
+    flex: 0 0 96px;
+    display: grid;
+    gap: 4px;
+    text-align: center;
+  }
+  .approval-stack {
+    height: 136px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+    border-bottom: 1px solid var(--line);
+  }
+  .approval-approved {
+    background: #2e8b66;
+  }
+  .approval-declined {
+    background: #bd4653;
+  }
+  .approval-pending {
+    background: #e4a52f;
+  }
+  .requirements-remarks {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+}

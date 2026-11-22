@@ -1,0 +1,770 @@
+{
+  "entities": {
+    "Calling": {
+      "key": "Calling",
+      "label": "Calling queues",
+      "module": "M22",
+      "columns": ["Contact", "Company", "City", "Queue", "Status"],
+      "seed": [
+        {
+          "id": "Calling-1",
+          "values": ["Sam Patel", "Zenith Logistics", "Mumbai", "Callbacks due", "Call Back Later"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Sam Patel",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-2",
+          "values": ["Riya Sen", "Zenith Logistics", "Mumbai", "Callbacks due", "Untapped"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-3",
+          "values": ["Kiran Iyer", "Zenith Logistics", "Mumbai", "Callbacks due", "No Response"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Kiran Iyer",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-4",
+          "values": ["Anil Rao", "Zenith Logistics", "Mumbai", "Callbacks due", "Call Back Later"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Anil Rao",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-5",
+          "values": ["Sam Patel 5", "Zenith Logistics", "Mumbai", "Callbacks due", "Untapped"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Sam Patel 5",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-6",
+          "values": ["Riya Sen 6", "Zenith Logistics", "Mumbai", "Callbacks due", "No Response"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Riya Sen 6",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-7",
+          "values": [
+            "Kiran Iyer 7",
+            "Zenith Logistics",
+            "Mumbai",
+            "Callbacks due",
+            "Call Back Later"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Kiran Iyer 7",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-8",
+          "values": ["Anil Rao 8", "Zenith Logistics", "Mumbai", "Callbacks due", "Untapped"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Anil Rao 8",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-9",
+          "values": ["Sam Patel 9", "Zenith Logistics", "Mumbai", "Callbacks due", "No Response"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Sam Patel 9",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-10",
+          "values": [
+            "Riya Sen 10",
+            "Zenith Logistics",
+            "Mumbai",
+            "Callbacks due",
+            "Call Back Later"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Riya Sen 10",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-11",
+          "values": ["Kiran Iyer 11", "Zenith Logistics", "Mumbai", "Callbacks due", "Untapped"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Kiran Iyer 11",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-12",
+          "values": ["Anil Rao 12", "Zenith Logistics", "Mumbai", "Callbacks due", "No Response"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Anil Rao 12",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-13",
+          "values": [
+            "Sam Patel 13",
+            "Zenith Logistics",
+            "Mumbai",
+            "Callbacks due",
+            "Call Back Later"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Sam Patel 13",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-14",
+          "values": ["Riya Sen 14", "Zenith Logistics", "Mumbai", "Callbacks due", "Untapped"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Riya Sen 14",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-15",
+          "values": ["Kiran Iyer 15", "Zenith Logistics", "Mumbai", "Callbacks due", "No Response"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Kiran Iyer 15",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-16",
+          "values": [
+            "Anil Rao 16",
+            "Zenith Logistics",
+            "Mumbai",
+            "Callbacks due",
+            "Call Back Later"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Anil Rao 16",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Calling-17",
+          "values": ["Sam Patel 17", "Zenith Logistics", "Mumbai", "Callbacks due", "Untapped"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Sam Patel 17",
+            "Company": "Zenith Logistics",
+            "Phone": "Assigned number",
+            "Script": "Active invite script",
+            "History": "2 attempts",
+            "Status": "Call Back Later",
+            "Sub-status": "Busy in meeting",
+            "Contacted number": "Selected number",
+            "Callback": "Tomorrow 11:00 IST",
+            "Contact": "Sam Patel",
+            "Due": "Tomorrow 11:00 IST",
+            "Reason": "Busy in meeting",
+            "Last attempt": "Today",
+            "Channel": "Email",
+            "Asset": "Active approved invite",
+            "Recipient": "Assigned contact",
+            "Sender": "Agent event sender"
+          },
+          "flow": "Calling",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Call disposition",
+      "view": "Calling contact workspace",
+      "kind": "calling"
+    }
+  },
+  "flows": {
+    "Calling": {
+      "key": "Calling",
+      "title": "Record call result",
+      "steps": [
+        {
+          "label": "Contact",
+          "sources": ["Calling contact workspace"],
+          "fields": [
+            {
+              "label": "Name",
+              "value": "Sam Patel",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Company",
+              "value": "Zenith Logistics",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Phone",
+              "value": "Assigned number",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Script",
+              "value": "Active invite script",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "History",
+              "value": "2 attempts",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Disposition",
+          "sources": ["Call disposition"],
+          "fields": [
+            {
+              "label": "Status",
+              "value": "Call Back Later",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Sub-status",
+              "value": "Busy in meeting",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Contacted number",
+              "value": "Selected number",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Callback",
+              "value": "Tomorrow 11:00 IST",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Follow-up",
+          "sources": ["Callback detail", "Send approved message"],
+          "fields": [
+            {
+              "label": "Contact",
+              "value": "Sam Patel",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Due",
+              "value": "Tomorrow 11:00 IST",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reason",
+              "value": "Busy in meeting",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Last attempt",
+              "value": "Today",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Channel",
+              "value": "Email",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Asset",
+              "value": "Active approved invite",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Recipient",
+              "value": "Assigned contact",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Sender",
+              "value": "Agent event sender",
+              "source": "FRD M22",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "Calling",
+      "source": "FRD M22",
+      "identity": "Name"
+    }
+  }
+}

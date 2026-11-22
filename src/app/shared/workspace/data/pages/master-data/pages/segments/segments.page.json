@@ -1,0 +1,196 @@
+{
+  "entities": {
+    "Segments": {
+      "key": "Segments",
+      "label": "Segments",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "Segments-1",
+          "values": ["Enterprise", "Master", "", "", "Active"],
+          "details": {
+            "Segment code": "ENTERPRISE",
+            "Segment name": "Enterprise",
+            "Client definition": "Client-defined thresholds",
+            "Active": "Yes"
+          },
+          "flow": "Segments",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Segments-2",
+          "values": ["SMB / mid-market", "Master", "", "", "Active"],
+          "details": {
+            "Segment code": "SMB_/_MID-MARKET",
+            "Segment name": "SMB / mid-market",
+            "Client definition": "Client-defined thresholds",
+            "Active": "Yes"
+          },
+          "flow": "Segments",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Segments-3",
+          "values": ["Startup", "Master", "", "", "Active"],
+          "details": {
+            "Segment code": "STARTUP",
+            "Segment name": "Startup",
+            "Client definition": "Client-defined thresholds",
+            "Active": "Yes"
+          },
+          "flow": "Segments",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Segments-4",
+          "values": ["GCC", "Master", "", "", "Active"],
+          "details": {
+            "Segment code": "GCC",
+            "Segment name": "GCC",
+            "Client definition": "Client-defined thresholds",
+            "Active": "Yes"
+          },
+          "flow": "Segments",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Segments-5",
+          "values": ["Government / PSU", "Master", "", "", "Active"],
+          "details": {
+            "Segment code": "GOVERNMENT_/_PSU",
+            "Segment name": "Government / PSU",
+            "Client definition": "Client-defined thresholds",
+            "Active": "Yes"
+          },
+          "flow": "Segments",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Segments-6",
+          "values": ["Other", "Master", "", "", "Active"],
+          "details": {
+            "Segment code": "OTHER",
+            "Segment name": "Other",
+            "Client definition": "Client-defined thresholds",
+            "Active": "Yes"
+          },
+          "flow": "Segments",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Segments-7",
+          "values": ["Any", "Master", "", "", "Active"],
+          "details": {
+            "Segment code": "ANY",
+            "Segment name": "Any",
+            "Client definition": "Client-defined thresholds",
+            "Active": "Yes"
+          },
+          "flow": "Segments",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Manage Segments",
+      "view": "View Segments",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "Segments": {
+      "title": "Manage Segments",
+      "entity": "Segments",
+      "steps": [
+        {
+          "label": "Master Details",
+          "fields": [
+            {
+              "label": "Segment code",
+              "value": "Example segment code",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Segment name",
+              "value": "Example segment name",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Client definition",
+              "value": "Example client definition",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Active",
+              "value": "Yes",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "Segment name"
+    }
+  }
+}

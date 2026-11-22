@@ -1,0 +1,155 @@
+{
+  "entities": {
+    "Districts": {
+      "key": "Districts",
+      "label": "Districts",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "Districts-1",
+          "values": ["Mumbai Suburban", "India", "Maharashtra", "", "Active"],
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "District code": "MUM",
+            "District name": "Mumbai Suburban",
+            "Active": "Yes"
+          },
+          "flow": "Districts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Districts-2",
+          "values": ["Pune", "India", "Maharashtra", "", "Active"],
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "District code": "PUN",
+            "District name": "Pune",
+            "Active": "Yes"
+          },
+          "flow": "Districts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Districts-3",
+          "values": ["Ghaziabad", "India", "Uttar Pradesh", "", "Active"],
+          "details": {
+            "Country": "India",
+            "State": "Uttar Pradesh",
+            "District code": "GZB",
+            "District name": "Ghaziabad",
+            "Active": "Yes"
+          },
+          "flow": "Districts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Districts-4",
+          "values": ["Central Delhi", "India", "Delhi", "", "Active"],
+          "details": {
+            "Country": "India",
+            "State": "Delhi",
+            "District code": "CDL",
+            "District name": "Central Delhi",
+            "Active": "Yes"
+          },
+          "flow": "Districts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Manage Districts",
+      "view": "View Districts",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "Districts": {
+      "title": "Manage Districts",
+      "entity": "Districts",
+      "steps": [
+        {
+          "label": "Master Details",
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": ["Maharashtra", "Uttar Pradesh", "Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "District code",
+              "value": "Example district code",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "District name",
+              "value": "Example district name",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Active",
+              "value": "Yes",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "District name"
+    }
+  }
+}

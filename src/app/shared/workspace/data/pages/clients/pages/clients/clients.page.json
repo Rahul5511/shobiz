@@ -1,0 +1,935 @@
+{
+  "entities": {
+    "Clients": {
+      "key": "Clients",
+      "label": "Clients",
+      "module": "M05",
+      "columns": ["Client", "Official name", "Owner", "City", "Status"],
+      "seed": [
+        {
+          "id": "Clients-1",
+          "values": [
+            "Northstar Technologies",
+            "Northstar Technologies",
+            "Vivek Roy",
+            "Mumbai",
+            "Active"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Northstar Technologies",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-2",
+          "values": [
+            "Digital Systems 2",
+            "Northstar Technologies",
+            "Vivek Roy",
+            "Mumbai",
+            "Inactive"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Digital Systems 2",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-3",
+          "values": ["Data Systems 3", "Northstar Technologies", "Vivek Roy", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Data Systems 3",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-4",
+          "values": [
+            "Innovation Systems 4",
+            "Northstar Technologies",
+            "Vivek Roy",
+            "Mumbai",
+            "Inactive"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Innovation Systems 4",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-5",
+          "values": ["Cloud Systems 5", "Northstar Technologies", "Vivek Roy", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Cloud Systems 5",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-6",
+          "values": [
+            "Digital Systems 6",
+            "Northstar Technologies",
+            "Vivek Roy",
+            "Mumbai",
+            "Inactive"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Digital Systems 6",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-7",
+          "values": ["Data Systems 7", "Northstar Technologies", "Vivek Roy", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Data Systems 7",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-8",
+          "values": [
+            "Innovation Systems 8",
+            "Northstar Technologies",
+            "Vivek Roy",
+            "Mumbai",
+            "Inactive"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Innovation Systems 8",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-9",
+          "values": ["Cloud Systems 9", "Northstar Technologies", "Vivek Roy", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Cloud Systems 9",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-10",
+          "values": [
+            "Digital Systems 10",
+            "Northstar Technologies",
+            "Vivek Roy",
+            "Mumbai",
+            "Inactive"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Digital Systems 10",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-11",
+          "values": ["Data Systems 11", "Northstar Technologies", "Vivek Roy", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Data Systems 11",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-12",
+          "values": [
+            "Innovation Systems 12",
+            "Northstar Technologies",
+            "Vivek Roy",
+            "Mumbai",
+            "Inactive"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Innovation Systems 12",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-13",
+          "values": ["Cloud Systems 13", "Northstar Technologies", "Vivek Roy", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Cloud Systems 13",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-14",
+          "values": [
+            "Digital Systems 14",
+            "Northstar Technologies",
+            "Vivek Roy",
+            "Mumbai",
+            "Inactive"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Digital Systems 14",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-15",
+          "values": ["Data Systems 15", "Northstar Technologies", "Vivek Roy", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Data Systems 15",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-16",
+          "values": [
+            "Innovation Systems 16",
+            "Northstar Technologies",
+            "Vivek Roy",
+            "Mumbai",
+            "Inactive"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Innovation Systems 16",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Clients-17",
+          "values": ["Cloud Systems 17", "Northstar Technologies", "Vivek Roy", "Mumbai", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Company Name": "Cloud Systems 17",
+            "Known as": "Northstar",
+            "Also Known As 1": "Northstar Tech",
+            "Also Known As 2": "NST",
+            "Also Known As 3": "Northstar India",
+            "Also Known As 4": "Northstar Group",
+            "Website": "https://northstar.example",
+            "Client logo": "Client logo placeholder",
+            "Client banner": "Client banner placeholder",
+            "Company Address": "Business Park, Andheri",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Postal code": "400069",
+            "Primary Contact": "Meera Rao",
+            "Designation": "Marketing Director",
+            "Email": "meera@example.com",
+            "Phone 1": "+91 9000000001",
+            "Phone 2": "",
+            "Give Portal Access": "Yes",
+            "Account Manager": "Rahul Sharma",
+            "CS Managers": ["Anita Rao"]
+          },
+          "flow": "Clients",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Create client",
+      "view": "Client details",
+      "kind": "mutable"
+    }
+  },
+  "flows": {
+    "Clients": {
+      "title": "Create / Update Client",
+      "entity": "Clients",
+      "steps": [
+        {
+          "label": "Client Profile",
+          "fields": [
+            {
+              "label": "Company Name",
+              "value": "Northstar Technologies",
+              "source": "FRD M05",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Known as",
+              "value": "Northstar",
+              "source": "FRD M05",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Also Known As 1",
+              "value": "Northstar Tech",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Also Known As 2",
+              "value": "NST",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Also Known As 3",
+              "value": "Northstar India",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Also Known As 4",
+              "value": "Northstar Group",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Website",
+              "value": "https://northstar.example",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Branding",
+          "fields": [
+            {
+              "label": "Client logo",
+              "value": "Client logo placeholder",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "image",
+              "multi": false
+            },
+            {
+              "label": "Client banner",
+              "value": "Client banner placeholder",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "image",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Address",
+          "fields": [
+            {
+              "label": "Company Address",
+              "value": "Business Park, Andheri",
+              "source": "FRD M05",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Postal code",
+              "value": "400069",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Client Representatives",
+          "fields": [
+            {
+              "label": "Primary Contact",
+              "value": "Meera Rao",
+              "source": "FRD M05",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Designation",
+              "value": "Marketing Director",
+              "source": "FRD M05",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Email",
+              "value": "meera@example.com",
+              "source": "FRD M05",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Phone 1",
+              "value": "+91 9000000001",
+              "source": "FRD M05",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Phone 2",
+              "value": "",
+              "source": "FRD M05",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Give Portal Access",
+              "value": "Yes",
+              "source": "FRD M05",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Team Assignment",
+          "fields": [
+            {
+              "label": "Account Manager",
+              "value": "Rahul Sharma",
+              "source": "FRD M05",
+              "required": true,
+              "options": ["Rahul Sharma", "Priya Shah"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "CS Managers",
+              "value": ["Anita Rao"],
+              "source": "FRD M05",
+              "required": false,
+              "options": ["Anita Rao", "Rohan Mehta"],
+              "kind": "select",
+              "multi": true
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "FRD M05 + user-requested additions",
+      "identity": "Company Name"
+    }
+  }
+}

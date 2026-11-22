@@ -1,0 +1,112 @@
+{
+  "entities": {
+    "Industries": {
+      "key": "Industries",
+      "label": "Industries",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "Industries-1",
+          "values": ["Technology", "Master", "", "", "Active"],
+          "details": {
+            "Industry code": "TECH",
+            "Industry name": "Technology",
+            "Active": "Yes"
+          },
+          "flow": "Industries",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Industries-2",
+          "values": ["Manufacturing", "Master", "", "", "Active"],
+          "details": {
+            "Industry code": "MFG",
+            "Industry name": "Manufacturing",
+            "Active": "Yes"
+          },
+          "flow": "Industries",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Industries-3",
+          "values": ["Financial Services", "Master", "", "", "Active"],
+          "details": {
+            "Industry code": "FIN",
+            "Industry name": "Financial Services",
+            "Active": "Yes"
+          },
+          "flow": "Industries",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Manage Industries",
+      "view": "View Industries",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "Industries": {
+      "title": "Manage Industries",
+      "entity": "Industries",
+      "steps": [
+        {
+          "label": "Master Details",
+          "fields": [
+            {
+              "label": "Industry code",
+              "value": "Example industry code",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Industry name",
+              "value": "Technology",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Active",
+              "value": "Yes",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "Industry name"
+    }
+  }
+}

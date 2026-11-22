@@ -1,0 +1,1035 @@
+{
+  "entities": {
+    "Extraction": {
+      "key": "Extraction",
+      "label": "Extraction jobs",
+      "module": "M13",
+      "columns": ["Job", "Event", "City", "Records", "Status"],
+      "seed": [
+        {
+          "id": "Extraction-1",
+          "values": ["X01", "Cloud Roadshow", "Mumbai", "820", "Completed"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-2",
+          "values": ["X01 2", "Cloud Roadshow", "Mumbai", "820", "Running"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 2"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-3",
+          "values": ["X01 3", "Cloud Roadshow", "Mumbai", "820", "Failed"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 3"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-4",
+          "values": ["X01 4", "Cloud Roadshow", "Mumbai", "820", "Completed"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 4"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-5",
+          "values": ["X01 5", "Cloud Roadshow", "Mumbai", "820", "Running"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 5"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-6",
+          "values": ["X01 6", "Cloud Roadshow", "Mumbai", "820", "Failed"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 6"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-7",
+          "values": ["X01 7", "Cloud Roadshow", "Mumbai", "820", "Completed"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 7"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-8",
+          "values": ["X01 8", "Cloud Roadshow", "Mumbai", "820", "Running"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 8"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-9",
+          "values": ["X01 9", "Cloud Roadshow", "Mumbai", "820", "Failed"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 9"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-10",
+          "values": ["X01 10", "Cloud Roadshow", "Mumbai", "820", "Completed"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 10"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-11",
+          "values": ["X01 11", "Cloud Roadshow", "Mumbai", "820", "Running"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 11"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-12",
+          "values": ["X01 12", "Cloud Roadshow", "Mumbai", "820", "Failed"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 12"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-13",
+          "values": ["X01 13", "Cloud Roadshow", "Mumbai", "820", "Completed"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 13"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-14",
+          "values": ["X01 14", "Cloud Roadshow", "Mumbai", "820", "Running"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 14"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-15",
+          "values": ["X01 15", "Cloud Roadshow", "Mumbai", "820", "Failed"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 15"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-16",
+          "values": ["X01 16", "Cloud Roadshow", "Mumbai", "820", "Completed"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 16"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Extraction-17",
+          "values": ["X01 17", "Cloud Roadshow", "Mumbai", "820", "Running"],
+          "created": "2026-11-07",
+          "details": {
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Criteria": "Saved DRF working filters",
+            "Wishlist": "Reviewed",
+            "Sources": "Priority order",
+            "Mumbai": "Ready",
+            "Chennai": "Basic criteria missing",
+            "Actor scope": "Mumbai only",
+            "Checks": "Email and mobile",
+            "Event / city assignment": "Selected contacts",
+            "Provider": "Configured service",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Suggested": "IT Director",
+            "Source": "Verification provider",
+            "Matched accounts": "85",
+            "Missing accounts": "35",
+            "Available contacts": "820",
+            "Required": "1000",
+            "Snapshot": "SN02",
+            "Summary": "Strong IT coverage",
+            "Shortfall": "35 target accounts missing",
+            "Companies": "40",
+            "Contacts per company": "2",
+            "Records": "80",
+            "Senior profiles": "75 percent",
+            "Job": "X01 17"
+          },
+          "flow": "Extraction",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Extraction setup",
+      "view": "Internal dataset",
+      "kind": "job"
+    }
+  },
+  "flows": {
+    "Extraction": {
+      "key": "Extraction",
+      "title": "Extract and prepare sample",
+      "steps": [
+        {
+          "label": "Criteria",
+          "sources": ["Extraction setup"],
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Criteria",
+              "value": "Saved DRF working filters",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Wishlist",
+              "value": "Reviewed",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Sources",
+              "value": "Priority order",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Readiness",
+          "sources": ["Extract all readiness"],
+          "fields": [
+            {
+              "label": "Mumbai",
+              "value": "Ready",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Chennai",
+              "value": "Basic criteria missing",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Actor scope",
+              "value": "Mumbai only",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Verification",
+          "sources": ["Verification setup", "Enrichment review"],
+          "fields": [
+            {
+              "label": "Checks",
+              "value": "Email and mobile",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Event / city assignment",
+              "value": "Selected contacts",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Provider",
+              "value": "Configured service",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Field",
+              "value": "Designation",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Current",
+              "value": "IT Manager",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Suggested",
+              "value": "IT Director",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Source",
+              "value": "Verification provider",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Snapshot",
+          "sources": ["Snapshot and shortfall", "Synopsis editor"],
+          "fields": [
+            {
+              "label": "Matched accounts",
+              "value": "85",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Missing accounts",
+              "value": "35",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Available contacts",
+              "value": "820",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Required",
+              "value": "1000",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Snapshot",
+              "value": "SN02",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Summary",
+              "value": "Strong IT coverage",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Shortfall",
+              "value": "35 target accounts missing",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Sample Controls",
+          "sources": ["Sample size controls"],
+          "fields": [
+            {
+              "label": "Companies",
+              "value": "40",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Contacts per company",
+              "value": "2",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Records",
+              "value": "80",
+              "source": "FRD M13",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Senior profiles",
+              "value": "75 percent",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "Extraction",
+      "source": "FRD M13",
+      "identity": "Job"
+    }
+  }
+}

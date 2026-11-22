@@ -1,0 +1,993 @@
+{
+  "entities": {
+    "Admin": {
+      "key": "Admin",
+      "label": "Users",
+      "module": "M07",
+      "columns": ["Name", "Email", "Role", "Scope", "Status"],
+      "seed": [
+        {
+          "id": "Admin-1",
+          "values": ["Asha Rao", "asha@example.com", "DB Head", "Portfolio", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-2",
+          "values": ["Asha Rao 2", "user2@example.com", "DB Head", "Portfolio", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 2",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-3",
+          "values": ["Asha Rao 3", "user3@example.com", "DB Head", "Portfolio", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 3",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-4",
+          "values": ["Asha Rao 4", "user4@example.com", "DB Head", "Portfolio", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 4",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-5",
+          "values": ["Asha Rao 5", "user5@example.com", "DB Head", "Portfolio", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 5",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-6",
+          "values": ["Asha Rao 6", "user6@example.com", "DB Head", "Portfolio", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 6",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-7",
+          "values": ["Asha Rao 7", "user7@example.com", "DB Head", "Portfolio", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 7",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-8",
+          "values": ["Asha Rao 8", "user8@example.com", "DB Head", "Portfolio", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 8",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-9",
+          "values": ["Asha Rao 9", "user9@example.com", "DB Head", "Portfolio", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 9",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-10",
+          "values": ["Asha Rao 10", "user10@example.com", "DB Head", "Portfolio", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 10",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-11",
+          "values": ["Asha Rao 11", "user11@example.com", "DB Head", "Portfolio", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 11",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-12",
+          "values": ["Asha Rao 12", "user12@example.com", "DB Head", "Portfolio", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 12",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-13",
+          "values": ["Asha Rao 13", "user13@example.com", "DB Head", "Portfolio", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 13",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-14",
+          "values": ["Asha Rao 14", "user14@example.com", "DB Head", "Portfolio", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 14",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-15",
+          "values": ["Asha Rao 15", "user15@example.com", "DB Head", "Portfolio", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 15",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-16",
+          "values": ["Asha Rao 16", "user16@example.com", "DB Head", "Portfolio", "Disabled"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 16",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Admin-17",
+          "values": ["Asha Rao 17", "user17@example.com", "DB Head", "Portfolio", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "First name": "Priya",
+            "Middle name": "",
+            "Last name": "Shah",
+            "Display name": "Asha Rao 17",
+            "Email": "priya@example.com",
+            "Mobile": "+91 9000000002",
+            "Profile picture": "Profile picture placeholder",
+            "Client": "Northstar Technologies",
+            "Employee code": "EMP-001",
+            "Department": "Audience Acquisition",
+            "Designation": "Account Manager",
+            "Reporting manager": "Sameer Popli",
+            "User type": "External",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Timezone": "Asia/Kolkata",
+            "Authentication method": "Email & Password",
+            "Roles": ["Account Manager"],
+            "Account status": "Active",
+            "Activation": "Send password setup link"
+          },
+          "flow": "Admin",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Add top-level user",
+      "view": "User access detail",
+      "kind": "access"
+    }
+  },
+  "flows": {
+    "Admin": {
+      "title": "Create / Update User",
+      "entity": "Admin",
+      "steps": [
+        {
+          "label": "Profile",
+          "fields": [
+            {
+              "label": "First name",
+              "value": "Priya",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Middle name",
+              "value": "",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Last name",
+              "value": "Shah",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Display name",
+              "value": "Priya Shah",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Email",
+              "value": "priya@example.com",
+              "source": "FRD M02/M07",
+              "required": true,
+              "options": [],
+              "kind": "email",
+              "multi": false
+            },
+            {
+              "label": "Mobile",
+              "value": "+91 9000000002",
+              "source": "FRD M08",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Profile picture",
+              "value": "Profile picture placeholder",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "image",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Organisation",
+          "fields": [
+            {
+              "label": "Client",
+              "value": "Northstar Technologies",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": ["Northstar Technologies", "CloudWorks"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Employee code",
+              "value": "EMP-001",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Department",
+              "value": "Audience Acquisition",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Audience Acquisition", "Database", "Response", "Accounts"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Designation",
+              "value": "Account Manager",
+              "source": "FRD M08",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reporting manager",
+              "value": "Sameer Popli",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "User type",
+              "value": "External",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Shobiz / Tootl", "External"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Location",
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Timezone",
+              "value": "Asia/Kolkata",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Credentials & Roles",
+          "fields": [
+            {
+              "label": "Authentication method",
+              "value": "Email & Password",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": true,
+              "options": ["Shobiz SSO", "Email & Password"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Roles",
+              "value": ["Account Manager"],
+              "source": "FRD M07",
+              "required": true,
+              "options": [
+                "Super User",
+                "Account Manager",
+                "Client Servicing Manager",
+                "DB Head",
+                "DB Manager",
+                "Response Head",
+                "Response Manager",
+                "AG Head",
+                "AG Manager",
+                "Event Executive",
+                "Client Contact",
+                "Telecaller"
+              ],
+              "kind": "select",
+              "multi": true
+            },
+            {
+              "label": "Account status",
+              "value": "Active",
+              "source": "FRD M07",
+              "required": false,
+              "options": ["Active", "Disabled"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Activation",
+              "value": "Send password setup link",
+              "source": "FRD M02",
+              "required": false,
+              "options": ["Send password setup link", "SSO invitation"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "FRD M02/M07/M08 + user-requested profile additions",
+      "identity": "Display name"
+    },
+    "UserRoleGrant": {
+      "title": "User Credentials & Role Assignment",
+      "entity": "Admin",
+      "steps": [
+        {
+          "label": "Select User",
+          "fields": [
+            {
+              "label": "User",
+              "value": "Priya Shah",
+              "source": "FRD M07",
+              "required": true,
+              "options": ["Priya Shah", "Rahul Sharma"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Email",
+              "value": "priya@example.com",
+              "source": "FRD M02",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Authentication & Roles",
+          "fields": [
+            {
+              "label": "Authentication method",
+              "value": "Email & Password",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": true,
+              "options": ["Shobiz SSO", "Email & Password"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Roles",
+              "value": ["Account Manager"],
+              "source": "FRD M07",
+              "required": true,
+              "options": [
+                "Super User",
+                "Account Manager",
+                "Client Servicing Manager",
+                "DB Head",
+                "DB Manager",
+                "Response Head",
+                "Response Manager",
+                "AG Head",
+                "AG Manager",
+                "Event Executive",
+                "Client Contact",
+                "Telecaller"
+              ],
+              "kind": "select",
+              "multi": true
+            }
+          ]
+        },
+        {
+          "label": "Client & Event Assignment",
+          "fields": [
+            {
+              "label": "Client",
+              "value": "Northstar Technologies",
+              "source": "FRD M05",
+              "required": false,
+              "options": ["Northstar Technologies", "CloudWorks"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Event",
+              "value": "Northstar Roadshow",
+              "source": "FRD M06",
+              "required": false,
+              "options": ["Northstar Roadshow", "Cloud Leadership Summit"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "District",
+              "value": ["Mumbai Suburban"],
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Mumbai Suburban", "Pune", "Ghaziabad", "Central Delhi"],
+              "kind": "select",
+              "multi": true
+            },
+            {
+              "label": "City",
+              "value": ["Mumbai"],
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": true
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "FRD role assignment + proposed unified credentials screen",
+      "identity": "User"
+    }
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "entities": {
+    "Alerts": {
+      "key": "Alerts",
+      "label": "Notifications",
+      "module": "M09/M16/M28",
+      "columns": ["Event", "City", "Type", "Date", "Status"],
+      "seed": [
+        {
+          "id": "Alerts-1",
+          "values": ["Cloud Roadshow", "Mumbai", "Sample approved", "07 Nov 2026", "Unread"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-2",
+          "values": ["Cloud Roadshow 2", "Mumbai", "Sample approved", "07 Nov 2026", "Read"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-3",
+          "values": ["Cloud Roadshow 3", "Mumbai", "Sample approved", "07 Nov 2026", "Unread"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-4",
+          "values": ["Cloud Roadshow 4", "Mumbai", "Sample approved", "07 Nov 2026", "Read"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-5",
+          "values": ["Cloud Roadshow 5", "Mumbai", "Sample approved", "07 Nov 2026", "Unread"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-6",
+          "values": ["Cloud Roadshow 6", "Mumbai", "Sample approved", "07 Nov 2026", "Read"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-7",
+          "values": ["Cloud Roadshow 7", "Mumbai", "Sample approved", "07 Nov 2026", "Unread"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-8",
+          "values": ["Cloud Roadshow 8", "Mumbai", "Sample approved", "07 Nov 2026", "Read"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-9",
+          "values": ["Cloud Roadshow 9", "Mumbai", "Sample approved", "07 Nov 2026", "Unread"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-10",
+          "values": ["Cloud Roadshow 10", "Mumbai", "Sample approved", "07 Nov 2026", "Read"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-11",
+          "values": ["Cloud Roadshow 11", "Mumbai", "Sample approved", "07 Nov 2026", "Unread"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-12",
+          "values": ["Cloud Roadshow 12", "Mumbai", "Sample approved", "07 Nov 2026", "Read"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-13",
+          "values": ["Cloud Roadshow 13", "Mumbai", "Sample approved", "07 Nov 2026", "Unread"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-14",
+          "values": ["Cloud Roadshow 14", "Mumbai", "Sample approved", "07 Nov 2026", "Read"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-15",
+          "values": ["Cloud Roadshow 15", "Mumbai", "Sample approved", "07 Nov 2026", "Unread"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-16",
+          "values": ["Cloud Roadshow 16", "Mumbai", "Sample approved", "07 Nov 2026", "Read"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Alerts-17",
+          "values": ["Cloud Roadshow 17", "Mumbai", "Sample approved", "07 Nov 2026", "Unread"],
+          "created": "2026-11-07",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Notification detail",
+      "view": "Notification detail",
+      "kind": "notification"
+    }
+  },
+  "flows": {}
+}

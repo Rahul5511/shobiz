@@ -1,0 +1,721 @@
+{
+  "entities": {
+    "Updates": {
+      "key": "Updates",
+      "label": "Contact proposals",
+      "module": "M23",
+      "columns": ["Proposal", "Contact", "Stage", "Proposed by", "Status"],
+      "seed": [
+        {
+          "id": "Updates-1",
+          "values": [
+            "Designation update",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Pending"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-2",
+          "values": [
+            "Designation update 2",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Approved"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 2",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-3",
+          "values": [
+            "Designation update 3",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Changes Requested"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 3",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-4",
+          "values": [
+            "Designation update 4",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Pending"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 4",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-5",
+          "values": [
+            "Designation update 5",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Approved"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 5",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-6",
+          "values": [
+            "Designation update 6",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Changes Requested"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 6",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-7",
+          "values": [
+            "Designation update 7",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Pending"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 7",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-8",
+          "values": [
+            "Designation update 8",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Approved"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 8",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-9",
+          "values": [
+            "Designation update 9",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Changes Requested"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 9",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-10",
+          "values": [
+            "Designation update 10",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Pending"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 10",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-11",
+          "values": [
+            "Designation update 11",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Approved"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 11",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-12",
+          "values": [
+            "Designation update 12",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Changes Requested"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 12",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-13",
+          "values": [
+            "Designation update 13",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Pending"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 13",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-14",
+          "values": [
+            "Designation update 14",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Approved"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 14",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-15",
+          "values": [
+            "Designation update 15",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Changes Requested"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 15",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-16",
+          "values": [
+            "Designation update 16",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Pending"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 16",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Updates-17",
+          "values": [
+            "Designation update 17",
+            "Sam Patel",
+            "Response review",
+            "Arjun Kumar",
+            "Approved"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Contact": "Designation update 17",
+            "Field": "Designation",
+            "Current": "IT Manager",
+            "Proposed": "IT Director",
+            "Reason": "Verified with contact",
+            "Name": "Riya Sen",
+            "Company": "Zenith Logistics",
+            "Email": "riya@zenith.example",
+            "Phone": "Example number",
+            "Proposal": "Designation correction",
+            "Evidence": "Call remark",
+            "Decision": "Forward to DB"
+          },
+          "flow": "Updates",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Propose contact update",
+      "view": "Proposal status history",
+      "kind": "immutable"
+    }
+  },
+  "flows": {
+    "Updates": {
+      "key": "Updates",
+      "title": "Propose contact change",
+      "steps": [
+        {
+          "label": "Contact",
+          "sources": ["Propose contact update", "Propose new contact"],
+          "fields": [
+            {
+              "label": "Contact",
+              "value": "Sam Patel",
+              "source": "FRD M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Field",
+              "value": "Designation",
+              "source": "FRD M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Current",
+              "value": "IT Manager",
+              "source": "FRD M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Proposed",
+              "value": "IT Director",
+              "source": "FRD M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reason",
+              "value": "Confirmed on call",
+              "source": "FRD M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Name",
+              "value": "Riya Sen",
+              "source": "FRD M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Company",
+              "value": "Zenith Logistics",
+              "source": "FRD M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Email",
+              "value": "riya@zenith.example",
+              "source": "FRD M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Phone",
+              "value": "Example number",
+              "source": "FRD M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Evidence",
+          "sources": ["First-level decision"],
+          "fields": [
+            {
+              "label": "Proposal",
+              "value": "Designation correction",
+              "source": "FRD M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Evidence",
+              "value": "Call remark",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Decision",
+              "value": "Forward to DB",
+              "source": "FRD M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reason",
+              "value": "Verified with contact",
+              "source": "FRD M23",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "Updates",
+      "source": "FRD M23",
+      "identity": "Contact"
+    }
+  }
+}

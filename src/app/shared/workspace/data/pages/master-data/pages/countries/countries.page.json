@@ -1,0 +1,139 @@
+{
+  "entities": {
+    "Countries": {
+      "key": "Countries",
+      "label": "Countries",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "Countries-1",
+          "values": ["India", "Master", "", "", "Active"],
+          "details": {
+            "Country code": "IN",
+            "Country name": "India",
+            "ISO2 code": "IN",
+            "Phone code": "+91",
+            "Currency code": "INR",
+            "Timezone": "Asia/Kolkata",
+            "Active": "Yes"
+          },
+          "flow": "Countries",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Countries-2",
+          "values": ["United Arab Emirates", "Master", "", "", "Active"],
+          "details": {
+            "Country code": "AE",
+            "Country name": "United Arab Emirates",
+            "ISO2 code": "AE",
+            "Phone code": "+971",
+            "Currency code": "AED",
+            "Timezone": "Asia/Dubai",
+            "Active": "Yes"
+          },
+          "flow": "Countries",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Manage Countries",
+      "view": "View Countries",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "Countries": {
+      "title": "Manage Countries",
+      "entity": "Countries",
+      "steps": [
+        {
+          "label": "Master Details",
+          "fields": [
+            {
+              "label": "Country code",
+              "value": "Example country code",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Country name",
+              "value": "India",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "ISO2 code",
+              "value": "IN",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Phone code",
+              "value": "+91",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Currency code",
+              "value": "INR",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Timezone",
+              "value": "Asia/Kolkata",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Active",
+              "value": "Yes",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "Country name"
+    }
+  }
+}

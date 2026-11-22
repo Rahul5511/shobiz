@@ -1,0 +1,355 @@
+{
+  "entities": {
+    "SessionAgenda": {
+      "key": "SessionAgenda",
+      "label": "Sessions & Agenda",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "SessionAgenda-1",
+          "values": [
+            "Cloud Leadership Keynote",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Session name": "Cloud Leadership Keynote",
+            "Session type": "Keynote",
+            "Track": "Cloud",
+            "Description": "Leadership and cloud transformation",
+            "Start time": "2026-11-20 10:00",
+            "End time": "2026-11-20 11:00",
+            "Hall / Room": "Hall A",
+            "Capacity": "100",
+            "Speakers": "Speaker A",
+            "Session registration required": "No"
+          },
+          "flow": "SessionAgenda",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "SessionAgenda-2",
+          "values": [
+            "Cloud Leadership Keynote 2",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Session name": "Cloud Leadership Keynote 2",
+            "Session type": "Keynote",
+            "Track": "Cloud",
+            "Description": "Leadership and cloud transformation",
+            "Start time": "2026-11-20 10:00",
+            "End time": "2026-11-20 11:00",
+            "Hall / Room": "Hall A",
+            "Capacity": "100",
+            "Speakers": "Speaker A",
+            "Session registration required": "No"
+          },
+          "flow": "SessionAgenda",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "SessionAgenda-3",
+          "values": [
+            "Cloud Leadership Keynote 3",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Session name": "Cloud Leadership Keynote 3",
+            "Session type": "Keynote",
+            "Track": "Cloud",
+            "Description": "Leadership and cloud transformation",
+            "Start time": "2026-11-20 10:00",
+            "End time": "2026-11-20 11:00",
+            "Hall / Room": "Hall A",
+            "Capacity": "100",
+            "Speakers": "Speaker A",
+            "Session registration required": "No"
+          },
+          "flow": "SessionAgenda",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "SessionAgenda-4",
+          "values": [
+            "Cloud Leadership Keynote 4",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Session name": "Cloud Leadership Keynote 4",
+            "Session type": "Keynote",
+            "Track": "Cloud",
+            "Description": "Leadership and cloud transformation",
+            "Start time": "2026-11-20 10:00",
+            "End time": "2026-11-20 11:00",
+            "Hall / Room": "Hall A",
+            "Capacity": "100",
+            "Speakers": "Speaker A",
+            "Session registration required": "No"
+          },
+          "flow": "SessionAgenda",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "SessionAgenda-5",
+          "values": [
+            "Cloud Leadership Keynote 5",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Session name": "Cloud Leadership Keynote 5",
+            "Session type": "Keynote",
+            "Track": "Cloud",
+            "Description": "Leadership and cloud transformation",
+            "Start time": "2026-11-20 10:00",
+            "End time": "2026-11-20 11:00",
+            "Hall / Room": "Hall A",
+            "Capacity": "100",
+            "Speakers": "Speaker A",
+            "Session registration required": "No"
+          },
+          "flow": "SessionAgenda",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "SessionAgenda-6",
+          "values": [
+            "Cloud Leadership Keynote 6",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Session name": "Cloud Leadership Keynote 6",
+            "Session type": "Keynote",
+            "Track": "Cloud",
+            "Description": "Leadership and cloud transformation",
+            "Start time": "2026-11-20 10:00",
+            "End time": "2026-11-20 11:00",
+            "Hall / Room": "Hall A",
+            "Capacity": "100",
+            "Speakers": "Speaker A",
+            "Session registration required": "No"
+          },
+          "flow": "SessionAgenda",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "SessionAgenda-7",
+          "values": [
+            "Cloud Leadership Keynote 7",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Event": "Northstar Roadshow",
+            "Session name": "Cloud Leadership Keynote 7",
+            "Session type": "Keynote",
+            "Track": "Cloud",
+            "Description": "Leadership and cloud transformation",
+            "Start time": "2026-11-20 10:00",
+            "End time": "2026-11-20 11:00",
+            "Hall / Room": "Hall A",
+            "Capacity": "100",
+            "Speakers": "Speaker A",
+            "Session registration required": "No"
+          },
+          "flow": "SessionAgenda",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Manage Sessions & Agenda",
+      "view": "View Sessions & Agenda",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "SessionAgenda": {
+      "title": "Manage Sessions & Agenda",
+      "entity": "SessionAgenda",
+      "steps": [
+        {
+          "label": "Session Details",
+          "fields": [
+            {
+              "label": "Event",
+              "value": "Northstar Roadshow",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": ["Northstar Roadshow"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Session name",
+              "value": "Cloud Leadership Keynote",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Session type",
+              "value": "Keynote",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Keynote", "Panel", "Workshop", "Demo"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Track",
+              "value": "Cloud",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Description",
+              "value": "Leadership and cloud transformation",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Schedule & Capacity",
+          "fields": [
+            {
+              "label": "Start time",
+              "value": "2026-11-20 10:00",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "End time",
+              "value": "2026-11-20 11:00",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Hall / Room",
+              "value": "Hall A",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Capacity",
+              "value": "100",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "number",
+              "multi": false
+            },
+            {
+              "label": "Speakers",
+              "value": "Speaker A",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Session registration required",
+              "value": "No",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "Session name"
+    }
+  }
+}

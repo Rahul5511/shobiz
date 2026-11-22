@@ -1,0 +1,830 @@
+{
+  "entities": {
+    "Wishlist": {
+      "key": "Wishlist",
+      "label": "Wishlist versions",
+      "module": "M12",
+      "columns": ["List name", "Version", "City", "Accounts", "Status"],
+      "seed": [
+        {
+          "id": "Wishlist-1",
+          "values": ["Target accounts", "WV01", "Mumbai", "120", "Reviewed"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-2",
+          "values": ["Target accounts 2", "WV01", "Mumbai", "120", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 2"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-3",
+          "values": ["Target accounts 3", "WV01", "Mumbai", "120", "Reviewed"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 3"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-4",
+          "values": ["Target accounts 4", "WV01", "Mumbai", "120", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 4"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-5",
+          "values": ["Target accounts 5", "WV01", "Mumbai", "120", "Reviewed"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 5"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-6",
+          "values": ["Target accounts 6", "WV01", "Mumbai", "120", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 6"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-7",
+          "values": ["Target accounts 7", "WV01", "Mumbai", "120", "Reviewed"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 7"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-8",
+          "values": ["Target accounts 8", "WV01", "Mumbai", "120", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 8"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-9",
+          "values": ["Target accounts 9", "WV01", "Mumbai", "120", "Reviewed"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 9"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-10",
+          "values": ["Target accounts 10", "WV01", "Mumbai", "120", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 10"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-11",
+          "values": ["Target accounts 11", "WV01", "Mumbai", "120", "Reviewed"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 11"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-12",
+          "values": ["Target accounts 12", "WV01", "Mumbai", "120", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 12"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-13",
+          "values": ["Target accounts 13", "WV01", "Mumbai", "120", "Reviewed"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 13"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-14",
+          "values": ["Target accounts 14", "WV01", "Mumbai", "120", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 14"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-15",
+          "values": ["Target accounts 15", "WV01", "Mumbai", "120", "Reviewed"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 15"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-16",
+          "values": ["Target accounts 16", "WV01", "Mumbai", "120", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 16"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Wishlist-17",
+          "values": ["Target accounts 17", "WV01", "Mumbai", "120", "Reviewed"],
+          "created": "2026-11-07",
+          "details": {
+            "File": "target-accounts.csv",
+            "Columns": "Company Name and Priority",
+            "Template": "Download",
+            "Rows": "125",
+            "Blank rows": "2",
+            "Duplicate companies": "3",
+            "Accepted": "120",
+            "Wishlist name": "Zenith Logistics",
+            "Suggested company": "Zenith Logistics Ltd",
+            "Confidence": "High",
+            "Reason": "Known alias",
+            "Company": "Meridian Systems",
+            "Similar names": "Two possible matches",
+            "Decision": "Review before creation",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Base priority": "P2",
+            "City priority": "P1",
+            "List name": "Target accounts 17"
+          },
+          "flow": "Wishlist",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Wishlist upload",
+      "view": "Wishlist overview",
+      "kind": "version"
+    }
+  },
+  "flows": {
+    "Wishlist": {
+      "key": "Wishlist",
+      "title": "Import and review wishlist",
+      "steps": [
+        {
+          "label": "Upload",
+          "sources": ["Wishlist upload"],
+          "fields": [
+            {
+              "label": "File",
+              "value": "target-accounts.csv",
+              "source": "FRD M12",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Columns",
+              "value": "Company Name and Priority",
+              "source": "FRD M12",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Template",
+              "value": "Download",
+              "source": "FRD M12",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Import Review",
+          "sources": ["Wishlist import review"],
+          "fields": [
+            {
+              "label": "Rows",
+              "value": "125",
+              "source": "FRD M12",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Blank rows",
+              "value": "2",
+              "source": "FRD M12",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Duplicate companies",
+              "value": "3",
+              "source": "FRD M12",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Accepted",
+              "value": "120",
+              "source": "FRD M12",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Company Matches",
+          "sources": ["Wishlist match review", "Wishlist unmatched company"],
+          "fields": [
+            {
+              "label": "Wishlist name",
+              "value": "Zenith Logistics",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Suggested company",
+              "value": "Zenith Logistics Ltd",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Confidence",
+              "value": "High",
+              "source": "FRD M12",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reason",
+              "value": "Known alias",
+              "source": "FRD M12",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Company",
+              "value": "New Example Systems",
+              "source": "FRD M12",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Similar names",
+              "value": "Two possible matches",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Decision",
+              "value": "Review before creation",
+              "source": "FRD M12",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "City Overrides",
+          "sources": ["Wishlist city overrides"],
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Company",
+              "value": "Meridian Systems",
+              "source": "FRD M12",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Base priority",
+              "value": "P2",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "City priority",
+              "value": "P1",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "Wishlist",
+      "source": "FRD M12",
+      "identity": "List name"
+    }
+  }
+}

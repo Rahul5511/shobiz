@@ -1,0 +1,515 @@
+{
+  "entities": {
+    "Contacts": {
+      "key": "Contacts",
+      "label": "Client Representatives",
+      "module": "M05",
+      "columns": ["Name", "Email", "Designation", "Scope", "Status"],
+      "seed": [
+        {
+          "id": "Contacts-1",
+          "values": ["Rahul Nair", "rahul@example.com", "Marketing Head", "Client", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-2",
+          "values": ["Rahul Nair 2", "rahul@example.com", "Marketing Head", "Client", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 2",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-3",
+          "values": ["Rahul Nair 3", "rahul@example.com", "Marketing Head", "Client", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 3",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-4",
+          "values": ["Rahul Nair 4", "rahul@example.com", "Marketing Head", "Client", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 4",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-5",
+          "values": ["Rahul Nair 5", "rahul@example.com", "Marketing Head", "Client", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 5",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-6",
+          "values": ["Rahul Nair 6", "rahul@example.com", "Marketing Head", "Client", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 6",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-7",
+          "values": ["Rahul Nair 7", "rahul@example.com", "Marketing Head", "Client", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 7",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-8",
+          "values": ["Rahul Nair 8", "rahul@example.com", "Marketing Head", "Client", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 8",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-9",
+          "values": ["Rahul Nair 9", "rahul@example.com", "Marketing Head", "Client", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 9",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-10",
+          "values": ["Rahul Nair 10", "rahul@example.com", "Marketing Head", "Client", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 10",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-11",
+          "values": ["Rahul Nair 11", "rahul@example.com", "Marketing Head", "Client", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 11",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-12",
+          "values": ["Rahul Nair 12", "rahul@example.com", "Marketing Head", "Client", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 12",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-13",
+          "values": ["Rahul Nair 13", "rahul@example.com", "Marketing Head", "Client", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 13",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-14",
+          "values": ["Rahul Nair 14", "rahul@example.com", "Marketing Head", "Client", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 14",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-15",
+          "values": ["Rahul Nair 15", "rahul@example.com", "Marketing Head", "Client", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 15",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-16",
+          "values": ["Rahul Nair 16", "rahul@example.com", "Marketing Head", "Client", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 16",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Contacts-17",
+          "values": ["Rahul Nair 17", "rahul@example.com", "Marketing Head", "Client", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Rahul Nair 17",
+            "Phone 1": "Example number",
+            "Phone 2": "Optional",
+            "Portal access": "Enabled",
+            "Event / city assignment": "Client and all its events",
+            "Client": "Northstar Technologies",
+            "Email": "rahul@example.com",
+            "Designation": "Marketing Head"
+          },
+          "flow": "Contacts",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Edit client contact",
+      "view": "Edit client contact",
+      "kind": "mutable"
+    }
+  },
+  "flows": {
+    "Contacts": {
+      "key": "Contacts",
+      "title": "Create or edit client contact",
+      "steps": [
+        {
+          "label": "Contact Details",
+          "sources": ["Edit client contact"],
+          "fields": [
+            {
+              "label": "Name",
+              "value": "Rahul Nair",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Phone 1",
+              "value": "Example number",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Phone 2",
+              "value": "Optional",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Portal access",
+              "value": "Yes",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Client",
+              "kind": "select",
+              "value": "Northstar Technologies",
+              "required": true,
+              "options": ["Northstar Technologies"],
+              "multi": false,
+              "source": "Client contact profile"
+            },
+            {
+              "label": "Email",
+              "kind": "email",
+              "value": "",
+              "required": false,
+              "options": [],
+              "multi": false,
+              "source": "Client contact profile"
+            },
+            {
+              "label": "Designation",
+              "kind": "text",
+              "value": "",
+              "required": false,
+              "options": [],
+              "multi": false,
+              "source": "Client contact profile"
+            }
+          ]
+        },
+        {
+          "label": "Portal Access",
+          "sources": [],
+          "fields": [
+            {
+              "label": "Portal access",
+              "value": "Enabled",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Event / city assignment",
+              "value": "Client and all its events",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "Contacts",
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "Name"
+    }
+  }
+}

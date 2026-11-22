@@ -1,0 +1,642 @@
+{
+  "entities": {
+    "Response": {
+      "key": "Response",
+      "label": "Response workspace",
+      "module": "M18",
+      "columns": ["Workspace", "City", "Manager", "Campaigns", "Status"],
+      "seed": [
+        {
+          "id": "Response-1",
+          "values": ["Cloud Roadshow", "Mumbai", "Neha Thomas", "3", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-2",
+          "values": ["Cloud Roadshow 2", "Mumbai", "Neha Thomas", "3", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 2",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-3",
+          "values": ["Cloud Roadshow 3", "Mumbai", "Neha Thomas", "3", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 3",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-4",
+          "values": ["Cloud Roadshow 4", "Mumbai", "Neha Thomas", "3", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 4",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-5",
+          "values": ["Cloud Roadshow 5", "Mumbai", "Neha Thomas", "3", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 5",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-6",
+          "values": ["Cloud Roadshow 6", "Mumbai", "Neha Thomas", "3", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 6",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-7",
+          "values": ["Cloud Roadshow 7", "Mumbai", "Neha Thomas", "3", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 7",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-8",
+          "values": ["Cloud Roadshow 8", "Mumbai", "Neha Thomas", "3", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 8",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-9",
+          "values": ["Cloud Roadshow 9", "Mumbai", "Neha Thomas", "3", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 9",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-10",
+          "values": ["Cloud Roadshow 10", "Mumbai", "Neha Thomas", "3", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 10",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-11",
+          "values": ["Cloud Roadshow 11", "Mumbai", "Neha Thomas", "3", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 11",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-12",
+          "values": ["Cloud Roadshow 12", "Mumbai", "Neha Thomas", "3", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 12",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-13",
+          "values": ["Cloud Roadshow 13", "Mumbai", "Neha Thomas", "3", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 13",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-14",
+          "values": ["Cloud Roadshow 14", "Mumbai", "Neha Thomas", "3", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 14",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-15",
+          "values": ["Cloud Roadshow 15", "Mumbai", "Neha Thomas", "3", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 15",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-16",
+          "values": ["Cloud Roadshow 16", "Mumbai", "Neha Thomas", "3", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 16",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Response-17",
+          "values": ["Cloud Roadshow 17", "Mumbai", "Neha Thomas", "3", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Name": "Cloud Roadshow 17",
+            "Type": "Calling",
+            "Phase": "Invite",
+            "Lots": "Released lot 1",
+            "Schedule": "10 Nov 2026",
+            "Email provider": "SendGrid",
+            "Backup": "Platform selected",
+            "Meta credentials": "Masked",
+            "SMS gateway": "Pending",
+            "Sender": "Approved inventory",
+            "Reply-to": "response@example.com",
+            "WhatsApp": "Approved number",
+            "SMS sender": "Approved ID"
+          },
+          "flow": "Response",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Campaign setup",
+      "view": "Response city workspace",
+      "kind": "workspace"
+    }
+  },
+  "flows": {
+    "Response": {
+      "key": "Response",
+      "title": "Prepare response campaign",
+      "steps": [
+        {
+          "label": "Campaign",
+          "sources": ["Campaign setup"],
+          "fields": [
+            {
+              "label": "Name",
+              "value": "Mumbai invite",
+              "source": "FRD M18",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Type",
+              "value": "Calling",
+              "source": "FRD M18",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Phase",
+              "value": "Invite",
+              "source": "FRD M18",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Lots",
+              "value": "Released lot 1",
+              "source": "FRD M18",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Schedule",
+              "value": "10 Nov 2026",
+              "source": "FRD M18",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Connections",
+          "sources": ["Event provider configuration"],
+          "fields": [
+            {
+              "label": "Email provider",
+              "value": "SendGrid",
+              "source": "FRD M18",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Backup",
+              "value": "Platform selected",
+              "source": "FRD M18",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Meta credentials",
+              "value": "Masked",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "SMS gateway",
+              "value": "Pending",
+              "source": "FRD M18",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Senders",
+          "sources": ["Event sender selection"],
+          "fields": [
+            {
+              "label": "Sender",
+              "value": "Approved inventory",
+              "source": "FRD M18",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reply-to",
+              "value": "response@example.com",
+              "source": "FRD M18",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "WhatsApp",
+              "value": "Approved number",
+              "source": "FRD M18",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "SMS sender",
+              "value": "Approved ID",
+              "source": "FRD M18",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "Response",
+      "source": "FRD M18",
+      "identity": "Name"
+    }
+  }
+}

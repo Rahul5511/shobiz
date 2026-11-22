@@ -1,0 +1,58 @@
+<div class="auth-shell grid min-h-dvh lg:grid-cols-2">
+  <aside
+    class="story-panel flex flex-col overflow-hidden p-7 sm:p-12 lg:p-14"
+    aria-label="About EventFlow"
+  >
+    <app-brand />
+    <div class="story-content my-auto py-12 lg:py-16">
+      <p class="eyebrow mb-6">A LITTLE LESS CHAOS. A LOT MORE POSSIBLE.</p>
+      <h1>Great events.<br />Beautifully<br /><span>organised.</span></h1>
+      <p class="story-description mt-6 max-w-sm">
+        Bring your people, plans, and every little detail together. Make room for the moments that
+        matter.
+      </p>
+
+      <div class="planner mt-12 hidden sm:block" aria-hidden="true">
+        <div class="flex items-center justify-between border-b border-current/10 pb-5">
+          <div class="flex items-center gap-3">
+            <span class="calendar-icon">24</span>
+            <div>
+              <p class="text-sm font-semibold">The next big thing</p>
+              <p class="planner-muted mt-1 text-xs">Your vision, coming together</p>
+            </div>
+          </div>
+          <span class="planner-badge">In the making</span>
+        </div>
+        <div class="mt-5 grid grid-cols-[auto_1fr_auto] items-center gap-x-3 gap-y-4 text-xs">
+          <span class="check">✓</span><span>The perfect space</span
+          ><span class="planner-muted">Booked</span> <span class="check">✓</span
+          ><span>People who make it happen</span><span class="planner-muted">Connected</span>
+          <span class="progress-dot"></span><span>Something unforgettable</span
+          ><span class="planner-muted">Up next</span>
+        </div>
+        <div class="planner-footer mt-6 flex items-center justify-between pt-4">
+          <div class="flex -space-x-2">
+            <span class="avatar">AM</span><span class="avatar">JK</span
+            ><span class="avatar">SR</span>
+          </div>
+          <span class="planner-muted text-xs">Better, together.</span>
+        </div>
+      </div>
+    </div>
+    <p class="story-footer text-xs">Thoughtfully planned. Unforgettably experienced.</p>
+  </aside>
+
+  <div class="form-panel flex min-w-0 flex-col px-6 py-7 sm:px-12 lg:px-16">
+    <div class="flex justify-end">
+      <span class="demo-badge"><span aria-hidden="true"></span>Demo workspace</span>
+    </div>
+    <main class="mx-auto flex w-full max-w-[410px] flex-1 flex-col justify-center py-12 sm:py-16">
+      <router-outlet />
+    </main>
+    <footer class="text-muted text-center text-xs leading-relaxed">
+      A little planning goes a long way.<br /><span class="mt-1 inline-block"
+        >EventFlow · Event Organisation</span
+      >
+    </footer>
+  </div>
+</div>

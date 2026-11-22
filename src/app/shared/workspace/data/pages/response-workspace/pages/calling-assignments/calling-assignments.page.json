@@ -1,0 +1,607 @@
+{
+  "entities": {
+    "CallingAssign": {
+      "key": "CallingAssign",
+      "label": "Calling assignments",
+      "module": "M21",
+      "columns": ["Agent", "City", "Queue", "Contacts", "Status"],
+      "seed": [
+        {
+          "id": "CallingAssign-1",
+          "values": ["Arjun Kumar", "Mumbai", "Untapped", "120", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-2",
+          "values": ["Arjun Kumar 2", "Mumbai", "Untapped", "120", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 2"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-3",
+          "values": ["Arjun Kumar 3", "Mumbai", "Untapped", "120", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 3"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-4",
+          "values": ["Arjun Kumar 4", "Mumbai", "Untapped", "120", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 4"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-5",
+          "values": ["Arjun Kumar 5", "Mumbai", "Untapped", "120", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 5"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-6",
+          "values": ["Arjun Kumar 6", "Mumbai", "Untapped", "120", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 6"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-7",
+          "values": ["Arjun Kumar 7", "Mumbai", "Untapped", "120", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 7"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-8",
+          "values": ["Arjun Kumar 8", "Mumbai", "Untapped", "120", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 8"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-9",
+          "values": ["Arjun Kumar 9", "Mumbai", "Untapped", "120", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 9"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-10",
+          "values": ["Arjun Kumar 10", "Mumbai", "Untapped", "120", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 10"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-11",
+          "values": ["Arjun Kumar 11", "Mumbai", "Untapped", "120", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 11"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-12",
+          "values": ["Arjun Kumar 12", "Mumbai", "Untapped", "120", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 12"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-13",
+          "values": ["Arjun Kumar 13", "Mumbai", "Untapped", "120", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 13"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-14",
+          "values": ["Arjun Kumar 14", "Mumbai", "Untapped", "120", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 14"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-15",
+          "values": ["Arjun Kumar 15", "Mumbai", "Untapped", "120", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 15"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-16",
+          "values": ["Arjun Kumar 16", "Mumbai", "Untapped", "120", "Removed"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 16"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingAssign-17",
+          "values": ["Arjun Kumar 17", "Mumbai", "Untapped", "120", "Assigned"],
+          "created": "2026-11-07",
+          "details": {
+            "Pool": "Released calling contacts",
+            "Criteria": "Company wise",
+            "Segment": "Enterprise",
+            "Priority": "P1",
+            "Arjun": "200 contacts",
+            "Meena": "200 contacts",
+            "Company grouping": "Preserved",
+            "From agent": "Arjun",
+            "Queue": "Untapped",
+            "To agent": "Meena",
+            "Records": "50",
+            "Campaign": "Arjun Kumar 17"
+          },
+          "flow": "CallingAssign",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Calling assignment filters",
+      "view": "Agent distribution preview",
+      "kind": "assignment"
+    }
+  },
+  "flows": {
+    "CallingAssign": {
+      "key": "CallingAssign",
+      "title": "Distribute calling data",
+      "steps": [
+        {
+          "label": "Criteria",
+          "sources": ["Calling assignment filters"],
+          "fields": [
+            {
+              "label": "Pool",
+              "value": "Released calling contacts",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Criteria",
+              "value": "Company wise",
+              "source": "FRD M21",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Segment",
+              "value": "Enterprise",
+              "source": "FRD M21",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Priority",
+              "value": "P1",
+              "source": "FRD M21",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Distribution",
+          "sources": ["Agent distribution preview"],
+          "fields": [
+            {
+              "label": "Arjun",
+              "value": "200 contacts",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Meena",
+              "value": "200 contacts",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Company grouping",
+              "value": "Preserved",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Rebalance",
+          "sources": ["Rebalance pending calls"],
+          "fields": [
+            {
+              "label": "From agent",
+              "value": "Arjun",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Queue",
+              "value": "Untapped",
+              "source": "FRD M21",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "To agent",
+              "value": "Meena",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Records",
+              "value": "50",
+              "source": "FRD M21",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "CallingAssign",
+      "source": "FRD M21",
+      "identity": "Campaign"
+    }
+  }
+}

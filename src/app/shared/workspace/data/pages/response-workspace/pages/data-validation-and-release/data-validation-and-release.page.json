@@ -1,0 +1,590 @@
+{
+  "entities": {
+    "Release": {
+      "key": "Release",
+      "label": "Data validation & release",
+      "module": "M19",
+      "columns": ["Lot", "City", "Channel", "Records", "Status"],
+      "seed": [
+        {
+          "id": "Release-1",
+          "values": ["Lot 1", "Mumbai", "Calling", "430", "Valid"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-2",
+          "values": ["Lot 1 2", "Mumbai", "Calling", "430", "Needs Review"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 2",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-3",
+          "values": ["Lot 1 3", "Mumbai", "Calling", "430", "Suppressed"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 3",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-4",
+          "values": ["Lot 1 4", "Mumbai", "Calling", "430", "Valid"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 4",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-5",
+          "values": ["Lot 1 5", "Mumbai", "Calling", "430", "Needs Review"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 5",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-6",
+          "values": ["Lot 1 6", "Mumbai", "Calling", "430", "Suppressed"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 6",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-7",
+          "values": ["Lot 1 7", "Mumbai", "Calling", "430", "Valid"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 7",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-8",
+          "values": ["Lot 1 8", "Mumbai", "Calling", "430", "Needs Review"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 8",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-9",
+          "values": ["Lot 1 9", "Mumbai", "Calling", "430", "Suppressed"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 9",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-10",
+          "values": ["Lot 1 10", "Mumbai", "Calling", "430", "Valid"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 10",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-11",
+          "values": ["Lot 1 11", "Mumbai", "Calling", "430", "Needs Review"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 11",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-12",
+          "values": ["Lot 1 12", "Mumbai", "Calling", "430", "Suppressed"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 12",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-13",
+          "values": ["Lot 1 13", "Mumbai", "Calling", "430", "Valid"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 13",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-14",
+          "values": ["Lot 1 14", "Mumbai", "Calling", "430", "Needs Review"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 14",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-15",
+          "values": ["Lot 1 15", "Mumbai", "Calling", "430", "Suppressed"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 15",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-16",
+          "values": ["Lot 1 16", "Mumbai", "Calling", "430", "Valid"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 16",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Release-17",
+          "values": ["Lot 1 17", "Mumbai", "Calling", "430", "Needs Review"],
+          "created": "2026-11-07",
+          "details": {
+            "Lot": "Lot 1 17",
+            "Records": "450",
+            "State": "Received",
+            "Delivered by": "Priya Shah",
+            "Valid": "430",
+            "Needs review": "10",
+            "Suppressed": "10",
+            "Reason": "New opt-outs",
+            "Selected": "430 valid",
+            "Calling": "Eligible",
+            "Email": "410 eligible"
+          },
+          "flow": "Release",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Release channels",
+      "view": "Release validation review",
+      "kind": "release"
+    }
+  },
+  "flows": {
+    "Release": {
+      "key": "Release",
+      "title": "Validate and release records",
+      "steps": [
+        {
+          "label": "Received Lot",
+          "sources": ["Received lot list"],
+          "fields": [
+            {
+              "label": "Lot",
+              "value": "Calling 1",
+              "source": "FRD M19",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Records",
+              "value": "450",
+              "source": "FRD M19",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Received",
+              "source": "FRD M19",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Delivered by",
+              "value": "Priya Shah",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Validation",
+          "sources": ["Release validation review"],
+          "fields": [
+            {
+              "label": "Valid",
+              "value": "430",
+              "source": "FRD M19",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Needs review",
+              "value": "10",
+              "source": "FRD M19",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Suppressed",
+              "value": "10",
+              "source": "FRD M19",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reason",
+              "value": "New opt-outs",
+              "source": "FRD M19",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Channels",
+          "sources": ["Release channels"],
+          "fields": [
+            {
+              "label": "Selected",
+              "value": "430 valid",
+              "source": "FRD M19",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Calling",
+              "value": "Eligible",
+              "source": "FRD M19",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Email",
+              "value": "410 eligible",
+              "source": "FRD M19",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "Release",
+      "source": "FRD M19",
+      "identity": "Lot"
+    }
+  }
+}

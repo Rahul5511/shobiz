@@ -1,0 +1,72 @@
+@scope (.platform-admin) {
+  .reports-controls {
+    padding: 18px 24px;
+  }
+  .report-fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(142px, 1fr));
+    gap: 12px;
+  }
+  .report-fields select,
+  .report-fields input,
+  .reports-export select {
+    margin-top: 4px;
+  }
+  .report-reset {
+    display: flex;
+    align-items: flex-end;
+  }
+  .report-charts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .report-charts h2 {
+    margin-top: 0;
+  }
+  .report-bar {
+    display: grid;
+    grid-template-columns: minmax(90px, 1fr) minmax(60px, 1.2fr) 3ch;
+    gap: 10px;
+    align-items: center;
+    margin: 7px 0;
+  }
+  .report-bar span {
+    overflow-wrap: anywhere;
+  }
+  .report-bar meter {
+    width: 100%;
+    height: 15px;
+  }
+  .report-bar meter::-webkit-meter-optimum-value {
+    background: var(--orange);
+  }
+  .report-bar meter::-moz-meter-bar {
+    background: var(--orange);
+  }
+  .reports-header,
+  .reports-export {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  .reports-header {
+    justify-content: space-between;
+  }
+  .reports-header h2,
+  .reports-header p {
+    margin: 0;
+  }
+  @media (max-width: 720px) {
+    .report-charts {
+      grid-template-columns: 1fr;
+    }
+    .reports-controls {
+      padding: 14px;
+    }
+    .report-fields {
+      grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+    }
+  }
+}

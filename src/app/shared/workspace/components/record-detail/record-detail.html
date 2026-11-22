@@ -1,0 +1,19 @@
+@if (s.view === 'detail') {
+  <div class="page-title">
+    <div>
+      <span class="eyebrow">FULL RECORD</span>
+      <h1>{{ s.selected.values[0] }}</h1>
+      <p>All saved values and related data.</p>
+    </div>
+    <button (click)="s.view = 'list'">Back to list</button>
+  </div>
+  <ng-content />
+  <app-workspace-record-review />
+  <section class="card padded">
+    <h2>Activity history</h2>
+    <app-data-table [headers]="['Action', 'User', 'Date']" [data]="s.historyRows()" />
+  </section>
+  @if (s.key === 'Sample') {
+    <button (click)="s.sample(s.selected)">View sample contacts</button>
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Angular Enterprise Architect'
+  short_description: 'Project architecture for the Angular admin portal'
+  default_prompt: 'Use $angular-enterprise-architect to implement or review this admin portal change.'

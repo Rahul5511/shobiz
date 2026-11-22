@@ -1,0 +1,73 @@
+<div class="auth-logo">sh<span>o</span>biz</div>
+<span class="eyebrow">JOURNEY REVIEW . LOCAL DEMO</span>
+<h1>Welcome back</h1>
+<p class="muted">Sign in to your assigned workspace.</p>
+<form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <label for="email">Email address</label>
+  <input
+    #emailInput
+    id="email"
+    type="email"
+    formControlName="email"
+    autocomplete="username"
+    placeholder="name@company.com"
+    [readOnly]="submitting()"
+    [attr.aria-invalid]="form.controls.email.touched && form.controls.email.invalid"
+    aria-describedby="email-error"
+  />
+  @if (form.controls.email.touched && form.controls.email.invalid) {
+    <p id="email-error" class="alert error">
+      {{
+        form.controls.email.hasError('required')
+          ? 'Enter your email address.'
+          : 'Enter a valid email address.'
+      }}
+    </p>
+  }
+  <label for="password">Password</label>
+  <div class="password-input">
+    <input
+      #passwordInput
+      id="password"
+      [type]="passwordVisible() ? 'text' : 'password'"
+      formControlName="password"
+      autocomplete="current-password"
+      [readOnly]="submitting()"
+      aria-describedby="password-error"
+    /><button
+      class="password-toggle"
+      type="button"
+      [attr.aria-pressed]="passwordVisible()"
+      (click)="passwordVisible.set(!passwordVisible())"
+    >
+      {{ passwordVisible() ? 'Hide' : 'Show' }}
+    </button>
+  </div>
+  @if (form.controls.password.touched && form.controls.password.invalid) {
+    <p id="password-error" class="alert error">Enter your password.</p>
+  }
+  @if (errorMessage()) {
+    <p class="alert error" role="alert">{{ errorMessage() }}</p>
+  }
+  <button type="submit" class="primary wide mt-4" [disabled]="submitting()">
+    {{ submitting() ? 'Signing in?' : 'Sign in' }}
+  </button>
+</form>
+<a routerLink="/forgot-password">Forgot password?</a>
+<button type="button" class="wide sso" (click)="ssoDemo()" [disabled]="submitting()">
+  Try Shobiz SSO demo
+</button>
+<details class="demo-accounts">
+  <summary>Platform Admin demo account</summary>
+  <p>{{ demoCredentials.email }}</p>
+  <p>
+    Password: <code>{{ demoCredentials.password }}</code>
+  </p>
+  <button type="button" class="demo-button" (click)="useDemoAccount()" [disabled]="submitting()">
+    Use demo account
+  </button>
+</details>
+<p class="auth-note">
+  Local design prototype. Authentication and password reset are simulated. Do not enter real
+  credentials.
+</p>

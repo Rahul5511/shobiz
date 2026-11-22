@@ -1,0 +1,11 @@
+export { CountriesPage } from './pages/countries/countries';
+export { StatesPage } from './pages/states/states';
+export { DistrictsPage } from './pages/districts/districts';
+export { CitiesPage } from './pages/cities/cities';
+export { IndustriesPage } from './pages/industries/industries';
+export { SubIndustriesPage } from './pages/sub-industries/sub-industries';
+export { SegmentsPage } from './pages/segments/segments';
+export { DepartmentsPage } from './pages/departments/departments';
+export { DesignationsPage } from './pages/designations/designations';
+export { ProfileLevelsPage } from './pages/profile-levels/profile-levels';
+export { CallStatusesPage } from './pages/call-statuses/call-statuses';

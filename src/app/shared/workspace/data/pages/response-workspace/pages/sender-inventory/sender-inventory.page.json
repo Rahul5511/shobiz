@@ -1,0 +1,419 @@
+{
+  "entities": {
+    "Senders": {
+      "key": "Senders",
+      "label": "Sender inventory",
+      "module": "M18",
+      "columns": ["Sender name", "Channel", "Address or ID", "Scope", "Status"],
+      "seed": [
+        {
+          "id": "Senders-1",
+          "values": ["Events team", "Email", "events@example.com", "Inventory", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-2",
+          "values": ["Events team 2", "Email", "events@example.com", "Inventory", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 2",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-3",
+          "values": ["Events team 3", "Email", "events@example.com", "Inventory", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 3",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-4",
+          "values": ["Events team 4", "Email", "events@example.com", "Inventory", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 4",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-5",
+          "values": ["Events team 5", "Email", "events@example.com", "Inventory", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 5",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-6",
+          "values": ["Events team 6", "Email", "events@example.com", "Inventory", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 6",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-7",
+          "values": ["Events team 7", "Email", "events@example.com", "Inventory", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 7",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-8",
+          "values": ["Events team 8", "Email", "events@example.com", "Inventory", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 8",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-9",
+          "values": ["Events team 9", "Email", "events@example.com", "Inventory", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 9",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-10",
+          "values": ["Events team 10", "Email", "events@example.com", "Inventory", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 10",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-11",
+          "values": ["Events team 11", "Email", "events@example.com", "Inventory", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 11",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-12",
+          "values": ["Events team 12", "Email", "events@example.com", "Inventory", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 12",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-13",
+          "values": ["Events team 13", "Email", "events@example.com", "Inventory", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 13",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-14",
+          "values": ["Events team 14", "Email", "events@example.com", "Inventory", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 14",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-15",
+          "values": ["Events team 15", "Email", "events@example.com", "Inventory", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 15",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-16",
+          "values": ["Events team 16", "Email", "events@example.com", "Inventory", "Inactive"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 16",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Senders-17",
+          "values": ["Events team 17", "Email", "events@example.com", "Inventory", "Active"],
+          "created": "2026-11-07",
+          "details": {
+            "Channel": "Email",
+            "Sender identity": "Events team 17",
+            "Sender display name": "Northstar Events",
+            "Event": "Northstar Roadshow",
+            "Approval status": "Approved"
+          },
+          "flow": "Senders",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Sender inventory",
+      "view": "Sender inventory",
+      "kind": "mutable"
+    }
+  },
+  "flows": {
+    "Senders": {
+      "title": "Configure Sender",
+      "entity": "Senders",
+      "steps": [
+        {
+          "label": "Sender Details",
+          "fields": [
+            {
+              "label": "Channel",
+              "value": "Email",
+              "source": "FRD M18",
+              "required": true,
+              "options": ["Email", "WhatsApp", "Calling"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Sender identity",
+              "value": "invitations@example.com",
+              "source": "FRD M18",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Sender display name",
+              "value": "Northstar Events",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Event",
+              "value": "Northstar Roadshow",
+              "source": "FRD M18",
+              "required": true,
+              "options": ["Northstar Roadshow"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Approval status",
+              "value": "Approved",
+              "source": "FRD M18",
+              "required": false,
+              "options": ["Pending", "Approved", "Disabled"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "FRD M18",
+      "identity": "Sender identity"
+    }
+  }
+}

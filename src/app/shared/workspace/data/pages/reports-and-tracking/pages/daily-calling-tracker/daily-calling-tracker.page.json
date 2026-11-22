@@ -1,0 +1,133 @@
+{
+  "entities": {
+    "CallingTracker": {
+      "key": "CallingTracker",
+      "label": "Daily Calling Tracker",
+      "module": "M04/M26/M27",
+      "columns": ["Name", "Event", "Assigned / Registered", "Called / Attended", "Status"],
+      "kind": "report",
+      "seed": [
+        {
+          "id": "CallingTracker-1",
+          "values": [
+            "Daily Calling Tracker",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingTracker-2",
+          "values": [
+            "Daily Calling Tracker 2",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingTracker-3",
+          "values": [
+            "Daily Calling Tracker 3",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingTracker-4",
+          "values": [
+            "Daily Calling Tracker 4",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingTracker-5",
+          "values": [
+            "Daily Calling Tracker 5",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingTracker-6",
+          "values": [
+            "Daily Calling Tracker 6",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "CallingTracker-7",
+          "values": [
+            "Daily Calling Tracker 7",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "flows": {}
+}

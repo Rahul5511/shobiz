@@ -1,0 +1,703 @@
+{
+  "entities": {
+    "RegApproval": {
+      "key": "RegApproval",
+      "label": "Registration approvals",
+      "module": "M25",
+      "columns": ["Registrant", "Company", "City", "Waiting", "Status"],
+      "seed": [
+        {
+          "id": "RegApproval-1",
+          "values": ["Sam Patel", "Zenith Logistics", "Mumbai", "2 days", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Sam Patel",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-2",
+          "values": ["Riya Sen", "Zenith Logistics", "Mumbai", "2 days", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Riya Sen",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-3",
+          "values": ["Kiran Iyer", "Zenith Logistics", "Mumbai", "2 days", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Kiran Iyer",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-4",
+          "values": ["Anil Rao", "Zenith Logistics", "Mumbai", "2 days", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Anil Rao",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-5",
+          "values": ["Sam Patel 5", "Zenith Logistics", "Mumbai", "2 days", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Sam Patel 5",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-6",
+          "values": ["Riya Sen 6", "Zenith Logistics", "Mumbai", "2 days", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Riya Sen 6",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-7",
+          "values": ["Kiran Iyer 7", "Zenith Logistics", "Mumbai", "2 days", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Kiran Iyer 7",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-8",
+          "values": ["Anil Rao 8", "Zenith Logistics", "Mumbai", "2 days", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Anil Rao 8",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-9",
+          "values": ["Sam Patel 9", "Zenith Logistics", "Mumbai", "2 days", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Sam Patel 9",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-10",
+          "values": ["Riya Sen 10", "Zenith Logistics", "Mumbai", "2 days", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Riya Sen 10",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-11",
+          "values": ["Kiran Iyer 11", "Zenith Logistics", "Mumbai", "2 days", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Kiran Iyer 11",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-12",
+          "values": ["Anil Rao 12", "Zenith Logistics", "Mumbai", "2 days", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Anil Rao 12",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-13",
+          "values": ["Sam Patel 13", "Zenith Logistics", "Mumbai", "2 days", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Sam Patel 13",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-14",
+          "values": ["Riya Sen 14", "Zenith Logistics", "Mumbai", "2 days", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Riya Sen 14",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-15",
+          "values": ["Kiran Iyer 15", "Zenith Logistics", "Mumbai", "2 days", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Kiran Iyer 15",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-16",
+          "values": ["Anil Rao 16", "Zenith Logistics", "Mumbai", "2 days", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Anil Rao 16",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegApproval-17",
+          "values": ["Sam Patel 17", "Zenith Logistics", "Mumbai", "2 days", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Authority": "Client contact",
+            "Mode": "Client platform",
+            "Communication owner": "Client platform",
+            "Contact": "Rahul Nair",
+            "Registrant": "Sam Patel 17",
+            "Waiting": "2 days",
+            "Company registrations": "2",
+            "Priority": "P1",
+            "Outcome": "Approved",
+            "Remarks": "Meets audience criteria",
+            "Approver": "Rahul Nair",
+            "Decision": "Approved",
+            "Date": "07 Nov 2026",
+            "Evidence": "approval.pdf"
+          },
+          "flow": "RegApproval",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Registration decision",
+      "view": "Registration detail",
+      "kind": "decision"
+    }
+  },
+  "flows": {
+    "RegApproval": {
+      "key": "RegApproval",
+      "title": "Review registration decisions",
+      "steps": [
+        {
+          "label": "Policy",
+          "sources": ["Registration approval setup"],
+          "fields": [
+            {
+              "label": "Authority",
+              "value": "Client contact",
+              "source": "FRD M25",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Mode",
+              "value": "Client platform",
+              "source": "FRD M25",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Communication owner",
+              "value": "Client platform",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Contact",
+              "value": "Rahul Nair",
+              "source": "FRD M25",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Selection",
+          "sources": ["Pending approval queue"],
+          "fields": [
+            {
+              "label": "Registrant",
+              "value": "",
+              "source": "FRD M25",
+              "required": true,
+              "options": [
+                "Asha Mehta",
+                "Rahul Verma",
+                "Neha Gupta",
+                "Arjun Das",
+                "Riya Kapoor",
+                "Kabir Shah",
+                "Anita Rao",
+                "Sonia Jain",
+                "Vivek Nair",
+                "Pooja Roy",
+                "Karan Bose",
+                "Maya Sen"
+              ],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Waiting",
+              "value": "2 days",
+              "source": "FRD M25",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Company registrations",
+              "value": "2",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Priority",
+              "value": "P1",
+              "source": "FRD M25",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Decision",
+          "sources": ["Registration decision", "Record client registration decision"],
+          "fields": [
+            {
+              "label": "Registrant",
+              "value": "",
+              "source": "FRD M25",
+              "required": true,
+              "options": [
+                "Asha Mehta",
+                "Rahul Verma",
+                "Neha Gupta",
+                "Arjun Das",
+                "Riya Kapoor",
+                "Kabir Shah",
+                "Anita Rao",
+                "Sonia Jain",
+                "Vivek Nair",
+                "Pooja Roy",
+                "Karan Bose",
+                "Maya Sen"
+              ],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Outcome",
+              "value": "Approved",
+              "source": "FRD M25",
+              "required": false,
+              "options": ["Approved", "On Hold", "Rejected", "Pending"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Remarks",
+              "value": "Meets audience criteria",
+              "source": "FRD M25",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Approver",
+              "value": "Rahul Nair",
+              "source": "FRD M25",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Decision",
+              "value": "Approved",
+              "source": "FRD M25",
+              "required": false,
+              "options": ["Approved", "On Hold", "Rejected", "Pending"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Date",
+              "value": "07 Nov 2026",
+              "source": "FRD M25",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Evidence",
+              "value": "approval.pdf",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": ["Bulk registration decisions"],
+          "fields": []
+        }
+      ],
+      "entity": "RegApproval",
+      "source": "FRD M25",
+      "identity": "Registrant"
+    }
+  }
+}

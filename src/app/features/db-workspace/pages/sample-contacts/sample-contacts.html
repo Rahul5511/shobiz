@@ -1,0 +1,37 @@
+@if (s.view === 'sample') {
+  <div class="page-title">
+    <div>
+      <span class="eyebrow">SAMPLE VERSION</span>
+      <h1>{{ s.selected?.values[0] || 'Sample 1' }} / Contacts</h1>
+      <p>{{ s.sampleRows.length }} matching sample contacts</p>
+    </div>
+    <button (click)="s.view = 'list'; s.key = 'Sample'">Back to samples</button>
+  </div>
+  <div class="alert warning">
+    SAMPLE: emails and phone numbers are excluded from screens, shared links and downloads (FRD
+    M13).
+  </div>
+  <section class="card">
+    <header class="card-header filters">
+      <label>Search company or title<input [(ngModel)]="s.search" /></label
+      ><label>Additional search<input [(ngModel)]="s.search2" /></label
+      ><label>Export limit<input type="number" min="1" max="100" [(ngModel)]="s.limit" /></label>
+    </header>
+    <app-data-table [headers]="s.m.sampleHeaders" [data]="s.sampleRows" />
+    <footer class="record-footer">
+      <span>{{ s.sampleRows.length }} sample contacts</span>
+      @if (s.role === 'DB Manager') {
+        <div class="row">
+          <button (click)="exportSample()"><app-icon name="download" />Excel</button
+          ><button (click)="printSample()">PDF / Print</button>
+        </div>
+      }
+      @if (s.role !== 'DB Manager') {
+        <span class="muted">View only for this role</span>
+      }
+    </footer>
+  </section>
+  <div class="provenance">
+    Limited downloads and additional search controls are proposed based on user feedback.
+  </div>
+}

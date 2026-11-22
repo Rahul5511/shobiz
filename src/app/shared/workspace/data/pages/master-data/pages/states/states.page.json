@@ -1,0 +1,155 @@
+{
+  "entities": {
+    "States": {
+      "key": "States",
+      "label": "States",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "States-1",
+          "values": ["Maharashtra", "India", "", "", "Active"],
+          "details": {
+            "Country": "India",
+            "State code": "MH",
+            "State name": "Maharashtra",
+            "State type": "State",
+            "Active": "Yes"
+          },
+          "flow": "States",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "States-2",
+          "values": ["Uttar Pradesh", "India", "", "", "Active"],
+          "details": {
+            "Country": "India",
+            "State code": "UP",
+            "State name": "Uttar Pradesh",
+            "State type": "State",
+            "Active": "Yes"
+          },
+          "flow": "States",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "States-3",
+          "values": ["Delhi", "India", "", "", "Active"],
+          "details": {
+            "Country": "India",
+            "State code": "DL",
+            "State name": "Delhi",
+            "State type": "Territory",
+            "Active": "Yes"
+          },
+          "flow": "States",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "States-4",
+          "values": ["Dubai", "United Arab Emirates", "", "", "Active"],
+          "details": {
+            "Country": "United Arab Emirates",
+            "State code": "DU",
+            "State name": "Dubai",
+            "State type": "Emirate",
+            "Active": "Yes"
+          },
+          "flow": "States",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Manage States",
+      "view": "View States",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "States": {
+      "title": "Manage States",
+      "entity": "States",
+      "steps": [
+        {
+          "label": "Master Details",
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State code",
+              "value": "Example state code",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "State name",
+              "value": "Maharashtra",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "State type",
+              "value": "Example state type",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Active",
+              "value": "Yes",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "State name"
+    }
+  }
+}

@@ -1,0 +1,191 @@
+<div class="page-title">
+  <div>
+    <h1>{{ s.roleName }} Reports</h1>
+    <p>Filter records, compare periods and export the results.</p>
+  </div>
+</div>
+@if (catalog.length) {
+  <section class="record-card reports-controls">
+    <div class="report-fields">
+      <label
+        >Report<select [ngModel]="selected()" (ngModelChange)="select($event)">
+          @for (report of catalog; track report) {
+            <option [value]="report.key">{{ report.title }}</option>
+          }
+        </select></label
+      >
+      <label
+        >Period<select [ngModel]="grain()" (ngModelChange)="grain.set($event); page.set(1)">
+          <option value="daily">Daily</option>
+          <option value="monthly">Monthly</option>
+          <option value="yearly">Yearly</option>
+        </select></label
+      >
+      <label
+        >Break down by<select
+          [ngModel]="breakdown()"
+          (ngModelChange)="breakdown.set($event); page.set(1)"
+        >
+          @for (key of filterKeys; track key) {
+            <option [value]="key">{{ dimensions[key] }}</option>
+          }
+        </select></label
+      >
+      <label
+        >From<input
+          type="date"
+          [ngModel]="filters().from"
+          (ngModelChange)="setFilter('from', $event)"
+      /></label>
+      <label
+        >To<input type="date" [ngModel]="filters().to" (ngModelChange)="setFilter('to', $event)"
+      /></label>
+    </div>
+    <p class="muted">
+      {{ current().basis }}
+      @if (undated()) {
+        <span>{{ undated() }} undated records are shown only when no date range is selected.</span>
+      }
+    </p>
+    <div class="report-fields">
+      @for (key of filterKeys; track key) {
+        <label
+          >{{ dimensions[key]
+          }}<select [ngModel]="filters()[key]" (ngModelChange)="setFilter(key, $event)">
+            <option value="">All</option>
+            @for (option of options()[key]; track option) {
+              <option [value]="option">{{ option }}</option>
+            }
+          </select></label
+        >
+      }
+      <label
+        >Search<input
+          type="search"
+          [ngModel]="filters().search"
+          (ngModelChange)="setFilter('search', $event)"
+      /></label>
+      <label
+        >Additional search<input
+          type="search"
+          [ngModel]="filters().more"
+          (ngModelChange)="setFilter('more', $event)"
+      /></label>
+      <div class="report-reset"><button (click)="clear()">Clear filters</button></div>
+    </div>
+    @if (invalidRange()) {
+      <p class="alert error" role="alert">The From date must be on or before the To date.</p>
+    }
+  </section>
+  @if (filtered().length) {
+    <div class="report-charts">
+      <section class="card padded">
+        <h2>Records by period</h2>
+        @if (chart().length > 12) {
+          <p class="muted">Showing the last 12 buckets. The table includes all matching periods.</p>
+        }
+        @for (row of chart().slice(-12); track row) {
+          <div class="report-bar">
+            <span>{{ row.period }}</span
+            ><meter min="0" [max]="max()" [value]="row.count" [attr.aria-label]="row.period"></meter
+            ><b>{{ row.count }}</b>
+          </div>
+        }
+      </section>
+      <section class="card padded">
+        <h2>Top {{ dimensions[breakdown()] | lowercase }} groups</h2>
+        @for (row of distribution(); track row) {
+          <div class="report-bar">
+            <span>{{ row.group }}</span
+            ><meter
+              min="0"
+              [max]="distribution()[0].count"
+              [value]="row.count"
+              [attr.aria-label]="row.group"
+            ></meter
+            ><b>{{ row.count }}</b>
+          </div>
+        }
+      </section>
+    </div>
+  }
+  <section class="record-card">
+    <header class="record-header reports-header">
+      <div>
+        <h2>{{ current().title }}</h2>
+        <p aria-live="polite">
+          {{ filtered().length }} matching records · {{ groups().length }} grouped rows
+        </p>
+      </div>
+      <div class="reports-export">
+        <label
+          >Format<select [(ngModel)]="format">
+            <option value="xlsx">Excel</option>
+            <option value="csv">CSV</option>
+            <option value="pdf">PDF / Print</option>
+          </select></label
+        >
+        <button
+          [disabled]="!pageRows().length"
+          (click)="download(false)"
+          title="Export rows on the current page"
+        >
+          Export
+        </button>
+        <button
+          class="primary"
+          [disabled]="!groups().length"
+          (click)="download(true)"
+          title="Export all matching rows across pages"
+        >
+          Export All
+        </button>
+      </div>
+    </header>
+    @if (error) {
+      <p class="alert error" role="alert">{{ error }}</p>
+    }
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Period</th>
+            <th scope="col">{{ dimensions[breakdown()] }}</th>
+            <th scope="col">Records</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of pageRows(); track row) {
+            <tr>
+              <td>{{ row.period }}</td>
+              <td>{{ row.group }}</td>
+              <td>{{ row.count }}</td>
+            </tr>
+          }
+          @if (!pageRows().length) {
+            <tr>
+              <td colspan="3" class="empty">No matching report rows.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <footer class="record-footer">
+      <label
+        >Rows per page
+        <select [ngModel]="pageSize()" (ngModelChange)="pageSize.set(+$event); page.set(1)">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="25">25</option>
+        </select></label
+      >
+      <div class="pagination">
+        <button [disabled]="page() <= 1" (click)="page.set(page() - 1)">Previous</button
+        ><span>Page {{ page() }} of {{ pages() }}</span
+        ><button [disabled]="page() >= pages()" (click)="page.set(page() + 1)">Next</button>
+      </div>
+    </footer>
+  </section>
+} @else {
+  <p class="alert info">No reports are configured for this role.</p>
+}

@@ -1,0 +1,364 @@
+@if (error) {
+  <p class="alert error" role="alert">{{ error }}</p>
+}
+@if (!detail) {
+  <section class="card padded">
+    <div class="event-portfolio-filters">
+      <label
+        >Event<select [ngModel]="eventName" (ngModelChange)="selectEvent($event)">
+          <option value="">Select event</option>
+          @for (row of portfolio; track row) {
+            <option [value]="row.values[0]">{{ row.values[0] }}</option>
+          }
+        </select></label
+      >
+      <label
+        >City<select [(ngModel)]="city">
+          <option value="">All cities</option>
+          @for (item of cities; track item) {
+            <option>{{ item }}</option>
+          }
+        </select></label
+      >
+      <label>From<input type="date" [(ngModel)]="from" /></label
+      ><label>To<input type="date" [(ngModel)]="to" /></label>
+    </div>
+    @if (eventRow && !calling && s.role !== 'Client Contact') {
+      <button class="event-portfolio-open" (click)="chooseEvent(eventRow)">
+        Open Event Dashboard
+      </button>
+    }
+    @if (!portfolio.length) {
+      <p>No events match this view.</p>
+    }
+    @if (!portfolio.length && s.eventEditor) {
+      <button class="primary" (click)="s.openTask('Events')">Add New Event</button>
+    }
+    @if (s.role === 'Super User') {
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Event</th>
+              <th>City</th>
+              <th>Start</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (row of portfolio; track row) {
+              <tr>
+                <td>{{ row.details?.Client }}</td>
+                <td>
+                  <button (click)="chooseEvent(row)">{{ row.values[0] }}</button>
+                </td>
+                <td>{{ row.details?.City }}</td>
+                <td>{{ row.details?.['Event Start Date'] }}</td>
+                <td>{{ row.details?.['Event Status'] || row.values[4] }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    }
+  </section>
+}
+@if (eventRow) {
+  @if (!detail || s.role !== 'Client Contact') {
+    @if (calling && !detail) {
+      <div class="metrics">
+        @for (metric of s.metrics; track metric) {
+          <button class="metric" (click)="s.openReport(metric.target)">
+            {{ metric.label }}<strong>{{ metric.value }}</strong>
+          </button>
+        }
+      </div>
+    }
+    @if (!calling && s.role !== 'Client Contact' && workSections.length) {
+      <section class="card padded">
+        <h2>Event work progress</h2>
+        @for (section of workSections; track section) {
+          <div>
+            <h3>{{ section.name }}</h3>
+            <div class="metrics">
+              @for (item of section.items; track item) {
+                <button class="metric" (click)="s.nav(item.key)">
+                  {{ item.label }}<strong>{{ item.count }}</strong>
+                </button>
+              }
+            </div>
+          </div>
+        }
+      </section>
+    }
+  }
+  @if (approvalAllowed) {
+    <section class="card padded">
+      <h2>Registration analytics</h2>
+      <p class="muted">{{ eventName }} · Figures refresh as demo records change.</p>
+      <div class="metrics">
+        @for (count of counts; track count) {
+          <div class="metric">
+            {{ count[0] }}<strong>{{ count[1] }}</strong>
+          </div>
+        }
+      </div>
+      <div class="registration-approval-analytics">
+        <h2>Registration approval analytics</h2>
+        <p><b>Average approval time</b> · {{ average }}</p>
+        <div class="approval-grid">
+          <div>
+            <h3>Pending approvals by waiting time</h3>
+            @for (bin of waiting; track bin) {
+              <div class="approval-waiting-row">
+                <span>{{ bin.label }}</span
+                ><meter
+                  min="0"
+                  [max]="pending.length || 1"
+                  [value]="bin.count"
+                  [attr.aria-label]="bin.label"
+                ></meter
+                ><b>{{ bin.count }}</b>
+              </div>
+            }
+          </div>
+          <div>
+            <h3>Registration outcomes by submission day</h3>
+            <p class="muted">Approved / Declined / Pending</p>
+            @if (daily.length) {
+              <div class="approval-chart">
+                @for (day of daily; track day) {
+                  <div class="approval-day">
+                    <div
+                      class="approval-stack"
+                      role="img"
+                      [attr.aria-label]="
+                        day.day +
+                        ': ' +
+                        day.approved +
+                        ' approved, ' +
+                        day.declined +
+                        ' declined, ' +
+                        day.pending +
+                        ' pending'
+                      "
+                    >
+                      <span
+                        class="approval-approved"
+                        [style.height.%]="(day.approved * 100) / dailyMax"
+                      ></span
+                      ><span
+                        class="approval-declined"
+                        [style.height.%]="(day.declined * 100) / dailyMax"
+                      ></span
+                      ><span
+                        class="approval-pending"
+                        [style.height.%]="(day.pending * 100) / dailyMax"
+                      ></span>
+                    </div>
+                    <small>{{ day.day }}</small
+                    ><small>{{ day.approved }} / {{ day.declined }} / {{ day.pending }}</small>
+                  </div>
+                }
+              </div>
+            } @else {
+              <p>No registration outcomes in this view.</p>
+            }
+          </div>
+        </div>
+        <div class="approval-grid">
+          <div>
+            <h3>Approvals by client contact</h3>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Recorded approver</th>
+                    <th>Approved</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (row of approvers; track row) {
+                    <tr>
+                      <td>{{ row[0] }}</td>
+                      <td>{{ row[1] }}</td>
+                    </tr>
+                  }
+                  @if (!approvers.length) {
+                    <tr>
+                      <td colspan="2">No approvals.</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <h3>Registrations awaiting approval</h3>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Reference</th>
+                    <th>City</th>
+                    <th>Submitted</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (row of pending; track row) {
+                    <tr>
+                      <td>{{ row.id }}</td>
+                      <td>{{ row.city }}</td>
+                      <td>
+                        {{ row.registeredAt ? (row.registeredAt | date: 'medium') : 'Unrecorded' }}
+                      </td>
+                    </tr>
+                  }
+                  @if (!pending.length) {
+                    <tr>
+                      <td colspan="3">No pending registrations.</td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  }
+  @if (detail && canManageExecutives) {
+    <section class="card padded">
+      <h2>Event Executives</h2>
+      <form class="report-fields" (ngSubmit)="addExecutive()">
+        <label>Name<input name="executiveName" [(ngModel)]="name" required /></label
+        ><label
+          >Email<input type="email" name="executiveEmail" [(ngModel)]="email" required
+        /></label>
+        <div class="report-reset"><button class="primary">Add Event Executive</button></div>
+      </form>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (row of state.executives; track row; let i = $index) {
+              <tr>
+                <td>{{ row.name }}</td>
+                <td>{{ row.email || 'Unrecorded' }}</td>
+                <td><button (click)="removeExecutive(i)">Remove event access</button></td>
+              </tr>
+            }
+            @if (!state.executives.length) {
+              <tr>
+                <td colspan="3">No executives assigned.</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+  }
+  @if (detail && canReadLog) {
+    <section class="card padded">
+      <h2>Client Requirements Log</h2>
+      @if (canWriteLog) {
+        <form (ngSubmit)="append(attachment)">
+          <label
+            >Remarks<textarea #requirementsRemarks name="remarks" [(ngModel)]="remarks"></textarea>
+          </label>
+          <div class="report-fields">
+            <label
+              >City<select name="logCity" [(ngModel)]="logCity">
+                <option value="">All cities</option>
+                @for (item of cities; track item) {
+                  <option>{{ item }}</option>
+                }
+              </select></label
+            >
+            <label
+              >Attachments<input #attachment type="file" multiple (change)="setFiles($event)"
+            /></label>
+            <div class="report-reset">
+              <button class="primary" [disabled]="busy">Add log entry</button>
+            </div>
+          </div>
+        </form>
+      }
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Date and time</th>
+              <th>Added by</th>
+              <th>City</th>
+              <th>Remarks</th>
+              <th>Attachments</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (entry of state.log; track entry) {
+              <tr>
+                <td>{{ entry.at | date: 'medium' }}</td>
+                <td>{{ entry.author }}</td>
+                <td>{{ entry.city || 'All cities' }}</td>
+                <td class="requirements-remarks">{{ entry.remarks }}</td>
+                <td>
+                  @for (file of entry.files; track file) {
+                    <button (click)="download(file)">
+                      {{ file.name }}
+                    </button>
+                  }
+                </td>
+              </tr>
+            }
+            @if (!state.log.length) {
+              <tr>
+                <td colspan="5">No client requirements logged.</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+  }
+  @if (s.eventEditor) {
+    <section class="card padded">
+      <h2>Scheduled reports</h2>
+      <p class="muted">
+        Save a schedule for this event and preview its output. Automatic runs and delivery require a
+        backend.
+      </p>
+      <form class="report-fields" (ngSubmit)="schedule()">
+        <label
+          >Frequency<select name="frequency" [(ngModel)]="frequency">
+            <option>Daily</option>
+            <option>Weekly</option>
+            <option>Monthly</option>
+          </select></label
+        >
+        <label>Local time<input type="time" name="time" [(ngModel)]="time" required /></label>
+        <label
+          >Format<select name="format" [(ngModel)]="format">
+            <option value="xlsx">Excel</option>
+            <option value="csv">CSV</option>
+            <option value="pdf">PDF / Print</option>
+          </select></label
+        >
+        <div class="report-reset"><button class="primary">Save schedule</button></div>
+      </form>
+      @if (state.schedule; as saved) {
+        <p role="status">
+          {{ saved.frequency }} at {{ saved.time }} · {{ saved.format | uppercase }}
+        </p>
+      }
+      <button (click)="preview()">Export report preview</button>
+    </section>
+  }
+}

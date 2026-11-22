@@ -1,0 +1,651 @@
+{
+  "entities": {
+    "Reports": {
+      "key": "Reports",
+      "label": "Reports",
+      "module": "M26",
+      "columns": ["Report", "Event", "City", "Period", "Status"],
+      "seed": [
+        {
+          "id": "Reports-1",
+          "values": ["Registration summary", "Cloud Roadshow", "Mumbai", "This week", "Ready"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-2",
+          "values": ["Registration summary 2", "Cloud Roadshow", "Mumbai", "This week", "Queued"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 2",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-3",
+          "values": ["Registration summary 3", "Cloud Roadshow", "Mumbai", "This week", "Ready"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 3",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-4",
+          "values": ["Registration summary 4", "Cloud Roadshow", "Mumbai", "This week", "Queued"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 4",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-5",
+          "values": ["Registration summary 5", "Cloud Roadshow", "Mumbai", "This week", "Ready"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 5",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-6",
+          "values": ["Registration summary 6", "Cloud Roadshow", "Mumbai", "This week", "Queued"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 6",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-7",
+          "values": ["Registration summary 7", "Cloud Roadshow", "Mumbai", "This week", "Ready"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 7",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-8",
+          "values": ["Registration summary 8", "Cloud Roadshow", "Mumbai", "This week", "Queued"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 8",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-9",
+          "values": ["Registration summary 9", "Cloud Roadshow", "Mumbai", "This week", "Ready"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 9",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-10",
+          "values": ["Registration summary 10", "Cloud Roadshow", "Mumbai", "This week", "Queued"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 10",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-11",
+          "values": ["Registration summary 11", "Cloud Roadshow", "Mumbai", "This week", "Ready"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 11",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-12",
+          "values": ["Registration summary 12", "Cloud Roadshow", "Mumbai", "This week", "Queued"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 12",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-13",
+          "values": ["Registration summary 13", "Cloud Roadshow", "Mumbai", "This week", "Ready"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 13",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-14",
+          "values": ["Registration summary 14", "Cloud Roadshow", "Mumbai", "This week", "Queued"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 14",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-15",
+          "values": ["Registration summary 15", "Cloud Roadshow", "Mumbai", "This week", "Ready"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 15",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-16",
+          "values": ["Registration summary 16", "Cloud Roadshow", "Mumbai", "This week", "Queued"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 16",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Reports-17",
+          "values": ["Registration summary 17", "Cloud Roadshow", "Mumbai", "This week", "Ready"],
+          "created": "2026-11-07",
+          "details": {
+            "Type": "Registration summary 17",
+            "Event": "Northstar",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "Date range": "This week",
+            "Summary": "Included",
+            "Registered personal data": "Authorized",
+            "Internal remarks": "Excluded",
+            "Format": "Excel",
+            "Report": "Registration summary",
+            "Recipients": "Rahul Nair",
+            "Download allowed": "No"
+          },
+          "flow": "Reports",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Report selection",
+      "view": "Registration summary report",
+      "kind": "report"
+    }
+  },
+  "flows": {
+    "Reports": {
+      "key": "Reports",
+      "title": "Prepare and share report",
+      "steps": [
+        {
+          "label": "Filters",
+          "sources": ["Report selection"],
+          "fields": [
+            {
+              "label": "Type",
+              "value": "Registration",
+              "source": "FRD M26",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Event",
+              "value": "Northstar",
+              "source": "FRD M26",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Date range",
+              "value": "This week",
+              "source": "FRD M26",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Columns",
+          "sources": ["Report column selection"],
+          "fields": [
+            {
+              "label": "Summary",
+              "value": "Included",
+              "source": "FRD M26",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Registered personal data",
+              "value": "Authorized",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Internal remarks",
+              "value": "Excluded",
+              "source": "FRD M26",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Format",
+              "value": "Excel",
+              "source": "FRD M26",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Sharing",
+          "sources": ["Share client report"],
+          "fields": [
+            {
+              "label": "Report",
+              "value": "Registration summary",
+              "source": "FRD M26",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Recipients",
+              "value": "Rahul Nair",
+              "source": "FRD M26",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Download allowed",
+              "value": "No",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Internal remarks",
+              "value": "Excluded",
+              "source": "FRD M26",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "Reports",
+      "source": "FRD M26",
+      "identity": "Type"
+    }
+  }
+}

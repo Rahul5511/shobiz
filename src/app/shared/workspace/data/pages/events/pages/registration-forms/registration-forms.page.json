@@ -1,0 +1,757 @@
+{
+  "entities": {
+    "RegistrationForm": {
+      "key": "RegistrationForm",
+      "label": "Registration Forms",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "RegistrationForm-1",
+          "values": [
+            "Northstar Public Registration",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Form name": "Northstar Public Registration",
+            "Override client defaults": "Yes",
+            "Field rules": [
+              {
+                "Field": "First name",
+                "Visible": true,
+                "Required": true,
+                "Order": 1
+              },
+              {
+                "Field": "Last name",
+                "Visible": true,
+                "Required": false,
+                "Order": 2
+              },
+              {
+                "Field": "Email",
+                "Visible": true,
+                "Required": true,
+                "Order": 3
+              },
+              {
+                "Field": "Mobile",
+                "Visible": true,
+                "Required": false,
+                "Order": 4
+              },
+              {
+                "Field": "Employer",
+                "Visible": true,
+                "Required": true,
+                "Order": 5
+              },
+              {
+                "Field": "Designation",
+                "Visible": true,
+                "Required": false,
+                "Order": 6
+              },
+              {
+                "Field": "Dietary preference",
+                "Visible": false,
+                "Required": false,
+                "Order": 7
+              }
+            ],
+            "Client logo": "Northstar logo",
+            "Banner": "Northstar banner",
+            "Consent text": "I agree to the stated event communication and privacy terms.",
+            "Opening date": "2026-11-07",
+            "Closing date": "2026-11-19",
+            "Thank-you message": "Your registration has been received.",
+            "Public registration path": "/northstar/northstar-roadshow/registration",
+            "Form status": "Published",
+            "Registration QR": "Generated from the event registration URL"
+          },
+          "flow": "RegistrationForm",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegistrationForm-2",
+          "values": [
+            "Northstar Public Registration 2",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Form name": "Northstar Public Registration 2",
+            "Override client defaults": "Yes",
+            "Field rules": [
+              {
+                "Field": "First name",
+                "Visible": true,
+                "Required": true,
+                "Order": 1
+              },
+              {
+                "Field": "Last name",
+                "Visible": true,
+                "Required": false,
+                "Order": 2
+              },
+              {
+                "Field": "Email",
+                "Visible": true,
+                "Required": true,
+                "Order": 3
+              },
+              {
+                "Field": "Mobile",
+                "Visible": true,
+                "Required": false,
+                "Order": 4
+              },
+              {
+                "Field": "Employer",
+                "Visible": true,
+                "Required": true,
+                "Order": 5
+              },
+              {
+                "Field": "Designation",
+                "Visible": true,
+                "Required": false,
+                "Order": 6
+              },
+              {
+                "Field": "Dietary preference",
+                "Visible": false,
+                "Required": false,
+                "Order": 7
+              }
+            ],
+            "Client logo": "Northstar logo",
+            "Banner": "Northstar banner",
+            "Consent text": "I agree to the stated event communication and privacy terms.",
+            "Opening date": "2026-11-07",
+            "Closing date": "2026-11-19",
+            "Thank-you message": "Your registration has been received.",
+            "Public registration path": "/northstar/northstar-roadshow/registration",
+            "Form status": "Published",
+            "Registration QR": "Generated from the event registration URL"
+          },
+          "flow": "RegistrationForm",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegistrationForm-3",
+          "values": [
+            "Northstar Public Registration 3",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Form name": "Northstar Public Registration 3",
+            "Override client defaults": "Yes",
+            "Field rules": [
+              {
+                "Field": "First name",
+                "Visible": true,
+                "Required": true,
+                "Order": 1
+              },
+              {
+                "Field": "Last name",
+                "Visible": true,
+                "Required": false,
+                "Order": 2
+              },
+              {
+                "Field": "Email",
+                "Visible": true,
+                "Required": true,
+                "Order": 3
+              },
+              {
+                "Field": "Mobile",
+                "Visible": true,
+                "Required": false,
+                "Order": 4
+              },
+              {
+                "Field": "Employer",
+                "Visible": true,
+                "Required": true,
+                "Order": 5
+              },
+              {
+                "Field": "Designation",
+                "Visible": true,
+                "Required": false,
+                "Order": 6
+              },
+              {
+                "Field": "Dietary preference",
+                "Visible": false,
+                "Required": false,
+                "Order": 7
+              }
+            ],
+            "Client logo": "Northstar logo",
+            "Banner": "Northstar banner",
+            "Consent text": "I agree to the stated event communication and privacy terms.",
+            "Opening date": "2026-11-07",
+            "Closing date": "2026-11-19",
+            "Thank-you message": "Your registration has been received.",
+            "Public registration path": "/northstar/northstar-roadshow/registration",
+            "Form status": "Published",
+            "Registration QR": "Generated from the event registration URL"
+          },
+          "flow": "RegistrationForm",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegistrationForm-4",
+          "values": [
+            "Northstar Public Registration 4",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Form name": "Northstar Public Registration 4",
+            "Override client defaults": "Yes",
+            "Field rules": [
+              {
+                "Field": "First name",
+                "Visible": true,
+                "Required": true,
+                "Order": 1
+              },
+              {
+                "Field": "Last name",
+                "Visible": true,
+                "Required": false,
+                "Order": 2
+              },
+              {
+                "Field": "Email",
+                "Visible": true,
+                "Required": true,
+                "Order": 3
+              },
+              {
+                "Field": "Mobile",
+                "Visible": true,
+                "Required": false,
+                "Order": 4
+              },
+              {
+                "Field": "Employer",
+                "Visible": true,
+                "Required": true,
+                "Order": 5
+              },
+              {
+                "Field": "Designation",
+                "Visible": true,
+                "Required": false,
+                "Order": 6
+              },
+              {
+                "Field": "Dietary preference",
+                "Visible": false,
+                "Required": false,
+                "Order": 7
+              }
+            ],
+            "Client logo": "Northstar logo",
+            "Banner": "Northstar banner",
+            "Consent text": "I agree to the stated event communication and privacy terms.",
+            "Opening date": "2026-11-07",
+            "Closing date": "2026-11-19",
+            "Thank-you message": "Your registration has been received.",
+            "Public registration path": "/northstar/northstar-roadshow/registration",
+            "Form status": "Published",
+            "Registration QR": "Generated from the event registration URL"
+          },
+          "flow": "RegistrationForm",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegistrationForm-5",
+          "values": [
+            "Northstar Public Registration 5",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Form name": "Northstar Public Registration 5",
+            "Override client defaults": "Yes",
+            "Field rules": [
+              {
+                "Field": "First name",
+                "Visible": true,
+                "Required": true,
+                "Order": 1
+              },
+              {
+                "Field": "Last name",
+                "Visible": true,
+                "Required": false,
+                "Order": 2
+              },
+              {
+                "Field": "Email",
+                "Visible": true,
+                "Required": true,
+                "Order": 3
+              },
+              {
+                "Field": "Mobile",
+                "Visible": true,
+                "Required": false,
+                "Order": 4
+              },
+              {
+                "Field": "Employer",
+                "Visible": true,
+                "Required": true,
+                "Order": 5
+              },
+              {
+                "Field": "Designation",
+                "Visible": true,
+                "Required": false,
+                "Order": 6
+              },
+              {
+                "Field": "Dietary preference",
+                "Visible": false,
+                "Required": false,
+                "Order": 7
+              }
+            ],
+            "Client logo": "Northstar logo",
+            "Banner": "Northstar banner",
+            "Consent text": "I agree to the stated event communication and privacy terms.",
+            "Opening date": "2026-11-07",
+            "Closing date": "2026-11-19",
+            "Thank-you message": "Your registration has been received.",
+            "Public registration path": "/northstar/northstar-roadshow/registration",
+            "Form status": "Published",
+            "Registration QR": "Generated from the event registration URL"
+          },
+          "flow": "RegistrationForm",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegistrationForm-6",
+          "values": [
+            "Northstar Public Registration 6",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Form name": "Northstar Public Registration 6",
+            "Override client defaults": "Yes",
+            "Field rules": [
+              {
+                "Field": "First name",
+                "Visible": true,
+                "Required": true,
+                "Order": 1
+              },
+              {
+                "Field": "Last name",
+                "Visible": true,
+                "Required": false,
+                "Order": 2
+              },
+              {
+                "Field": "Email",
+                "Visible": true,
+                "Required": true,
+                "Order": 3
+              },
+              {
+                "Field": "Mobile",
+                "Visible": true,
+                "Required": false,
+                "Order": 4
+              },
+              {
+                "Field": "Employer",
+                "Visible": true,
+                "Required": true,
+                "Order": 5
+              },
+              {
+                "Field": "Designation",
+                "Visible": true,
+                "Required": false,
+                "Order": 6
+              },
+              {
+                "Field": "Dietary preference",
+                "Visible": false,
+                "Required": false,
+                "Order": 7
+              }
+            ],
+            "Client logo": "Northstar logo",
+            "Banner": "Northstar banner",
+            "Consent text": "I agree to the stated event communication and privacy terms.",
+            "Opening date": "2026-11-07",
+            "Closing date": "2026-11-19",
+            "Thank-you message": "Your registration has been received.",
+            "Public registration path": "/northstar/northstar-roadshow/registration",
+            "Form status": "Published",
+            "Registration QR": "Generated from the event registration URL"
+          },
+          "flow": "RegistrationForm",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "RegistrationForm-7",
+          "values": [
+            "Northstar Public Registration 7",
+            "Northstar Technologies",
+            "Northstar Roadshow",
+            "Mumbai",
+            "Draft"
+          ],
+          "details": {
+            "Client": "Northstar Technologies",
+            "Event": "Northstar Roadshow",
+            "Form name": "Northstar Public Registration 7",
+            "Override client defaults": "Yes",
+            "Field rules": [
+              {
+                "Field": "First name",
+                "Visible": true,
+                "Required": true,
+                "Order": 1
+              },
+              {
+                "Field": "Last name",
+                "Visible": true,
+                "Required": false,
+                "Order": 2
+              },
+              {
+                "Field": "Email",
+                "Visible": true,
+                "Required": true,
+                "Order": 3
+              },
+              {
+                "Field": "Mobile",
+                "Visible": true,
+                "Required": false,
+                "Order": 4
+              },
+              {
+                "Field": "Employer",
+                "Visible": true,
+                "Required": true,
+                "Order": 5
+              },
+              {
+                "Field": "Designation",
+                "Visible": true,
+                "Required": false,
+                "Order": 6
+              },
+              {
+                "Field": "Dietary preference",
+                "Visible": false,
+                "Required": false,
+                "Order": 7
+              }
+            ],
+            "Client logo": "Northstar logo",
+            "Banner": "Northstar banner",
+            "Consent text": "I agree to the stated event communication and privacy terms.",
+            "Opening date": "2026-11-07",
+            "Closing date": "2026-11-19",
+            "Thank-you message": "Your registration has been received.",
+            "Public registration path": "/northstar/northstar-roadshow/registration",
+            "Form status": "Published",
+            "Registration QR": "Generated from the event registration URL"
+          },
+          "flow": "RegistrationForm",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Client / Event Registration Form",
+      "view": "View Client / Event Registration Form",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "RegistrationForm": {
+      "title": "Client / Event Registration Form",
+      "entity": "RegistrationForm",
+      "steps": [
+        {
+          "label": "Client & Event",
+          "fields": [
+            {
+              "label": "Client",
+              "value": "Northstar Technologies",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": ["Northstar Technologies", "CloudWorks"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Event",
+              "value": "Northstar Roadshow",
+              "source": "FRD M24",
+              "required": true,
+              "options": ["Client default", "Northstar Roadshow", "Cloud Leadership Summit"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Form name",
+              "value": "Northstar Public Registration",
+              "source": "FRD M24",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Override client defaults",
+              "value": "Yes",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Field Configuration",
+          "fields": [
+            {
+              "label": "Field rules",
+              "value": [
+                {
+                  "Field": "First name",
+                  "Visible": true,
+                  "Required": true,
+                  "Order": 1
+                },
+                {
+                  "Field": "Last name",
+                  "Visible": true,
+                  "Required": false,
+                  "Order": 2
+                },
+                {
+                  "Field": "Email",
+                  "Visible": true,
+                  "Required": true,
+                  "Order": 3
+                },
+                {
+                  "Field": "Mobile",
+                  "Visible": true,
+                  "Required": false,
+                  "Order": 4
+                },
+                {
+                  "Field": "Employer",
+                  "Visible": true,
+                  "Required": true,
+                  "Order": 5
+                },
+                {
+                  "Field": "Designation",
+                  "Visible": true,
+                  "Required": false,
+                  "Order": 6
+                },
+                {
+                  "Field": "Dietary preference",
+                  "Visible": false,
+                  "Required": false,
+                  "Order": 7
+                }
+              ],
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "fieldrules",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Branding & Consent",
+          "fields": [
+            {
+              "label": "Client logo",
+              "value": "Northstar logo",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "image",
+              "multi": false
+            },
+            {
+              "label": "Banner",
+              "value": "Northstar banner",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "image",
+              "multi": false
+            },
+            {
+              "label": "Consent text",
+              "value": "I agree to the stated event communication and privacy terms.",
+              "source": "FRD M02/M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Opening date",
+              "value": "2026-11-07",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "date",
+              "multi": false
+            },
+            {
+              "label": "Closing date",
+              "value": "2026-11-19",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "date",
+              "multi": false
+            },
+            {
+              "label": "Thank-you message",
+              "value": "Your registration has been received.",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "URL & Publish",
+          "fields": [
+            {
+              "label": "Public registration path",
+              "value": "/northstar/northstar-roadshow/registration",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Form status",
+              "value": "Published",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Draft", "Published", "Closed"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Registration QR",
+              "value": "Generated from the event registration URL",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "qr",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "FRD M24 form + proposed reusable catalogue and client overrides",
+      "identity": "Form name"
+    }
+  }
+}

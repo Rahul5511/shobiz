@@ -1,0 +1,1297 @@
+{
+  "entities": {
+    "Assets": {
+      "key": "Assets",
+      "label": "Campaign assets",
+      "module": "M17",
+      "columns": ["Asset", "Version", "Channel", "Phase", "Status"],
+      "seed": [
+        {
+          "id": "Assets-1",
+          "values": ["Cloud invite", "2", "Email", "Invite", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-2",
+          "values": ["Cloud invite 2", "2", "Email", "Invite", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 2",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-3",
+          "values": ["Cloud invite 3", "2", "Email", "Invite", "Retired"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 3",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-4",
+          "values": ["Cloud invite 4", "2", "Email", "Invite", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 4",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-5",
+          "values": ["Cloud invite 5", "2", "Email", "Invite", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 5",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-6",
+          "values": ["Cloud invite 6", "2", "Email", "Invite", "Retired"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 6",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-7",
+          "values": ["Cloud invite 7", "2", "Email", "Invite", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 7",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-8",
+          "values": ["Cloud invite 8", "2", "Email", "Invite", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 8",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-9",
+          "values": ["Cloud invite 9", "2", "Email", "Invite", "Retired"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 9",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-10",
+          "values": ["Cloud invite 10", "2", "Email", "Invite", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 10",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-11",
+          "values": ["Cloud invite 11", "2", "Email", "Invite", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 11",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-12",
+          "values": ["Cloud invite 12", "2", "Email", "Invite", "Retired"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 12",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-13",
+          "values": ["Cloud invite 13", "2", "Email", "Invite", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 13",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-14",
+          "values": ["Cloud invite 14", "2", "Email", "Invite", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 14",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-15",
+          "values": ["Cloud invite 15", "2", "Email", "Invite", "Retired"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 15",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-16",
+          "values": ["Cloud invite 16", "2", "Email", "Invite", "Draft"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 16",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Assets-17",
+          "values": ["Cloud invite 17", "2", "Email", "Invite", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Asset name": "Cloud invite 17",
+            "Type": "WhatsApp",
+            "Phase": "Invite",
+            "Audience": "Customers",
+            "Language": "English",
+            "Country": "India",
+            "State": "Maharashtra",
+            "City": "Mumbai",
+            "HTML": "Upload HTML",
+            "Subject": "Cloud Roadshow invite",
+            "Sender": "Approved sender",
+            "Text version": "Required follow-up text",
+            "Unsubscribe": "Present",
+            "Meta template": "cloud_invite",
+            "Category": "Marketing",
+            "Variables": "Name and event",
+            "Version": "2",
+            "Client approver": "Rahul Nair",
+            "Date": "07 Nov 2026",
+            "Evidence": "email.pdf",
+            "Approved version": "2",
+            "Option": "Default",
+            "Expiry": "20 Nov 2026",
+            "Previous version": "1"
+          },
+          "flow": "Assets",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Emailer asset editor",
+      "view": "Asset library",
+      "kind": "asset"
+    }
+  },
+  "flows": {
+    "Assets": {
+      "key": "Assets",
+      "title": "Create and approve campaign asset",
+      "steps": [
+        {
+          "label": "Asset Details",
+          "sources": ["Asset library"],
+          "fields": [
+            {
+              "label": "Asset name",
+              "value": "Cloud invite",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Type",
+              "value": "Emailer",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Phase",
+              "value": "Invite",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Audience",
+              "value": "Customers",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Language",
+              "value": "English",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Content",
+          "sources": ["Emailer asset editor", "Messaging and script editor"],
+          "fields": [
+            {
+              "label": "HTML",
+              "value": "Upload HTML",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Subject",
+              "value": "Cloud Roadshow invite",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Sender",
+              "value": "Approved sender",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Text version",
+              "value": "Required follow-up text",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Unsubscribe",
+              "value": "Present",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Type",
+              "value": "WhatsApp",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Meta template",
+              "value": "cloud_invite",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Category",
+              "value": "Marketing",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Language",
+              "value": "English",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Variables",
+              "value": "Name and event",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Approval",
+          "sources": ["Asset approval evidence"],
+          "fields": [
+            {
+              "label": "Version",
+              "value": "2",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Client approver",
+              "value": "Rahul Nair",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Date",
+              "value": "07 Nov 2026",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Evidence",
+              "value": "email.pdf",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Activation",
+          "sources": ["Asset activation and retirement"],
+          "fields": [
+            {
+              "label": "Approved version",
+              "value": "2",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Option",
+              "value": "Default",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Expiry",
+              "value": "20 Nov 2026",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Previous version",
+              "value": "1",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "Assets",
+      "source": "FRD M17",
+      "identity": "Asset name"
+    },
+    "ResponseBrief": {
+      "key": "ResponseBrief",
+      "entity": "Assets",
+      "title": "Prepare response handover brief",
+      "steps": [
+        {
+          "label": "Context",
+          "sources": ["Response brief overview"],
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Target",
+              "value": "50 registrations",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Plan",
+              "value": "Draft",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Readiness",
+              "value": "4 of 6 ready",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Targets",
+          "sources": ["Weekly target plan"],
+          "fields": [
+            {
+              "label": "Week",
+              "value": "09 to 15 Nov",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Registration target",
+              "value": "25",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Attendance target",
+              "value": "20",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Communication",
+          "sources": ["Communication plan"],
+          "fields": [
+            {
+              "label": "Phase",
+              "value": "Invite",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Channel",
+              "value": "Email",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Date",
+              "value": "10 Nov 2026",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Asset",
+              "value": "Emailer version 2",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Registration",
+          "sources": ["Response handover settings"],
+          "fields": [
+            {
+              "label": "Registration URL",
+              "value": "https://register.example.com",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Host",
+              "value": "Client",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "UTM",
+              "value": "Client values",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Approval owner",
+              "value": "Client contact",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "source": "FRD M17",
+      "identity": "Event"
+    },
+    "AssetRemark": {
+      "key": "AssetRemark",
+      "entity": "Assets",
+      "title": "Report campaign asset issue",
+      "steps": [
+        {
+          "label": "Asset & Remark",
+          "sources": ["Asset issue remark"],
+          "fields": [
+            {
+              "label": "Version",
+              "value": "2",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Issue",
+              "value": "Registration link broken",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reported by",
+              "value": "Neha Thomas",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "source": "FRD M17",
+      "identity": "Asset"
+    },
+    "BriefAcknowledge": {
+      "key": "BriefAcknowledge",
+      "entity": "Assets",
+      "title": "Acknowledge response brief",
+      "steps": [
+        {
+          "label": "Brief",
+          "sources": ["Response brief overview"],
+          "fields": [
+            {
+              "label": "Country",
+              "value": "India",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["India", "United Arab Emirates"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "State",
+              "value": "Maharashtra",
+              "source": "FRD M05/M06/M11",
+              "required": true,
+              "options": ["Maharashtra", "Delhi", "Uttar Pradesh"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "City",
+              "value": "Mumbai",
+              "source": "FRD M05/M06/M10/M11",
+              "required": true,
+              "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Target",
+              "value": "50 registrations",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Plan",
+              "value": "Draft",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Readiness",
+              "value": "4 of 6 ready",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Acknowledgment",
+          "sources": ["Handover acknowledgment"],
+          "fields": [
+            {
+              "label": "Brief",
+              "value": "Shared",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Readiness",
+              "value": "5 of 6",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Remark",
+              "value": "Sender still pending",
+              "source": "FRD M17",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "source": "FRD M17",
+      "identity": "Event"
+    }
+  }
+}

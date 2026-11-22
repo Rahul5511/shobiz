@@ -1,0 +1,124 @@
+{
+  "entities": {
+    "ProfileLevels": {
+      "key": "ProfileLevels",
+      "label": "Profile Levels",
+      "module": "Proposed",
+      "columns": ["Name", "Client / Parent", "Event / Type", "City", "Status"],
+      "seed": [
+        {
+          "id": "ProfileLevels-1",
+          "values": ["Functional CXO", "Master", "", "", "Active"],
+          "details": {
+            "Profile level code": "FUNCTIONAL_CXO",
+            "Profile level name": "Functional CXO",
+            "Example titles": "Defined by client criteria",
+            "Active": "Yes"
+          },
+          "flow": "ProfileLevels",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "ProfileLevels-2",
+          "values": ["VP Level", "Master", "", "", "Active"],
+          "details": {
+            "Profile level code": "VP_LEVEL",
+            "Profile level name": "VP Level",
+            "Example titles": "Defined by client criteria",
+            "Active": "Yes"
+          },
+          "flow": "ProfileLevels",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "ProfileLevels-3",
+          "values": ["Manager Level", "Master", "", "", "Active"],
+          "details": {
+            "Profile level code": "MANAGER_LEVEL",
+            "Profile level name": "Manager Level",
+            "Example titles": "Defined by client criteria",
+            "Active": "Yes"
+          },
+          "flow": "ProfileLevels",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Super Admin",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Manage Profile Levels",
+      "view": "View Profile Levels",
+      "kind": "record"
+    }
+  },
+  "flows": {
+    "ProfileLevels": {
+      "title": "Manage Profile Levels",
+      "entity": "ProfileLevels",
+      "steps": [
+        {
+          "label": "Master Details",
+          "fields": [
+            {
+              "label": "Profile level code",
+              "value": "Example profile level code",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Profile level name",
+              "value": "Example profile level name",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Example titles",
+              "value": "Example example titles",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Active",
+              "value": "Yes",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": ["Yes", "No"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "Profile level name"
+    }
+  }
+}

@@ -1,0 +1,857 @@
+{
+  "entities": {
+    "Broadcast": {
+      "key": "Broadcast",
+      "label": "Broadcast campaigns",
+      "module": "M20",
+      "columns": ["Campaign", "Channel", "City", "Recipients", "Status"],
+      "seed": [
+        {
+          "id": "Broadcast-1",
+          "values": ["Mumbai invite", "Email", "Mumbai", "460", "Scheduled"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-2",
+          "values": ["Mumbai invite 2", "Email", "Mumbai", "460", "Completed"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 2",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-3",
+          "values": ["Mumbai invite 3", "Email", "Mumbai", "460", "Paused"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 3",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-4",
+          "values": ["Mumbai invite 4", "Email", "Mumbai", "460", "Scheduled"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 4",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-5",
+          "values": ["Mumbai invite 5", "Email", "Mumbai", "460", "Completed"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 5",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-6",
+          "values": ["Mumbai invite 6", "Email", "Mumbai", "460", "Paused"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 6",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-7",
+          "values": ["Mumbai invite 7", "Email", "Mumbai", "460", "Scheduled"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 7",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-8",
+          "values": ["Mumbai invite 8", "Email", "Mumbai", "460", "Completed"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 8",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-9",
+          "values": ["Mumbai invite 9", "Email", "Mumbai", "460", "Paused"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 9",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-10",
+          "values": ["Mumbai invite 10", "Email", "Mumbai", "460", "Scheduled"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 10",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-11",
+          "values": ["Mumbai invite 11", "Email", "Mumbai", "460", "Completed"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 11",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-12",
+          "values": ["Mumbai invite 12", "Email", "Mumbai", "460", "Paused"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 12",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-13",
+          "values": ["Mumbai invite 13", "Email", "Mumbai", "460", "Scheduled"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 13",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-14",
+          "values": ["Mumbai invite 14", "Email", "Mumbai", "460", "Completed"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 14",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-15",
+          "values": ["Mumbai invite 15", "Email", "Mumbai", "460", "Paused"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 15",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-16",
+          "values": ["Mumbai invite 16", "Email", "Mumbai", "460", "Scheduled"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 16",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Broadcast-17",
+          "values": ["Mumbai invite 17", "Email", "Mumbai", "460", "Completed"],
+          "created": "2026-11-07",
+          "details": {
+            "Campaign": "Mumbai invite 17",
+            "Approved emailer": "Version 2",
+            "Subject": "Cloud Roadshow",
+            "Schedule": "10 Nov 10:00 IST",
+            "Batch size": "100",
+            "Lots": "Released records",
+            "Filter": "Not registered",
+            "Selected": "500",
+            "Excluded": "40",
+            "Final": "460",
+            "Spam wording": "One advisory",
+            "Broken links": "0",
+            "Unsubscribe": "Present",
+            "Version": "2",
+            "Recipients": "460",
+            "Display": "Passed",
+            "Links": "Passed",
+            "Sender": "Correct",
+            "Send time": "10 Nov 10:00 IST",
+            "Asset": "Version 2"
+          },
+          "flow": "Broadcast",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Email broadcast editor",
+      "view": "Broadcast monitoring",
+      "kind": "campaign"
+    }
+  },
+  "flows": {
+    "Broadcast": {
+      "key": "Broadcast",
+      "title": "Prepare broadcast",
+      "steps": [
+        {
+          "label": "Campaign",
+          "sources": ["Email broadcast editor"],
+          "fields": [
+            {
+              "label": "Campaign",
+              "value": "Invite",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Approved emailer",
+              "value": "Version 2",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Subject",
+              "value": "Cloud Roadshow",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Schedule",
+              "value": "10 Nov 10:00 IST",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Batch size",
+              "value": "100",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Audience",
+          "sources": ["Broadcast audience"],
+          "fields": [
+            {
+              "label": "Lots",
+              "value": "Released records",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Filter",
+              "value": "Not registered",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Selected",
+              "value": "500",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Excluded",
+              "value": "40",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Final",
+              "value": "460",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Asset & Test",
+          "sources": ["Email advisory checks", "Test broadcast", "Test approval"],
+          "fields": [
+            {
+              "label": "Spam wording",
+              "value": "One advisory",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Broken links",
+              "value": "0",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Unsubscribe",
+              "value": "Present",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Version",
+              "value": "2",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Subject",
+              "value": "Cloud Roadshow",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Recipients",
+              "value": "Internal event test group",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Display",
+              "value": "Passed",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Links",
+              "value": "Passed",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Sender",
+              "value": "Correct",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Schedule",
+          "sources": ["Schedule broadcast confirmation"],
+          "fields": [
+            {
+              "label": "Recipients",
+              "value": "460",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Excluded",
+              "value": "40",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Send time",
+              "value": "10 Nov 10:00 IST",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Asset",
+              "value": "Version 2",
+              "source": "FRD M20",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "Broadcast",
+      "source": "FRD M20",
+      "identity": "Campaign"
+    }
+  }
+}

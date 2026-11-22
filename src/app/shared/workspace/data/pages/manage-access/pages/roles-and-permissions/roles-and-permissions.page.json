@@ -1,0 +1,561 @@
+{
+  "entities": {
+    "RoleBuilder": {
+      "key": "RoleBuilder",
+      "label": "Roles & permissions",
+      "module": "EXTENSION",
+      "columns": ["Role name", "Description", "Permissions", "Assignment", "Status"],
+      "seed": [
+        {
+          "id": "RoleBuilder-1",
+          "values": [
+            "Regional DB Coordinator",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Draft"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-2",
+          "values": [
+            "Regional DB Coordinator 2",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Active"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 2",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-3",
+          "values": [
+            "Regional DB Coordinator 3",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Draft"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 3",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-4",
+          "values": [
+            "Regional DB Coordinator 4",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Active"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 4",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-5",
+          "values": [
+            "Regional DB Coordinator 5",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Draft"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 5",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-6",
+          "values": [
+            "Regional DB Coordinator 6",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Active"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 6",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-7",
+          "values": [
+            "Regional DB Coordinator 7",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Draft"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 7",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-8",
+          "values": [
+            "Regional DB Coordinator 8",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Active"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 8",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-9",
+          "values": [
+            "Regional DB Coordinator 9",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Draft"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 9",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-10",
+          "values": [
+            "Regional DB Coordinator 10",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Active"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 10",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-11",
+          "values": [
+            "Regional DB Coordinator 11",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Draft"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 11",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-12",
+          "values": [
+            "Regional DB Coordinator 12",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Active"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 12",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-13",
+          "values": [
+            "Regional DB Coordinator 13",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Draft"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 13",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-14",
+          "values": [
+            "Regional DB Coordinator 14",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Active"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 14",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-15",
+          "values": [
+            "Regional DB Coordinator 15",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Draft"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 15",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-16",
+          "values": [
+            "Regional DB Coordinator 16",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Active"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 16",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        },
+        {
+          "id": "RoleBuilder-17",
+          "values": [
+            "Regional DB Coordinator 17",
+            "City review role",
+            "2 granted",
+            "Separate assignments",
+            "Draft"
+          ],
+          "created": "2026-11-07",
+          "details": {
+            "Role Name": "Regional DB Coordinator 17",
+            "Role Code": "REGIONAL_DB_COORD",
+            "Description": "Reviews DB progress for assigned events",
+            "Granted permissions": ["dashboard.read", "drf.read"]
+          },
+          "flow": "RoleBuilder",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ],
+          "grants": ["dashboard.read", "drf.read"]
+        }
+      ],
+      "create": "Create custom role",
+      "view": "Role preview",
+      "kind": "role"
+    }
+  },
+  "flows": {
+    "RoleBuilder": {
+      "title": "Create New Role",
+      "entity": "RoleBuilder",
+      "steps": [
+        {
+          "label": "Role Details",
+          "fields": [
+            {
+              "label": "Role Name",
+              "value": "Regional DB Coordinator",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Role Code",
+              "value": "REGIONAL_DB_COORD",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Description",
+              "value": "Reviews DB progress for assigned events",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Permissions",
+          "fields": [
+            {
+              "label": "Granted permissions",
+              "value": ["dashboard.read", "drf.read"],
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "permissions",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "fields": []
+        }
+      ],
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "Role Name"
+    },
+    "RolePermissions": {
+      "title": "Role Permissions",
+      "entity": "RoleBuilder",
+      "steps": [
+        {
+          "label": "Role & Permissions",
+          "fields": [
+            {
+              "label": "Selected role",
+              "value": "DB Manager",
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": true,
+              "options": [
+                "Super User",
+                "Account Manager",
+                "Client Servicing Manager",
+                "DB Head",
+                "DB Manager",
+                "Response Head",
+                "Response Manager",
+                "AG Head",
+                "AG Manager",
+                "Event Executive",
+                "Client Contact",
+                "Telecaller"
+              ],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Granted permissions",
+              "value": ["dashboard.read", "drf.read"],
+              "source": "Not specified in FRD - proposed based on user feedback",
+              "required": false,
+              "options": [],
+              "kind": "permissions",
+              "multi": false
+            }
+          ]
+        }
+      ],
+      "source": "Not specified in FRD - proposed based on user feedback",
+      "identity": "Selected role"
+    }
+  }
+}

@@ -1,0 +1,743 @@
+{
+  "entities": {
+    "Registration": {
+      "key": "Registration",
+      "label": "Registrations",
+      "module": "M24",
+      "columns": ["Registrant", "Company", "City", "Source", "Status"],
+      "seed": [
+        {
+          "id": "Registration-1",
+          "values": ["Sam Patel", "Zenith Logistics", "Mumbai", "Email invite", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Sam Patel"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-2",
+          "values": ["Riya Sen", "Zenith Logistics", "Mumbai", "Email invite", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Riya Sen"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-3",
+          "values": ["Kiran Iyer", "Zenith Logistics", "Mumbai", "Email invite", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Kiran Iyer"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-4",
+          "values": ["Anil Rao", "Zenith Logistics", "Mumbai", "Email invite", "Rejected"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Anil Rao"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-5",
+          "values": ["Sam Patel 5", "Zenith Logistics", "Mumbai", "Email invite", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Sam Patel 5"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-6",
+          "values": ["Riya Sen 6", "Zenith Logistics", "Mumbai", "Email invite", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Riya Sen 6"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-7",
+          "values": ["Kiran Iyer 7", "Zenith Logistics", "Mumbai", "Email invite", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Kiran Iyer 7"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-8",
+          "values": ["Anil Rao 8", "Zenith Logistics", "Mumbai", "Email invite", "Rejected"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Anil Rao 8"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-9",
+          "values": ["Sam Patel 9", "Zenith Logistics", "Mumbai", "Email invite", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Sam Patel 9"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-10",
+          "values": ["Riya Sen 10", "Zenith Logistics", "Mumbai", "Email invite", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Riya Sen 10"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-11",
+          "values": ["Kiran Iyer 11", "Zenith Logistics", "Mumbai", "Email invite", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Kiran Iyer 11"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-12",
+          "values": ["Anil Rao 12", "Zenith Logistics", "Mumbai", "Email invite", "Rejected"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Anil Rao 12"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-13",
+          "values": ["Sam Patel 13", "Zenith Logistics", "Mumbai", "Email invite", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Sam Patel 13"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-14",
+          "values": ["Riya Sen 14", "Zenith Logistics", "Mumbai", "Email invite", "Approved"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Riya Sen 14"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-15",
+          "values": ["Kiran Iyer 15", "Zenith Logistics", "Mumbai", "Email invite", "On Hold"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Kiran Iyer 15"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-16",
+          "values": ["Anil Rao 16", "Zenith Logistics", "Mumbai", "Email invite", "Rejected"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Anil Rao 16"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        },
+        {
+          "id": "Registration-17",
+          "values": ["Sam Patel 17", "Zenith Logistics", "Mumbai", "Email invite", "Pending"],
+          "created": "2026-11-07",
+          "details": {
+            "Host": "Client platform",
+            "Registration URL": "https://register.example.com",
+            "Import mode": "Approved integration",
+            "Client UTM": "Campaign code",
+            "Email": "Registered email",
+            "Company": "Company name",
+            "Custom field": "Track",
+            "Consent": "Capture source consent",
+            "Rows": "120",
+            "Matched": "98",
+            "Net-new": "18",
+            "Duplicates": "4",
+            "Registrant": "Sam Patel",
+            "Match": "Existing contact",
+            "Source": "Email invite",
+            "Sub-UTM": "Campaign code",
+            "Event": "Sam Patel 17"
+          },
+          "flow": "Registration",
+          "history": [
+            {
+              "Action": "Created",
+              "User": "Demo User",
+              "Date": "2026-11-07"
+            }
+          ]
+        }
+      ],
+      "create": "Registration import preview",
+      "view": "Registration detail",
+      "kind": "registration"
+    }
+  },
+  "flows": {
+    "Registration": {
+      "key": "Registration",
+      "title": "Import registrations",
+      "steps": [
+        {
+          "label": "Source",
+          "sources": ["Registration source setup"],
+          "fields": [
+            {
+              "label": "Host",
+              "value": "Client platform",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Registration URL",
+              "value": "https://register.example.com",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Import mode",
+              "value": "Approved integration",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Client UTM",
+              "value": "Campaign code",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Mapping",
+          "sources": ["Registration field mapping"],
+          "fields": [
+            {
+              "label": "Email",
+              "value": "Registered email",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Company",
+              "value": "Company name",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Custom field",
+              "value": "Track",
+              "source": "Not specified in FRD - proposed based on analysis",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Consent",
+              "value": "Capture source consent",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Import Review",
+          "sources": ["Registration import preview"],
+          "fields": [
+            {
+              "label": "Rows",
+              "value": "120",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Matched",
+              "value": "98",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Net-new",
+              "value": "18",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Duplicates",
+              "value": "4",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Matching",
+          "sources": ["Registration match review"],
+          "fields": [
+            {
+              "label": "Registrant",
+              "value": "Sam Patel",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Match",
+              "value": "Existing contact",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Source",
+              "value": "Email invite",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Sub-UTM",
+              "value": "Campaign code",
+              "source": "FRD M24",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            }
+          ]
+        },
+        {
+          "label": "Review",
+          "sources": [],
+          "fields": []
+        }
+      ],
+      "entity": "Registration",
+      "source": "FRD M24",
+      "identity": "Event"
+    }
+  }
+}

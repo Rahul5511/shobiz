@@ -1,0 +1,51 @@
+@for (section of s.reviewSections; track section; let i = $index) {
+  <section class="review-section">
+    <header>
+      <h3>{{ section.label }}</h3>
+      @if (s.wizard) {
+        <button (click)="s.tab(i)"><app-icon name="edit" />Edit section</button>
+      }
+    </header>
+    <dl class="review-grid">
+      @for (f of section.fields; track f) {
+        <div [class.full-width]="s.isRecordArray(s.value(f)) || f.kind === 'permissions'">
+          <dt>
+            {{ f.label }}<small>{{ f.source }}</small>
+          </dt>
+          <dd>
+            @if (f.kind === 'permissions') {
+              <app-data-table
+                [headers]="['Module', 'Permission', 'Code', 'Granted']"
+                [data]="s.permissionRows()"
+              />
+            } @else {
+              @if (s.isRecordArray(s.value(f))) {
+                <app-data-table
+                  [headers]="s.recordHeaders(s.value(f))"
+                  [data]="s.recordRows(s.value(f))"
+                />
+              } @else {
+                @if (s.isArray(s.value(f))) {
+                  <div>
+                    @for (value of s.value(f); track value) {
+                      <span class="chip">{{ value }}</span>
+                    }
+                  </div>
+                } @else {
+                  {{ s.value(f) }}
+                  @if (s.reviewValues[f.label + ' preview']) {
+                    <img
+                      class="upload-preview"
+                      [src]="s.reviewValues[f.label + ' preview']"
+                      alt="Saved image preview"
+                    />
+                  }
+                }
+              }
+            }
+          </dd>
+        </div>
+      }
+    </dl>
+  </section>
+}
