@@ -2,9 +2,9 @@
   "entities": {
     "RoleBuilder": {
       "key": "RoleBuilder",
-      "label": "Roles & permissions",
+      "label": "Roles",
       "module": "EXTENSION",
-      "columns": ["Role name", "Description", "Permissions", "Assignment", "Status"],
+      "columns": ["Role name", "Description", "Permissions", "Scope", "Status"],
       "seed": [
         {
           "id": "RoleBuilder-1",
@@ -467,15 +467,6 @@
               "value": "Regional DB Coordinator",
               "source": "Not specified in FRD - proposed based on user feedback",
               "required": true,
-              "options": [],
-              "kind": "text",
-              "multi": false
-            },
-            {
-              "label": "Role Code",
-              "value": "REGIONAL_DB_COORD",
-              "source": "Not specified in FRD - proposed based on analysis",
-              "required": false,
               "options": [],
               "kind": "text",
               "multi": false

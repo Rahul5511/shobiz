@@ -7,6 +7,17 @@
     </div>
     <button (click)="s.view = 'list'">Back to list</button>
   </div>
+  @if (s.key === 'Clients') {
+    <section class="card padded">
+      <h2>Prepared CS Manager notifications</h2>
+      @for (notification of s.preparedNotifications; track notification.id) {
+        @if (notification.clientId === s.selected.id) {
+          <p>{{ notification.name }} ({{ notification.email }}): {{ notification.status }}</p>
+        }
+      }
+      <p class="muted">Local preparation only; no notification delivery service is connected.</p>
+    </section>
+  }
   <ng-content />
   <app-workspace-record-review />
   <section class="card padded">

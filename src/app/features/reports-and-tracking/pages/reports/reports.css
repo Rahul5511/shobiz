@@ -1,3 +1,30 @@
 :host {
   display: contents;
 }
+.report-view-switch,
+.report-export {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  margin-top: 14px;
+}
+.record-report-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  align-items: end;
+}
+.column-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+fieldset {
+  margin: 18px 0;
+}
+legend {
+  font-weight: 600;
+}
+.review-section {
+  margin-top: 16px;
+}

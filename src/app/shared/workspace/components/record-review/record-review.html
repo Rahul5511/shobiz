@@ -15,7 +15,7 @@
           <dd>
             @if (f.kind === 'permissions') {
               <app-data-table
-                [headers]="['Module', 'Permission', 'Code', 'Granted']"
+                [headers]="['Module', 'Permission', 'Access']"
                 [data]="s.permissionRows()"
               />
             } @else {

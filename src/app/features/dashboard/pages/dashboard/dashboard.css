@@ -1,3 +1,135 @@
 :host {
   display: contents;
 }
+.portfolio-filter-card {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--white);
+}
+.portfolio-filter-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(140px, 1fr));
+  gap: 16px;
+  overflow-x: auto;
+}
+.scope-line {
+  margin: 12px 0;
+  font-weight: 600;
+}
+.portfolio-metrics {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+.portfolio-metrics strong {
+  font-size: 23px;
+}
+.portfolio-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.portfolio-chart-grid > section {
+  min-width: 0;
+}
+meter {
+  display: block;
+  width: 100%;
+  height: 12px;
+}
+.stage-stack {
+  display: flex;
+  min-height: 28px;
+}
+.stage-stack span {
+  padding: 4px;
+  text-align: center;
+  color: #fff;
+}
+.status-Upcoming,
+.pending {
+  background: #e4a52f;
+}
+.status-Ongoing,
+.approved {
+  background: #2e8b66;
+}
+.status-On-Hold,
+.declined {
+  background: #bd4653;
+}
+.status-Completed {
+  background: #64748b;
+}
+.pax-row {
+  margin-bottom: 14px;
+}
+.pax-row button {
+  margin-bottom: 6px;
+}
+.pax-row label {
+  font-size: 12px;
+}
+.trend-chart {
+  width: 100%;
+  height: 180px;
+}
+.portfolio-waiting {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(0, 1fr) 2ch;
+  gap: 10px;
+  align-items: center;
+  margin: 8px 0;
+}
+.portfolio-daily {
+  display: flex;
+  gap: 16px;
+  overflow: auto;
+}
+.portfolio-daily > div {
+  flex: 0 0 90px;
+  text-align: center;
+}
+.portfolio-stack {
+  height: 136px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.portfolio-stack span {
+  display: block;
+}
+@media (max-width: 720px) {
+  .portfolio-chart-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.status-donut {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 16px auto;
+}
+.status-donut::before {
+  content: '';
+  position: absolute;
+  inset: 30px;
+  border-radius: 50%;
+  background: var(--white);
+}
+.status-donut b {
+  position: relative;
+  font-size: 24px;
+}
+.pax-gauge {
+  position: relative;
+}
+.pax-target {
+  position: absolute;
+  top: 0;
+  height: 12px;
+  border-left: 2px solid var(--text);
+  transform: translateX(-1px);
+}

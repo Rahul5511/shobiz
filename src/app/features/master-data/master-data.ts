@@ -9,3 +9,4 @@ export { DepartmentsPage } from './pages/departments/departments';
 export { DesignationsPage } from './pages/designations/designations';
 export { ProfileLevelsPage } from './pages/profile-levels/profile-levels';
 export { CallStatusesPage } from './pages/call-statuses/call-statuses';
+export { MasterDataPage } from './pages/master-data/master-data';

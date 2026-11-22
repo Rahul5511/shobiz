@@ -95,7 +95,8 @@
   }
   @if (approvalAllowed) {
     <section class="card padded">
-      <h2>Registration analytics</h2>
+      <h2>Registration analytics - {{ eventName }}</h2>
+      <p><b>Days to event:</b> {{ daysToEvent === null ? 'Date not recorded' : daysToEvent }}</p>
       <p class="muted">{{ eventName }} · Figures refresh as demo records change.</p>
       <div class="metrics">
         @for (count of counts; track count) {
@@ -231,12 +232,12 @@
   @if (detail && canManageExecutives) {
     <section class="card padded">
       <h2>Event Executives</h2>
-      <form class="report-fields" (ngSubmit)="addExecutive()">
+      <form class="event-detail-fields" (ngSubmit)="addExecutive()">
         <label>Name<input name="executiveName" [(ngModel)]="name" required /></label
         ><label
           >Email<input type="email" name="executiveEmail" [(ngModel)]="email" required
         /></label>
-        <div class="report-reset"><button class="primary">Add Event Executive</button></div>
+        <div class="event-detail-action"><button class="primary">Add Event Executive</button></div>
       </form>
       <div class="table-scroll">
         <table>
@@ -273,7 +274,7 @@
           <label
             >Remarks<textarea #requirementsRemarks name="remarks" [(ngModel)]="remarks"></textarea>
           </label>
-          <div class="report-fields">
+          <div class="event-detail-fields">
             <label
               >City<select name="logCity" [(ngModel)]="logCity">
                 <option value="">All cities</option>
@@ -285,7 +286,7 @@
             <label
               >Attachments<input #attachment type="file" multiple (change)="setFiles($event)"
             /></label>
-            <div class="report-reset">
+            <div class="event-detail-action">
               <button class="primary" [disabled]="busy">Add log entry</button>
             </div>
           </div>
@@ -328,14 +329,14 @@
       </div>
     </section>
   }
-  @if (s.eventEditor) {
+  @if (s.eventEditor && s.role !== 'Super User') {
     <section class="card padded">
       <h2>Scheduled reports</h2>
       <p class="muted">
         Save a schedule for this event and preview its output. Automatic runs and delivery require a
         backend.
       </p>
-      <form class="report-fields" (ngSubmit)="schedule()">
+      <form class="event-detail-fields" (ngSubmit)="schedule()">
         <label
           >Frequency<select name="frequency" [(ngModel)]="frequency">
             <option>Daily</option>
@@ -351,7 +352,7 @@
             <option value="pdf">PDF / Print</option>
           </select></label
         >
-        <div class="report-reset"><button class="primary">Save schedule</button></div>
+        <div class="event-detail-action"><button class="primary">Save schedule</button></div>
       </form>
       @if (state.schedule; as saved) {
         <p role="status">

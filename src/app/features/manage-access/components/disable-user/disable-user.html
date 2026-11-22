@@ -1,0 +1,27 @@
+<dialog #dialog (cancel)="s.disableTarget = null" aria-labelledby="disable-title">
+  <h2 id="disable-title">Disable {{ s.disableTarget?.values[0] }}</h2>
+  <p>Review assigned work before disabling this login.</p>
+  <ul>
+    @for (item of s.disableAssignments; track item.id) {
+      <li>{{ item.kind }}: {{ item.title }}</li>
+    } @empty {
+      <li>No linked clients, events or calling records.</li>
+    }
+  </ul>
+  <label
+    >Successor<select [(ngModel)]="s.disableSuccessor">
+      <option value="">Leave unassigned and flag</option>
+      @for (user of s.successors; track user.id) {
+        <option [value]="user.id">{{ user.values[0] }}</option>
+      }
+    </select></label
+  >
+  <p class="muted">Unassigned work stays flagged until an administrator assigns it.</p>
+  @if (s.error) {
+    <p role="alert">{{ s.error }}</p>
+  }
+  <footer>
+    <button (click)="s.disableTarget = null">Cancel</button
+    ><button class="primary" (click)="s.confirmDisable()">Confirm disable</button>
+  </footer>
+</dialog>

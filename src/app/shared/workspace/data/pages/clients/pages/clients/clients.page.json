@@ -4,7 +4,16 @@
       "key": "Clients",
       "label": "Clients",
       "module": "M05",
-      "columns": ["Client", "Official name", "Owner", "City", "Status"],
+      "columns": [
+        "Known as",
+        "Official name",
+        "Account Manager",
+        "City",
+        "Status",
+        "Primary Contact",
+        "CS Managers",
+        "Events"
+      ],
       "seed": [
         {
           "id": "Clients-1",
@@ -720,74 +729,6 @@
               "options": [],
               "kind": "text",
               "multi": false
-            },
-            {
-              "label": "Also Known As 1",
-              "value": "Northstar Tech",
-              "source": "Not specified in FRD - proposed based on user feedback",
-              "required": false,
-              "options": [],
-              "kind": "text",
-              "multi": false
-            },
-            {
-              "label": "Also Known As 2",
-              "value": "NST",
-              "source": "Not specified in FRD - proposed based on user feedback",
-              "required": false,
-              "options": [],
-              "kind": "text",
-              "multi": false
-            },
-            {
-              "label": "Also Known As 3",
-              "value": "Northstar India",
-              "source": "Not specified in FRD - proposed based on user feedback",
-              "required": false,
-              "options": [],
-              "kind": "text",
-              "multi": false
-            },
-            {
-              "label": "Also Known As 4",
-              "value": "Northstar Group",
-              "source": "Not specified in FRD - proposed based on user feedback",
-              "required": false,
-              "options": [],
-              "kind": "text",
-              "multi": false
-            },
-            {
-              "label": "Website",
-              "value": "https://northstar.example",
-              "source": "Not specified in FRD - proposed based on user feedback",
-              "required": false,
-              "options": [],
-              "kind": "text",
-              "multi": false
-            }
-          ]
-        },
-        {
-          "label": "Branding",
-          "fields": [
-            {
-              "label": "Client logo",
-              "value": "Client logo placeholder",
-              "source": "Not specified in FRD - proposed based on user feedback",
-              "required": false,
-              "options": [],
-              "kind": "image",
-              "multi": false
-            },
-            {
-              "label": "Client banner",
-              "value": "Client banner placeholder",
-              "source": "Not specified in FRD - proposed based on user feedback",
-              "required": false,
-              "options": [],
-              "kind": "image",
-              "multi": false
             }
           ]
         },
@@ -829,15 +770,6 @@
               "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
               "kind": "select",
               "multi": false
-            },
-            {
-              "label": "Postal code",
-              "value": "400069",
-              "source": "Not specified in FRD - proposed based on user feedback",
-              "required": false,
-              "options": [],
-              "kind": "text",
-              "multi": false
             }
           ]
         },
@@ -868,7 +800,7 @@
               "source": "FRD M05",
               "required": true,
               "options": [],
-              "kind": "text",
+              "kind": "email",
               "multi": false
             },
             {
@@ -897,6 +829,13 @@
               "options": ["Yes", "No"],
               "kind": "select",
               "multi": false
+            },
+            {
+              "label": "Secondary contacts",
+              "kind": "contacts",
+              "value": [],
+              "required": false,
+              "source": "Review CE-02"
             }
           ]
         },
@@ -920,6 +859,13 @@
               "options": ["Anita Rao", "Rohan Mehta"],
               "kind": "select",
               "multi": true
+            },
+            {
+              "label": "Additional CS Managers",
+              "kind": "managers",
+              "value": [],
+              "required": false,
+              "source": "Review CE-02"
             }
           ]
         },

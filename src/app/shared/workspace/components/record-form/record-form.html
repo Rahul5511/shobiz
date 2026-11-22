@@ -14,9 +14,6 @@
         <span class="eyebrow">{{ w.row ? 'EDITING RECORD' : 'DRAFT RECORD' }}</span>
         <h2>{{ s.identity }}</h2>
       </div>
-      @if (w.values['Role Code']) {
-        <span class="count-pill">{{ w.values['Role Code'] }}</span>
-      }
     </header>
     @if (w.key !== 'RolePermissions') {
       <nav class="steps">
@@ -50,7 +47,7 @@
                   <input
                     class="permission-search"
                     [(ngModel)]="s.permissionQuery"
-                    placeholder="Search module, permission or action code"
+                    placeholder="Search module or permission"
                   />
                   <div class="permission-grid">
                     @for (mod of s.permissionModules; track mod) {
@@ -70,6 +67,38 @@
                       </section>
                     }
                   </div>
+                }
+                @case ('contacts') {
+                  @for (contact of w.values[f.label]; track contact; let i = $index) {
+                    <div class="review-contact-fields">
+                      <label>Name<input [(ngModel)]="contact.Name" required /></label>
+                      <label
+                        >Email<input type="email" [(ngModel)]="contact.Email" required
+                      /></label>
+                      <label>Designation<input [(ngModel)]="contact.Designation" /></label>
+                      <label>Phone<input [(ngModel)]="contact.Phone" /></label>
+                      <button type="button" (click)="w.values[f.label].splice(i, 1)">
+                        Remove contact
+                      </button>
+                    </div>
+                  }
+                  <button type="button" (click)="s.addContact(f)">Add secondary contact</button>
+                }
+                @case ('managers') {
+                  @for (manager of w.values[f.label]; track manager; let i = $index) {
+                    <div class="review-contact-fields">
+                      <label>Name<input [(ngModel)]="manager.Name" required /></label
+                      ><label
+                        >Email<input type="email" [(ngModel)]="manager.Email" required /></label
+                      ><button type="button" (click)="w.values[f.label].splice(i, 1)">
+                        Remove manager
+                      </button>
+                    </div>
+                  }
+                  <button type="button" (click)="s.addContact(f)">
+                    Add CS Manager by name and email
+                  </button>
+                  <p class="muted">Notifications are prepared locally and are not sent.</p>
                 }
                 @case ('fieldrules') {
                   <div class="alert info">
@@ -187,7 +216,20 @@
                   </div>
                 }
                 @default {
-                  @if (f.options?.length) {
+                  @if (f.label === 'Account Manager') {
+                    <input
+                      [id]="f.label"
+                      list="account-manager-options"
+                      [ngModel]="w.values[f.label]"
+                      (ngModelChange)="s.setField(f, $event)"
+                      placeholder="Search account managers"
+                    />
+                    <datalist id="account-manager-options">
+                      @for (option of s.options(f); track option) {
+                        <option [value]="option"></option>
+                      }
+                    </datalist>
+                  } @else if (f.options?.length) {
                     @if (f.multi) {
                       <select
                         multiple
@@ -257,6 +299,25 @@
         <app-workspace-record-review />
       }
     </div>
+    @if (w.key === 'Admin') {
+      <section class="padded">
+        <h3>Access preview</h3>
+        <p>
+          Active sign-in role: {{ s.labelRole(w.values.Roles[0] || 'Choose a role') }}. The first
+          assigned role remains active until the replacement permission model is specified.
+        </p>
+        <p>Roles: {{ s.roleLabels(w.values.Roles) || 'Choose a role' }}</p>
+        <p>Events: {{ w.values.Event?.join(', ') || 'No event assignments' }}</p>
+        <p>Cities: {{ w.values.City?.join(', ') || 'No city assignments' }}</p>
+        <p class="muted">
+          Assigned access without assignments has no event/city records. Invitation prepared locally
+          - not sent.
+        </p>
+        @for (permission of s.userAccessPreview; track $index) {
+          <span class="chip">{{ permission }}</span>
+        }
+      </section>
+    }
     <footer class="form-actions">
       <button (click)="s.cancel()">Cancel</button><button (click)="s.saveDraft()">Save Draft</button
       ><span></span>
@@ -268,7 +329,13 @@
       }
       @if (w.step === w.flow.steps.length - 1 || w.key === 'RolePermissions') {
         <button class="primary" (click)="s.save()">
-          {{ w.key === 'RolePermissions' ? 'Save Permissions' : 'Confirm & Save' }}
+          {{
+            w.key === 'Admin'
+              ? 'Save access and prepare invitation'
+              : w.key === 'RolePermissions'
+                ? 'Save Permissions'
+                : 'Confirm & Save'
+          }}
         </button>
       }
     </footer>

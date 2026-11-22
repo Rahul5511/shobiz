@@ -1,1 +1,199 @@
-<app-workspace-operational-report />
+<div class="page-title">
+  <div>
+    <h1>Reports - {{ reportName }}</h1>
+    <p>Select a report, scope and columns.</p>
+  </div>
+</div>
+<section class="card padded">
+  <label
+    >Report<select [(ngModel)]="reportKey" (ngModelChange)="selectReport()">
+      @for (report of catalog; track report.key) {
+        <option [value]="report.key">{{ report.title }}</option>
+      }
+    </select></label
+  >
+  @if (recordAvailable) {
+    <div class="report-view-switch">
+      <button (click)="changeView('summary')" [attr.aria-pressed]="view === 'summary'">
+        Summary</button
+      ><button (click)="changeView('records')" [attr.aria-pressed]="view === 'records'">
+        Underlying records
+      </button>
+    </div>
+  }
+</section>
+@if (view === 'summary') {
+  <app-role-reports [embedded]="true" [reportKey]="reportKey" [restoredState]="summaryState" />
+} @else {
+  <section class="card padded">
+    <h2>{{ reportName }} - {{ scope }}</h2>
+    <div class="record-report-filters">
+      @for (key of ['client', 'event', 'country', 'state', 'city']; track key) {
+        <label
+          >{{ key | titlecase
+          }}<select [ngModel]="$any(filters)[key]" (ngModelChange)="setFilter(key, $event)">
+            <option value="">All</option>
+            @for (option of options(key); track option) {
+              <option>{{ option }}</option>
+            }
+          </select></label
+        >
+      }
+      <label
+        >Status<select [(ngModel)]="filters.status" (ngModelChange)="page = 1">
+          <option value="">All</option>
+          <option>Approved</option>
+          <option>Pending</option>
+          <option>Declined</option>
+          <option>Rejected</option>
+        </select></label
+      >
+      <label>From<input type="date" [(ngModel)]="filters.from" (ngModelChange)="page = 1" /></label
+      ><label>To<input type="date" [(ngModel)]="filters.to" (ngModelChange)="page = 1" /></label>
+      <label>Search<input [(ngModel)]="filters.search" (ngModelChange)="page = 1" /></label
+      ><label
+        >Additional search<input [(ngModel)]="filters.more" (ngModelChange)="page = 1" /></label
+      ><button (click)="clear()">Clear filters</button>
+    </div>
+    @if (invalidRange) {
+      <p class="alert error" role="alert">From must be on or before To.</p>
+    }
+    <fieldset>
+      <legend>Columns</legend>
+      <div class="column-options">
+        @for (header of headers; track header; let i = $index) {
+          <label class="checkbox-label"
+            ><input type="checkbox" [(ngModel)]="columns[i]" />{{ header }}</label
+          >
+        }
+      </div>
+    </fieldset>
+    @if (!indexes.length) {
+      <p role="alert">Select at least one column.</p>
+    }
+  </section>
+  <div class="metrics">
+    @for (stat of stats; track stat[0]) {
+      <div class="metric">
+        {{ stat[0] }}<strong>{{ stat[1] }}</strong>
+      </div>
+    }
+  </div>
+  <section class="card">
+    <div class="padded report-export">
+      <label
+        >Format<select [(ngModel)]="format">
+          <option value="xlsx">Excel</option>
+          <option value="csv">CSV</option>
+          <option value="pdf">PDF / Print</option>
+        </select></label
+      ><button [disabled]="!facts.length || !indexes.length || invalidRange" (click)="download()">
+        Export all matching records
+      </button>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            @for (index of indexes; track index) {
+              <th>{{ headers[index] }}</th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of pageRows; track row.id) {
+            <tr>
+              @for (index of indexes; track index) {
+                <td>{{ values(row)[index] }}</td>
+              }
+            </tr>
+          } @empty {
+            <tr>
+              <td [attr.colspan]="indexes.length || 1">No matching records.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <footer class="record-footer">
+      <span>{{ facts.length }} matching records</span
+      ><label
+        >Rows<select [(ngModel)]="size" (ngModelChange)="page = 1">
+          <option [ngValue]="5">5</option>
+          <option [ngValue]="10">10</option>
+          <option [ngValue]="20">20</option>
+        </select></label
+      ><button [disabled]="page === 1" (click)="page = page - 1">Previous</button
+      ><span>{{ page }} / {{ pages }}</span
+      ><button [disabled]="page === pages" (click)="page = page + 1">Next</button>
+    </footer>
+  </section>
+}
+@if (error) {
+  <p class="alert error" role="alert">{{ error }}</p>
+}
+<section class="card padded">
+  <h2>Share with client contact</h2>
+  <p>
+    Filter the report to one client to select its contacts. Sharing is prepared locally; nothing is
+    sent.
+  </p>
+  <label
+    >Client contact<select [(ngModel)]="recipient" [disabled]="!activeClient">
+      <option value="">Select contact</option>
+      @for (contact of contacts; track contact.email) {
+        <option [value]="contact.email">{{ contact.name }} ({{ contact.email }})</option>
+      }
+    </select></label
+  ><button [disabled]="!recipient || !activeClient" (click)="share()">
+    Prepare sharing preview
+  </button>
+  @for (share of s.shares.slice(0, 3); track share.id) {
+    <div class="review-section padded">
+      <b>{{ share.report }}</b>
+      <p>{{ share.scope }} - {{ share.recipient }}</p>
+      <p>{{ share.columns.join(', ') }}</p>
+      <p>{{ share.status }}</p>
+    </div>
+  }
+</section>
+<section class="card padded">
+  <h2>Export history</h2>
+  <p>
+    Prepared means a file or print view was generated; it does not confirm the browser saved it.
+  </p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Report</th>
+          <th>Scope / filters</th>
+          <th>Columns</th>
+          <th>Records</th>
+          <th>Time</th>
+          <th>Outcome</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (entry of history; track entry.id) {
+          <tr>
+            <td>{{ entry.user }}</td>
+            <td>{{ entry.report }}</td>
+            <td>
+              {{ entry.scope }}<small>{{ entry.filters | json }}</small>
+            </td>
+            <td>{{ entry.columns.join(', ') }}</td>
+            <td>{{ entry.records }}</td>
+            <td>{{ entry.at | date: 'medium' }}</td>
+            <td>{{ entry.outcome }}</td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="7">No exports recorded.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

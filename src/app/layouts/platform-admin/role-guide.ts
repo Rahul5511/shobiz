@@ -1,6 +1,6 @@
 export const roleGuide: Record<string, string> = {
   'Super User':
-    'Create roles, configure permissions and maintain master data. Onboard clients before creating users and assigning their access.',
+    'Review all client events, maintain clients and master data, create users with assigned access, and manage events and requirements. The replacement 22-feature role model is deferred.',
   'Account Manager':
     'Onboard clients, create events, capture requirements and assign Client Servicing Managers and Event Executives.',
   'Client Servicing Manager':

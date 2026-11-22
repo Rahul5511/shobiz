@@ -10,6 +10,7 @@ describe('Reference record lists', () => {
       print: vi.fn(),
     } as unknown as Window);
     const table = new RecordCardComponent();
+    table.columns = ['Client', 'Name', 'Owner', 'City', 'Status'];
     table.records = Array.from({ length: 12 }, (_, index) => ({
       values: [`Client ${index}`, 'Example', '', 'Mumbai', index < 9 ? 'Active' : 'Inactive'],
     }));

@@ -30,7 +30,7 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('opens the Platform Admin dashboard, preserves the event restrictions, and logs out', async () => {
+  it('opens the Platform Admin dashboard, supports the approved event actions, and logs out', async () => {
     localStorage.clear();
     const harness = await RouterTestingHarness.create('/login');
     element<HTMLButtonElement>(harness, '.demo-button').click();
@@ -57,11 +57,9 @@ describe('App', () => {
     harness.detectChanges();
     element<HTMLButtonElement>(harness, '[aria-label="Events"]').click();
     harness.detectChanges();
-    element<HTMLButtonElement>(harness, '.nav-children .navitem').click();
-    harness.detectChanges();
     expect(harness.routeNativeElement?.querySelector('app-record-card')).toBeTruthy();
-    expect(harness.routeNativeElement?.textContent).not.toContain('Create New Event');
-    expect(harness.routeNativeElement?.querySelector('[aria-label="Edit record"]')).toBeNull();
+    expect(harness.routeNativeElement?.textContent).toContain('Create New Event');
+    expect(harness.routeNativeElement?.querySelector('[aria-label="Edit record"]')).toBeTruthy();
     expect(
       harness.routeNativeElement?.querySelector('[aria-label="Public registration link and QR"]'),
     ).toBeTruthy();
@@ -141,17 +139,16 @@ describe('App', () => {
         state.m.entities[key].label,
       );
     }
-    state.openTask('RolePermissions');
-    expectScreen('app-role-permissions-page');
-    expect(element(harness, '.form-card').textContent).toContain('Selected role');
+    state.nav('RoleBuilder');
+    expectScreen('app-roles-and-permissions-page');
+    state.openTask('RoleBuilder');
+    detect();
+    expect(element(harness, '.form-card').textContent).toContain('Role Name');
     state.cancel();
     state.nav('Reports');
     expectScreen('app-reports-page');
-    expect(harness.routeNativeElement?.textContent).toContain('Restricted');
-    state.nav('AttendanceReport');
-    expectScreen('app-registration-vs-attendance-page');
-    state.openRoleReports();
-    expectScreen('app-role-reports');
+    expect(harness.routeNativeElement?.textContent).toContain('Underlying records');
+    expect(harness.routeNativeElement?.textContent).not.toContain('Restricted');
 
     shell.account('account');
     expectScreen('app-profile-page');

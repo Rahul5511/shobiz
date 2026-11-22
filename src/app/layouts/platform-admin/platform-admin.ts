@@ -8,19 +8,7 @@ import {
   UserCredentialsRoleAssignmentPage,
 } from '../../features/manage-access/manage-access';
 import { NotificationsPage } from '../../features/notifications/notifications';
-import {
-  CountriesPage,
-  StatesPage,
-  DistrictsPage,
-  CitiesPage,
-  IndustriesPage,
-  SubIndustriesPage,
-  SegmentsPage,
-  DepartmentsPage,
-  DesignationsPage,
-  ProfileLevelsPage,
-  CallStatusesPage,
-} from '../../features/master-data/master-data';
+import { MasterDataPage } from '../../features/master-data/master-data';
 import { DashboardPage } from '../../features/dashboard/dashboard';
 import {
   ReportsPage,
@@ -30,7 +18,14 @@ import {
 import { ProfilePage, ChangePasswordPage } from '../../features/account/account';
 import { SampleContactsPage } from '../../features/db-workspace/db-workspace';
 import { roleGuide } from './role-guide';
-import { Component, inject, ChangeDetectorRef, HostListener, forwardRef } from '@angular/core';
+import {
+  Component,
+  inject,
+  ChangeDetectorRef,
+  HostListener,
+  forwardRef,
+  effect,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -52,18 +47,8 @@ import { IconComponent } from '../../shared/components/platform-admin/ui.compone
     RolePermissionsPage,
     UserCredentialsRoleAssignmentPage,
     NotificationsPage,
-    CountriesPage,
-    StatesPage,
-    DistrictsPage,
-    CitiesPage,
-    IndustriesPage,
-    SubIndustriesPage,
-    SegmentsPage,
-    DepartmentsPage,
-    DesignationsPage,
-    ProfileLevelsPage,
-    CallStatusesPage,
     DashboardPage,
+    MasterDataPage,
     RegistrationQrPage,
     ReportsPage,
     RegistrationVsAttendancePage,
@@ -99,6 +84,9 @@ export class WorkspaceComponent {
   isArray = Array.isArray;
 
   constructor() {
+    effect(() => {
+      if (!this.auth.session) void this.router.navigateByUrl('/login');
+    });
     this.s.dashboard();
     this.profile = this.read(this.profileKey, {
       name: this.auth.session?.name || '',
@@ -125,7 +113,9 @@ export class WorkspaceComponent {
     return roleGuide[this.s.role];
   }
   get guideTasks() {
-    return this.s.flowKeys.map((key: string) => this.s.m.flows[key]);
+    return this.s.flowKeys
+      .filter((key) => key !== 'UserRoleGrant')
+      .map((key: string) => this.s.m.flows[key]);
   }
   get roleGrants(): string[] | undefined {
     return this.s.grants[this.s.role];

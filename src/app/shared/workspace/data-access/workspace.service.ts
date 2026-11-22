@@ -1,3 +1,9 @@
+import {
+  InvitationPreview,
+  RelatedAssignment,
+  ExportContext,
+  PreparedShare,
+} from '../models/review.models';
 import { Injectable, inject } from '@angular/core';
 import { AuthService } from '../../../core/services/login/platform-admin-session';
 import model from '../data/model';
@@ -38,6 +44,27 @@ export class WorkspaceService {
   mobileMenu = false;
   permissionQuery = '';
   openSection: string | null = null;
+  eventClientFilter = '';
+  eventStageFilter = '';
+  eventDateSort = true;
+  preparedNotifications: {
+    id: string;
+    clientId: string;
+    name: string;
+    email: string;
+    status: string;
+    created: string;
+  }[] = [];
+  userView = 'list';
+  userHierarchyQuery = '';
+  pendingSuccessors: Record<string, string> = {};
+  invitations: InvitationPreview[] = [];
+  shares: PreparedShare[] = [];
+  pendingAssignments: (RelatedAssignment & { previousUser: string })[] = [];
+  disableTarget: any = null;
+  disableSuccessor = '';
+  disableAssignments: RelatedAssignment[] = [];
+  relatedPanel: { title: string; rows: unknown[][] } | null = null;
   constructor() {
     this.resetData(false);
     try {
@@ -48,8 +75,13 @@ export class WorkspaceService {
         this.drafts = saved.drafts || {};
         this.grants = saved.grants || {};
         this.configs = saved.configs || {};
+        this.preparedNotifications = saved.preparedNotifications || [];
+        this.invitations = saved.invitations || [];
+        this.shares = saved.shares || [];
+        this.pendingAssignments = saved.pendingAssignments || [];
       }
     } catch {}
+    this.migrateReviewData();
   }
   get role() {
     return this.auth.session?.role || '';
@@ -93,10 +125,16 @@ export class WorkspaceService {
           drafts: this.drafts,
           grants: this.grants,
           configs: this.configs,
+          preparedNotifications: this.preparedNotifications,
+          invitations: this.invitations,
+          shares: this.shares,
+          pendingAssignments: this.pendingAssignments,
         }),
       );
+      return true;
     } catch {
       this.error = 'Browser storage is full. Export or reset demo data.';
+      return false;
     }
   }
   dashboard() {
@@ -116,15 +154,18 @@ export class WorkspaceService {
     }
     this.wizard = null;
     this.selected = null;
+    this.relatedPanel = null;
     this.key = k;
     this.view =
-      k === 'CallingTracker'
-        ? 'report'
-        : k === 'AttendanceReport'
+      k === 'Reports'
+        ? 'reports'
+        : k === 'CallingTracker'
           ? 'report'
-          : k === 'Reports'
+          : k === 'AttendanceReport'
             ? 'report'
-            : 'list';
+            : k === 'Reports'
+              ? 'report'
+              : 'list';
     this.reportType =
       k === 'CallingTracker'
         ? 'calling'
@@ -185,7 +226,7 @@ export class WorkspaceService {
       ? 'Sample downloads are not enabled for this role. Emails and phone numbers remain excluded.'
       : 'FRD M22: Telecallers cannot download or export contact lists.';
   }
-  get menus() {
+  get legacyMenus() {
     return this.m.menuGroups
       .map(([title, keys]: any) => ({
         title,
@@ -195,7 +236,10 @@ export class WorkspaceService {
   }
   tasks(k = this.key) {
     return this.flowKeys
-      .filter((x: string) => this.m.flows[x].entity === k)
+      .filter(
+        (x: string) =>
+          this.m.flows[x].entity === k && x !== 'UserRoleGrant' && x !== 'RolePermissions',
+      )
       .map((key: string) => ({ key, title: this.m.flows[key].title }));
   }
   get primaryTask() {
@@ -232,6 +276,10 @@ export class WorkspaceService {
   }
   requirementsFocus = false;
   openTask(key: string, row: any = null) {
+    if (row?.locked) {
+      this.error = 'The Platform Admin system role is locked.';
+      return;
+    }
     if (!this.can(key)) {
       this.error = 'This role cannot perform this action.';
       return;
@@ -249,10 +297,7 @@ export class WorkspaceService {
       return;
     }
     let f = copy(this.m.flows[key]);
-    if (key === 'Admin')
-      f.steps = f.steps.filter(
-        (step: any) => !step.fields.some((field: any) => field.label === 'Roles'),
-      );
+
     if (key === 'Events')
       for (const step of f.steps)
         step.fields = step.fields.filter((field: any) => field.label !== 'Event Executives');
@@ -268,6 +313,8 @@ export class WorkspaceService {
     let values = Object.fromEntries(this.fields(f).map((x: any) => [x.label, copy(x.value)]));
     if (row?.details) Object.assign(values, copy(row.details));
     if (key === 'Admin' && row) {
+      values['Name'] = row.values[0];
+      values['Roles'] = [...(row.details?.Roles || [])];
       values['Email'] = row.details?.Email || row.values[1];
       if (!values['First name'] || !row.details)
         values['First name'] = String(row.values[0]).split(' ')[0];
@@ -326,7 +373,18 @@ export class WorkspaceService {
     if (draft) {
       this.wizard = copy(draft);
       this.wizard.flow = f;
+      this.wizard.values.Name ||=
+        this.wizard.values['Display name'] ||
+        [this.wizard.values['First name'], this.wizard.values['Last name']]
+          .filter(Boolean)
+          .join(' ');
+      for (const field of this.fields(f))
+        if (this.wizard.values[field.label] === undefined)
+          this.wizard.values[field.label] = copy(field.value);
+      this.wizard.step = Math.min(this.wizard.step, f.steps.length - 1);
+      this.wizard.visited = Math.min(this.wizard.visited, f.steps.length - 1);
     }
+    if (key === 'Events') this.configureEventCities();
     this.normaliseSelections();
     this.view = 'form';
     this.key = f.entity;
@@ -355,12 +413,26 @@ export class WorkspaceService {
     const w = this.wizard;
     if (!w) return;
     w.values[f.label] = value;
+    if (w.key === 'Events' && f.label === 'Event Type') this.configureEventCities();
+    if (w.key === 'Admin' && f.label === 'Email' && !w.row) {
+      const existing = this.userRow(String(value).trim().toLowerCase());
+      if (existing) {
+        w.values.Name = existing.values[0];
+        w.values.Roles = [
+          ...new Set([...(existing.details?.Roles || []), ...(w.values.Roles || [])]),
+        ];
+        this.notice = 'This email already exists. Access will be added to the same login.';
+      }
+    }
     if (w.key === 'UserRoleGrant' && f.label === 'User') {
       const user = this.userRow(value);
       w.values.Email = user?.values[1] || '';
       w.values.Roles = user?.details?.Roles || [];
     }
-    if (f.label === 'Client' && ['RegistrationForm', 'UserRoleGrant', 'Events'].includes(w.key)) {
+    if (
+      f.label === 'Client' &&
+      ['RegistrationForm', 'UserRoleGrant', 'Admin', 'Events'].includes(w.key)
+    ) {
       if (Object.hasOwn(w.values, 'Event')) w.values.Event = '';
       if (w.key === 'Events') w.values['Key Client Contacts'] = [];
     }
@@ -408,9 +480,9 @@ export class WorkspaceService {
     return [
       ...new Set<string>([
         ...this.m.roles,
-        ...this.rows.RoleBuilder.filter((row: any) => row.values[4] === 'Active').map(
-          (row: any) => row.values[0],
-        ),
+        ...this.rows.RoleBuilder.filter(
+          (row: any) => row.values[4] === 'Active' && !row.locked,
+        ).map((row: any) => row.values[0]),
       ]),
     ];
   }
@@ -493,13 +565,21 @@ export class WorkspaceService {
             ...this.scopedEvents
               .filter(
                 (row) =>
-                  !['RegistrationForm', 'UserRoleGrant'].includes(key) ||
+                  !['RegistrationForm', 'UserRoleGrant', 'Admin'].includes(key) ||
                   (!!values['Client'] && row.details?.Client === values['Client']),
               )
               .map((row) => row.values[0]),
           ];
         break;
     }
+    if (f.label === 'Key Client Contacts')
+      choices = [...choices, ...this.clientContacts(values.Client).map((contact) => contact.name)];
+    if (
+      key === 'Clients' &&
+      this.wizard.row &&
+      ['Account Manager', 'CS Managers'].includes(f.label)
+    )
+      choices = [...choices, ...[this.wizard.row.details?.[f.label]].flat().filter(Boolean)];
     return [...new Set<string>(choices.filter(Boolean))];
   }
   isLocation(label: string) {
@@ -589,7 +669,10 @@ export class WorkspaceService {
   valid() {
     for (const f of this.step.fields) {
       const v = this.wizard.values[f.label];
-      if (f.required && (!v || (Array.isArray(v) && !v.length))) {
+      if (
+        f.required &&
+        (!v || (typeof v === 'string' && !v.trim()) || (Array.isArray(v) && !v.length))
+      ) {
         this.error = f.label + ' is required.';
         return false;
       }
@@ -634,6 +717,15 @@ export class WorkspaceService {
       this.error = 'End date must be on or after start date.';
       return false;
     }
+    for (const field of this.step.fields.filter((f: any) =>
+      ['contacts', 'managers'].includes(f.kind),
+    ))
+      for (const row of this.wizard.values[field.label] || []) {
+        if (!String(row.Name || '').trim() || !/^[^ @]+@[^ @]+\.[^ @]+$/.test(row.Email || '')) {
+          this.error = 'Enter a name and valid email for every ' + field.label + ' entry.';
+          return false;
+        }
+      }
     this.error = '';
     return true;
   }
@@ -667,6 +759,12 @@ export class WorkspaceService {
   }
   save() {
     const w = this.wizard;
+    if (w?.values.Email) w.values.Email = String(w.values.Email).trim().toLowerCase();
+    if (w?.values.Name) w.values.Name = String(w.values.Name).trim();
+    if (!w || !this.can(w.key) || w.row?.locked) {
+      this.error = 'This record cannot be changed.';
+      return;
+    }
     for (let i = 0; i < w.flow.steps.length; i++) {
       w.step = i;
       if (!this.valid()) return;
@@ -715,15 +813,32 @@ export class WorkspaceService {
       this.persist();
       return;
     }
+    if (w.key === 'RoleBuilder') {
+      w.values['Role Name'] = String(w.values['Role Name']).trim();
+      if (['platform admin', 'super user'].includes(w.values['Role Name'].toLowerCase())) {
+        this.error = 'The Platform Admin system role is reserved.';
+        return;
+      }
+    }
+    const snapshot = this.reviewSnapshot();
     if (
-      w.key === 'Admin' &&
-      this.rows.Admin.some(
-        (row: any) =>
-          row.id !== w.row?.id &&
-          String(row.values[1]).toLowerCase() === String(w.values.Email).trim().toLowerCase(),
-      )
+      w.key === 'RoleBuilder' &&
+      (this.m.roles.some(
+        (role: string) => role.toLowerCase() === w.values['Role Name'].toLowerCase(),
+      ) ||
+        this.rows.RoleBuilder.some(
+          (r: any) =>
+            r.id !== w.row?.id &&
+            String(r.values[0]).trim().toLowerCase() ===
+              String(w.values['Role Name']).trim().toLowerCase(),
+        ))
     ) {
-      this.error = 'A user with this email already exists.';
+      this.error = 'A role with this name already exists.';
+      return;
+    }
+    const previousRole = w.key === 'RoleBuilder' ? w.row?.values[0] : null;
+    if (w.key === 'Admin') {
+      this.saveReviewedUser();
       return;
     }
     if (
@@ -760,7 +875,7 @@ export class WorkspaceService {
           created: new Date().toISOString(),
           history: [],
         };
-    row.details = w.key === 'Admin' ? { ...row.details, ...copy(w.values) } : copy(w.values);
+    row.details = { ...row.details, ...copy(w.values) };
     row.flow = w.key;
     row.values[0] = String(w.values[w.flow.identity] || row.values[0]);
     if (!w.row)
@@ -779,6 +894,21 @@ export class WorkspaceService {
         'Active',
       ];
       this.grants[w.values['Role Name']] = copy(w.grants);
+      if (previousRole && previousRole !== row.values[0]) {
+        const rename = (values: string[]) =>
+          values.map((role) => (role === previousRole ? row.values[0] : role));
+        for (const user of this.rows.Admin) {
+          if (Array.isArray(user.details?.Roles)) user.details.Roles = rename(user.details.Roles);
+          if (Array.isArray(user.details?.['Access assignment']?.Roles))
+            user.details['Access assignment'].Roles = rename(
+              user.details['Access assignment'].Roles,
+            );
+          user.values[2] = this.roleLabels(user.details?.Roles || []);
+        }
+        for (const draft of Object.values(this.drafts) as any[])
+          if (Array.isArray(draft.values?.Roles)) draft.values.Roles = rename(draft.values.Roles);
+        delete this.grants[previousRole];
+      }
     }
     const cityColumn = e.columns.indexOf('City');
     if (cityColumn >= 0 && !this.m.masters.includes(k) && Object.hasOwn(w.values, 'City')) {
@@ -795,6 +925,14 @@ export class WorkspaceService {
         roles.length ? 'Active' : 'Pending',
       ];
     }
+    if (w.key === 'Events')
+      row.values = [
+        w.values['Event Name'],
+        w.values.Client,
+        [w.values.City].flat().filter(Boolean).join(', '),
+        w.values.Stage,
+        w.values['Event Status'] || 'Upcoming',
+      ];
     if (w.key === 'Contacts')
       row.values = [
         w.values.Name,
@@ -850,11 +988,31 @@ export class WorkspaceService {
       Date: new Date().toISOString(),
     });
     if (!w.row && !existingAgent) this.rows[k].unshift(row);
+    if (w.key === 'Clients' && (w.values['Additional CS Managers'] || []).length) {
+      for (const person of w.values['Additional CS Managers'])
+        this.preparedNotifications.unshift({
+          id: crypto.randomUUID(),
+          clientId: row.id,
+          name: person.Name,
+          email: person.Email,
+          status: 'Prepared locally - not sent',
+          created: new Date().toISOString(),
+        });
+      this.notice = 'Client saved. CS Manager notifications prepared locally - not sent.';
+    }
     delete this.drafts[this.draftKey()];
+    if (
+      !this.commitReview(snapshot, () => {
+        if (previousRole && previousRole !== row.values[0])
+          this.auth.renameRole(previousRole, row.values[0]);
+      })
+    )
+      return;
+    if (previousRole && previousRole !== row.values[0] && this.auth.session?.role === previousRole)
+      this.auth.logout();
     this.wizard = null;
     this.view = 'list';
     this.key = k;
-    this.persist();
   }
   get scopedEvents(): any[] {
     const email = this.auth.session?.email;
@@ -873,9 +1031,68 @@ export class WorkspaceService {
     );
   }
   get listRows() {
-    return this.key === 'Events' ? this.scopedEvents : this.rows[this.key];
+    let rows =
+      this.key === 'Events'
+        ? this.scopedEvents.filter(
+            (r: any) =>
+              (!this.eventClientFilter || r.details?.Client === this.eventClientFilter) &&
+              (!this.eventStageFilter || r.values[3] === this.eventStageFilter),
+          )
+        : this.rows[this.key];
+    if (this.key === 'Events' && this.eventDateSort)
+      rows = [...rows].sort((a: any, b: any) =>
+        String(a.details?.['Event Start Date'] || '').localeCompare(
+          String(b.details?.['Event Start Date'] || ''),
+        ),
+      );
+    return (rows || []).map((r: any) => {
+      let values = r.values;
+      if (this.key === 'Clients')
+        values = [
+          r.details?.['Known as'] || r.values[0],
+          r.details?.['Company Name'] || r.values[0],
+          r.details?.['Account Manager'] || r.values[2],
+          r.values[3],
+          r.values[4],
+          r.details?.['Primary Contact'] || '',
+          [
+            ...(r.details?.['CS Managers'] || []),
+            ...(r.details?.['Additional CS Managers'] || []).map((manager: any) => manager.Name),
+          ].join(', '),
+          'View events',
+        ];
+      if (this.key === 'Admin')
+        values = [
+          r.values[0],
+          this.maskEmail(r.values[1]),
+          (r.details?.Roles || []).map((role: string) => this.labelRole(role)).join(', '),
+          this.userScope(r),
+          r.values[4],
+          r.addedBy || 'Not recorded',
+        ];
+      if (this.key === 'Events')
+        values = [
+          ...r.values.slice(0, 5),
+          r.details?.['Event Start Date'] || '',
+          (r.details?.['Key Client Contacts'] || []).join(', '),
+          'View DRF',
+          'View assets',
+        ];
+      return {
+        ...r,
+        values,
+        source: r,
+        cities: this.recordCities(r),
+        lastAdmin:
+          this.key === 'Admin' &&
+          r.values[4] === 'Active' &&
+          r.details?.Roles?.[0] === 'Super User' &&
+          this.lastActiveAdmin,
+      };
+    });
   }
   viewRecord(row: any) {
+    row = row.source || row;
     this.requirementsFocus = false;
     if (this.key === 'Events' && !this.scopedEvents.includes(row)) return;
     if (this.key === 'Events') this.event = row.values[0];
@@ -884,6 +1101,11 @@ export class WorkspaceService {
     this.view = 'detail';
   }
   editRecord(row: any) {
+    row = row.source || row;
+    if (row.locked) {
+      this.error = 'The Platform Admin system role is locked.';
+      return;
+    }
     const tasks = this.tasks();
     const k =
       this.key === 'Admin' && this.can('Admin')
@@ -892,6 +1114,8 @@ export class WorkspaceService {
     if (k) this.openTask(k, row);
   }
   remove(row: any) {
+    row = row.source || row;
+    if (row.locked) return;
     if (!['Draft', 'New'].includes(row.values[4]) || !this.tasks().length) return;
     if (!confirm('Delete this unsubmitted draft?')) return;
     this.rows[this.key] = this.rows[this.key].filter((r: any) => r.id !== row.id);
@@ -899,6 +1123,7 @@ export class WorkspaceService {
     this.notice = 'Draft deleted; submitted history is retained.';
   }
   toggle(row: any) {
+    row = row.source || row;
     if (
       !this.accessible(this.key) ||
       !this.m.masters.includes(this.key) ||
@@ -969,13 +1194,11 @@ export class WorkspaceService {
       this.selected?.grants ||
       this.reviewValues['Granted permissions'] ||
       [];
-    return this.m.permissions.map((p: any) => [
-      p.module,
-      p.label,
-      p.code,
-      g.includes(p.code) ? 'True' : 'False',
-    ]);
+    return this.m.permissions
+      .filter((p: any) => g.includes(p.code))
+      .map((p: any) => [p.module, p.label, 'Granted']);
   }
+
   async file(f: any, event: any) {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -1031,7 +1254,7 @@ export class WorkspaceService {
     this.wizard.values[f.label].push({ Platform: '', URL: '' });
   }
   get eventEditor() {
-    return ['Account Manager', 'Client Servicing Manager'].includes(this.role);
+    return ['Super User', 'Account Manager', 'Client Servicing Manager'].includes(this.role);
   }
   get eventNames() {
     return this.scopedEvents.map((r: any) => r.values[0]);
@@ -1167,7 +1390,7 @@ export class WorkspaceService {
   get reportRows() {
     const pii = this.calling
       ? ['Response Manager', 'Response Head', 'Telecaller'].includes(this.role)
-      : !['Super User', 'Platform Admin', 'DB Head', 'DB Manager'].includes(this.role);
+      : !['DB Head', 'DB Manager'].includes(this.role);
     return this.reportData.map((r) =>
       this.calling
         ? [
@@ -1381,5 +1604,616 @@ export class WorkspaceService {
     }
     this.persist();
     return true;
+  }
+  get menus() {
+    return [
+      { title: 'Clients', key: 'Clients', keys: [] },
+      { title: 'Events', key: 'Events', keys: [] },
+      { title: 'Reports', key: 'Reports', keys: [] },
+      { title: 'Manage Access', key: '', keys: ['Admin', 'RoleBuilder'] },
+      { title: 'Master Data', key: 'MasterData', keys: [] },
+    ];
+  }
+  openMaster() {
+    this.nav(this.m.masters.includes(this.key) ? this.key : 'Countries');
+    this.openSection = null;
+  }
+  get exportContext(): ExportContext {
+    return {
+      user: this.auth.session?.email || 'Unrecorded',
+      scope: this.key || 'Dashboard',
+      filters: {
+        search: this.search,
+        event: this.event,
+        client: this.eventClientFilter,
+        stage: this.eventStageFilter,
+      },
+    };
+  }
+  maskEmail(value: string): string {
+    const [name, domain] = String(value || '').split('@');
+    return domain ? (name[0] || '') + '***@' + domain : 'Not recorded';
+  }
+  userScope(row: any): string {
+    return row.details?.Roles?.[0] === 'Super User'
+      ? 'All'
+      : row.details?.Roles?.[0] === 'Telecaller'
+        ? 'Own'
+        : 'Assigned';
+  }
+  recordCities(row: any): string[] {
+    return [
+      ...new Set<string>(
+        [row.details?.Cities || row.details?.City || row.values[2]].flat().filter(Boolean),
+      ),
+    ];
+  }
+  configureEventCities() {
+    const w = this.wizard;
+    if (!w) return;
+    const field = this.fields(w.flow).find((f: any) => f.label === 'City');
+    if (!field) return;
+    field.multi = w.values['Event Type'] === 'Multi City';
+    const city = w.values.City;
+    w.values.City = field.multi
+      ? [city].flat().filter(Boolean)
+      : Array.isArray(city)
+        ? city[0] || ''
+        : city;
+  }
+  migrateReviewData() {
+    const seen = new Set<string>();
+    this.rows.Admin = (this.rows.Admin || []).filter((row: any) => {
+      const email = String(row.values[1] || '')
+        .trim()
+        .toLowerCase();
+      if (!email || seen.has(email)) return false;
+      seen.add(email);
+      row.values[1] = email;
+      row.details = { ...row.details, Name: row.values[0], Email: email };
+      row.details.Roles ||= [row.values[2]].filter(Boolean);
+      return true;
+    });
+    const accounts = [...(this.auth.users || [])];
+    if (
+      this.auth.session?.email &&
+      !accounts.some((account) => account.email === this.auth.session?.email)
+    )
+      accounts.push({
+        method: 'Email & Password',
+        name: this.auth.session.name,
+        email: this.auth.session.email,
+        roles: [...(this.auth.session.roles || [this.auth.session.role || 'Super User'])],
+      });
+    for (const account of accounts)
+      if (!seen.has(account.email)) {
+        seen.add(account.email);
+        this.rows.Admin.push({
+          id: 'account:' + account.email,
+          values: [
+            account.name,
+            account.email,
+            account.roles.join(', '),
+            account.roles.includes('Super User') ? 'All' : 'Assigned',
+            account.status || 'Active',
+          ],
+          details: { Name: account.name, Email: account.email, Roles: [...account.roles] },
+          history: [],
+          flow: 'Admin',
+        });
+      }
+    const system = this.rows.RoleBuilder.find((r: any) =>
+      ['Super User', 'Platform Admin'].includes(r.values[0]),
+    );
+    if (system) system.locked = true;
+    else
+      this.rows.RoleBuilder.unshift({
+        id: 'system-platform-admin',
+        locked: true,
+        values: [
+          'Platform Admin',
+          'Fixed system role',
+          'Current approved capabilities',
+          'All',
+          'Active',
+        ],
+        details: {
+          'Role Name': 'Platform Admin',
+          Description: 'Fixed system role. The 22-feature replacement model is deferred.',
+        },
+        flow: 'RoleBuilder',
+        history: [],
+      });
+    this.rows.RoleBuilder.forEach((r: any) => {
+      if (!r.locked) r.values[3] = 'Assigned';
+    });
+    for (const draft of Object.values(this.drafts) as any[]) {
+      if (draft.key !== 'UserRoleGrant') continue;
+      const user = this.userRow(
+        String(draft.values?.User || draft.values?.Email || '')
+          .trim()
+          .toLowerCase(),
+      );
+      const values = {
+        ...copy(draft.values),
+        Name: user?.values[0] || '',
+        Email: user?.values[1] || '',
+        Event: [draft.values?.Event].flat().filter(Boolean),
+        City: [draft.values?.City].flat().filter(Boolean),
+      };
+      this.drafts[this.role + '|Admin|' + (user?.id || 'new')] = {
+        ...copy(draft),
+        key: 'Admin',
+        flow: copy(this.m.flows.Admin),
+        row: user ? copy(user) : null,
+        values,
+        step: 0,
+        visited: Math.min(draft.visited || 0, this.m.flows.Admin.steps.length - 1),
+      };
+    }
+  }
+  get lastActiveAdmin(): boolean {
+    return (
+      this.rows.Admin.filter(
+        (r: any) => r.values[4] === 'Active' && r.details?.Roles?.[0] === 'Super User',
+      ).length <= 1
+    );
+  }
+  saveReviewedUser() {
+    const snapshot = this.reviewSnapshot();
+    const w = this.wizard,
+      v = w.values,
+      email = String(v.Email).trim().toLowerCase();
+    const existing = w.row || this.userRow(email);
+    const currentRoles = existing?.details?.Roles || [];
+    const roles = w.row
+      ? [...new Set<string>(v.Roles || [])]
+      : [...new Set<string>([...currentRoles, ...(v.Roles || [])])];
+    if (
+      existing?.values[4] === 'Active' &&
+      currentRoles[0] === 'Super User' &&
+      roles[0] !== 'Super User' &&
+      this.lastActiveAdmin
+    ) {
+      this.error = 'At least one Platform Admin must remain active.';
+      return;
+    }
+    const row = existing
+      ? copy(existing)
+      : {
+          id: crypto.randomUUID(),
+          values: [],
+          details: {},
+          history: [],
+          created: new Date().toISOString(),
+          addedBy: this.auth.session?.email,
+          flow: 'Admin',
+        };
+    const previous = row.details?.['Access assignment'] || {};
+    const events = w.row
+      ? [v.Event].flat().filter(Boolean)
+      : [
+          ...new Set([
+            ...[previous.Event].flat().filter(Boolean),
+            ...[v.Event].flat().filter(Boolean),
+          ]),
+        ];
+    const cities = w.row
+      ? [v.City].flat().filter(Boolean)
+      : [
+          ...new Set([
+            ...[previous.City].flat().filter(Boolean),
+            ...[v.City].flat().filter(Boolean),
+          ]),
+        ];
+    const name = existing && !w.row ? existing.values[0] : String(v.Name).trim();
+    row.details = {
+      ...row.details,
+      ...copy(v),
+      Name: name,
+      Email: email,
+      Roles: roles,
+      'Access assignment': { ...previous, ...copy(v), Roles: roles, Event: events, City: cities },
+    };
+    const status = existing?.values[4] === 'Disabled' ? 'Disabled' : 'Active';
+    row.values = [
+      name,
+      email,
+      roles.map((r) => this.labelRole(r)).join(', '),
+      roles.includes('Super User') ? 'All' : 'Assigned',
+      status,
+    ];
+    row.history ||= [];
+    row.history.push({
+      Action: existing ? 'Access updated' : 'User added',
+      User: this.auth.session?.email || this.roleName,
+      Date: new Date().toISOString(),
+    });
+    if (!existing) this.rows.Admin.unshift(row);
+    else
+      this.rows.Admin = this.rows.Admin.map((candidate: any) =>
+        candidate.id === row.id ? row : candidate,
+      );
+    this.invitations.unshift({
+      email,
+      name,
+      roles,
+      events,
+      cities,
+      created: new Date().toISOString(),
+      status: 'Prepared locally - not sent',
+    });
+    delete this.drafts[this.draftKey()];
+    if (
+      !this.commitReview(snapshot, () =>
+        this.auth.upsertDemoUser(
+          email,
+          name,
+          roles,
+          v['Authentication method'] || 'Email & Password',
+          status,
+        ),
+      )
+    )
+      return;
+    this.wizard = null;
+    this.view = 'list';
+    this.notice = 'User access saved. Invitation prepared locally - not sent.';
+    if (email === this.auth.session?.email && roles[0] !== this.auth.session?.role)
+      this.auth.logout();
+  }
+  get hierarchyUsers() {
+    const query = this.userHierarchyQuery.toLowerCase();
+    return this.rows.Admin.filter((r: any) =>
+      [r.values[0], r.values[1], r.addedBy || ''].join(' ').toLowerCase().includes(query),
+    );
+  }
+  get creatorGroups(): string[] {
+    return [
+      ...new Set<string>(
+        this.hierarchyUsers.map((r: any) => r.addedBy || 'Unknown / legacy creator'),
+      ),
+    ];
+  }
+  addedByUsers(creator: string) {
+    return this.hierarchyUsers.filter(
+      (r: any) => (r.addedBy || 'Unknown / legacy creator') === creator,
+    );
+  }
+  relatedAssignments(row: any): RelatedAssignment[] {
+    const email = row.values[1],
+      name = row.values[0];
+    const result: RelatedAssignment[] = [];
+    const uniqueName =
+      this.rows.Admin.filter((candidate: any) => candidate.values[0] === name).length === 1;
+    const matches = (value: unknown) => value === email || (uniqueName && value === name);
+    const add = (entity: string, record: any, field: string, kind: RelatedAssignment['kind']) =>
+      result.push({
+        id: entity + ':' + record.id + ':' + field,
+        entity,
+        recordId: record.id,
+        field,
+        kind,
+        title: String(record.values[0]),
+      });
+    for (const client of this.rows.Clients)
+      for (const field of ['Account Manager', 'CS Managers'])
+        if ([client.details?.[field]].flat().some(matches)) add('Clients', client, field, 'Client');
+    for (const event of this.rows.Events)
+      if ([event.details?.['Event Executives']].flat().some(matches))
+        add('Events', event, 'Event Executives', 'Event');
+    for (const record of this.regs)
+      if (matches(record.telecaller))
+        result.push({
+          id: 'Registration:' + record.id,
+          entity: 'registrants',
+          recordId: record.id,
+          field: 'telecaller',
+          kind: 'Calling',
+          title: record.id + ' ? ' + record.event,
+        });
+    for (const assignment of this.rows.Assignment || [])
+      if ([assignment.details?.Managers].flat().some(matches))
+        add('Assignment', assignment, 'Managers', 'Event');
+    for (const event of [row.details?.['Access assignment']?.Event].flat().filter(Boolean))
+      result.push({
+        id: 'access:' + row.id + ':' + event,
+        entity: 'user-access',
+        recordId: row.id,
+        field: 'Event',
+        kind: 'Event',
+        title: event,
+      });
+    for (const record of this.rows.CallingAssign || [])
+      for (const field of ['From agent', 'To agent'])
+        if (matches(record.details?.[field])) add('CallingAssign', record, field, 'Calling');
+    return result;
+  }
+  beginDisable(candidate: any) {
+    const row = candidate.source || candidate;
+    if (
+      row.values[4] === 'Active' &&
+      row.details?.Roles?.[0] === 'Super User' &&
+      this.lastActiveAdmin
+    ) {
+      this.error = 'The last active Platform Admin cannot be disabled.';
+      return;
+    }
+    this.disableTarget = row;
+    this.disableAssignments = this.relatedAssignments(row);
+    this.disableSuccessor = '';
+    this.error = '';
+  }
+  get successors() {
+    return this.rows.Admin.filter((r: any) => r !== this.disableTarget && r.values[4] === 'Active');
+  }
+  enableUser(candidate: any) {
+    const row = candidate.source || candidate;
+    const snapshot = this.reviewSnapshot();
+    row.values[4] = 'Active';
+    if (
+      !this.commitReview(snapshot, () =>
+        this.auth.upsertDemoUser(
+          row.values[1],
+          row.values[0],
+          row.details.Roles || [],
+          'Email & Password',
+          'Active',
+        ),
+      )
+    )
+      return;
+    this.notice = 'User enabled.';
+  }
+  confirmDisable() {
+    const row = this.disableTarget;
+    if (!row) return;
+    const snapshot = this.reviewSnapshot();
+    if (
+      row.values[4] === 'Active' &&
+      row.details?.Roles?.[0] === 'Super User' &&
+      this.lastActiveAdmin
+    ) {
+      this.error = 'The last active Platform Admin cannot be disabled.';
+      return;
+    }
+    const successor = this.successors.find((r: any) => r.id === this.disableSuccessor);
+    if (this.disableSuccessor && !successor) {
+      this.error = 'Choose an active successor.';
+      return;
+    }
+    for (const assignment of this.disableAssignments) {
+      this.moveAssignment(assignment, row.values[1], successor);
+      if (!successor && !this.pendingAssignments.some((item) => item.id === assignment.id))
+        this.pendingAssignments.push({ ...assignment, previousUser: row.values[1] });
+    }
+    row.values[4] = 'Disabled';
+    row.history ||= [];
+    row.history.push({
+      Action: 'Disabled',
+      User: this.auth.session?.email,
+      Date: new Date().toISOString(),
+    });
+    const self = row.values[1] === this.auth.session?.email;
+    if (
+      !this.commitReview(snapshot, () =>
+        this.auth.upsertDemoUser(
+          row.values[1],
+          row.values[0],
+          row.details.Roles || [],
+          'Email & Password',
+          'Disabled',
+        ),
+      )
+    )
+      return;
+    this.disableTarget = null;
+    this.notice = successor
+      ? 'User disabled and work reassigned.'
+      : 'User disabled. Unassigned work is flagged.';
+    if (self) this.auth.logout();
+  }
+
+  private moveAssignment(assignment: RelatedAssignment, previousEmail: string, successor?: any) {
+    if (assignment.entity === 'user-access') {
+      const source = this.rows.Admin.find((row: any) => row.id === assignment.recordId);
+      if (!source) return;
+      const access = source.details['Access assignment'];
+      access.Event = [access.Event].flat().filter((event: string) => event !== assignment.title);
+      if (successor) {
+        const target = (successor.details['Access assignment'] ||= {});
+        target.Event = [...new Set([...[target.Event].flat().filter(Boolean), assignment.title])];
+        target.City = [
+          ...new Set([
+            ...[target.City].flat().filter(Boolean),
+            ...[access.City].flat().filter(Boolean),
+          ]),
+        ];
+      }
+      return;
+    }
+    const previous = this.userRow(previousEmail);
+    const record =
+      assignment.entity === 'registrants'
+        ? this.regs.find((row) => row.id === assignment.recordId)
+        : this.rows[assignment.entity]?.find((row: any) => row.id === assignment.recordId);
+    if (!record) return;
+    const holder = assignment.entity === 'registrants' ? record : record.details;
+    const value = holder[assignment.field];
+    holder[assignment.field] = Array.isArray(value)
+      ? [
+          ...new Set([
+            ...value.filter((item) => item !== previousEmail && item !== previous?.values[0]),
+            ...(successor ? [successor.values[0]] : []),
+          ]),
+        ]
+      : successor?.values[0] || '';
+  }
+  assignPending(assignment: RelatedAssignment, userId: string) {
+    const user = this.rows.Admin.find(
+      (row: any) => row.id === userId && row.values[4] === 'Active',
+    );
+    if (!user) {
+      this.error = 'Choose an active successor.';
+      return;
+    }
+    const snapshot = this.reviewSnapshot();
+    const pending = this.pendingAssignments.find((item) => item.id === assignment.id);
+    if (!pending) return;
+    this.moveAssignment(assignment, pending.previousUser, user);
+    this.pendingAssignments = this.pendingAssignments.filter((item) => item.id !== assignment.id);
+    if (this.commitReview(snapshot)) this.notice = 'Pending work reassigned.';
+  }
+  recordLink(candidate: any, column: string) {
+    const row = candidate.source || candidate;
+    if (column === 'Events') {
+      this.eventClientFilter = row.details?.['Company Name'] || row.values[0];
+      this.nav('Events');
+      return;
+    }
+    const entity = column === 'DRF' ? 'DRF' : 'Assets';
+    this.relatedPanel = {
+      title: column + ' ? ' + row.values[0],
+      rows: (this.rows[entity] || [])
+        .filter((r: any) => r.details?.Event === row.values[0])
+        .map((r: any) => [r.values[0], r.values[4]]),
+    };
+  }
+  clientContacts(clientName: string): { name: string; email: string }[] {
+    const client = this.rows.Clients.find(
+      (row: any) => (row.details?.['Company Name'] || row.values[0]) === clientName,
+    );
+    const people = [
+      ...(this.rows.Contacts || [])
+        .filter(
+          (row: any) =>
+            row.values[4] === 'Active' && (row.details?.Client || row.values[3]) === clientName,
+        )
+        .map((row: any) => ({ name: row.values[0], email: row.details?.Email || row.values[1] })),
+      ...(client
+        ? [
+            { name: client.details?.['Primary Contact'], email: client.details?.Email },
+            ...(client.details?.['Secondary contacts'] || []).map((person: any) => ({
+              name: person.Name,
+              email: person.Email,
+            })),
+          ]
+        : []),
+    ];
+    return [
+      ...new Map<string, { name: string; email: string }>(
+        people
+          .filter((person) => person.name && person.email)
+          .map((person) => [String(person.email).trim().toLowerCase(), person]),
+      ).values(),
+    ];
+  }
+  addContact(field: any) {
+    this.wizard.values[field.label].push(
+      field.kind === 'managers'
+        ? { Name: '', Email: '' }
+        : { Name: '', Email: '', Designation: '', Phone: '' },
+    );
+  }
+  roleLabels(roles: string[] = []): string {
+    return roles.map((role) => this.labelRole(role)).join(', ');
+  }
+  get userAccessPreview(): string[] {
+    const role = this.wizard?.values.Roles?.[0];
+    if (!role) return [];
+    if (role === 'Super User') return this.entities.map((key) => this.m.entities[key].label);
+    const configured = this.grants[role];
+    return configured
+      ? this.m.permissions
+          .filter((permission: any) => configured.includes(permission.code))
+          .map((permission: any) => permission.label)
+      : (this.m.roleEntities[role] || []).map((key: string) => this.m.entities[key]?.label || key);
+  }
+
+  prepareShare(
+    report: string,
+    recipient: string,
+    scope: string,
+    filters: Record<string, unknown>,
+    columns: string[],
+  ) {
+    const snapshot = this.reviewSnapshot();
+    if (!columns.length) {
+      this.error = 'Select at least one report column.';
+      return false;
+    }
+    if (!/^[^ @]+@[^ @]+\.[^ @]+$/.test(recipient)) {
+      this.error = 'Choose a client contact with a valid email.';
+      return false;
+    }
+    this.shares.unshift({
+      id: crypto.randomUUID(),
+      report,
+      recipient,
+      scope,
+      filters: copy(filters),
+      columns: [...columns],
+      at: new Date().toISOString(),
+      status: 'Prepared locally - not sent',
+    });
+    if (!this.commitReview(snapshot)) return false;
+    this.notice = 'Report sharing prepared locally - not sent.';
+    return true;
+  }
+
+  private reviewSnapshot() {
+    return {
+      rows: copy(this.rows),
+      regs: copy(this.regs),
+      drafts: copy(this.drafts),
+      invitations: copy(this.invitations),
+      pendingAssignments: copy(this.pendingAssignments),
+      shares: copy(this.shares),
+      grants: copy(this.grants),
+      configs: copy(this.configs),
+      preparedNotifications: copy(this.preparedNotifications),
+      raw: localStorage.getItem('ngage-demo-data'),
+    };
+  }
+  private commitReview(
+    snapshot: ReturnType<WorkspaceService['reviewSnapshot']>,
+    registry: () => void = () => {},
+  ): boolean {
+    const restore = () => {
+      this.rows = snapshot.rows;
+      this.regs = snapshot.regs;
+      this.drafts = snapshot.drafts;
+      this.invitations = snapshot.invitations;
+      this.pendingAssignments = snapshot.pendingAssignments;
+      this.shares = snapshot.shares;
+      this.grants = snapshot.grants;
+      this.configs = snapshot.configs;
+      this.preparedNotifications = snapshot.preparedNotifications;
+      if (this.wizard?.row)
+        this.wizard.row =
+          this.rows[this.wizard.flow.entity]?.find((row: any) => row.id === this.wizard.row.id) ||
+          this.wizard.row;
+      if (this.disableTarget)
+        this.disableTarget =
+          this.rows.Admin.find((row: any) => row.id === this.disableTarget.id) ||
+          this.disableTarget;
+    };
+    if (!this.persist()) {
+      restore();
+      return false;
+    }
+    try {
+      registry();
+      return true;
+    } catch {
+      restore();
+      try {
+        if (snapshot.raw === null) localStorage.removeItem('ngage-demo-data');
+        else localStorage.setItem('ngage-demo-data', snapshot.raw);
+      } catch {}
+      this.error =
+        'Unable to save account access in browser storage. Your changes were not applied.';
+      return false;
+    }
   }
 }

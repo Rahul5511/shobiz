@@ -1,3 +1,15 @@
 :host {
   display: contents;
 }
+
+.user-view-switch {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+ul {
+  padding-left: 20px;
+}
+li {
+  margin: 8px 0;
+}

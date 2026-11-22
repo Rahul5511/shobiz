@@ -12,7 +12,38 @@
       client representatives; event audience contacts are managed separately.
     </div>
   }
+  @if (s.key === 'Events') {
+    <section class="card padded event-list-filters">
+      <label
+        >Client<select [(ngModel)]="s.eventClientFilter">
+          <option value="">All clients</option>
+          @for (client of s.rows.Clients; track client.id) {
+            <option [value]="client.details?.['Company Name'] || client.values[0]">
+              {{ client.values[0] }}
+            </option>
+          }
+        </select></label
+      >
+      <label
+        >Stage<select [(ngModel)]="s.eventStageFilter">
+          <option value="">All stages</option>
+          <option>Pitch</option>
+          <option>Planning</option>
+          <option>Confirmed</option>
+        </select></label
+      ><button (click)="s.eventClientFilter = ''; s.eventStageFilter = ''; table.clear()">
+        Clear event filters</button
+      ><button (click)="table.sort(5)">Sort by Event Date</button>
+    </section>
+  }
   <app-record-card
+    #table
+    [exportContext]="s.exportContext"
+    [userManagement]="s.key === 'Admin'"
+    [sortIndex]="s.key === 'Events' ? 5 : 0"
+    (disableUser)="s.beginDisable($event)"
+    (enableUser)="s.enableUser($event)"
+    (link)="s.recordLink($event.row, $event.column)"
     [title]="s.m.entities[s.key].label"
     [exportAllowed]="s.canExportList(s.key)"
     [exportReason]="s.exportReason(s.key)"
@@ -37,4 +68,16 @@
     (qr)="showQr($event)"
     (contacts)="s.sample($event)"
   />
+  @if (s.relatedPanel; as panel) {
+    <section class="card padded">
+      <h2>{{ panel.title }}</h2>
+      <p>Read-only related information.</p>
+      @for (row of panel.rows; track $index) {
+        <p>{{ row.join(' - ') }}</p>
+      } @empty {
+        <p>No related records saved for this event.</p>
+      }
+      <button (click)="s.relatedPanel = null">Close</button>
+    </section>
+  }
 }

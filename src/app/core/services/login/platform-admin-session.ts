@@ -22,7 +22,19 @@ export class AuthService {
       ? this.api.changePassword(user.email, current, next, confirmation)
       : 'Sign in first.';
   }
-  upsertDemoUser(email: string, name: string, roles: string[], method: string): void {
-    this.api.upsertDemoUser(email, name, roles, method);
+  upsertDemoUser(
+    email: string,
+    name: string,
+    roles: string[],
+    method: string,
+    status?: string,
+  ): void {
+    this.api.upsertDemoUser(email, name, roles, method, status);
+  }
+  setUserStatus(email: string, status: string): void {
+    this.api.setUserStatus(email, status);
+  }
+  renameRole(previous: string, next: string): void {
+    this.api.renameRole(previous, next);
   }
 }

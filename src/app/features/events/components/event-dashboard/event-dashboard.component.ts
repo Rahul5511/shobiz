@@ -1,4 +1,12 @@
-import { ViewEncapsulation, Component, inject, Input, ElementRef, ViewChild } from '@angular/core';
+import {
+  ViewEncapsulation,
+  Component,
+  inject,
+  Input,
+  ElementRef,
+  ViewChild,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { WorkspaceService } from '../../../../shared/workspace/data-access/workspace.service';
@@ -27,6 +35,7 @@ type EventData = { log: LogEntry[]; executives: Executive[]; schedule?: Schedule
 export class EventDashboardComponent {
   @Input() detail = false;
   s = inject(WorkspaceService);
+  private readonly cdr = inject(ChangeDetectorRef);
   @ViewChild('requirementsRemarks') requirementsRemarks?: ElementRef<HTMLTextAreaElement>;
   ngAfterViewInit() {
     if (this.detail && this.s.requirementsFocus) {
@@ -108,6 +117,7 @@ export class EventDashboardComponent {
     return (
       this.canReadLog &&
       [
+        'Super User',
         'Account Manager',
         'Client Servicing Manager',
         'AG Manager',
@@ -117,7 +127,12 @@ export class EventDashboardComponent {
     );
   }
   get canManageExecutives() {
-    return this.s.eventEditor && !!this.eventRow;
+    return this.s.role !== 'Super User' && this.s.eventEditor && !!this.eventRow;
+  }
+  get daysToEvent() {
+    const start = this.details['Event Start Date'];
+    const today = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' });
+    return start ? Math.ceil((Date.parse(start) - Date.parse(today)) / 86400000) : null;
   }
   get calling() {
     return this.s.role === 'Telecaller';
@@ -167,7 +182,10 @@ export class EventDashboardComponent {
       ['Pending approval', this.pending.length],
       ['Declined', rows.filter((r) => ['Declined', 'Rejected'].includes(r.approval)).length],
       ['Confirmed', rows.filter((r) => r.confirmation === 'Confirmed').length],
-      ['Registered and attended', rows.filter((r) => r.attendance === 'Checked in').length],
+      ...(String(this.details['Event Start Date'] || '') <=
+      new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' })
+        ? [['Registered and attended', rows.filter((r) => r.attendance === 'Checked in').length]]
+        : []),
     ];
   }
   get pending() {
@@ -375,6 +393,7 @@ export class EventDashboardComponent {
       this.error = 'Could not read the attachment.';
     } finally {
       this.busy = false;
+      this.cdr.markForCheck();
     }
   }
   download(file: { name: string; data: string }) {
@@ -385,20 +404,21 @@ export class EventDashboardComponent {
     link.click();
   }
   schedule() {
-    if (!this.s.eventEditor || !this.time || !this.eventRow) return;
+    if (this.s.role === 'Super User' || !this.s.eventEditor || !this.time || !this.eventRow) return;
     this.save(this.eventRow.id, {
       ...this.state,
       schedule: { frequency: this.frequency, time: this.time, format: this.format },
     });
   }
   preview() {
-    if (!this.s.eventEditor || !this.eventRow) return;
+    if (this.s.role === 'Super User' || !this.s.eventEditor || !this.eventRow) return;
     try {
       exportTable(
         this.state.schedule?.format || this.format,
         this.eventName + ' registration report',
         ['Metric', 'Count'],
         this.counts,
+        this.s.exportContext,
       );
     } catch (error) {
       this.error = String(error);

@@ -1,4 +1,5 @@
 import { WORKSPACE_UI_ACTIONS } from '../../models/workspace-ui-actions';
+import { FormsModule } from '@angular/forms';
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 
 import { WorkspaceService } from '../../data-access/workspace.service';
@@ -8,7 +9,7 @@ import { RecordCardComponent } from '../../../components/platform-admin/ui.compo
   changeDetection: ChangeDetectionStrategy.Eager,
   selector: 'app-workspace-record-list',
   standalone: true,
-  imports: [RecordCardComponent],
+  imports: [RecordCardComponent, FormsModule],
   templateUrl: './record-list.html',
   styleUrl: './record-list.css',
 })

@@ -17,58 +17,41 @@
     >
       <app-icon name="dashboard" /><span>Dashboard</span>
     </button>
-    @for (group of s.menus; track group) {
-      <section class="nav-group" [class.expanded]="s.openSection === group.title">
+    @for (group of s.menus; track group.title) {
+      @if (group.key) {
         <button
-          class="nav-heading"
-          [title]="group.title"
+          class="navitem"
           [attr.aria-label]="group.title"
-          (click)="s.toggleSection(group.title)"
-          [attr.aria-expanded]="s.openSection === group.title"
+          [class.active]="
+            group.key === 'MasterData' ? s.m.masters.includes(s.key) : s.key === group.key
+          "
+          (click)="group.key === 'MasterData' ? s.openMaster() : s.nav(group.key)"
         >
-          <app-icon [name]="s.groupIcon(group.title)" /><span>{{ group.title }}</span
-          ><app-icon name="chevron" class="nav-chevron" />
+          <app-icon
+            [name]="group.key === 'MasterData' ? 'settings' : s.itemIcon(group.key)"
+          /><span>{{ group.title }}</span>
         </button>
-        @if (s.openSection === group.title) {
-          <div class="nav-children">
-            @if (group.title === 'Reports & Tracking') {
-              <button
-                class="navitem sub"
-                [class.active]="s.view === 'role-reports'"
-                (click)="s.openRoleReports()"
-              >
-                <app-icon name="reports" /><span>Role Reports</span>
-              </button>
-            }
-            @for (k of group.keys; track k) {
-              <button class="navitem sub" [class.active]="s.key === k" (click)="s.nav(k)">
-                <app-icon [name]="s.itemIcon(k)" /><span>{{ s.m.entities[k].label }}</span>
-              </button>
-            }
-          </div>
-        }
-      </section>
-    }
-    @if (s.role === 'Super User') {
-      <section class="nav-group" [class.expanded]="s.openSection === 'Permission Settings'">
-        <button
-          class="nav-heading"
-          title="Permission Settings"
-          aria-label="Permission Settings"
-          (click)="s.toggleSection('Permission Settings')"
-          [attr.aria-expanded]="s.openSection === 'Permission Settings'"
-        >
-          <app-icon name="access" /><span>Permission Settings</span
-          ><app-icon name="chevron" class="nav-chevron" />
-        </button>
-        @if (s.openSection === 'Permission Settings') {
-          <div class="nav-children">
-            <button class="navitem sub" (click)="s.openTask('RolePermissions')">
-              <app-icon name="access" /><span>Role Permissions</span>
-            </button>
-          </div>
-        }
-      </section>
+      } @else {
+        <section class="nav-group" [class.expanded]="s.openSection === group.title">
+          <button
+            class="nav-heading"
+            (click)="s.toggleSection(group.title)"
+            [attr.aria-expanded]="s.openSection === group.title"
+          >
+            <app-icon name="access" /><span>{{ group.title }}</span
+            ><app-icon name="chevron" />
+          </button>
+          @if (s.openSection === group.title) {
+            <div class="nav-children">
+              @for (key of group.keys; track key) {
+                <button class="navitem sub" [class.active]="s.key === key" (click)="s.nav(key)">
+                  {{ key === 'Admin' ? 'Users' : 'Roles' }}
+                </button>
+              }
+            </div>
+          }
+        </section>
+      }
     }
   </aside>
   <div class="workspace" [attr.inert]="guideOpen ? '' : null">
@@ -221,6 +204,9 @@
       @if (s.view === 'password') {
         <app-change-password-page [context]="this" />
       }
+      @if (s.view === 'reports') {
+        <app-reports-page />
+      }
       @if (s.view === 'report') {
         @if (s.key === 'AttendanceReport') {
           <app-registration-vs-attendance-page />
@@ -229,7 +215,9 @@
         }
       }
       @if (['list', 'form', 'detail'].includes(s.view)) {
-        @if (s.wizard?.key === 'RolePermissions') {
+        @if (s.m.masters.includes(s.key)) {
+          <app-master-data-page />
+        } @else if (s.wizard?.key === 'RolePermissions') {
           <app-role-permissions-page />
         } @else if (s.wizard?.key === 'UserRoleGrant') {
           <app-user-credentials-role-assignment-page />
@@ -249,39 +237,6 @@
             }
             @case ('Alerts') {
               <app-notifications-page />
-            }
-            @case ('Countries') {
-              <app-countries-page />
-            }
-            @case ('States') {
-              <app-states-page />
-            }
-            @case ('Districts') {
-              <app-districts-page />
-            }
-            @case ('Cities') {
-              <app-cities-page />
-            }
-            @case ('Industries') {
-              <app-industries-page />
-            }
-            @case ('SubIndustries') {
-              <app-sub-industries-page />
-            }
-            @case ('Segments') {
-              <app-segments-page />
-            }
-            @case ('Departments') {
-              <app-departments-page />
-            }
-            @case ('Designations') {
-              <app-designations-page />
-            }
-            @case ('ProfileLevels') {
-              <app-profile-levels-page />
-            }
-            @case ('CallStatuses') {
-              <app-call-statuses-page />
             }
           }
         }

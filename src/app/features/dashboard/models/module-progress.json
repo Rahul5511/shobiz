@@ -1,0 +1,102 @@
+[
+  {
+    "eventId": "review-demo-event-1",
+    "label": "DB records delivered",
+    "done": 200,
+    "target": 300
+  },
+  {
+    "eventId": "review-demo-event-1",
+    "label": "Response invitations",
+    "done": 162,
+    "target": 225,
+    "opened": 105
+  },
+  {
+    "eventId": "review-demo-event-1",
+    "label": "Confirmations",
+    "done": 45,
+    "target": 75
+  },
+  {
+    "eventId": "review-demo-event-1",
+    "label": "Calling connected",
+    "done": 60,
+    "target": 100
+  },
+  {
+    "eventId": "review-demo-event-2",
+    "label": "DB records delivered",
+    "done": 200,
+    "target": 300
+  },
+  {
+    "eventId": "review-demo-event-2",
+    "label": "Response invitations",
+    "done": 162,
+    "target": 225,
+    "opened": 105
+  },
+  {
+    "eventId": "review-demo-event-2",
+    "label": "Confirmations",
+    "done": 45,
+    "target": 75
+  },
+  {
+    "eventId": "review-demo-event-2",
+    "label": "Calling connected",
+    "done": 60,
+    "target": 100
+  },
+  {
+    "eventId": "review-demo-event-3",
+    "label": "DB records delivered",
+    "done": 200,
+    "target": 300
+  },
+  {
+    "eventId": "review-demo-event-3",
+    "label": "Response invitations",
+    "done": 162,
+    "target": 225,
+    "opened": 105
+  },
+  {
+    "eventId": "review-demo-event-3",
+    "label": "Confirmations",
+    "done": 45,
+    "target": 75
+  },
+  {
+    "eventId": "review-demo-event-3",
+    "label": "Calling connected",
+    "done": 60,
+    "target": 100
+  },
+  {
+    "eventId": "review-demo-event-4",
+    "label": "DB records delivered",
+    "done": 200,
+    "target": 300
+  },
+  {
+    "eventId": "review-demo-event-4",
+    "label": "Response invitations",
+    "done": 162,
+    "target": 225,
+    "opened": 105
+  },
+  {
+    "eventId": "review-demo-event-4",
+    "label": "Confirmations",
+    "done": 45,
+    "target": 75
+  },
+  {
+    "eventId": "review-demo-event-4",
+    "label": "Calling connected",
+    "done": 60,
+    "target": 100
+  }
+]

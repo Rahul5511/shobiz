@@ -1,4 +1,4 @@
-import { ViewEncapsulation, Component, computed, inject, signal } from '@angular/core';
+import { ViewEncapsulation, Component, computed, inject, signal, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { WorkspaceService } from '../../../../shared/workspace/data-access/workspace.service';
@@ -14,7 +14,15 @@ import {
   ReportFact,
 } from './role-reports';
 
-type Filters = Record<Dimension | 'from' | 'to' | 'search' | 'more', string>;
+export type Filters = Record<Dimension | 'from' | 'to' | 'search' | 'more', string>;
+export interface RoleReportState {
+  filters: Filters;
+  grain: string;
+  breakdown: Dimension;
+  page: number;
+  pageSize: number;
+  columns: boolean[];
+}
 const emptyFilters: Filters = {
   client: '',
   event: '',
@@ -38,6 +46,54 @@ const emptyFilters: Filters = {
   styleUrl: './role-reports.component.css',
 })
 export class RoleReportsComponent {
+  @Input() embedded = false;
+  @Input() set restoredState(state: RoleReportState | null) {
+    if (!state) return;
+    this.filters.set({ ...state.filters });
+    this.grain.set(state.grain);
+    this.breakdown.set(state.breakdown);
+    this.page.set(state.page);
+    this.pageSize.set(state.pageSize);
+    this.columnFlags = [...state.columns];
+  }
+  get snapshot(): RoleReportState {
+    return {
+      filters: { ...this.filters() },
+      grain: this.grain(),
+      breakdown: this.breakdown(),
+      page: this.page(),
+      pageSize: this.pageSize(),
+      columns: [...this.columnFlags],
+    };
+  }
+  @Input() set reportKey(value: string) {
+    if (value) this.select(value);
+  }
+  columnFlags = [true, true, true];
+  get columnHeaders() {
+    return ['Period (' + this.grain() + ')', dimensions[this.breakdown()], 'Records'];
+  }
+  get columnIndexes() {
+    return this.columnFlags
+      .map((enabled, index) => (enabled ? index : -1))
+      .filter((index) => index >= 0);
+  }
+  rowValues(row: { period: string; group: string; count: number }) {
+    return [row.period, row.group || 'Unspecified', row.count];
+  }
+  get scopeTitle() {
+    const event = this.filters().event;
+    if (event) return event;
+    const events = new Set(
+      this.filtered()
+        .map((row) => row.event)
+        .filter(Boolean),
+    );
+    return events.size
+      ? 'All events: ' + events.size + ' events'
+      : 'All matching records: ' + this.filtered().length;
+  }
+
   s = inject(WorkspaceService);
   catalog = [
     ...(audienceAccess[this.s.role] || []).map((key) => ({
@@ -140,14 +196,19 @@ export class RoleReportsComponent {
   }
   download(all: boolean) {
     const rows = all ? this.groups() : this.pageRows();
-    if (this.invalidRange() || !rows.length) return;
+    if (this.invalidRange() || !rows.length || !this.columnIndexes.length) return;
     this.error = '';
     try {
       exportTable(
         this.format,
         `${this.s.roleName} ${this.current().title} ${all ? 'all matching rows' : 'page ' + this.page()}`,
-        ['Period (' + this.grain() + ')', dimensions[this.breakdown()], 'Records'],
-        rows.map((row) => [row.period, row.group || 'Unspecified', row.count]),
+        this.columnIndexes.map((index) => this.columnHeaders[index]),
+        rows.map((row) => this.columnIndexes.map((index) => this.rowValues(row)[index])),
+        {
+          user: this.s.auth.session?.email || 'Unrecorded',
+          scope: this.scopeTitle,
+          filters: { ...this.filters(), period: this.grain(), breakdown: this.breakdown() },
+        },
       );
     } catch (error) {
       this.error = error instanceof Error ? error.message : 'Export failed.';

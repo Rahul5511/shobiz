@@ -1,4 +1,4 @@
-/** Exact Platform Admin capability map supplied by PLATFORM_ADMIN_UI_FLOW.md.
+/** Platform Admin capabilities, including the approved design-review changes.
  * Configured permission checkboxes are demo data and never change this navigation policy.
  */
 export const PLATFORM_ADMIN_ROLE = 'Super User';
@@ -24,10 +24,10 @@ export const PLATFORM_ADMIN_ENTITIES: readonly string[] = [
 ];
 export const PLATFORM_ADMIN_WORKFLOWS: readonly string[] = [
   'RoleBuilder',
-  'UserRoleGrant',
   'Admin',
   'Clients',
-  'RolePermissions',
+  'Events',
+  'Requirements',
   'Countries',
   'States',
   'Districts',

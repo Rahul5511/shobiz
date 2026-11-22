@@ -1,3 +1,67 @@
-<app-workspace-record-list />
-<app-workspace-record-form />
-<app-workspace-record-detail></app-workspace-record-detail>
+@if (s.view === 'list') {
+  <section class="card padded">
+    <div class="user-view-switch">
+      <button (click)="s.userView = 'list'" [attr.aria-pressed]="s.userView === 'list'">List</button
+      ><button (click)="s.userView = 'hierarchy'" [attr.aria-pressed]="s.userView === 'hierarchy'">
+        Hierarchy
+      </button>
+    </div>
+    @if (s.invitations[0]; as invitation) {
+      <p role="status">
+        Latest invitation for {{ invitation.name }}: {{ invitation.status }}. Roles:
+        {{ s.roleLabels(invitation.roles) }}.
+      </p>
+    }
+    @if (s.pendingAssignments.length) {
+      <h3>Work awaiting reassignment</h3>
+      <ul>
+        @for (item of s.pendingAssignments; track $index) {
+          <li>
+            {{ item.kind }}: {{ item.title
+            }}<label
+              >Assign to<select [(ngModel)]="s.pendingSuccessors[item.id]">
+                <option value="">Select active user</option>
+                @for (user of s.successors; track user.id) {
+                  <option [value]="user.id">{{ user.values[0] }}</option>
+                }
+              </select></label
+            ><button
+              [disabled]="!s.pendingSuccessors[item.id]"
+              (click)="s.assignPending(item, s.pendingSuccessors[item.id])"
+            >
+              Assign
+            </button>
+          </li>
+        }
+      </ul>
+    }
+  </section>
+  @if (s.userView === 'hierarchy') {
+    <section class="card padded">
+      <h2>User hierarchy</h2>
+      <label>Search hierarchy<input [(ngModel)]="s.userHierarchyQuery" /></label>
+      @for (creator of s.creatorGroups; track creator) {
+        <section>
+          <h3>Added by {{ creator }}</h3>
+          <ul>
+            @for (user of s.addedByUsers(creator); track user.id) {
+              <li>
+                {{ user.values[0] }} - {{ user.details.Roles.join(', ') }} - {{ user.values[4] }}
+                <button (click)="s.viewRecord(user)">View</button>
+              </li>
+            }
+          </ul>
+        </section>
+      } @empty {
+        <p>No matching users.</p>
+      }
+    </section>
+  }
+}
+@if (s.userView === 'list' || s.view !== 'list') {
+  <app-workspace-record-list />
+}
+<app-workspace-record-form /><app-workspace-record-detail />
+@if (s.disableTarget) {
+  <app-disable-user />
+}

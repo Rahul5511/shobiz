@@ -45,6 +45,34 @@ describe('LoginService dummy login', () => {
     await invalid;
   });
 
+  it('keeps disabled built-in users disabled when another account is updated and after reload', async () => {
+    localStorage.clear();
+    const api = new LoginService();
+    api.upsertDemoUser('dbhead@demo.local', 'DB Head', ['DB Head'], 'Email & Password', 'Disabled');
+    api.upsertDemoUser(
+      'accountmanager@demo.local',
+      'Account Manager',
+      ['Account Manager'],
+      'Email & Password',
+    );
+    const restored = new LoginService();
+    expect(restored.users.find((user) => user.email === 'dbhead@demo.local')?.status).toBe(
+      'Disabled',
+    );
+    const rejected = expect(
+      firstValueFrom(restored.login({ email: 'dbhead@demo.local', password: 'Demo@123' })),
+    ).rejects.toEqual(new AuthApiError('invalid-credentials'));
+    await vi.advanceTimersByTimeAsync(650);
+    await rejected;
+    restored.setUserStatus('dbhead@demo.local', 'Active');
+    const accepted = firstValueFrom(
+      restored.login({ email: 'dbhead@demo.local', password: 'Demo@123' }),
+    );
+    await vi.advanceTimersByTimeAsync(650);
+    expect((await accepted).role).toBe('DB Head');
+    localStorage.clear();
+  });
+
   it('uses the first assigned role and changes the demo password only in this service session', async () => {
     localStorage.clear();
     const api = new LoginService();

@@ -1,19 +1,20 @@
-<div class="page-title">
-  <div>
-    <h1>{{ s.roleName }} Reports</h1>
-    <p>Filter records, compare periods and export the results.</p>
+@if (!embedded) {
+  <div class="page-title">
+    <h1>{{ current()?.title }} - {{ scopeTitle }}</h1>
   </div>
-</div>
+}
 @if (catalog.length) {
   <section class="record-card reports-controls">
     <div class="report-fields">
-      <label
-        >Report<select [ngModel]="selected()" (ngModelChange)="select($event)">
-          @for (report of catalog; track report) {
-            <option [value]="report.key">{{ report.title }}</option>
-          }
-        </select></label
-      >
+      @if (!embedded) {
+        <label
+          >Report<select [ngModel]="selected()" (ngModelChange)="select($event)">
+            @for (report of catalog; track report) {
+              <option [value]="report.key">{{ report.title }}</option>
+            }
+          </select></label
+        >
+      }
       <label
         >Period<select [ngModel]="grain()" (ngModelChange)="grain.set($event); page.set(1)">
           <option value="daily">Daily</option>
@@ -77,6 +78,18 @@
       <p class="alert error" role="alert">The From date must be on or before the To date.</p>
     }
   </section>
+  <p class="scope-line">{{ current().title }} - {{ scopeTitle }}</p>
+  <fieldset class="card padded">
+    <legend>Columns</legend>
+    @for (header of columnHeaders; track $index; let i = $index) {
+      <label class="checkbox-label"
+        ><input type="checkbox" [(ngModel)]="columnFlags[i]" />{{ header }}</label
+      >
+    }
+  </fieldset>
+  @if (!columnIndexes.length) {
+    <p role="alert">Select at least one column to display or export.</p>
+  }
   @if (filtered().length) {
     <div class="report-charts">
       <section class="card padded">
@@ -134,7 +147,7 @@
         </button>
         <button
           class="primary"
-          [disabled]="!groups().length"
+          [disabled]="!groups().length || !columnIndexes.length"
           (click)="download(true)"
           title="Export all matching rows across pages"
         >
@@ -149,22 +162,24 @@
       <table>
         <thead>
           <tr>
-            <th scope="col">Period</th>
-            <th scope="col">{{ dimensions[breakdown()] }}</th>
-            <th scope="col">Records</th>
+            @for (index of columnIndexes; track index) {
+              <th scope="col">{{ columnHeaders[index] }}</th>
+            }
           </tr>
         </thead>
         <tbody>
           @for (row of pageRows(); track row) {
             <tr>
-              <td>{{ row.period }}</td>
-              <td>{{ row.group }}</td>
-              <td>{{ row.count }}</td>
+              @for (index of columnIndexes; track index) {
+                <td>{{ rowValues(row)[index] }}</td>
+              }
             </tr>
           }
           @if (!pageRows().length) {
             <tr>
-              <td colspan="3" class="empty">No matching report rows.</td>
+              <td [attr.colspan]="columnIndexes.length || 1" class="empty">
+                No matching report rows.
+              </td>
             </tr>
           }
         </tbody>

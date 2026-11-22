@@ -1,0 +1,24 @@
+dialog {
+  margin: auto;
+  width: min(560px, calc(100vw - 32px));
+  max-height: 80vh;
+  overflow: auto;
+  padding: 24px;
+  background: var(--white);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+dialog::backdrop {
+  background: #0008;
+}
+footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+ul {
+  padding-left: 20px;
+  margin: 16px 0;
+}

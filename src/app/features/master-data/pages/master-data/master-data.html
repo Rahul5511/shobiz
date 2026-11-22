@@ -1,0 +1,44 @@
+<section class="card padded master-selector">
+  <label
+    >Master Data<select [ngModel]="s.key" (ngModelChange)="s.nav($event)">
+      @for (key of s.m.masters; track key) {
+        <option [value]="key">{{ s.m.entities[key].label }}</option>
+      }
+    </select></label
+  >
+</section>
+@switch (s.key) {
+  @case ('Countries') {
+    <app-countries-page />
+  }
+  @case ('States') {
+    <app-states-page />
+  }
+  @case ('Districts') {
+    <app-districts-page />
+  }
+  @case ('Cities') {
+    <app-cities-page />
+  }
+  @case ('Industries') {
+    <app-industries-page />
+  }
+  @case ('SubIndustries') {
+    <app-sub-industries-page />
+  }
+  @case ('Segments') {
+    <app-segments-page />
+  }
+  @case ('Departments') {
+    <app-departments-page />
+  }
+  @case ('Designations') {
+    <app-designations-page />
+  }
+  @case ('ProfileLevels') {
+    <app-profile-levels-page />
+  }
+  @case ('CallStatuses') {
+    <app-call-statuses-page />
+  }
+}

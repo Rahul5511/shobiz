@@ -1,20 +1,32 @@
 # Platform Admin
 
-The `/app` workspace adapts `design-source/source` and `PLATFORM_ADMIN_UI_FLOW.md`.
-Sign in with `superadmin@demo.local` / `Demo@123`. The stored role is `Super User`.
+The `/app` workspace adapts the supplied design and Platform Admin flow, with the approved Word review changes. Demo sign-in: `superadmin@demo.local` / `Demo@123`. The internal Platform Admin role remains `Super User`.
 
-- `layouts/platform-admin` owns the header, sidebar, theme settings, guide and account context. Navigation inside `/app` still follows the existing in-workspace view model; no URLs or actions changed during screen separation.
-- `shared/workspace/data-access/workspace.service` owns the shared admin-domain state and browser draft/record persistence. It still has exactly one provider on the admin shell. `shared/workspace/data/model.ts` composes the unchanged supplied JSON. Keep the form schemas and display content when replacing persistence with feature APIs.
-- Each screen has its own component, template and CSS folder under `features/<feature>/pages/<screen>`: Dashboard; Clients; Events and registration QR; Users, Roles & permissions, Role Permissions and credentials assignment; all 11 master-data pages; Reports, Registration vs Attendance and Role Reports; Notifications; Profile and Change Password. Feature root files expose their screen components for shell composition.
-- Event analytics lives in `features/events/components/event-dashboard`; Role Reports lives in `features/reports-and-tracking/pages/role-reports`. Both have separate HTML, CSS and TypeScript files; their existing screen-only CSS retains the native admin scope. Public registration, recovery and the legacy Events page also use external HTML/CSS files. Common theme rules remain shared.
-- Reused list, form, review, record-detail and operational-report renderers live in `shared/workspace/components`. They render the same shared state and unchanged templates. Async QR/upload actions delegate to the shell so view changes do not destroy their change detector. Generic tables, icons and exports remain under `shared`.
-- Extracted page/renderer components use `ChangeDetectionStrategy.Eager` to preserve the former inline template's response to the existing mutable workspace state. The shell keeps its original change-detection behavior.
-- The own-account pages receive the same typed shell context, preserving unsaved profile state and synchronization with the header. The standalone public-registration page moved to `features/events/pages/public-registration`.
-- `core/permissions/platform-admin-policy.ts` is the exact documented capability map used by routing and workspace commands. Saving permission checkboxes updates demo configuration, independently of this navigation policy.
-- `core/services/login/LoginService` is the authentication adapter; `AuthSession` remains the sole live session owner. The workspace compatibility adapter delegates to them. Password changes last for the running service session; recovery and SSO are simulated.
-- `layouts/platform-admin/platform-admin.css` preserves the reference stylesheet inside native CSS `@scope (.platform-admin)`, including themes, responsive and print rules. It also restores the reference browser margins within Tailwind's reset. It does not style other application roots.
-- Public registration URLs open the supplied standalone public registration view with its own workspace state provider.
+## Screens and architecture
 
-Run `npm.cmd run build` and `npm.cmd test -- --watch=false`. The tests cover login/session behavior, the guarded dashboard, read-only events, onboarding and separate access activation, drafts, validation, permission saves, active location options, report masking/date states and exports across pages.
+- The sidebar contains Dashboard, Clients, Events, Reports, Manage Access (Users and Roles), and Master Data. Notifications and account actions remain in the header. Master Data selects among the existing 11 screens through one dropdown.
+- Screens keep separate TypeScript, HTML and CSS files under their feature folders. The shell owns navigation within `/app`; shared record forms, lists and reviews reuse the existing schema renderer. Styles remain scoped to the admin workspace or individual component.
+- The shell provides one `WorkspaceService` for shared records, drafts, assignments and browser persistence. Public registration retains its standalone provider. Async QR/upload actions continue to delegate to the shell.
+- Mutable workspace renderers use `ChangeDetectionStrategy.Eager`; analytics use local Signals where already established. `AuthSession` owns the live session, with `LoginService` providing the dummy account adapter.
+- `core/permissions/platform-admin-policy.ts` controls navigation and actions. The approved Admin changes enable event creation/editing, Requirements Log writes and visible attendee details. Executive assignment and scheduled reporting remain unavailable to Admin.
 
-APIs, real email delivery and production authentication are not connected. Live-browser visual verification was blocked by Computer Use's inability to determine the Chrome URL; automated Angular DOM and behavior tests run locally.
+## Review behavior
+
+- Dashboard defaults to all events, with Client/Event/City/date filters and event drilldown. It includes five KPIs, stage/status and Pax comparisons, registration trends, approval timing and outcomes, ongoing/upcoming events, and pending approvals waiting at least 72 hours. Missing timestamps remain unknown. Module progress is explicitly dummy, event-scoped data with coverage shown.
+- Clients support searchable Account Manager selection, repeated secondary contacts and additional CS Managers. CS notification receipts are prepared locally. Events provide stage/client filters, start-date sorting, expandable cities and read-only DRF/Assets context.
+- Users combine identity, roles, event/city assignments and access preview. Existing emails match case-insensitively and gain roles without creating duplicate users. Lists/exports mask user email; report attendee PII remains visible. Disable supports reassignment or pending-work flags. The fixed Admin role and last active Admin are protected.
+- All assigned roles are stored, while sign-in continues using the first role. Editing one's active role requires signing in again. Custom role renames preserve assigned user references and account status.
+- Reports consolidate seven choices with summary/record views, filters, selected columns, pagination and export metadata history. Exports cover every matching record, not only the visible page. Sharing is prepared only for a matching contact of the selected client. Export history records preparation or failure, not confirmation that a file was saved.
+- Removed client/event/user form fields stay in saved records. Legacy access-assignment drafts migrate to the combined user flow. Failed storage writes roll back the affected records and local invitation/notification changes.
+
+## Deferred integration
+
+The proposed 22-feature None/View/Manage model, new module scopes, PII settings, Can-add switches, role types, copy-role and licensing controls are deferred until the v0.2 permission specification is supplied. Existing permission definitions and first-role sign-in semantics remain in use.
+
+Supplied JSON and browser storage remain the data sources. Seed additions do not reset existing browser records. APIs, production authentication, real invitations, notification delivery and report sending are not connected. Login, recovery, public registration and theme behavior remain in place.
+
+## Validation
+
+Run `npm.cmd run build` and `npm.cmd test -- --watch=false`. Tests cover authentication/status persistence, approved capabilities, user onboarding and reassignment, protected Admin access, data/draft migration, rollback on storage failures, event log permissions, analytics boundaries, report filters/columns and exports.
+
+Live-browser visual verification was unavailable because the Computer Use browser host was unavailable. Automated Angular DOM and behavior tests provide local verification; no live-browser visual pass is claimed.

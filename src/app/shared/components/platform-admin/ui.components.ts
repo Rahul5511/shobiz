@@ -1,3 +1,4 @@
+import { ExportContext } from '../../workspace/models/review.models';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
@@ -84,9 +85,9 @@ export class IconComponent {
           </tr>
         </thead>
         <tbody>
-          @for (row of data; track row) {
+          @for (row of data; track $index) {
             <tr>
-              @for (v of row; track v) {
+              @for (v of row; track $index) {
                 <td>{{ display(v) }}</td>
               }
             </tr>
@@ -101,15 +102,16 @@ export class IconComponent {
     </div>`,
 })
 export class DataTableComponent {
+  @Input() exportContext?: ExportContext;
   @Input() exportable = false;
   @Input() exportAllowed = true;
   @Input() exportReason = 'Export is restricted for this role.';
   @Input() exportTitle = 'Report';
   error = '';
   doExport(format: string) {
-    if (!this.exportAllowed) return;
+    if (!this.exportAllowed || !this.data.length || !this.headers.length) return;
     try {
-      exportTable(format, this.exportTitle, this.headers, this.data);
+      exportTable(format, this.exportTitle, this.headers, this.data, this.exportContext);
       this.error = '';
     } catch (e: any) {
       this.error = e.message;
@@ -226,15 +228,29 @@ export class DataTableComponent {
           </tr>
         </thead>
         <tbody>
-          @for (r of visible; track r) {
+          @for (r of visible; track r.id || $index) {
             <tr>
-              @for (v of r.values; track v; let i = $index) {
+              @for (v of r.values; track $index; let i = $index) {
                 <td>
                   @if (i === 4) {
                     <span class="status" [class.pending]="pending(v)">{{ v }}</span>
                   }
                   @if (i !== 4) {
-                    <span>{{ v }}</span>
+                    @if (['Events', 'DRF', 'Assets'].includes(columns[i])) {
+                      <button (click)="link.emit({ row: r, column: columns[i] })">{{ v }}</button>
+                    } @else if (event && i === 0) {
+                      <button (click)="view.emit(r)">{{ v }}</button>
+                      @if (r.details?.['Event Type'] === 'Multi City') {
+                        <button
+                          [attr.aria-expanded]="expanded.has(r.id)"
+                          (click)="toggleCities(r.id)"
+                        >
+                          Cities
+                        </button>
+                      }
+                    } @else {
+                      <span>{{ v }}</span>
+                    }
                   }
                 </td>
               }
@@ -247,7 +263,30 @@ export class DataTableComponent {
                     (click)="view.emit(r)"
                   >
                     <app-icon name="view" />
+                    @if (event) {
+                      <span>View</span>
+                    }
                   </button>
+                  @if (userManagement) {
+                    @if (r.values[4] === 'Disabled') {
+                      <button (click)="enableUser.emit(r)">Enable</button>
+                    } @else {
+                      <button
+                        (click)="disableUser.emit(r)"
+                        [disabled]="r.lastAdmin"
+                        [title]="
+                          r.lastAdmin
+                            ? 'At least one Platform Admin must remain active'
+                            : 'Disable and reassign'
+                        "
+                      >
+                        Disable
+                      </button>
+                    }
+                  }
+                  @if (r.locked) {
+                    <span>Locked</span>
+                  }
                   @if (requirements) {
                     <button
                       class="icon-btn"
@@ -266,9 +305,12 @@ export class DataTableComponent {
                       (click)="edit.emit(r)"
                     >
                       <app-icon name="edit" />
+                      @if (event) {
+                        <span>Edit</span>
+                      }
                     </button>
                   }
-                  @if (editable && ['Draft', 'New'].includes(r.values[4])) {
+                  @if (editable && !r.locked && ['Draft', 'New'].includes(r.values[4])) {
                     <button
                       class="icon-btn danger"
                       title="Delete draft"
@@ -295,7 +337,7 @@ export class DataTableComponent {
                       aria-label="Public registration link and QR"
                       (click)="qr.emit(r)"
                     >
-                      <app-icon name="qr" />
+                      <app-icon name="qr" /><span>Registration QR</span>
                     </button>
                   }
                   @if (sample) {
@@ -321,6 +363,35 @@ export class DataTableComponent {
                 </div>
               </td>
             </tr>
+          }
+          @if (event) {
+            @for (row of visible; track row.id) {
+              @if (expanded.has(row.id)) {
+                <tr>
+                  <td [attr.colspan]="columns.length + 1">
+                    <b>{{ row.values[0] }} - cities</b>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>City</th>
+                          <th>Start</th>
+                          <th>End</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @for (city of row.cities; track city) {
+                          <tr>
+                            <td>{{ city }}</td>
+                            <td>{{ row.details?.['Event Start Date'] }}</td>
+                            <td>{{ row.details?.['Event End Date'] }}</td>
+                          </tr>
+                        }
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              }
+            }
           }
           @if (!filtered.length) {
             <tr>
@@ -363,6 +434,15 @@ export class DataTableComponent {
   </section>`,
 })
 export class RecordCardComponent {
+  @Input() exportContext?: ExportContext;
+  @Input() userManagement = false;
+  @Output() disableUser = new EventEmitter<any>();
+  @Output() enableUser = new EventEmitter<any>();
+  @Output() link = new EventEmitter<{ row: any; column: string }>();
+  expanded = new Set<string>();
+  toggleCities(id: string) {
+    this.expanded.has(id) ? this.expanded.delete(id) : this.expanded.add(id);
+  }
   @Input() title = 'Records';
   @Input() columns: string[] = [];
   @Input() records: any[] = [];
@@ -391,7 +471,7 @@ export class RecordCardComponent {
   status = 'All';
   page = 1;
   size = 5;
-  sortIndex = 0;
+  @Input() sortIndex = 0;
   direction = 1;
   get statuses() {
     return [...new Set(this.records.map((r) => r.values[4]))];
@@ -433,6 +513,17 @@ export class RecordCardComponent {
         this.title,
         this.columns,
         this.filtered.map((r) => r.values),
+        {
+          ...(this.exportContext || { user: 'Unrecorded', scope: this.title, filters: {} }),
+          filters: {
+            ...this.exportContext?.filters,
+            search: this.query,
+            additionalSearch: this.secondary,
+            status: this.status,
+            sortColumn: this.columns[this.sortIndex],
+            sortDirection: this.direction,
+          },
+        },
       );
       this.exportError = '';
     } catch (e: any) {
@@ -455,7 +546,9 @@ export class RecordCardComponent {
   }
   canEdit(r: any) {
     return (
-      this.editable && !['Handed Over', 'Approved', 'Completed', 'Rejected'].includes(r.values[4])
+      this.editable &&
+      !r.locked &&
+      !['Handed Over', 'Approved', 'Completed', 'Rejected'].includes(r.values[4])
     );
   }
   pending(v: any) {

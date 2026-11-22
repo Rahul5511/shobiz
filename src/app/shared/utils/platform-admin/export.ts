@@ -1,3 +1,4 @@
+import { ExportContext, ExportHistoryEntry } from '../../workspace/models/review.models';
 function crc32(b: Uint8Array) {
   let c = ~0;
   for (const x of b) {
@@ -112,7 +113,7 @@ export function csvText(headers: any[], data: any[][]) {
   };
   return '\ufeff' + [headers, ...data].map((row) => row.map(safe).join(',')).join('\r\n');
 }
-export function exportTable(format: string, title: string, headers: any[], data: any[][]) {
+function performExport(format: string, title: string, headers: any[], data: any[][]) {
   const name = title.replace(/[^a-z0-9]+/gi, '_').replace(/^_|_$/g, '') || 'Export';
   if (format === 'pdf') {
     const win = window.open('', '_blank');
@@ -154,4 +155,48 @@ export function exportTable(format: string, title: string, headers: any[], data:
   a.download = name + '.' + format;
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+export function exportHistory(): ExportHistoryEntry[] {
+  try {
+    const rows = JSON.parse(localStorage.getItem('ngage-export-history') || '[]');
+    return Array.isArray(rows) ? rows : [];
+  } catch {
+    return [];
+  }
+}
+export function exportTable(
+  format: string,
+  title: string,
+  headers: any[],
+  data: any[][],
+  context?: ExportContext,
+): void {
+  if (!headers.length || !data.length) return;
+  const entry: ExportHistoryEntry = {
+    id: crypto.randomUUID(),
+    report: title,
+    format,
+    columns: headers.map(String),
+    records: data.length,
+    at: new Date().toISOString(),
+    user: context?.user || 'Unrecorded',
+    scope: context?.scope || title,
+    filters: context?.filters || {},
+    outcome: 'Prepared',
+  };
+  try {
+    performExport(format, title, headers, data);
+  } catch (error) {
+    entry.outcome = 'Failed';
+    try {
+      localStorage.setItem('ngage-export-history', JSON.stringify([entry, ...exportHistory()]));
+    } catch {}
+    throw error;
+  }
+  try {
+    localStorage.setItem('ngage-export-history', JSON.stringify([entry, ...exportHistory()]));
+  } catch {
+    throw new Error('The export was prepared, but browser storage could not save its history.');
+  }
 }

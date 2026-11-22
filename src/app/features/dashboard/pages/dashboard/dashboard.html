@@ -1,22 +1,288 @@
-@if (s.view === 'dashboard') {
-  <div class="page-title">
-    <div>
-      <span class="eyebrow">OVERVIEW</span>
-      <h1>{{ s.roleName }} Dashboard</h1>
-      <p>Your consolidated work, progress and reports.</p>
-    </div>
-    <button (click)="s.openRoleReports()"><app-icon name="reports" />View Role Reports</button>
+<div class="page-title">
+  <div>
+    <span class="eyebrow">OVERVIEW</span>
+    <h1>Platform Admin Dashboard</h1>
+    <p>Portfolio registration and approval overview.</p>
   </div>
-  <app-event-dashboard />
+  <button (click)="s.nav('Reports')">View Reports</button>
+</div>
+<section class="card padded portfolio-filter-card" aria-label="Portfolio filters">
+  <div class="portfolio-filter-row">
+    <label
+      >Client<select [(ngModel)]="filters.client" (ngModelChange)="changeClient()">
+        <option value="">All clients</option>
+        @for (client of clients; track client) {
+          <option>{{ client }}</option>
+        }
+      </select></label
+    >
+    <label
+      >Event<select [(ngModel)]="filters.event">
+        <option value="">All events</option>
+        @for (event of eventOptions; track event.id) {
+          <option [value]="event.id">{{ event.name }}</option>
+        }
+      </select></label
+    >
+    <label
+      >City<select [(ngModel)]="filters.city">
+        <option value="">All cities</option>
+        @for (city of cities; track city) {
+          <option>{{ city }}</option>
+        }
+      </select></label
+    >
+    <label>From<input type="date" [(ngModel)]="filters.from" /></label
+    ><label>To<input type="date" [(ngModel)]="filters.to" /></label>
+  </div>
+  <p class="scope-line">{{ scope }}</p>
+  @if (filters.event) {
+    <button (click)="openSelected()" [disabled]="!filtered.length">Open Event Dashboard</button>
+  }
+  @if (invalidRange) {
+    <p class="alert error" role="alert">From must be on or before To.</p>
+  }
+</section>
+@if (!filtered.length) {
+  <div class="card padded">No events match these filters.</div>
+} @else {
+  <div class="metrics portfolio-metrics">
+    @for (card of cards; track card[0]) {
+      <div class="metric">
+        {{ card[0] }}<strong>{{ card[1] }}</strong>
+      </div>
+    }
+  </div>
   <section class="card padded">
-    <h2>Quick access</h2>
-    <div class="quick-grid">
-      @for (k of s.entities; track k) {
-        <button (click)="s.nav(k)">{{ s.m.entities[k].label }} <span>→</span></button>
+    <h2>{{ scope }} - Next events</h2>
+    <p>Next ten ongoing or upcoming events, ordered by start date.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Client</th>
+            <th>Event</th>
+            <th>City</th>
+            <th>Start</th>
+            <th>Stage</th>
+            <th>Status</th>
+            <th>Days to event</th>
+            <th>Registered / Pax</th>
+            <th>Pending approvals</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (event of nextEvents; track event.id) {
+            <tr
+              tabindex="0"
+              (click)="open(event)"
+              (keydown.enter)="open(event)"
+              (keydown.space)="$event.preventDefault(); open(event)"
+            >
+              <td>{{ event.client }}</td>
+              <td>
+                <button (click)="$event.stopPropagation(); open(event)">{{ event.name }}</button>
+              </td>
+              <td>{{ event.cities.join(', ') }}</td>
+              <td>{{ event.start }}</td>
+              <td>{{ event.stage }}</td>
+              <td>{{ event.status }}</td>
+              <td>{{ event.days }}</td>
+              <td>{{ event.registered }} / {{ event.pax }}</td>
+              <td>{{ event.pending }}</td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="9">No ongoing or upcoming events in this view.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <button (click)="viewAll()">View all events</button>
+  </section>
+  <div class="portfolio-chart-grid">
+    <section class="card padded">
+      <h2>Events by stage and status</h2>
+      <p class="muted">Upcoming / Ongoing / On Hold / Completed</p>
+      @for (stage of stages; track stage.stage) {
+        <p>{{ stage.stage }} ({{ stage.total }})</p>
+        <div class="stage-stack">
+          @for (segment of stage.segments; track segment.status) {
+            @if (segment.count) {
+              <span
+                [class]="'status-' + segment.status.replace(' ', '-')"
+                [style.flex]="segment.count"
+                [title]="segment.status + ': ' + segment.count"
+                >{{ segment.count }}</span
+              >
+            }
+          }
+        </div>
+      } @empty {
+        <p>No stage data.</p>
+      }
+    </section>
+    <section class="card padded">
+      <h2>Registrations against Pax by event</h2>
+      @for (event of eventBars; track event.id) {
+        <div class="pax-row">
+          <button (click)="$event.stopPropagation(); open(event)">{{ event.name }}</button
+          ><label
+            >Registered {{ event.registered }} / {{ event.pax }}
+            <div class="pax-gauge">
+              <meter min="0" [max]="barMaximum(event)" [value]="event.registered"></meter
+              ><span
+                class="pax-target"
+                [style.left.%]="(event.pax * 100) / barMaximum(event)"
+                title="Pax target"
+              ></span></div></label
+          ><label
+            >Approved {{ event.approved }} / {{ event.pax }}
+            <div class="pax-gauge">
+              <meter min="0" [max]="barMaximum(event)" [value]="event.approved"></meter
+              ><span
+                class="pax-target"
+                [style.left.%]="(event.pax * 100) / barMaximum(event)"
+                title="Pax target"
+              ></span></div
+          ></label>
+        </div>
+      }
+    </section>
+    <section class="card padded">
+      <h2>Registration trend - {{ scope }}</h2>
+      <p>Registration count over time; target {{ pax }}.</p>
+      @if (trend.length) {
+        <svg
+          class="trend-chart"
+          viewBox="0 0 600 180"
+          role="img"
+          [attr.aria-label]="
+            'Cumulative registrations ' + registrations.length + '; Pax target ' + pax
+          "
+        >
+          <line x1="20" x2="580" y1="150" y2="150" stroke="currentColor" />
+          <line
+            x1="20"
+            x2="580"
+            [attr.y1]="150 - (pax * 130) / trendScale"
+            [attr.y2]="150 - (pax * 130) / trendScale"
+            stroke="#bd4653"
+            stroke-dasharray="5 5"
+          />
+          <polyline [attr.points]="trendPoints" fill="none" stroke="#2e8b66" stroke-width="3" />
+        </svg>
+        <p class="muted">
+          {{ trend[0].day }} to {{ trend[trend.length - 1].day }}. Green: registrations; dashed red:
+          Pax target.
+        </p>
+      } @else {
+        <p>No dated registrations.</p>
+      }
+    </section>
+    <section class="card padded">
+      <h2>Registration status</h2>
+      <div
+        class="status-donut"
+        [style.background]="statusGradient"
+        role="img"
+        [attr.aria-label]="registrations.length + ' registrations; status counts listed below'"
+      >
+        <b>{{ registrations.length }}</b>
+      </div>
+      @for (outcome of outcomes; track outcome.name) {
+        <label
+          >{{ outcome.name }}: {{ outcome.count
+          }}<meter min="0" [max]="registrations.length || 1" [value]="outcome.count"></meter
+        ></label>
+      }
+    </section>
+    <section class="card padded">
+      <h2>Pending approvals by waiting time</h2>
+      @for (band of waiting; track band.label) {
+        <div class="portfolio-waiting">
+          <span>{{ band.label }}</span
+          ><meter
+            min="0"
+            [max]="registrations.length || 1"
+            [value]="band.count"
+            [attr.aria-label]="band.label"
+          ></meter
+          ><b>{{ band.count }}</b>
+        </div>
+      }
+    </section>
+    <section class="card padded">
+      <h2>Approval outcomes by submission day</h2>
+      <p>Approved / Declined / Pending</p>
+      <div class="portfolio-daily">
+        @for (day of daily; track day.day) {
+          <div>
+            <div class="portfolio-stack">
+              <span class="approved" [style.height.%]="(day.approved * 100) / dailyMax"></span
+              ><span class="declined" [style.height.%]="(day.declined * 100) / dailyMax"></span
+              ><span class="pending" [style.height.%]="(day.pending * 100) / dailyMax"></span>
+            </div>
+            <small>{{ day.day }}</small
+            ><small>{{ day.approved }} / {{ day.declined }} / {{ day.pending }}</small>
+          </div>
+        } @empty {
+          <p>No registration outcomes.</p>
+        }
+      </div>
+    </section>
+  </div>
+  <section class="card padded">
+    <h2>Events needing attention</h2>
+    <p>Events with approvals waiting at least 72 hours.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Client</th>
+            <th>Event</th>
+            <th>Days to event</th>
+            <th>Registered / Pax</th>
+            <th>Pending 3+ days</th>
+            <th>Stage</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (event of attention; track event.id) {
+            <tr>
+              <td>{{ event.client }}</td>
+              <td>
+                <button (click)="$event.stopPropagation(); open(event)">{{ event.name }}</button>
+              </td>
+              <td>{{ event.days }}</td>
+              <td>{{ event.registered }} / {{ event.pax }}</td>
+              <td>{{ event.agedPending }}</td>
+              <td>{{ event.stage }}</td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="6">No events meet the attention rule.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section class="card padded">
+    <h2>Module progress</h2>
+    <p class="muted">
+      Illustrative dummy metrics for {{ moduleCoverage }} of {{ filtered.length }} selected events;
+      no live integrations. Missing event metrics are not inferred.
+    </p>
+    <div class="metrics">
+      @for (module of modules; track module.label) {
+        <div class="metric">
+          {{ module.label }}<strong>{{ module.done }} / {{ module.target }}</strong
+          ><meter min="0" [max]="module.target" [value]="module.done"></meter>
+          <p>{{ module.detail }}</p>
+        </div>
       }
     </div>
   </section>
-  <div class="provenance">
-    FRD M04/M26 · Dashboard suggestions are demonstrated with browser-local data.
-  </div>
 }
