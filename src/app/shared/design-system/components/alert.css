@@ -1,0 +1,52 @@
+@import '../styles/tokens.css';
+:host {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--ngage-space-2);
+  width: 357px;
+  max-width: 100%;
+  padding: var(--ngage-space-4) var(--ngage-space-6);
+  border-radius: var(--ngage-radius-m);
+  background: var(--ngage-background-inverse);
+  color: var(--ngage-content-primary-inverse);
+  box-shadow: var(--ngage-shadow-l2);
+  font: var(--ngage-font-regular) var(--ngage-text-m-size) / var(--ngage-text-m-line-height)
+    var(--ngage-font-family);
+  letter-spacing: var(--ngage-letter-spacing);
+}
+:host([data-tone='positive']) {
+  background: var(--ngage-background-positive);
+}
+:host([data-tone='negative']) {
+  background: var(--ngage-background-negative);
+}
+:host([data-tone='alert']) {
+  background: var(--ngage-background-alert);
+}
+.message {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+button ngage-icon {
+  width: 20px;
+  height: 20px;
+}
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}

@@ -1,0 +1,89 @@
+@import '../styles/tokens.css';
+:host {
+  box-sizing: border-box;
+  display: inline-flex;
+  width: 194px;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ngage-space-2);
+  padding: var(--ngage-space-3) var(--ngage-space-4);
+  border: 0;
+  border-radius: var(--ngage-radius-m);
+  background: var(--ngage-background-brand);
+  color: var(--ngage-content-primary-inverse);
+  font: var(--ngage-font-medium) var(--ngage-text-m-size) / var(--ngage-text-m-line-height)
+    var(--ngage-font-family);
+  letter-spacing: var(--ngage-letter-spacing);
+  cursor: pointer;
+  text-decoration: none;
+}
+:host([data-size='large']) {
+  padding: var(--ngage-space-4);
+}
+:host(:hover:not(:disabled)) {
+  background: var(--ngage-background-brand-hover);
+}
+:host([data-variant='ghost']),
+:host([data-variant='border']),
+:host([data-variant='icon-border']) {
+  background: transparent;
+  color: var(--ngage-content-primary);
+}
+:host([data-variant='border']),
+:host([data-variant='icon-border']) {
+  border: 1px solid var(--ngage-border-tertiary);
+}
+:host([data-variant='ghost']:hover:not(:disabled)),
+:host([data-variant='border']:hover:not(:disabled)),
+:host([data-variant='icon-border']:hover:not(:disabled)) {
+  background: transparent;
+  border-color: var(--ngage-border-brand);
+  color: var(--ngage-content-brand);
+}
+:host([data-variant='icon-solid']),
+:host([data-variant='icon-border']) {
+  width: auto;
+  padding: var(--ngage-space-3);
+  gap: 0;
+}
+.label {
+  white-space: nowrap;
+}
+:host([data-variant='icon-solid']) .label,
+:host([data-variant='icon-border']) .label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+:host(:disabled) {
+  background: var(--ngage-background-disabled);
+  color: var(--ngage-content-disabled);
+  cursor: not-allowed;
+  opacity: 1;
+}
+:host([data-variant='ghost']:disabled),
+:host([data-variant='border']:disabled),
+:host([data-variant='icon-border']:disabled) {
+  background: transparent;
+  border-color: var(--ngage-border-disabled);
+}
+:host(:focus-visible) {
+  outline: 2px solid var(--ngage-content-primary);
+  outline-offset: 3px;
+}
+.hover-icon,
+.disabled-icon {
+  display: none;
+}
+:host(:hover:not(:disabled)) .normal-icon,
+:host(:disabled) .normal-icon {
+  display: none;
+}
+:host(:hover:not(:disabled)) .hover-icon,
+:host(:disabled) .disabled-icon {
+  display: inline-flex;
+}

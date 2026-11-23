@@ -6,7 +6,7 @@
       <p>Search and manage records in your authorised workspace.</p>
     </div>
   </div>
-  @if (s.key === 'Events' && s.can('Events')) {
+  @if (s.key === 'Events' && s.canCreate('Events')) {
     <div class="alert info">
       Onboard the Client first, assign its users, then create the event. Key Client Contacts are
       client representatives; event audience contacts are managed separately.
@@ -53,9 +53,11 @@
     [requirements]="s.key === 'Events' && s.can('Requirements')"
     (requirement)="s.openTask('Requirements', $event)"
     [createLabel]="
-      s.primaryTask && s.primaryTask !== 'Requirements' ? s.actionLabel(s.primaryTask) : ''
+      s.primaryTask && s.canCreate(s.primaryTask) && s.primaryTask !== 'Requirements'
+        ? s.actionLabel(s.primaryTask)
+        : ''
     "
-    [tasks]="s.tasks()"
+    [tasks]="s.createTasks"
     [event]="s.key === 'Events'"
     [sample]="s.key === 'Sample'"
     [master]="s.m.masters.includes(s.key)"

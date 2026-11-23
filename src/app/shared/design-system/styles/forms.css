@@ -1,0 +1,43 @@
+/* Imported only in the future consumer's stylesheet (or future global opt-in).
+ * Defaults inherit tokens from ngage-form-field or a .ngage-theme ancestor. */
+.ngage-control {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: var(--ngage-space-3);
+  border: 1px solid var(--ngage-border-tertiary);
+  border-radius: var(--ngage-radius-m);
+  background: var(--ngage-background-primary);
+  color: var(--ngage-content-primary);
+  font: var(--ngage-font-regular) var(--ngage-text-m-size) / var(--ngage-text-m-line-height)
+    var(--ngage-font-family);
+  letter-spacing: var(--ngage-letter-spacing);
+}
+.ngage-control::placeholder {
+  color: var(--ngage-content-disabled);
+  opacity: 1;
+}
+.ngage-control:focus {
+  border-color: var(--ngage-border-brand);
+  outline: 1px solid var(--ngage-border-brand);
+  outline-offset: -1px;
+}
+.ngage-control:disabled {
+  background: var(--ngage-background-disabled);
+  border-color: var(--ngage-border-disabled);
+  color: var(--ngage-content-disabled);
+  cursor: not-allowed;
+}
+ngage-form-field[data-state='error'] .ngage-control,
+.ngage-control[aria-invalid='true'] {
+  color: var(--ngage-content-negative);
+  border-color: var(--ngage-content-negative);
+}
+ngage-form-field[data-state='success'] .ngage-control {
+  color: var(--ngage-content-positive);
+  border-color: var(--ngage-content-positive);
+}
+textarea.ngage-control {
+  min-height: 98px;
+  resize: vertical;
+}

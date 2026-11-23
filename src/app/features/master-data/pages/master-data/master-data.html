@@ -1,11 +1,17 @@
 <section class="card padded master-selector">
   <label
-    >Master Data<select [ngModel]="s.key" (ngModelChange)="s.nav($event)">
+    >Manage Master Data (Add/Edit)<select
+      #masterSelect
+      aria-describedby="master-selector-hint"
+      [ngModel]="s.key"
+      (ngModelChange)="s.nav($event)"
+    >
       @for (key of s.m.masters; track key) {
         <option [value]="key">{{ s.m.entities[key].label }}</option>
       }
     </select></label
   >
+  <p id="master-selector-hint">Start here: select the master data you want to add or edit.</p>
 </section>
 @switch (s.key) {
   @case ('Countries') {

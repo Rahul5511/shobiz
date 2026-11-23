@@ -1,0 +1,47 @@
+/* Shobiz Ngage v1.0.0. Deliberately not imported by src/styles.css.
+ * :host supplies standalone components; .ngage-theme is a future opt-in scope.
+ * Only values verified in the inspected Figma nodes are included. */
+:host,
+.ngage-theme {
+  --ngage-font-family: 'Baikal', sans-serif;
+  --ngage-font-regular: 400;
+  --ngage-font-medium: 500;
+  --ngage-text-s-size: 12px;
+  --ngage-text-s-line-height: 16px;
+  --ngage-text-m-size: 14px;
+  --ngage-text-m-line-height: 20px;
+  --ngage-text-l-size: 16px;
+  --ngage-text-l-line-height: 24px;
+  --ngage-letter-spacing: 0px;
+
+  --ngage-background-primary: #ffffff;
+  --ngage-background-inverse: #0d0d0d;
+  --ngage-background-brand: #f7931e;
+  --ngage-background-brand-hover: #b36100;
+  --ngage-background-disabled: #f2f2f2;
+  --ngage-background-positive: #009933;
+  --ngage-background-negative: #d70429;
+  --ngage-background-alert: #ff8000;
+  --ngage-content-primary: #0d0d0d;
+  --ngage-content-primary-inverse: #ffffff;
+  --ngage-content-tertiary: #666666;
+  --ngage-content-disabled: #b2b2b2;
+  --ngage-content-brand: #f7931e;
+  --ngage-content-positive: #009933;
+  --ngage-content-negative: #d70429;
+  --ngage-content-alert: #ff8000;
+  --ngage-content-info: #339cff;
+  --ngage-border-tertiary: #e5e5e5;
+  --ngage-border-brand: #f7931e;
+  --ngage-border-disabled: #f2f2f2;
+  --ngage-popup-header-border: #e5e7eb;
+
+  --ngage-radius-s: 8px;
+  --ngage-radius-m: 12px;
+  --ngage-space-1: 4px;
+  --ngage-space-2: 8px;
+  --ngage-space-3: 12px;
+  --ngage-space-4: 16px;
+  --ngage-space-6: 24px;
+  --ngage-shadow-l2: 0 0 4px #00000014, 0 4px 8px #0000001a;
+}

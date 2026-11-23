@@ -13,7 +13,7 @@ import { DashboardPage } from '../../features/dashboard/dashboard';
 import {
   ReportsPage,
   RegistrationVsAttendancePage,
-  RoleReportsComponent,
+  // RoleReportsComponent, // Standalone Role Reports is paused.
 } from '../../features/reports-and-tracking/reports-and-tracking';
 import { ProfilePage, ChangePasswordPage } from '../../features/account/account';
 import { SampleContactsPage } from '../../features/db-workspace/db-workspace';
@@ -52,7 +52,7 @@ import { IconComponent } from '../../shared/components/platform-admin/ui.compone
     RegistrationQrPage,
     ReportsPage,
     RegistrationVsAttendancePage,
-    RoleReportsComponent,
+    // RoleReportsComponent,
     ProfilePage,
     ChangePasswordPage,
     SampleContactsPage,
@@ -115,7 +115,9 @@ export class WorkspaceComponent {
   get guideTasks() {
     return this.s.flowKeys
       .filter((key) => key !== 'UserRoleGrant')
-      .map((key: string) => this.s.m.flows[key]);
+      .map((key: string) =>
+        key === 'Events' ? { ...this.s.m.flows[key], title: 'Update Event' } : this.s.m.flows[key],
+      );
   }
   get roleGrants(): string[] | undefined {
     return this.s.grants[this.s.role];

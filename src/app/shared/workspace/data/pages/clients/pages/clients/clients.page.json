@@ -733,6 +733,29 @@
           ]
         },
         {
+          "label": "Branding",
+          "fields": [
+            {
+              "label": "Client logo",
+              "value": "Client logo placeholder",
+              "source": "User-requested client branding",
+              "required": false,
+              "options": [],
+              "kind": "image",
+              "multi": false
+            },
+            {
+              "label": "Client banner",
+              "value": "Client banner placeholder",
+              "source": "User-requested client branding",
+              "required": false,
+              "options": [],
+              "kind": "image",
+              "multi": false
+            }
+          ]
+        },
+        {
           "label": "Address",
           "fields": [
             {
@@ -769,6 +792,15 @@
               "required": true,
               "options": ["Mumbai", "Pune", "Ghaziabad", "New Delhi"],
               "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "PIN Code",
+              "value": "",
+              "source": "User-requested address field",
+              "required": false,
+              "options": [],
+              "kind": "text",
               "multi": false
             }
           ]

@@ -1,0 +1,4 @@
+/* Future opt-in entry point; do not add to global styles until migration. */
+@import './tokens.css';
+@import './typography.css';
+@import './forms.css';

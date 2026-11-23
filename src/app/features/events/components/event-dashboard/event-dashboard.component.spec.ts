@@ -21,6 +21,14 @@ describe('Approved event-detail capabilities', () => {
     });
   });
   afterEach(() => vi.restoreAllMocks());
+  it('does not offer event creation to Admin in the empty event view', () => {
+    const state = TestBed.inject(WorkspaceService);
+    state.rows.Events = [];
+    const fixture = TestBed.createComponent(EventDashboardComponent);
+    fixture.detectChanges();
+    expect(fixture.nativeElement.textContent).toContain('No events match this view.');
+    expect(fixture.nativeElement.textContent).not.toContain('Add New Event');
+  });
   it('allows requirements entries while retaining staff and scheduling restrictions', async () => {
     const state = TestBed.inject(WorkspaceService);
     state.nav('Events');

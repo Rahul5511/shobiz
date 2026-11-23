@@ -1,4 +1,11 @@
-import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  inject,
+  ChangeDetectionStrategy,
+  ElementRef,
+  viewChild,
+  afterRenderEffect,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { WorkspaceService } from '../../../../shared/workspace/data-access/workspace.service';
 import { CountriesPage } from '../countries/countries';
@@ -35,4 +42,11 @@ import { CallStatusesPage } from '../call-statuses/call-statuses';
 })
 export class MasterDataPage {
   s = inject(WorkspaceService);
+  readonly masterSelect = viewChild<ElementRef<HTMLSelectElement>>('masterSelect');
+  constructor() {
+    afterRenderEffect(() => {
+      this.s.masterFocusRequest();
+      this.masterSelect()?.nativeElement.focus();
+    });
+  }
 }

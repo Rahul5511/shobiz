@@ -1,0 +1,62 @@
+@import '../styles/tokens.css';
+:host {
+  box-sizing: border-box;
+  width: 400px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: var(--ngage-background-primary);
+  color: var(--ngage-content-primary);
+  font: var(--ngage-font-regular) var(--ngage-text-m-size) / var(--ngage-text-m-line-height)
+    var(--ngage-font-family);
+  letter-spacing: var(--ngage-letter-spacing);
+}
+/* Backdrop is a browser implementation choice: only the header is specified in Figma. */
+:host::backdrop {
+  background: rgb(0 0 0 / 40%);
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ngage-space-2);
+  padding: var(--ngage-space-6);
+  border-bottom: 1px solid var(--ngage-popup-header-border);
+}
+.titles {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+h2 {
+  margin: 0;
+  font: var(--ngage-font-medium) var(--ngage-text-l-size) / var(--ngage-text-l-line-height)
+    var(--ngage-font-family);
+}
+p {
+  margin: 2px 0 0;
+  color: var(--ngage-content-tertiary);
+  font-size: var(--ngage-text-s-size);
+  line-height: var(--ngage-text-s-line-height);
+}
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  flex: 0 0 auto;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+button:focus-visible {
+  outline: 2px solid var(--ngage-content-primary);
+  outline-offset: 3px;
+}
+.body {
+  padding: var(--ngage-space-6);
+}

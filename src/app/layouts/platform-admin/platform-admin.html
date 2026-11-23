@@ -45,7 +45,7 @@
             <div class="nav-children">
               @for (key of group.keys; track key) {
                 <button class="navitem sub" [class.active]="s.key === key" (click)="s.nav(key)">
-                  {{ key === 'Admin' ? 'Users' : 'Roles' }}
+                  {{ key === 'Admin' ? 'Users' : 'Role & Permission' }}
                 </button>
               }
             </div>
@@ -192,9 +192,11 @@
       @if (s.view === 'qr') {
         <app-registration-qr-page />
       }
+      <!-- Standalone Role Reports is paused; Reports remains available.
       @if (s.view === 'role-reports') {
         <app-role-reports />
       }
+      -->
       @if (s.view === 'sample') {
         <app-sample-contacts-page />
       }

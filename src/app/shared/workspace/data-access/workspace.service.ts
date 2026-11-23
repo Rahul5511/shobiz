@@ -4,7 +4,7 @@ import {
   ExportContext,
   PreparedShare,
 } from '../models/review.models';
-import { Injectable, inject } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { AuthService } from '../../../core/services/login/platform-admin-session';
 import model from '../data/model';
 import QRCode from 'qrcode';
@@ -12,6 +12,7 @@ import {
   isPlatformAdmin,
   PLATFORM_ADMIN_ENTITIES,
   PLATFORM_ADMIN_WORKFLOWS,
+  canCreatePlatformAdminRecord,
 } from '../../../core/permissions/platform-admin-policy';
 export const copy = (x: any) => JSON.parse(JSON.stringify(x));
 @Injectable()
@@ -101,6 +102,10 @@ export class WorkspaceService {
   can(k: string) {
     return this.flowKeys.includes(k);
   }
+  canCreate(k: string) {
+    return isPlatformAdmin(this.role) && canCreatePlatformAdminRecord(k);
+  }
+  masterFocusRequest = signal(0);
   accessible(k: string) {
     return this.entities.includes(k);
   }
@@ -242,6 +247,9 @@ export class WorkspaceService {
       )
       .map((key: string) => ({ key, title: this.m.flows[key].title }));
   }
+  get createTasks() {
+    return this.tasks().filter((task) => this.canCreate(task.key));
+  }
   get primaryTask() {
     return this.key === 'Admin' && this.can('Admin')
       ? 'Admin'
@@ -284,6 +292,10 @@ export class WorkspaceService {
       this.error = 'This role cannot perform this action.';
       return;
     }
+    if (!row && !this.canCreate(key)) {
+      this.error = 'Platform Admin cannot create events.';
+      return;
+    }
     if (key === 'Requirements') {
       const target =
         row ||
@@ -297,6 +309,7 @@ export class WorkspaceService {
       return;
     }
     let f = copy(this.m.flows[key]);
+    if (key === 'Events' && row) f.title = 'Update Event';
 
     if (key === 'Events')
       for (const step of f.steps)
@@ -312,6 +325,8 @@ export class WorkspaceService {
       });
     let values = Object.fromEntries(this.fields(f).map((x: any) => [x.label, copy(x.value)]));
     if (row?.details) Object.assign(values, copy(row.details));
+    if (key === 'Clients')
+      values['PIN Code'] = row?.details?.['PIN Code'] ?? row?.details?.['Postal code'] ?? '';
     if (key === 'Admin' && row) {
       values['Name'] = row.values[0];
       values['Roles'] = [...(row.details?.Roles || [])];
@@ -372,7 +387,11 @@ export class WorkspaceService {
     const draft = this.drafts[this.draftKey()];
     if (draft) {
       this.wizard = copy(draft);
+      const stepLabel = draft.flow?.steps?.[draft.step]?.label;
+      const visitedLabel = draft.flow?.steps?.[draft.visited]?.label;
       this.wizard.flow = f;
+      if (key === 'Clients')
+        this.wizard.values['PIN Code'] ??= this.wizard.values['Postal code'] ?? '';
       this.wizard.values.Name ||=
         this.wizard.values['Display name'] ||
         [this.wizard.values['First name'], this.wizard.values['Last name']]
@@ -383,6 +402,10 @@ export class WorkspaceService {
           this.wizard.values[field.label] = copy(field.value);
       this.wizard.step = Math.min(this.wizard.step, f.steps.length - 1);
       this.wizard.visited = Math.min(this.wizard.visited, f.steps.length - 1);
+      const stepIndex = f.steps.findIndex((step: any) => step.label === stepLabel);
+      const visitedIndex = f.steps.findIndex((step: any) => step.label === visitedLabel);
+      if (stepIndex >= 0) this.wizard.step = stepIndex;
+      if (visitedIndex >= 0) this.wizard.visited = Math.max(this.wizard.step, visitedIndex);
     }
     if (key === 'Events') this.configureEventCities();
     this.normaliseSelections();
@@ -761,7 +784,7 @@ export class WorkspaceService {
     const w = this.wizard;
     if (w?.values.Email) w.values.Email = String(w.values.Email).trim().toLowerCase();
     if (w?.values.Name) w.values.Name = String(w.values.Name).trim();
-    if (!w || !this.can(w.key) || w.row?.locked) {
+    if (!w || !this.can(w.key) || (!w.row && !this.canCreate(w.key)) || w.row?.locked) {
       this.error = 'This record cannot be changed.';
       return;
     }
@@ -876,6 +899,7 @@ export class WorkspaceService {
           history: [],
         };
     row.details = { ...row.details, ...copy(w.values) };
+    if (w.key === 'Clients') row.details['Postal code'] = w.values['PIN Code'];
     row.flow = w.key;
     row.values[0] = String(w.values[w.flow.identity] || row.values[0]);
     if (!w.row)
@@ -1329,14 +1353,8 @@ export class WorkspaceService {
     ];
   }
   openRoleReports() {
-    this.view = 'role-reports';
-    this.openSection = 'Reports & Tracking';
-    this.key = '';
-    this.wizard = null;
-    this.selected = null;
-    this.notice = '';
-    this.error = '';
-    this.mobileMenu = false;
+    // Standalone Role Reports is paused. Keep existing callers on Reports.
+    this.nav('Reports');
   }
   reportList() {
     this.nav('Reports');
@@ -1617,6 +1635,7 @@ export class WorkspaceService {
   openMaster() {
     this.nav(this.m.masters.includes(this.key) ? this.key : 'Countries');
     this.openSection = null;
+    this.masterFocusRequest.update((value) => value + 1);
   }
   get exportContext(): ExportContext {
     return {

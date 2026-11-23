@@ -2,7 +2,7 @@
   "entities": {
     "RoleBuilder": {
       "key": "RoleBuilder",
-      "label": "Roles",
+      "label": "Role & Permission",
       "module": "EXTENSION",
       "columns": ["Role name", "Description", "Permissions", "Scope", "Status"],
       "seed": [

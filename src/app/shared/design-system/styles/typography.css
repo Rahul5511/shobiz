@@ -1,0 +1,24 @@
+/* Opt-in typography utilities. No element selectors or global reset. */
+.ngage-theme,
+.ngage-text-s,
+.ngage-text-m,
+.ngage-text-l {
+  font-family: var(--ngage-font-family);
+  font-weight: var(--ngage-font-regular);
+  letter-spacing: var(--ngage-letter-spacing);
+}
+.ngage-text-s {
+  font-size: var(--ngage-text-s-size);
+  line-height: var(--ngage-text-s-line-height);
+}
+.ngage-text-m {
+  font-size: var(--ngage-text-m-size);
+  line-height: var(--ngage-text-m-line-height);
+}
+.ngage-text-l {
+  font-size: var(--ngage-text-l-size);
+  line-height: var(--ngage-text-l-line-height);
+}
+.ngage-medium {
+  font-weight: var(--ngage-font-medium);
+}

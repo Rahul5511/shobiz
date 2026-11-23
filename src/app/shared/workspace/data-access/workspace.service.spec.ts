@@ -25,6 +25,58 @@ describe('Approved Platform Admin review workflows', () => {
     s = TestBed.inject(WorkspaceService);
   });
   afterEach(() => vi.restoreAllMocks());
+  it('restores branding and the legacy postal value as PIN Code without losing either on save', () => {
+    const row = s.rows.Clients[0];
+    s.openTask('Clients', row);
+    expect(s.wizard.flow.steps.map((step: any) => step.label)).toContain('Branding');
+    expect(s.wizard.values['PIN Code']).toBe(row.details['Postal code']);
+    s.wizard.values['PIN Code'] = '400001';
+    s.wizard.values['Client logo preview'] = 'data:image/png;base64,example';
+    fill();
+    s.save();
+    expect(s.error).toBe('');
+    const saved = s.rows.Clients.find((record: any) => record.id === row.id);
+    expect(saved.details['PIN Code']).toBe('400001');
+    expect(saved.details['Postal code']).toBe('400001');
+    s.openTask('Clients', saved);
+    expect(s.wizard.values['Client logo preview']).toBe('data:image/png;base64,example');
+  });
+  it('restores Organisation fields and persists them through the combined user flow', () => {
+    s.openTask('Admin');
+    expect(s.wizard.flow.steps.map((step: any) => step.label)).toEqual([
+      'Identity',
+      'Organisation',
+      'Roles & Assignment',
+      'Review',
+    ]);
+    s.wizard.values.Name = 'Organisation user';
+    s.wizard.values.Email = 'organisation@example.com';
+    s.wizard.values.Roles = ['DB Head'];
+    s.wizard.values.Department = 'Database';
+    s.wizard.values['Employee code'] = 'EMP-NEW';
+    s.wizard.values['Reporting manager'] = 'Manager';
+    s.save();
+    expect(s.error).toBe('');
+    s.openTask('Admin', s.userRow('organisation@example.com'));
+    expect(s.wizard.values.Department).toBe('Database');
+    expect(s.wizard.values['Employee code']).toBe('EMP-NEW');
+    expect(s.wizard.values['Reporting manager']).toBe('Manager');
+    expect(s.fields(s.wizard.flow).filter((field: any) => field.label === 'Client')).toHaveLength(
+      1,
+    );
+  });
+  it('rejects a direct event creation save and keeps standalone Role Reports paused', () => {
+    const count = s.rows.Events.length;
+    s.openTask('Events', s.rows.Events[0]);
+    s.wizard.row = null;
+    s.save();
+    expect(s.error).toContain('cannot be changed');
+    expect(s.rows.Events).toHaveLength(count);
+    s.openRoleReports();
+    expect(s.key).toBe('Reports');
+    expect(s.view).toBe('reports');
+    expect(s.m.entities.RoleBuilder.label).toBe('Role & Permission');
+  });
   function fill() {
     for (const field of s.fields(s.wizard.flow)) {
       if (!field.required || s.wizard.values[field.label]?.length) continue;
@@ -42,6 +94,7 @@ describe('Approved Platform Admin review workflows', () => {
   }
   it('keeps only approved access changes and the seven report catalogues', () => {
     expect(s.can('Events')).toBe(true);
+    expect(s.canCreate('Events')).toBe(false);
     expect(s.can('Requirements')).toBe(true);
     expect(s.can('RolePermissions')).toBe(false);
     for (const key of ['RegApproval', 'AttendanceCheckin', 'Reports', 'Assignment']) {
@@ -112,13 +165,7 @@ describe('Approved Platform Admin review workflows', () => {
     expect(s.wizard.values.Name).toBe('Draft');
     const labels = s.fields(s.wizard.flow).map((field: { label: string }) => field.label);
     expect(labels).toContain('Roles');
-    for (const removed of [
-      'Middle name',
-      'Display name',
-      'Profile picture',
-      'Department',
-      'Employee code',
-    ])
+    for (const removed of ['Middle name', 'Display name', 'Profile picture'])
       expect(labels).not.toContain(removed);
   });
   it('keeps removed client fields in stored records while omitting them from forms and review', () => {
@@ -135,8 +182,12 @@ describe('Approved Platform Admin review workflows', () => {
       website,
     );
   });
-  it('supports Multi City event creation and updates the list projection', () => {
+  it('blocks event creation but retains Multi City editing and the list projection', () => {
+    const count = s.rows.Events.length;
     s.openTask('Events');
+    expect(s.wizard).toBeNull();
+    expect(s.error).toContain('cannot create');
+    s.openTask('Events', s.rows.Events[0]);
     s.setField({ label: 'Event Name' }, 'Review event');
     s.setField({ label: 'Event Type' }, 'Multi City');
     fill();
@@ -146,6 +197,7 @@ describe('Approved Platform Admin review workflows', () => {
     s.nav('Events');
     const event = s.rows.Events.find((r: { values: string[] }) => r.values[0] === 'Review event');
     expect(event).toBeTruthy();
+    expect(s.rows.Events.length).toBe(count);
     expect(Array.isArray(event.details.City)).toBe(true);
     expect(s.fields(s.m.flows.Events).map((field: { label: string }) => field.label)).not.toContain(
       'Capacity',
@@ -311,6 +363,7 @@ describe('Approved Platform Admin review workflows', () => {
     expect(restored.wizard.values.Event).toEqual(['Northstar Roadshow']);
     expect(restored.wizard.flow.steps.map((step: { label: string }) => step.label)).toEqual([
       'Identity',
+      'Organisation',
       'Roles & Assignment',
       'Review',
     ]);

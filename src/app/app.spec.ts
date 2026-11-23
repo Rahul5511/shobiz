@@ -30,7 +30,7 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('opens the Platform Admin dashboard, supports the approved event actions, and logs out', async () => {
+  it('opens the dashboard, permits event editing without creation, and logs out', async () => {
     localStorage.clear();
     const harness = await RouterTestingHarness.create('/login');
     element<HTMLButtonElement>(harness, '.demo-button').click();
@@ -58,7 +58,7 @@ describe('App', () => {
     element<HTMLButtonElement>(harness, '[aria-label="Events"]').click();
     harness.detectChanges();
     expect(harness.routeNativeElement?.querySelector('app-record-card')).toBeTruthy();
-    expect(harness.routeNativeElement?.textContent).toContain('Create New Event');
+    expect(harness.routeNativeElement?.textContent).not.toContain('Create New Event');
     expect(harness.routeNativeElement?.querySelector('[aria-label="Edit record"]')).toBeTruthy();
     expect(
       harness.routeNativeElement?.querySelector('[aria-label="Public registration link and QR"]'),

@@ -31,7 +31,7 @@
     @if (!portfolio.length) {
       <p>No events match this view.</p>
     }
-    @if (!portfolio.length && s.eventEditor) {
+    @if (!portfolio.length && s.canCreate('Events')) {
       <button class="primary" (click)="s.openTask('Events')">Add New Event</button>
     }
     @if (s.role === 'Super User') {

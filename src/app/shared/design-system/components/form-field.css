@@ -1,0 +1,25 @@
+@import '../styles/tokens.css';
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ngage-space-2);
+  width: 358px;
+  max-width: 100%;
+  color: var(--ngage-content-primary);
+  font: var(--ngage-font-regular) var(--ngage-text-m-size) / var(--ngage-text-m-line-height)
+    var(--ngage-font-family);
+  letter-spacing: var(--ngage-letter-spacing);
+}
+label {
+  display: flex;
+  gap: 2px;
+  font-weight: var(--ngage-font-medium);
+}
+.required {
+  color: var(--ngage-content-negative);
+}
+.control-slot {
+  display: flex;
+  min-width: 0;
+}
+/* Projected controls are styled by the opt-in stylesheet below, without ::ng-deep. */

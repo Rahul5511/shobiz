@@ -659,6 +659,65 @@
           ]
         },
         {
+          "label": "Organisation",
+          "fields": [
+            {
+              "label": "Client",
+              "value": "",
+              "source": "User-requested organisation details",
+              "required": false,
+              "options": ["Northstar Technologies", "CloudWorks"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Employee code",
+              "value": "",
+              "source": "User-requested organisation details",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Department",
+              "value": "",
+              "source": "User-requested organisation details",
+              "required": false,
+              "options": ["Audience Acquisition", "Database", "Response", "Accounts"],
+              "kind": "select",
+              "multi": false
+            },
+            {
+              "label": "Designation",
+              "value": "",
+              "source": "User-requested organisation details",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "Reporting manager",
+              "value": "",
+              "source": "User-requested organisation details",
+              "required": false,
+              "options": [],
+              "kind": "text",
+              "multi": false
+            },
+            {
+              "label": "User type",
+              "value": "",
+              "source": "User-requested organisation details",
+              "required": false,
+              "options": ["Shobiz / Tootl", "External"],
+              "kind": "select",
+              "multi": false
+            }
+          ]
+        },
+        {
           "label": "Roles & Assignment",
           "fields": [
             {
@@ -669,15 +728,6 @@
               "multi": true,
               "source": "Review RP-08",
               "options": ["Super User"]
-            },
-            {
-              "label": "Client",
-              "kind": "select",
-              "required": false,
-              "value": "",
-              "multi": false,
-              "source": "Review RP-08",
-              "options": ["Northstar Technologies"]
             },
             {
               "label": "Event",

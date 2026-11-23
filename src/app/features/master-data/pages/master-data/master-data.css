@@ -2,5 +2,18 @@
   display: contents;
 }
 .master-selector {
-  max-width: 480px;
+  max-width: 640px;
+  border: 2px solid var(--orange);
+  background: var(--orange-light);
+  margin-bottom: 24px;
+}
+.master-selector label {
+  font-weight: 700;
+}
+.master-selector p {
+  margin: 10px 0 0;
+}
+.master-selector:focus-within {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
 }
