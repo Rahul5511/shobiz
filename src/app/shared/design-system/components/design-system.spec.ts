@@ -25,7 +25,7 @@ class Harness {
   dismissed = 0;
 }
 
-describe('Inactive Ngage shared components', () => {
+describe('Ngage shared components', () => {
   afterEach(() => vi.restoreAllMocks());
 
   it('retains native button disabled semantics and labels for icon-only buttons', async () => {

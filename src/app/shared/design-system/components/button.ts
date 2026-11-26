@@ -4,7 +4,7 @@ import { NgageIcon } from './icon';
 export type NgageButtonVariant = 'primary' | 'ghost' | 'border' | 'icon-solid' | 'icon-border';
 
 @Component({
-  selector: 'button[ngageButton]',
+  selector: 'button[ngageButton], a[ngageButton]',
   imports: [NgageIcon],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
@@ -12,16 +12,12 @@ export type NgageButtonVariant = 'primary' | 'ghost' | 'border' | 'icon-solid' |
     '[attr.data-size]': 'size()',
   },
   template: `
-    @if (leadingIcon()) {
-      <ngage-icon class="normal-icon" name="add" [tone]="solid ? 'inverse' : 'primary'" />
-      <ngage-icon class="hover-icon" name="add" [tone]="solid ? 'inverse' : 'brand'" />
-      <ngage-icon class="disabled-icon" name="add" tone="disabled" />
+    @if (leadingIcon() || iconOnly) {
+      <ngage-icon name="add" />
     }
     <span class="label"><ng-content /></span>
     @if (trailingIcon() && !iconOnly) {
-      <ngage-icon class="normal-icon" name="chevron-down" [tone]="solid ? 'inverse' : 'primary'" />
-      <ngage-icon class="hover-icon" name="chevron-down" [tone]="solid ? 'inverse' : 'brand'" />
-      <ngage-icon class="disabled-icon" name="chevron-down" tone="disabled" />
+      <ngage-icon name="chevron-down" />
     }
   `,
   styleUrl: './button.css',
@@ -29,8 +25,8 @@ export type NgageButtonVariant = 'primary' | 'ghost' | 'border' | 'icon-solid' |
 export class NgageButton {
   readonly variant = input<NgageButtonVariant>('primary');
   readonly size = input<'default' | 'large'>('default');
-  readonly leadingIcon = input(true);
-  readonly trailingIcon = input(true);
+  readonly leadingIcon = input(false);
+  readonly trailingIcon = input(false);
   get solid(): boolean {
     return this.variant() === 'primary' || this.variant() === 'icon-solid';
   }

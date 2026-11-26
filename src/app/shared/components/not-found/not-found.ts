@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { NgageButton } from '../../design-system';
 
 @Component({
   selector: 'app-not-found',
-  imports: [RouterLink],
+  imports: [RouterLink, NgageButton],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <main
@@ -12,7 +13,7 @@ import { RouterLink } from '@angular/router';
       <p class="text-brand mb-4 text-sm font-semibold">404</p>
       <h1 class="text-ink text-3xl font-semibold">This page isn't on the plan.</h1>
       <p class="text-muted mt-4">Let's get you back to your workspace.</p>
-      <a routerLink="/login" class="primary-button mt-8">Back to workspace</a>
+      <a ngageButton routerLink="/login" class="mt-8">Back to workspace</a>
     </main>
   `,
 })

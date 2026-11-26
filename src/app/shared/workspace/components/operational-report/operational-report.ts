@@ -1,3 +1,4 @@
+import { NgageButton, NgageInput, NgageAlert } from '../../../design-system/index';
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
@@ -8,7 +9,7 @@ import { DataTableComponent } from '../../../components/platform-admin/ui.compon
   changeDetection: ChangeDetectionStrategy.Eager,
   selector: 'app-workspace-operational-report',
   standalone: true,
-  imports: [FormsModule, DataTableComponent],
+  imports: [NgageButton, NgageInput, NgageAlert, FormsModule, DataTableComponent],
   templateUrl: './operational-report.html',
   styleUrl: './operational-report.css',
 })

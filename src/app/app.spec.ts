@@ -105,7 +105,10 @@ describe('App', () => {
 
     state.nav('Clients');
     expectScreen('app-clients-page');
-    element<HTMLButtonElement>(harness, 'app-record-card .primary').click();
+    element<HTMLButtonElement>(
+      harness,
+      'app-record-card button[ngageButton]:not([data-variant="border"])',
+    ).click();
     await harness.fixture.whenStable();
     harness.detectChanges();
     expect(element(harness, '.form-card').textContent).toContain('Client Profile');
@@ -237,7 +240,7 @@ describe('App', () => {
     expect(harness.routeNativeElement?.textContent).toContain('Test Organiser');
     await harness.navigateByUrl('/login');
     expect(router.url).toBe('/events');
-    element<HTMLButtonElement>(harness, '.secondary-button').click();
+    element<HTMLButtonElement>(harness, 'button[ngageButton]').click();
     await harness.fixture.whenStable();
     expect(router.url).toBe('/login');
     expect(TestBed.inject(AuthSession).user()).toBeNull();

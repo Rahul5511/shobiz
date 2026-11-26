@@ -1,27 +1,60 @@
+import { NgageButton, NgageInput, NgageTag, NgageNav } from '../../design-system/index';
 import { ExportContext } from '../../workspace/models/review.models';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
+import { NgageIcon, NgageIconName } from '../../design-system';
 import { exportTable } from '../../utils/platform-admin/export';
 @Component({
   selector: 'app-icon',
   standalone: true,
-  template: `<svg
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.7"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    aria-hidden="true"
-  >
-    <path [attr.d]="paths[name] || paths.view" />
-  </svg>`,
+  imports: [NgageIcon],
+  host: { 'aria-hidden': 'true' },
+  styles: `
+    :host {
+      display: inline-flex;
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    svg {
+      display: block;
+      flex: none;
+    }
+  `,
+  template: `@if (exported[name]; as glyph) {
+      <ngage-icon [name]="glyph" />
+    } @else {
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path [attr.d]="paths[name] || paths.view" />
+      </svg>
+    }`,
 })
 export class IconComponent {
   @Input() name = 'view';
+  readonly exported: Partial<Record<string, NgageIconName>> = {
+    plus: 'add',
+    chevron: 'chevron-down',
+    next: 'arrow-right-01',
+    prev: 'arrow-left-01',
+    check: 'check',
+    home: 'home-01',
+    search: 'search-01',
+    password: 'user-lock-02',
+  };
   paths: any = {
     dashboard: 'M3 3h7v7H3z M14 3h7v7h-7z M3 14h7v7H3z M14 14h7v7h-7z',
     clients: 'M3 21V7h12v14 M15 11h6v10 M7 11h4 M7 15h4 M7 19h4 M6 7V3h6v4',
@@ -57,14 +90,30 @@ export class IconComponent {
 @Component({
   selector: 'app-data-table',
   standalone: true,
-  imports: [IconComponent],
+  imports: [NgageButton, IconComponent],
   template: `@if (exportable) {
       <div class="data-exportbar">
         <span>{{ data.length }} records</span
-        ><button [disabled]="!exportAllowed || !data.length" (click)="doExport('xlsx')">
+        ><button
+          [disabled]="!exportAllowed || !data.length"
+          (click)="doExport('xlsx')"
+          ngageButton
+          variant="border"
+        >
           <app-icon name="download" />Excel</button
-        ><button [disabled]="!exportAllowed || !data.length" (click)="doExport('csv')">CSV</button
-        ><button [disabled]="!exportAllowed || !data.length" (click)="doExport('pdf')">
+        ><button
+          [disabled]="!exportAllowed || !data.length"
+          (click)="doExport('csv')"
+          ngageButton
+          variant="border"
+        >
+          CSV</button
+        ><button
+          [disabled]="!exportAllowed || !data.length"
+          (click)="doExport('pdf')"
+          ngageButton
+          variant="border"
+        >
           PDF / Print
         </button>
       </div>
@@ -132,7 +181,7 @@ export class DataTableComponent {
 @Component({
   selector: 'app-record-card',
   standalone: true,
-  imports: [FormsModule, IconComponent],
+  imports: [NgageButton, NgageInput, NgageTag, NgageNav, FormsModule, IconComponent],
   template: ` <section class="record-card">
     <header class="record-header">
       <div class="record-title">
@@ -151,20 +200,23 @@ export class DataTableComponent {
               [title]="exportAllowed ? 'Export all matching records across pages' : exportReason"
               (click)="exportOpen = !exportOpen"
               [attr.aria-expanded]="exportOpen"
+              ngageButton
+              variant="border"
             >
               <app-icon name="download" />Export<app-icon name="chevron" />
             </button>
             @if (exportOpen && exportAllowed) {
               <div class="export-options">
-                <button (click)="doExport('xlsx')">Excel (.xlsx)</button
-                ><button (click)="doExport('csv')">CSV (.csv)</button
-                ><button (click)="doExport('pdf')">PDF / Print</button
+                <button (click)="doExport('xlsx')" ngageButton variant="border">
+                  Excel (.xlsx)</button
+                ><button (click)="doExport('csv')" ngageButton variant="border">CSV (.csv)</button
+                ><button (click)="doExport('pdf')" ngageButton variant="border">PDF / Print</button
                 ><small>{{ filtered.length }} matching records, all pages</small>
               </div>
             }
           </div>
           @if (createLabel) {
-            <button class="primary" (click)="create.emit()">
+            <button (click)="create.emit()" ngageButton>
               <app-icon name="plus" />{{ createLabel }}
             </button>
           }
@@ -175,20 +227,22 @@ export class DataTableComponent {
           >Search all fields<input
             [(ngModel)]="query"
             (ngModelChange)="resetPage()"
-            placeholder="Name, company, email or code" /></label
+            placeholder="Name, company, email or code"
+            ngageInput /></label
         ><label
           >Additional search<input
             [(ngModel)]="secondary"
             (ngModelChange)="resetPage()"
-            placeholder="Combine another keyword" /></label
+            placeholder="Combine another keyword"
+            ngageInput /></label
         ><label
-          >Status<select [(ngModel)]="status" (ngModelChange)="resetPage()">
+          >Status<select [(ngModel)]="status" (ngModelChange)="resetPage()" ngageInput>
             <option>All</option>
             @for (s of statuses; track s) {
               <option>{{ s }}</option>
             }
           </select></label
-        ><button class="clear" (click)="clear()">Clear filters</button>
+        ><button class="clear" (click)="clear()" ngageButton variant="border">Clear filters</button>
       </div>
       @if (tasks.length > 1) {
         <div class="task-row">
@@ -197,6 +251,7 @@ export class DataTableComponent {
               #task
               (change)="task.value && taskOpen.emit(task.value); task.value = ''"
               aria-label="Other actions"
+              ngageInput
             >
               <option value="">Choose an action</option>
               @for (t of tasks; track t) {
@@ -213,12 +268,23 @@ export class DataTableComponent {
     @if (exportError) {
       <div class="export-policy" role="alert">{{ exportError }}</div>
     }
-    <div class="record-body table-scroll">
-      <table>
+    <div
+      class="record-body table-scroll"
+      [class.event-table-scroll]="event"
+      [attr.tabindex]="event ? 0 : null"
+      [attr.role]="event ? 'region' : null"
+      [attr.aria-label]="event ? 'Events table, scroll horizontally for more columns' : null"
+    >
+      <table [class.event-table]="event" [class.event-table--directory]="event">
         <thead>
           <tr>
             @for (h of columns; track h; let i = $index) {
-              <th>
+              <th
+                [class.event-name-cell]="event && i === 0"
+                [class.event-status-cell]="event && i === 4"
+                [class.event-date-cell]="event && h === 'Start Date'"
+                [class.event-count-cell]="event && (h === 'DRF' || h === 'Assets')"
+              >
                 <button class="sort" (click)="sort(i)">
                   {{ h }} <span aria-hidden="true">↕</span>
                 </button>
@@ -231,19 +297,34 @@ export class DataTableComponent {
           @for (r of visible; track r.id || $index) {
             <tr>
               @for (v of r.values; track $index; let i = $index) {
-                <td>
+                <td
+                  [class.event-name-cell]="event && i === 0"
+                  [class.event-status-cell]="event && i === 4"
+                  [class.event-date-cell]="event && columns[i] === 'Start Date'"
+                  [class.event-count-cell]="
+                    event && (columns[i] === 'DRF' || columns[i] === 'Assets')
+                  "
+                >
                   @if (i === 4) {
-                    <span class="status" [class.pending]="pending(v)">{{ v }}</span>
+                    <span [tone]="pending(v) ? 'alert' : 'positive'" ngageTag>{{ v }}</span>
                   }
                   @if (i !== 4) {
                     @if (['Events', 'DRF', 'Assets'].includes(columns[i])) {
-                      <button (click)="link.emit({ row: r, column: columns[i] })">{{ v }}</button>
+                      <button
+                        (click)="link.emit({ row: r, column: columns[i] })"
+                        ngageButton
+                        variant="border"
+                      >
+                        {{ v }}
+                      </button>
                     } @else if (event && i === 0) {
-                      <button (click)="view.emit(r)">{{ v }}</button>
+                      <button (click)="view.emit(r)" ngageButton variant="border">{{ v }}</button>
                       @if (r.details?.['Event Type'] === 'Multi City') {
                         <button
                           [attr.aria-expanded]="expanded.has(r.id)"
                           (click)="toggleCities(r.id)"
+                          ngageButton
+                          variant="border"
                         >
                           Cities
                         </button>
@@ -261,6 +342,8 @@ export class DataTableComponent {
                     title="View full record"
                     aria-label="View full record"
                     (click)="view.emit(r)"
+                    ngageButton
+                    variant="border"
                   >
                     <app-icon name="view" />
                     @if (event) {
@@ -269,7 +352,9 @@ export class DataTableComponent {
                   </button>
                   @if (userManagement) {
                     @if (r.values[4] === 'Disabled') {
-                      <button (click)="enableUser.emit(r)">Enable</button>
+                      <button (click)="enableUser.emit(r)" ngageButton variant="border">
+                        Enable
+                      </button>
                     } @else {
                       <button
                         (click)="disableUser.emit(r)"
@@ -279,6 +364,8 @@ export class DataTableComponent {
                             ? 'At least one Platform Admin must remain active'
                             : 'Disable and reassign'
                         "
+                        ngageButton
+                        variant="border"
                       >
                         Disable
                       </button>
@@ -293,6 +380,8 @@ export class DataTableComponent {
                       title="Add client requirement entry"
                       aria-label="Add client requirement entry"
                       (click)="requirement.emit(r)"
+                      ngageButton
+                      variant="border"
                     >
                       <app-icon name="assets" />
                     </button>
@@ -303,6 +392,8 @@ export class DataTableComponent {
                       title="Edit record"
                       aria-label="Edit record"
                       (click)="edit.emit(r)"
+                      ngageButton
+                      variant="border"
                     >
                       <app-icon name="edit" />
                       @if (event) {
@@ -316,6 +407,8 @@ export class DataTableComponent {
                       title="Delete draft"
                       aria-label="Delete draft"
                       (click)="remove.emit(r)"
+                      ngageButton
+                      variant="border"
                     >
                       <app-icon name="delete" />
                     </button>
@@ -326,6 +419,8 @@ export class DataTableComponent {
                       title="Activate or deactivate"
                       aria-label="Activate or deactivate"
                       (click)="toggle.emit(r)"
+                      ngageButton
+                      variant="border"
                     >
                       <app-icon name="check" />
                     </button>
@@ -336,6 +431,8 @@ export class DataTableComponent {
                       title="Public registration link and QR"
                       aria-label="Public registration link and QR"
                       (click)="qr.emit(r)"
+                      ngageButton
+                      variant="border"
                     >
                       <app-icon name="qr" /><span>Registration QR</span>
                     </button>
@@ -346,6 +443,8 @@ export class DataTableComponent {
                       title="View sample contacts"
                       aria-label="View sample contacts"
                       (click)="contacts.emit(r)"
+                      ngageButton
+                      variant="border"
                     >
                       <app-icon name="view" />
                     </button>
@@ -356,6 +455,8 @@ export class DataTableComponent {
                       title="View history"
                       aria-label="View history"
                       (click)="view.emit(r)"
+                      ngageButton
+                      variant="border"
                     >
                       <app-icon name="history" />
                     </button>
@@ -398,7 +499,7 @@ export class DataTableComponent {
               <td [attr.colspan]="columns.length + 1" class="empty">
                 <h3>No matching records</h3>
                 <p>Adjust the search fields or clear the filters.</p>
-                <button (click)="clear()">Clear filters</button>
+                <button (click)="clear()" ngageButton variant="border">Clear filters</button>
               </td>
             </tr>
           }
@@ -413,20 +514,38 @@ export class DataTableComponent {
       </div>
       <div class="pagination">
         <label
-          >Rows<select [(ngModel)]="size" (ngModelChange)="resetPage()">
+          >Rows<select [(ngModel)]="size" (ngModelChange)="resetPage()" ngageInput>
             <option [ngValue]="5">5</option>
             <option [ngValue]="10">10</option>
             <option [ngValue]="20">20</option>
           </select></label
-        ><button [disabled]="page === 1" (click)="page = page - 1" aria-label="Previous page">
+        ><button
+          [disabled]="page === 1"
+          (click)="page = page - 1"
+          aria-label="Previous page"
+          ngageButton
+          variant="border"
+        >
           <app-icon name="prev" />Previous
         </button>
         @for (n of pages; track n) {
-          <button [class.current]="n === page" (click)="page = n" [attr.aria-label]="'Page ' + n">
+          <button
+            [class.current]="n === page"
+            (click)="page = n"
+            [attr.aria-label]="'Page ' + n"
+            ngageNav
+            [selected]="n === page"
+          >
             {{ n }}
           </button>
         }
-        <button [disabled]="page === max" (click)="page = page + 1" aria-label="Next page">
+        <button
+          [disabled]="page === max"
+          (click)="page = page + 1"
+          aria-label="Next page"
+          ngageButton
+          variant="border"
+        >
           Next<app-icon name="next" />
         </button>
       </div>

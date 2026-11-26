@@ -1,11 +1,11 @@
-@import '../styles/tokens.css';
 :host {
   box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: var(--ngage-space-2);
-  width: 357px;
+  width: 100%;
   max-width: 100%;
+  margin-block-end: var(--ngage-space-4);
   padding: var(--ngage-space-4) var(--ngage-space-6);
   border-radius: var(--ngage-radius-m);
   background: var(--ngage-background-inverse);
@@ -17,12 +17,18 @@
 }
 :host([data-tone='positive']) {
   background: var(--ngage-background-positive);
+  color: var(--ngage-palette-neutral-950);
 }
 :host([data-tone='negative']) {
   background: var(--ngage-background-negative);
 }
 :host([data-tone='alert']) {
   background: var(--ngage-background-alert);
+  color: var(--ngage-palette-neutral-950);
+}
+:host([data-tone='info']) {
+  background: var(--ngage-background-info-subtle);
+  color: var(--ngage-content-info-bold);
 }
 .message {
   flex: 1;

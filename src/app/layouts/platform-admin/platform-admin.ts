@@ -1,3 +1,4 @@
+import { NgageButton, NgageInput, NgageAlert, NgageAvatar } from '../../shared/design-system/index';
 import { WORKSPACE_UI_ACTIONS } from '../../shared/workspace/models/workspace-ui-actions';
 import { ClientsPage } from '../../features/clients/clients';
 import { EventsPage, RegistrationQrPage } from '../../features/events/events';
@@ -37,6 +38,10 @@ import { IconComponent } from '../../shared/components/platform-admin/ui.compone
   selector: 'app-workspace',
   standalone: true,
   imports: [
+    NgageAvatar,
+    NgageButton,
+    NgageInput,
+    NgageAlert,
     CommonModule,
     FormsModule,
     IconComponent,

@@ -1,4 +1,6 @@
-/* Future opt-in entry point; do not add to global styles until migration. */
+/* Single global entry point; components inherit the active theme. */
+@import './exported-tokens.css';
 @import './tokens.css';
 @import './typography.css';
 @import './forms.css';
+@import './primitives.css';

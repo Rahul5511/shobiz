@@ -1,47 +1,43 @@
-/* Shobiz Ngage v1.0.0. Deliberately not imported by src/styles.css.
- * :host supplies standalone components; .ngage-theme is a future opt-in scope.
- * Only values verified in the inspected Figma nodes are included. */
-:host,
-.ngage-theme {
-  --ngage-font-family: 'Baikal', sans-serif;
+/* Stable aliases. Exported values load once globally and inherit into components. */
+:root {
+  --ngage-font-family: 'Baikal', 'Inter', 'Segoe UI', Arial, sans-serif;
   --ngage-font-regular: 400;
   --ngage-font-medium: 500;
-  --ngage-text-s-size: 12px;
-  --ngage-text-s-line-height: 16px;
-  --ngage-text-m-size: 14px;
-  --ngage-text-m-line-height: 20px;
-  --ngage-text-l-size: 16px;
-  --ngage-text-l-line-height: 24px;
+  --ngage-text-s-size: var(--ngage-type-text-s-regular-size);
+  --ngage-text-s-line-height: var(--ngage-type-text-s-regular-line-height);
+  --ngage-text-m-size: var(--ngage-type-text-m-regular-size);
+  --ngage-text-m-line-height: var(--ngage-type-text-m-regular-line-height);
+  --ngage-text-l-size: var(--ngage-type-text-l-regular-size);
+  --ngage-text-l-line-height: var(--ngage-type-text-l-regular-line-height);
   --ngage-letter-spacing: 0px;
 
-  --ngage-background-primary: #ffffff;
-  --ngage-background-inverse: #0d0d0d;
-  --ngage-background-brand: #f7931e;
-  --ngage-background-brand-hover: #b36100;
-  --ngage-background-disabled: #f2f2f2;
-  --ngage-background-positive: #009933;
-  --ngage-background-negative: #d70429;
-  --ngage-background-alert: #ff8000;
-  --ngage-content-primary: #0d0d0d;
-  --ngage-content-primary-inverse: #ffffff;
-  --ngage-content-tertiary: #666666;
-  --ngage-content-disabled: #b2b2b2;
-  --ngage-content-brand: #f7931e;
-  --ngage-content-positive: #009933;
-  --ngage-content-negative: #d70429;
-  --ngage-content-alert: #ff8000;
-  --ngage-content-info: #339cff;
-  --ngage-border-tertiary: #e5e5e5;
-  --ngage-border-brand: #f7931e;
-  --ngage-border-disabled: #f2f2f2;
-  --ngage-popup-header-border: #e5e7eb;
-
-  --ngage-radius-s: 8px;
-  --ngage-radius-m: 12px;
-  --ngage-space-1: 4px;
-  --ngage-space-2: 8px;
-  --ngage-space-3: 12px;
-  --ngage-space-4: 16px;
-  --ngage-space-6: 24px;
+  --ngage-space-1: var(--ngage-space-xs);
+  --ngage-space-2: var(--ngage-space-s);
+  --ngage-space-3: var(--ngage-space-m);
+  --ngage-space-4: var(--ngage-space-l);
+  --ngage-space-6: var(--ngage-space-xl);
+  --ngage-popup-header-border: var(--ngage-border-tertiary);
   --ngage-shadow-l2: 0 0 4px #00000014, 0 4px 8px #0000001a;
+  --ngage-focus-ring: var(--ngage-content-primary);
+  /* Readable foregrounds on the exported orange/green solid surfaces. */
+  --ngage-button-content: var(--ngage-palette-neutral-950);
+  --ngage-button-hover-content: var(--ngage-palette-primary-white);
+}
+
+.night-theme,
+[data-ngage-theme='dark'] {
+  --ngage-button-hover-content: var(--ngage-palette-neutral-950);
+}
+
+.ngage-custom-theme {
+  --ngage-background-brand: var(--custom-accent);
+  --ngage-border-brand: var(--custom-accent);
+  --ngage-content-brand: var(--custom-accent);
+  --ngage-background-brand-hover: color-mix(in srgb, var(--custom-accent) 72%, black);
+  --ngage-background-brand-pressed: color-mix(in srgb, var(--custom-accent) 55%, black);
+  --ngage-background-selected: color-mix(
+    in srgb,
+    var(--custom-accent) 20%,
+    var(--ngage-background-primary)
+  );
 }

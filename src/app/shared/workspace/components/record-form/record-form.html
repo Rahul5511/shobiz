@@ -5,7 +5,7 @@
       <h1>{{ w.flow.title }}</h1>
       <p>One record, related sections, and full final confirmation.</p>
     </div>
-    <button (click)="s.cancel()">Back to list</button>
+    <button (click)="s.cancel()" ngageButton variant="border">Back to list</button>
   </div>
   <div class="provenance">{{ w.flow.source }}</div>
   <section class="card form-card">
@@ -18,7 +18,13 @@
     @if (w.key !== 'RolePermissions') {
       <nav class="steps">
         @for (st of w.flow.steps; track st; let i = $index) {
-          <button [class.current]="w.step === i" [disabled]="i > w.visited" (click)="s.tab(i)">
+          <button
+            [class.current]="w.step === i"
+            [disabled]="i > w.visited"
+            (click)="s.tab(i)"
+            ngageNav
+            [selected]="w.step === i"
+          >
             <span>{{ i + 1 | number: '2.0' }}</span
             >{{ st.label }}
           </button>
@@ -319,16 +325,16 @@
       </section>
     }
     <footer class="form-actions">
-      <button (click)="s.cancel()">Cancel</button><button (click)="s.saveDraft()">Save Draft</button
-      ><span></span>
+      <button (click)="s.cancel()" ngageButton variant="border">Cancel</button
+      ><button (click)="s.saveDraft()" ngageButton variant="border">Save Draft</button><span></span>
       @if (w.step > 0) {
-        <button (click)="s.back()">Back</button>
+        <button (click)="s.back()" ngageButton variant="border">Back</button>
       }
       @if (w.step < w.flow.steps.length - 1 && w.key !== 'RolePermissions') {
-        <button class="primary" (click)="s.next()">Next <app-icon name="next" /></button>
+        <button (click)="s.next()" ngageButton>Next <app-icon name="next" /></button>
       }
       @if (w.step === w.flow.steps.length - 1 || w.key === 'RolePermissions') {
-        <button class="primary" (click)="s.save()">
+        <button (click)="s.save()" ngageButton>
           {{
             w.key === 'Admin'
               ? 'Save access and prepare invitation'

@@ -17,26 +17,26 @@
       </p>
     </div>
     @if (s.can('Reports')) {
-      <button (click)="s.reportList()">View saved reports</button>
+      <button (click)="s.reportList()" ngageButton variant="border">View saved reports</button>
     }
   </div>
   <div class="card filters">
     <label
-      >Event<select [(ngModel)]="s.event">
+      >Event<select [(ngModel)]="s.event" ngageInput>
         @for (n of s.eventNames; track n) {
           <option>{{ n }}</option>
         }
       </select></label
     ><label
-      >Country<select>
+      >Country<select ngageInput>
         <option>India</option>
       </select></label
     ><label
-      >State<select>
+      >State<select ngageInput>
         <option>Maharashtra</option>
       </select></label
     ><label
-      >City<select>
+      >City<select ngageInput>
         <option>Mumbai</option>
       </select></label
     >
@@ -44,7 +44,13 @@
   @if (s.reportType === 'department') {
     <div class="metrics">
       @for (k of ['Assignment', 'DRF', 'Extraction', 'Sample', 'Lots', 'Returns']; track k) {
-        <button [hidden]="!s.accessible(k)" class="metric" (click)="s.nav(k)">
+        <button
+          [hidden]="!s.accessible(k)"
+          class="metric"
+          (click)="s.nav(k)"
+          ngageButton
+          variant="border"
+        >
           {{ s.m.entities[k].label }}<strong>{{ s.rows[k].length }}</strong
           >View records →
         </button>
@@ -61,14 +67,14 @@
     </section>
   } @else {
     <div class="card filters">
-      <label>Search<input [(ngModel)]="s.search" /></label
-      ><label>Additional search<input [(ngModel)]="s.search2" /></label>
+      <label>Search<input [(ngModel)]="s.search" ngageInput /></label
+      ><label>Additional search<input [(ngModel)]="s.search2" ngageInput /></label>
       @if (s.calling) {
-        <label>Date<input type="date" [(ngModel)]="s.date" /></label>
+        <label>Date<input type="date" [(ngModel)]="s.date" ngageInput /></label>
       }
       @if (s.calling) {
         <label
-          >Telecaller<select [(ngModel)]="s.agent" [disabled]="s.role === 'Telecaller'">
+          >Telecaller<select [(ngModel)]="s.agent" [disabled]="s.role === 'Telecaller'" ngageInput>
             <option>All</option>
             <option>Neha Singh</option>
             <option>Arjun Das</option>
@@ -110,12 +116,12 @@
         />
       </section>
     }
-    <div class="alert info">
+    <ngage-alert [dismissible]="false" tone="info">
       {{
         s.calling
           ? 'Call attempts are different from unique contacts called.'
           : 'Registration and confirmation do not establish attendance. Check-in/import establishes attendance; classify no-shows only after event closure.'
       }}
-    </div>
+    </ngage-alert>
   }
 }

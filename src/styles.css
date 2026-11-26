@@ -1,26 +1,29 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source('./');
 @import './app/layouts/platform-admin/platform-admin.css';
+@import './app/layouts/platform-admin/platform-admin-responsive.css';
+@import './app/layouts/platform-admin/event-tables.css';
+@import './app/shared/design-system/styles/index.css';
 
-@theme {
-  --font-sans: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-  --color-brand: #24634c;
-  --color-brand-hover: #194b39;
-  --color-brand-deep: #143d30;
-  --color-brand-accent: #cee5a0;
-  --color-brand-soft: #c0d4ca;
-  --color-brand-pale: #edf4ee;
-  --color-on-brand: #ffffff;
-  --color-background: #f6f7f4;
-  --color-surface: #ffffff;
-  --color-ink: #202e28;
-  --color-muted: #647169;
-  --color-placeholder: #6b766e;
-  --color-line: #dce2dc;
-  --color-focus: #24634c26;
-  --color-sand: #e9d7b7;
-  --color-danger: #a92a2a;
-  --color-danger-border: #efc6c6;
-  --color-danger-surface: #fff4f4;
+@theme inline {
+  --font-sans: var(--ngage-font-family);
+  --color-brand: var(--ngage-background-brand);
+  --color-brand-hover: var(--ngage-background-brand-hover);
+  --color-brand-deep: var(--ngage-background-brand-pressed);
+  --color-brand-accent: var(--ngage-background-selected);
+  --color-brand-soft: var(--ngage-background-selected);
+  --color-brand-pale: var(--ngage-background-hover);
+  --color-on-brand: var(--ngage-content-primary-inverse);
+  --color-background: var(--ngage-background-hover);
+  --color-surface: var(--ngage-background-primary);
+  --color-ink: var(--ngage-content-primary);
+  --color-muted: var(--ngage-content-tertiary);
+  --color-placeholder: var(--ngage-content-disabled);
+  --color-line: var(--ngage-border-tertiary);
+  --color-focus: var(--ngage-border-brand);
+  --color-sand: var(--ngage-background-alert-subtle);
+  --color-danger: var(--ngage-content-negative);
+  --color-danger-border: var(--ngage-border-negative);
+  --color-danger-surface: var(--ngage-background-negative-subtle);
 }
 
 @layer base {
@@ -45,42 +48,6 @@
     outline-offset: 4px;
   }
   button:disabled {
-    cursor: wait;
-    opacity: 0.65;
-  }
-}
-
-@layer components {
-  .primary-button {
-    display: inline-flex;
-    min-height: 3.15rem;
-    align-items: center;
-    justify-content: center;
-    padding: 0.85rem 1.25rem;
-    border: 1px solid transparent;
-    border-radius: 0.6rem;
-    background: var(--color-brand);
-    color: var(--color-on-brand);
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .primary-button:hover:not(:disabled) {
-    background: var(--color-brand-hover);
-  }
-  .secondary-button {
-    min-height: 2.75rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--color-line);
-    border-radius: 0.6rem;
-    background: var(--color-surface);
-    color: var(--color-ink);
-    font-size: 0.8rem;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  .secondary-button:hover {
-    background: var(--color-brand-pale);
+    cursor: not-allowed;
   }
 }

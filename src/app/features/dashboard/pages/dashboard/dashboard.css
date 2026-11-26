@@ -9,23 +9,31 @@
 }
 .portfolio-filter-row {
   display: grid;
-  grid-template-columns: repeat(5, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
   gap: 16px;
-  overflow-x: auto;
+  align-items: end;
+}
+.portfolio-filter-row > label {
+  min-width: 0;
+}
+@container ngage-workspace (max-width: 640px) {
+  .portfolio-filter-card {
+    position: static;
+  }
 }
 .scope-line {
   margin: 12px 0;
   font-weight: 600;
 }
 .portfolio-metrics {
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
 }
 .portfolio-metrics strong {
   font-size: 23px;
 }
 .portfolio-chart-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 20px;
 }
 .portfolio-chart-grid > section {

@@ -1,3 +1,4 @@
+import { NgageInput } from '../../../../shared/design-system/index';
 import {
   Component,
   inject,
@@ -24,6 +25,7 @@ import { CallStatusesPage } from '../call-statuses/call-statuses';
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
+    NgageInput,
     FormsModule,
     CountriesPage,
     StatesPage,

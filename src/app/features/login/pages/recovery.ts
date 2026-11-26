@@ -1,10 +1,11 @@
+import { NgageInput, NgageAlert, NgageButton } from '../../../shared/design-system/index';
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 /** The supplied recovery journey is simulated and does not change account passwords. */
 @Component({
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [NgageInput, NgageAlert, NgageButton, ReactiveFormsModule, RouterLink],
   host: { class: 'platform-admin' },
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './recovery.html',

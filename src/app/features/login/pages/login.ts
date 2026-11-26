@@ -1,3 +1,4 @@
+import { NgageInput, NgageAlert, NgageButton } from '../../../shared/design-system/index';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -17,7 +18,7 @@ import { DEMO_CREDENTIALS } from '../../../core/services/login/login.service';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [NgageInput, NgageAlert, NgageButton, ReactiveFormsModule, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './login.html',
 })

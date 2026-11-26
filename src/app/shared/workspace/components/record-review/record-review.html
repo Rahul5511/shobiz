@@ -3,7 +3,9 @@
     <header>
       <h3>{{ section.label }}</h3>
       @if (s.wizard) {
-        <button (click)="s.tab(i)"><app-icon name="edit" />Edit section</button>
+        <button (click)="s.tab(i)" ngageButton variant="border">
+          <app-icon name="edit" />Edit section
+        </button>
       }
     </header>
     <dl class="review-grid">

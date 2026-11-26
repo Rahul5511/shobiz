@@ -1,6 +1,6 @@
-/* Imported only in the future consumer's stylesheet (or future global opt-in).
- * Defaults inherit tokens from ngage-form-field or a .ngage-theme ancestor. */
-.ngage-control {
+/* Native controls retain Angular forms ownership. Repeated class specificity
+ * lets the shared design replace previous screen-level control appearance. */
+.ngage-control.ngage-control {
   box-sizing: border-box;
   width: 100%;
   min-width: 0;
@@ -13,16 +13,16 @@
     var(--ngage-font-family);
   letter-spacing: var(--ngage-letter-spacing);
 }
-.ngage-control::placeholder {
+.ngage-control.ngage-control::placeholder {
   color: var(--ngage-content-disabled);
   opacity: 1;
 }
-.ngage-control:focus {
+.ngage-control.ngage-control:focus {
   border-color: var(--ngage-border-brand);
   outline: 1px solid var(--ngage-border-brand);
   outline-offset: -1px;
 }
-.ngage-control:disabled {
+.ngage-control.ngage-control:disabled {
   background: var(--ngage-background-disabled);
   border-color: var(--ngage-border-disabled);
   color: var(--ngage-content-disabled);

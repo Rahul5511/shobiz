@@ -1,3 +1,4 @@
+import { NgageAlert, NgageInput, NgageButton } from '../../../../shared/design-system/index';
 import {
   ViewEncapsulation,
   Component,
@@ -26,7 +27,7 @@ type EventData = { log: LogEntry[]; executives: Executive[]; schedule?: Schedule
 @Component({
   selector: 'app-event-dashboard',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [NgageAlert, NgageInput, NgageButton, CommonModule, FormsModule],
   templateUrl: './event-dashboard.component.html',
   // Preserve the existing CSS selectors and native admin scope.
   encapsulation: ViewEncapsulation.None,

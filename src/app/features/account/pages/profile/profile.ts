@@ -1,3 +1,9 @@
+import {
+  NgageNav,
+  NgageButton,
+  NgageInput,
+  NgageChoice,
+} from '../../../../shared/design-system/index';
 import { Component, ChangeDetectionStrategy, inject, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { WorkspaceService } from '../../../../shared/workspace/data-access/workspace.service';
@@ -8,7 +14,7 @@ import { IconComponent } from '../../../../shared/components/platform-admin/ui.c
   changeDetection: ChangeDetectionStrategy.Eager,
   selector: 'app-profile-page',
   standalone: true,
-  imports: [FormsModule, IconComponent],
+  imports: [NgageNav, NgageButton, NgageInput, NgageChoice, FormsModule, IconComponent],
   templateUrl: './profile.html',
   styleUrl: './profile.css',
 })

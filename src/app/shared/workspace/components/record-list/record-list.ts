@@ -1,3 +1,4 @@
+import { NgageAlert, NgageInput, NgageButton } from '../../../design-system/index';
 import { WORKSPACE_UI_ACTIONS } from '../../models/workspace-ui-actions';
 import { FormsModule } from '@angular/forms';
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
@@ -9,7 +10,7 @@ import { RecordCardComponent } from '../../../components/platform-admin/ui.compo
   changeDetection: ChangeDetectionStrategy.Eager,
   selector: 'app-workspace-record-list',
   standalone: true,
-  imports: [RecordCardComponent, FormsModule],
+  imports: [NgageAlert, NgageInput, NgageButton, RecordCardComponent, FormsModule],
   templateUrl: './record-list.html',
   styleUrl: './record-list.css',
 })

@@ -1,11 +1,11 @@
 @if (error) {
-  <p class="alert error" role="alert">{{ error }}</p>
+  <ngage-alert role="alert" [dismissible]="false" tone="negative">{{ error }}</ngage-alert>
 }
 @if (!detail) {
   <section class="card padded">
     <div class="event-portfolio-filters">
       <label
-        >Event<select [ngModel]="eventName" (ngModelChange)="selectEvent($event)">
+        >Event<select [ngModel]="eventName" (ngModelChange)="selectEvent($event)" ngageInput>
           <option value="">Select event</option>
           @for (row of portfolio; track row) {
             <option [value]="row.values[0]">{{ row.values[0] }}</option>
@@ -13,18 +13,23 @@
         </select></label
       >
       <label
-        >City<select [(ngModel)]="city">
+        >City<select [(ngModel)]="city" ngageInput>
           <option value="">All cities</option>
           @for (item of cities; track item) {
             <option>{{ item }}</option>
           }
         </select></label
       >
-      <label>From<input type="date" [(ngModel)]="from" /></label
-      ><label>To<input type="date" [(ngModel)]="to" /></label>
+      <label>From<input type="date" [(ngModel)]="from" ngageInput /></label
+      ><label>To<input type="date" [(ngModel)]="to" ngageInput /></label>
     </div>
     @if (eventRow && !calling && s.role !== 'Client Contact') {
-      <button class="event-portfolio-open" (click)="chooseEvent(eventRow)">
+      <button
+        class="event-portfolio-open"
+        (click)="chooseEvent(eventRow)"
+        ngageButton
+        variant="border"
+      >
         Open Event Dashboard
       </button>
     }
@@ -32,17 +37,22 @@
       <p>No events match this view.</p>
     }
     @if (!portfolio.length && s.canCreate('Events')) {
-      <button class="primary" (click)="s.openTask('Events')">Add New Event</button>
+      <button (click)="s.openTask('Events')" ngageButton>Add New Event</button>
     }
     @if (s.role === 'Super User') {
-      <div class="table-scroll">
-        <table>
+      <div
+        class="table-scroll event-table-scroll"
+        tabindex="0"
+        role="region"
+        aria-label="Event portfolio table, scroll horizontally for more columns"
+      >
+        <table class="event-table event-table--portfolio">
           <thead>
             <tr>
               <th>Client</th>
-              <th>Event</th>
+              <th class="event-name-cell">Event</th>
               <th>City</th>
-              <th>Start</th>
+              <th class="event-date-cell">Start</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -50,11 +60,13 @@
             @for (row of portfolio; track row) {
               <tr>
                 <td>{{ row.details?.Client }}</td>
-                <td>
-                  <button (click)="chooseEvent(row)">{{ row.values[0] }}</button>
+                <td class="event-name-cell">
+                  <button (click)="chooseEvent(row)" ngageButton variant="border">
+                    {{ row.values[0] }}
+                  </button>
                 </td>
                 <td>{{ row.details?.City }}</td>
-                <td>{{ row.details?.['Event Start Date'] }}</td>
+                <td class="event-date-cell">{{ row.details?.['Event Start Date'] }}</td>
                 <td>{{ row.details?.['Event Status'] || row.values[4] }}</td>
               </tr>
             }
@@ -233,11 +245,11 @@
     <section class="card padded">
       <h2>Event Executives</h2>
       <form class="event-detail-fields" (ngSubmit)="addExecutive()">
-        <label>Name<input name="executiveName" [(ngModel)]="name" required /></label
+        <label>Name<input name="executiveName" [(ngModel)]="name" required ngageInput /></label
         ><label
-          >Email<input type="email" name="executiveEmail" [(ngModel)]="email" required
+          >Email<input type="email" name="executiveEmail" [(ngModel)]="email" required ngageInput
         /></label>
-        <div class="event-detail-action"><button class="primary">Add Event Executive</button></div>
+        <div class="event-detail-action"><button ngageButton>Add Event Executive</button></div>
       </form>
       <div class="table-scroll">
         <table>
@@ -253,7 +265,11 @@
               <tr>
                 <td>{{ row.name }}</td>
                 <td>{{ row.email || 'Unrecorded' }}</td>
-                <td><button (click)="removeExecutive(i)">Remove event access</button></td>
+                <td>
+                  <button (click)="removeExecutive(i)" ngageButton variant="border">
+                    Remove event access
+                  </button>
+                </td>
               </tr>
             }
             @if (!state.executives.length) {
@@ -272,11 +288,16 @@
       @if (canWriteLog) {
         <form (ngSubmit)="append(attachment)">
           <label
-            >Remarks<textarea #requirementsRemarks name="remarks" [(ngModel)]="remarks"></textarea>
+            >Remarks<textarea
+              #requirementsRemarks
+              name="remarks"
+              [(ngModel)]="remarks"
+              ngageInput
+            ></textarea>
           </label>
           <div class="event-detail-fields">
             <label
-              >City<select name="logCity" [(ngModel)]="logCity">
+              >City<select name="logCity" [(ngModel)]="logCity" ngageInput>
                 <option value="">All cities</option>
                 @for (item of cities; track item) {
                   <option>{{ item }}</option>
@@ -287,7 +308,7 @@
               >Attachments<input #attachment type="file" multiple (change)="setFiles($event)"
             /></label>
             <div class="event-detail-action">
-              <button class="primary" [disabled]="busy">Add log entry</button>
+              <button [disabled]="busy" ngageButton>Add log entry</button>
             </div>
           </div>
         </form>
@@ -312,7 +333,7 @@
                 <td class="requirements-remarks">{{ entry.remarks }}</td>
                 <td>
                   @for (file of entry.files; track file) {
-                    <button (click)="download(file)">
+                    <button (click)="download(file)" ngageButton variant="border">
                       {{ file.name }}
                     </button>
                   }
@@ -338,28 +359,30 @@
       </p>
       <form class="event-detail-fields" (ngSubmit)="schedule()">
         <label
-          >Frequency<select name="frequency" [(ngModel)]="frequency">
+          >Frequency<select name="frequency" [(ngModel)]="frequency" ngageInput>
             <option>Daily</option>
             <option>Weekly</option>
             <option>Monthly</option>
           </select></label
         >
-        <label>Local time<input type="time" name="time" [(ngModel)]="time" required /></label>
         <label
-          >Format<select name="format" [(ngModel)]="format">
+          >Local time<input type="time" name="time" [(ngModel)]="time" required ngageInput
+        /></label>
+        <label
+          >Format<select name="format" [(ngModel)]="format" ngageInput>
             <option value="xlsx">Excel</option>
             <option value="csv">CSV</option>
             <option value="pdf">PDF / Print</option>
           </select></label
         >
-        <div class="event-detail-action"><button class="primary">Save schedule</button></div>
+        <div class="event-detail-action"><button ngageButton>Save schedule</button></div>
       </form>
       @if (state.schedule; as saved) {
         <p role="status">
           {{ saved.frequency }} at {{ saved.time }} · {{ saved.format | uppercase }}
         </p>
       }
-      <button (click)="preview()">Export report preview</button>
+      <button (click)="preview()" ngageButton variant="border">Export report preview</button>
     </section>
   }
 }

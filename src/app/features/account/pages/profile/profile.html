@@ -6,12 +6,16 @@
         [class.active]="c.profileTab === 'details'"
         [attr.aria-pressed]="c.profileTab === 'details'"
         (click)="c.profileTab = 'details'"
+        ngageNav
+        [selected]="c.profileTab === 'details'"
       >
         Profile Details</button
       ><button
         [class.active]="c.profileTab === 'permissions'"
         [attr.aria-pressed]="c.profileTab === 'permissions'"
         (click)="c.profileTab = 'permissions'"
+        ngageNav
+        [selected]="c.profileTab === 'permissions'"
       >
         Roles &amp; Permissions
       </button>
@@ -33,7 +37,11 @@
           <p>{{ c.profile.designation || s.roleName }}</p>
         </div>
         @if (!c.profileDraft) {
-          <button (click)="c.profileDraft = { ...c.profile }; s.notice = ''">
+          <button
+            (click)="c.profileDraft = { ...c.profile }; s.notice = ''"
+            ngageButton
+            variant="border"
+          >
             <app-icon name="edit" />Edit Profile
           </button>
         }
@@ -46,13 +54,25 @@
               [(ngModel)]="draft.name"
               required
               maxlength="100"
-          /></label>
-          <label>Sign-in email<input name="email" [value]="auth.session?.email" readonly /></label>
-          <label
-            >Mobile<input name="mobile" type="tel" [(ngModel)]="draft.mobile" maxlength="30"
+              ngageInput
           /></label>
           <label
-            >Designation<input name="designation" [(ngModel)]="draft.designation" maxlength="100"
+            >Sign-in email<input name="email" [value]="auth.session?.email" readonly ngageInput
+          /></label>
+          <label
+            >Mobile<input
+              name="mobile"
+              type="tel"
+              [(ngModel)]="draft.mobile"
+              maxlength="30"
+              ngageInput
+          /></label>
+          <label
+            >Designation<input
+              name="designation"
+              [(ngModel)]="draft.designation"
+              maxlength="100"
+              ngageInput
           /></label>
           <label
             >Profile picture<input
@@ -62,12 +82,20 @@
           /></label>
           @if (draft.photo) {
             <div>
-              <button type="button" (click)="draft.photo = ''">Remove picture</button>
+              <button type="button" (click)="draft.photo = ''" ngageButton variant="border">
+                Remove picture
+              </button>
             </div>
           }
           <div class="profile-form-actions">
-            <button type="button" (click)="c.profileDraft = null; s.error = ''">Cancel</button
-            ><button type="submit" class="primary">Save Profile</button>
+            <button
+              type="button"
+              (click)="c.profileDraft = null; s.error = ''"
+              ngageButton
+              variant="border"
+            >
+              Cancel</button
+            ><button type="submit" ngageButton>Save Profile</button>
           </div>
         </form>
       } @else {
@@ -147,6 +175,7 @@
                       disabled
                       [checked]="grants.includes(permission.code)"
                       [attr.aria-label]="permission.label"
+                      ngageChoice="checkbox"
                     />
                   </td>
                 </tr>

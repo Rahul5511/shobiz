@@ -4,12 +4,12 @@
     <h1>Platform Admin Dashboard</h1>
     <p>Portfolio registration and approval overview.</p>
   </div>
-  <button (click)="s.nav('Reports')">View Reports</button>
+  <button (click)="s.nav('Reports')" ngageButton variant="border">View Reports</button>
 </div>
 <section class="card padded portfolio-filter-card" aria-label="Portfolio filters">
   <div class="portfolio-filter-row">
     <label
-      >Client<select [(ngModel)]="filters.client" (ngModelChange)="changeClient()">
+      >Client<select [(ngModel)]="filters.client" (ngModelChange)="changeClient()" ngageInput>
         <option value="">All clients</option>
         @for (client of clients; track client) {
           <option>{{ client }}</option>
@@ -17,7 +17,7 @@
       </select></label
     >
     <label
-      >Event<select [(ngModel)]="filters.event">
+      >Event<select [(ngModel)]="filters.event" ngageInput>
         <option value="">All events</option>
         @for (event of eventOptions; track event.id) {
           <option [value]="event.id">{{ event.name }}</option>
@@ -25,22 +25,26 @@
       </select></label
     >
     <label
-      >City<select [(ngModel)]="filters.city">
+      >City<select [(ngModel)]="filters.city" ngageInput>
         <option value="">All cities</option>
         @for (city of cities; track city) {
           <option>{{ city }}</option>
         }
       </select></label
     >
-    <label>From<input type="date" [(ngModel)]="filters.from" /></label
-    ><label>To<input type="date" [(ngModel)]="filters.to" /></label>
+    <label>From<input type="date" [(ngModel)]="filters.from" ngageInput /></label
+    ><label>To<input type="date" [(ngModel)]="filters.to" ngageInput /></label>
   </div>
   <p class="scope-line">{{ scope }}</p>
   @if (filters.event) {
-    <button (click)="openSelected()" [disabled]="!filtered.length">Open Event Dashboard</button>
+    <button (click)="openSelected()" [disabled]="!filtered.length" ngageButton variant="border">
+      Open Event Dashboard
+    </button>
   }
   @if (invalidRange) {
-    <p class="alert error" role="alert">From must be on or before To.</p>
+    <ngage-alert role="alert" [dismissible]="false" tone="negative"
+      >From must be on or before To.</ngage-alert
+    >
   }
 </section>
 @if (!filtered.length) {
@@ -56,14 +60,19 @@
   <section class="card padded">
     <h2>{{ scope }} - Next events</h2>
     <p>Next ten ongoing or upcoming events, ordered by start date.</p>
-    <div class="table-scroll">
-      <table>
+    <div
+      class="table-scroll event-table-scroll"
+      tabindex="0"
+      role="region"
+      aria-label="Upcoming events table, scroll horizontally for more columns"
+    >
+      <table class="event-table event-table--summary">
         <thead>
           <tr>
             <th>Client</th>
-            <th>Event</th>
+            <th class="event-name-cell">Event</th>
             <th>City</th>
-            <th>Start</th>
+            <th class="event-date-cell">Start</th>
             <th>Stage</th>
             <th>Status</th>
             <th>Days to event</th>
@@ -80,11 +89,17 @@
               (keydown.space)="$event.preventDefault(); open(event)"
             >
               <td>{{ event.client }}</td>
-              <td>
-                <button (click)="$event.stopPropagation(); open(event)">{{ event.name }}</button>
+              <td class="event-name-cell">
+                <button
+                  (click)="$event.stopPropagation(); open(event)"
+                  ngageButton
+                  variant="border"
+                >
+                  {{ event.name }}
+                </button>
               </td>
               <td>{{ event.cities.join(', ') }}</td>
-              <td>{{ event.start }}</td>
+              <td class="event-date-cell">{{ event.start }}</td>
               <td>{{ event.stage }}</td>
               <td>{{ event.status }}</td>
               <td>{{ event.days }}</td>
@@ -99,7 +114,7 @@
         </tbody>
       </table>
     </div>
-    <button (click)="viewAll()">View all events</button>
+    <button (click)="viewAll()" ngageButton variant="border">View all events</button>
   </section>
   <div class="portfolio-chart-grid">
     <section class="card padded">
@@ -127,7 +142,8 @@
       <h2>Registrations against Pax by event</h2>
       @for (event of eventBars; track event.id) {
         <div class="pax-row">
-          <button (click)="$event.stopPropagation(); open(event)">{{ event.name }}</button
+          <button (click)="$event.stopPropagation(); open(event)" ngageButton variant="border">
+            {{ event.name }}</button
           ><label
             >Registered {{ event.registered }} / {{ event.pax }}
             <div class="pax-gauge">
@@ -236,12 +252,17 @@
   <section class="card padded">
     <h2>Events needing attention</h2>
     <p>Events with approvals waiting at least 72 hours.</p>
-    <div class="table-scroll">
-      <table>
+    <div
+      class="table-scroll event-table-scroll"
+      tabindex="0"
+      role="region"
+      aria-label="Events needing attention table, scroll horizontally for more columns"
+    >
+      <table class="event-table event-table--attention">
         <thead>
           <tr>
             <th>Client</th>
-            <th>Event</th>
+            <th class="event-name-cell">Event</th>
             <th>Days to event</th>
             <th>Registered / Pax</th>
             <th>Pending 3+ days</th>
@@ -252,8 +273,14 @@
           @for (event of attention; track event.id) {
             <tr>
               <td>{{ event.client }}</td>
-              <td>
-                <button (click)="$event.stopPropagation(); open(event)">{{ event.name }}</button>
+              <td class="event-name-cell">
+                <button
+                  (click)="$event.stopPropagation(); open(event)"
+                  ngageButton
+                  variant="border"
+                >
+                  {{ event.name }}
+                </button>
               </td>
               <td>{{ event.days }}</td>
               <td>{{ event.registered }} / {{ event.pax }}</td>
@@ -279,7 +306,12 @@
       @for (module of modules; track module.label) {
         <div class="metric">
           {{ module.label }}<strong>{{ module.done }} / {{ module.target }}</strong
-          ><meter min="0" [max]="module.target" [value]="module.done"></meter>
+          ><progress
+            ngageProgress
+            [max]="module.target"
+            [value]="module.done"
+            [attr.aria-label]="module.label + ' completion'"
+          ></progress>
           <p>{{ module.detail }}</p>
         </div>
       }

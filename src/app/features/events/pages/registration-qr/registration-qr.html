@@ -5,7 +5,7 @@
       <h1>{{ s.selected.values[0] }}</h1>
       <p>Event registration link and QR</p>
     </div>
-    <button (click)="s.view = 'list'">Back to events</button>
+    <button (click)="s.view = 'list'" ngageButton variant="border">Back to events</button>
   </div>
   <section class="card padded qr-card">
     @if (s.qrImage) {

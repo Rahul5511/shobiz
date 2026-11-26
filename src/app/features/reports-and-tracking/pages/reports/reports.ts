@@ -1,3 +1,9 @@
+import {
+  NgageInput,
+  NgageButton,
+  NgageAlert,
+  NgageChoice,
+} from '../../../../shared/design-system/index';
 import { Component, ChangeDetectionStrategy, inject, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -9,7 +15,15 @@ import { audienceAccess, audienceReports, entityReports } from '../role-reports/
   selector: 'app-reports-page',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [CommonModule, FormsModule, RoleReportsComponent],
+  imports: [
+    NgageInput,
+    NgageButton,
+    NgageAlert,
+    NgageChoice,
+    CommonModule,
+    FormsModule,
+    RoleReportsComponent,
+  ],
   templateUrl: './reports.html',
   styleUrl: './reports.css',
 })

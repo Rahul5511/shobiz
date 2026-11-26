@@ -14,15 +14,16 @@
     [readOnly]="submitting()"
     [attr.aria-invalid]="form.controls.email.touched && form.controls.email.invalid"
     aria-describedby="email-error"
+    ngageInput
   />
   @if (form.controls.email.touched && form.controls.email.invalid) {
-    <p id="email-error" class="alert error">
+    <ngage-alert id="email-error" [dismissible]="false" tone="negative">
       {{
         form.controls.email.hasError('required')
           ? 'Enter your email address.'
           : 'Enter a valid email address.'
       }}
-    </p>
+    </ngage-alert>
   }
   <label for="password">Password</label>
   <div class="password-input">
@@ -34,6 +35,7 @@
       autocomplete="current-password"
       [readOnly]="submitting()"
       aria-describedby="password-error"
+      ngageInput
     /><button
       class="password-toggle"
       type="button"
@@ -44,17 +46,35 @@
     </button>
   </div>
   @if (form.controls.password.touched && form.controls.password.invalid) {
-    <p id="password-error" class="alert error">Enter your password.</p>
+    <ngage-alert id="password-error" [dismissible]="false" tone="negative"
+      >Enter your password.</ngage-alert
+    >
   }
   @if (errorMessage()) {
-    <p class="alert error" role="alert">{{ errorMessage() }}</p>
+    <ngage-alert role="alert" [dismissible]="false" tone="negative">{{
+      errorMessage()
+    }}</ngage-alert>
   }
-  <button type="submit" class="primary wide mt-4" [disabled]="submitting()">
+  <button
+    type="submit"
+    class="wide mt-4"
+    style="width: 100%"
+    [disabled]="submitting()"
+    ngageButton
+  >
     {{ submitting() ? 'Signing in?' : 'Sign in' }}
   </button>
 </form>
-<a routerLink="/forgot-password">Forgot password?</a>
-<button type="button" class="wide sso" (click)="ssoDemo()" [disabled]="submitting()">
+<a routerLink="/forgot-password" class="my-4 block">Forgot password?</a>
+<button
+  type="button"
+  class="wide sso"
+  style="width: 100%"
+  (click)="ssoDemo()"
+  [disabled]="submitting()"
+  ngageButton
+  variant="border"
+>
   Try Shobiz SSO demo
 </button>
 <details class="demo-accounts">
@@ -63,7 +83,14 @@
   <p>
     Password: <code>{{ demoCredentials.password }}</code>
   </p>
-  <button type="button" class="demo-button" (click)="useDemoAccount()" [disabled]="submitting()">
+  <button
+    type="button"
+    class="demo-button"
+    (click)="useDemoAccount()"
+    [disabled]="submitting()"
+    ngageButton
+    variant="border"
+  >
     Use demo account
   </button>
 </details>

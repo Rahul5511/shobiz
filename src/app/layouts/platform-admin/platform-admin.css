@@ -19,14 +19,14 @@
     text-decoration: underline;
   }
   :scope {
-    --orange: #f99417;
-    --orange-light: #fff5e7;
-    --black: #111315;
-    --text: #20252e;
-    --muted: #727986;
-    --line: #e2e5eb;
-    --bg: #f3f4f7;
-    --white: #fff;
+    --orange: var(--ngage-background-brand);
+    --orange-light: var(--ngage-background-selected);
+    --black: var(--ngage-background-inverse);
+    --text: var(--ngage-content-primary);
+    --muted: var(--ngage-content-tertiary);
+    --line: var(--ngage-border-tertiary);
+    --bg: var(--ngage-background-hover);
+    --white: var(--ngage-background-primary);
   }
   * {
     box-sizing: border-box;
@@ -34,22 +34,17 @@
   :scope {
     margin: 0;
     background: var(--bg);
-    font:
-      14px/1.45 -apple-system,
-      BlinkMacSystemFont,
-      'Segoe UI',
-      Arial,
-      sans-serif;
+    font: var(--ngage-text-m-size)/var(--ngage-text-m-line-height) var(--ngage-font-family);
     color: var(--text);
   }
-  button,
-  input,
-  textarea,
-  select {
+  button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)),
+  input:where(:not(.ngage-control, .ngage-choice)),
+  textarea:where(:not(.ngage-control, .ngage-choice)),
+  select:where(:not(.ngage-control, .ngage-choice)) {
     font: inherit;
   }
-  button,
-  .button {
+  button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)),
+  .button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -63,23 +58,14 @@
     text-decoration: none;
     white-space: nowrap;
   }
-  button:hover,
-  .button:hover {
+  button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)):hover,
+  .button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)):hover {
     border-color: #e1a249;
     background: #fffaf3;
   }
-  button:disabled {
+  button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)):disabled {
     opacity: 0.4;
     cursor: default;
-  }
-  .primary {
-    background: var(--orange) !important;
-    border-color: var(--orange) !important;
-    color: white !important;
-    font-weight: 650;
-  }
-  .primary:hover {
-    background: #e7850b !important;
   }
   .icon-btn {
     padding: 8px;
@@ -121,18 +107,18 @@
     margin-top: 0;
   }
   h1 {
-    font-size: 27px;
-    letter-spacing: -0.5px;
-    line-height: 1.25;
+    font-size: var(--ngage-type-heading-l-semibold-size);
+    letter-spacing: var(--ngage-type-heading-l-semibold-letter-spacing);
+    line-height: var(--ngage-type-heading-l-semibold-line-height);
     margin-bottom: 7px;
   }
   h2 {
-    font-size: 18px;
-    letter-spacing: -0.2px;
+    font-size: var(--ngage-type-heading-m-semibold-size);
+    letter-spacing: var(--ngage-type-heading-m-semibold-letter-spacing);
     margin-bottom: 12px;
   }
   h3 {
-    font-size: 15px;
+    font-size: var(--ngage-type-heading-s-semibold-size);
     margin-bottom: 10px;
   }
   p {
@@ -143,9 +129,9 @@
     font-weight: 600;
     font-size: 13px;
   }
-  input,
-  textarea,
-  select {
+  input:where(:not(.ngage-control, .ngage-choice)),
+  textarea:where(:not(.ngage-control, .ngage-choice)),
+  select:where(:not(.ngage-control, .ngage-choice)) {
     display: block;
     width: 100%;
     border: 1px solid #dfe3e9;
@@ -157,18 +143,18 @@
     min-height: 41px;
     outline: none;
   }
-  input:focus,
-  textarea:focus,
-  select:focus {
+  input:where(:not(.ngage-control, .ngage-choice)):focus,
+  textarea:where(:not(.ngage-control, .ngage-choice)):focus,
+  select:where(:not(.ngage-control, .ngage-choice)):focus {
     border-color: var(--orange);
     box-shadow: 0 0 0 3px #f994171a;
   }
-  input[readonly],
-  select:disabled {
+  input:where(:not(.ngage-control, .ngage-choice))[readonly],
+  select:where(:not(.ngage-control, .ngage-choice)):disabled {
     background: #f2f4f7;
     color: #69717e;
   }
-  input[type='checkbox'] {
+  input:where(:not(.ngage-control, .ngage-choice))[type='checkbox'] {
     display: inline-block;
     width: 16px;
     min-height: 16px;
@@ -176,14 +162,14 @@
     margin: 0;
     accent-color: var(--orange);
   }
-  select[multiple] {
+  select:where(:not(.ngage-control, .ngage-choice))[multiple] {
     min-height: 104px;
   }
-  textarea {
+  textarea:where(:not(.ngage-control, .ngage-choice)) {
     min-height: 86px;
     resize: vertical;
   }
-  button:focus-visible,
+  button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)):focus-visible,
   a:focus-visible {
     outline: 3px solid #f9941777;
     outline-offset: 3px;
@@ -397,7 +383,7 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
   }
-  .quick-grid button {
+  .quick-grid button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
     justify-content: space-between;
     text-align: left;
     white-space: normal;
@@ -409,44 +395,6 @@
     margin: 12px 0 18px;
     padding-left: 10px;
     border-left: 3px solid #e6bf88;
-  }
-  .alert {
-    padding: 13px 16px;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    margin-bottom: 18px;
-    position: relative;
-    font-size: 12px;
-  }
-  .alert.success {
-    background: #edf8f1;
-    border-color: #cde9d7;
-    color: #2e6e48;
-  }
-  .alert.info {
-    background: #eef4ff;
-    border-color: #d9e5fd;
-    color: #4f698c;
-  }
-  .alert.warning {
-    background: #fff7df;
-    border-color: #eedfac;
-    color: #8b7135;
-  }
-  .alert.error {
-    background: #fff0f0;
-    border-color: #f1d0d0;
-    color: #a74343;
-  }
-  .dismiss {
-    position: absolute;
-    right: 8px;
-    top: 6px;
-    background: transparent;
-    border: 0;
-    color: inherit;
-    font-size: 20px;
-    padding: 0 6px;
   }
   .record-header {
     background: white;
@@ -495,8 +443,8 @@
     font-size: 11px;
     color: #707986;
   }
-  .search-grid input,
-  .search-grid select {
+  .search-grid input:where(:not(.ngage-control, .ngage-choice)),
+  .search-grid select:where(:not(.ngage-control, .ngage-choice)) {
     font-size: 12px;
     background: #fbfcfe;
   }
@@ -517,7 +465,7 @@
     font-size: 11px;
     color: var(--muted);
   }
-  .task-row select {
+  .task-row select:where(:not(.ngage-control, .ngage-choice)) {
     width: auto;
     min-width: 260px;
     max-width: 75%;
@@ -525,6 +473,13 @@
     min-height: 32px;
     font-size: 11px;
     padding: 6px;
+  }
+  .task-row select {
+    width: auto;
+    min-width: 260px;
+    max-width: 75%;
+    margin: 0;
+    min-height: 32px;
   }
   .table-scroll {
     width: 100%;
@@ -578,19 +533,6 @@
     align-items: center;
     justify-content: flex-end;
   }
-  .status {
-    display: inline-flex;
-    padding: 4px 9px;
-    border-radius: 5px;
-    font-size: 10px;
-    background: #edf6f0;
-    color: #46795c;
-    white-space: nowrap;
-  }
-  .status.pending {
-    background: #fff3dc;
-    color: #aa7a2e;
-  }
   .record-footer {
     display: flex;
     align-items: center;
@@ -612,9 +554,12 @@
     align-items: center;
     gap: 5px;
   }
-  .pagination > button {
+  .pagination > button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
     padding: 7px 10px;
     font-size: 11px;
+    min-width: 31px;
+  }
+  .pagination > button {
     min-width: 31px;
   }
   .pagination .current {
@@ -631,10 +576,15 @@
     color: var(--muted);
     margin-right: 9px;
   }
-  .pagination select {
+  .pagination select:where(:not(.ngage-control, .ngage-choice)) {
     width: 58px;
     margin: 0;
     padding: 5px;
+    min-height: 31px;
+  }
+  .pagination select {
+    width: 58px;
+    margin: 0;
     min-height: 31px;
   }
   .empty {
@@ -670,7 +620,7 @@
     padding: 0 16px;
     z-index: 5;
   }
-  .steps button {
+  .steps button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
     border: 0;
     border-radius: 0;
     border-bottom: 3px solid transparent;
@@ -679,11 +629,11 @@
     white-space: nowrap;
     gap: 8px;
   }
-  .steps button span {
+  .steps button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) span {
     font-size: 9px;
     color: #a4adb9;
   }
-  .steps button.current {
+  .steps button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)).current {
     color: #b56c11;
     border-bottom-color: var(--orange);
     font-weight: 700;
@@ -725,7 +675,7 @@
   .form-actions > span {
     flex: 1;
   }
-  .form-actions button {
+  .form-actions button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
     font-size: 12px;
   }
   .review-section {
@@ -746,7 +696,7 @@
   .review-section h3 {
     margin: 0;
   }
-  .review-section button {
+  .review-section button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
     font-size: 11px;
     padding: 6px 10px;
   }
@@ -809,6 +759,10 @@
   .checkbox-label small {
     font-size: 9px;
     margin-top: 3px;
+  }
+  .checkbox-label input:where(:not(.ngage-control, .ngage-choice)) {
+    flex: none;
+    margin-top: 2px;
   }
   .checkbox-label input {
     flex: none;
@@ -889,15 +843,17 @@
   .wide {
     width: 100%;
   }
-  .password-input {
+  .password-input:where(:not(.ngage-control, .ngage-choice)) {
     display: flex;
     align-items: center;
     position: relative;
   }
-  .password-input input {
+  .password-input:where(:not(.ngage-control, .ngage-choice))
+    input:where(:not(.ngage-control, .ngage-choice)) {
     padding-right: 60px;
   }
-  .password-input button {
+  .password-input:where(:not(.ngage-control, .ngage-choice))
+    button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
     position: absolute;
     right: 5px;
     top: 12px;
@@ -940,7 +896,7 @@
   .account-option small {
     font-size: 10px;
   }
-  .account-option button {
+  .account-option button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
     font-size: 10px;
     padding: 5px 10px;
   }
@@ -958,7 +914,7 @@
     padding-top: 16px;
     margin-top: 18px;
   }
-  .text-button {
+  .text-button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
     border: 0;
     padding: 0;
     background: transparent;
@@ -1135,6 +1091,12 @@
     .task-row label {
       display: block;
     }
+    .task-row select:where(:not(.ngage-control, .ngage-choice)) {
+      margin-top: 6px;
+      max-width: 100%;
+      width: 100%;
+      min-width: 0;
+    }
     .task-row select {
       margin-top: 6px;
       max-width: 100%;
@@ -1155,7 +1117,7 @@
     .pagination label {
       margin-right: 2px;
     }
-    .pagination > button {
+    .pagination > button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
       font-size: 10px;
       padding: 7px 8px;
     }
@@ -1188,7 +1150,7 @@
     .steps {
       padding: 0 7px;
     }
-    .steps button {
+    .steps button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
       font-size: 10px;
       padding: 13px 10px;
     }
@@ -1197,7 +1159,7 @@
       flex-wrap: wrap;
       gap: 7px;
     }
-    .form-actions button {
+    .form-actions button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
       padding: 9px 11px;
       font-size: 11px;
     }
@@ -1233,6 +1195,13 @@
     }
   }
   @media print {
+    .sidebar,
+    .topbar,
+    .form-actions,
+    .application-footer,
+    .page-title > button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
+      display: none !important;
+    }
     .sidebar,
     .topbar,
     .form-actions,
@@ -1373,7 +1342,7 @@
     font-size: 10px;
     word-break: break-all;
   }
-  .profile-dropdown button {
+  .profile-dropdown button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
     width: 100%;
     justify-content: flex-start;
     border: 0;
@@ -1381,7 +1350,11 @@
     font-size: 12px;
     padding: 11px;
   }
-  .profile-dropdown button:hover {
+  .profile-dropdown button {
+    width: 100%;
+  }
+  .profile-dropdown
+    button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)):hover {
     background: var(--orange-light);
   }
   .export-controls {
@@ -1403,12 +1376,15 @@
     border-radius: 8px;
     z-index: 20;
   }
-  .export-options button {
+  .export-options button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
     width: 100%;
     justify-content: flex-start;
     border: 0;
     font-size: 12px;
     padding: 9px;
+  }
+  .export-options button {
+    width: 100%;
   }
   .export-options small {
     font-size: 10px;
@@ -1437,7 +1413,7 @@
     font-size: 11px;
     color: var(--muted);
   }
-  .data-exportbar button {
+  .data-exportbar button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
     padding: 7px 10px;
     font-size: 11px;
   }
@@ -1491,7 +1467,7 @@
       padding: 10px;
       flex-wrap: wrap;
     }
-    .data-exportbar button {
+    .data-exportbar button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
       font-size: 10px;
     }
     .nav-heading {
@@ -1561,8 +1537,8 @@
 
   /* Portal header, navigation and personal settings */
   .layout {
-    --orange: var(--custom-accent, #f99417);
-    --orange-light: color-mix(in srgb, var(--orange) 12%, var(--white));
+    --orange: var(--ngage-background-brand);
+    --orange-light: var(--ngage-background-selected);
     background: var(--bg);
   }
   .header-actions,
@@ -1598,13 +1574,20 @@
     display: block;
     margin-top: 10px;
   }
+  .header-popup label select:where(:not(.ngage-control, .ngage-choice)),
+  .header-popup label input:where(:not(.ngage-control, .ngage-choice)) {
+    margin-top: 4px;
+  }
   .header-popup label select,
   .header-popup label input {
     margin-top: 4px;
   }
-  .header-popup input[type='color'] {
+  .header-popup input:where(:not(.ngage-control, .ngage-choice))[type='color'] {
     height: 38px;
     padding: 4px;
+  }
+  .header-popup input[type='color'] {
+    height: 38px;
   }
   .notification-popup {
     width: 305px;
@@ -1628,6 +1611,11 @@
     border-top: 1px solid var(--line);
     padding-top: 10px;
   }
+  .notification-popup
+    footer
+    button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
+    width: 100%;
+  }
   .notification-popup footer button {
     width: 100%;
   }
@@ -1650,12 +1638,13 @@
     border-bottom: 1px solid var(--line);
     margin-bottom: 20px;
   }
-  .profile-tabs button {
+  .profile-tabs button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
     border: 0;
     border-bottom: 3px solid transparent;
     border-radius: 0;
   }
-  .profile-tabs button.active {
+  .profile-tabs
+    button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)).active {
     border-bottom-color: var(--orange);
     font-weight: 700;
   }
@@ -1668,6 +1657,9 @@
   .profile-summary h2,
   .profile-summary p {
     margin: 0;
+  }
+  .profile-summary button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)) {
+    margin-left: auto;
   }
   .profile-summary button {
     margin-left: auto;
@@ -1687,6 +1679,9 @@
   .profile-fields dd {
     margin: 3px 0;
     overflow-wrap: anywhere;
+  }
+  .profile-fields label input:where(:not(.ngage-control, .ngage-choice)) {
+    margin-top: 5px;
   }
   .profile-fields label input {
     margin-top: 5px;
@@ -1808,12 +1803,12 @@
   }
   .night-theme {
     color-scheme: dark;
-    --text: #edf0f6;
-    --muted: #b7c0d0;
-    --line: #414956;
-    --bg: #181c24;
-    --white: #252c37;
-    --black: #11151d;
+    --text: var(--ngage-content-primary);
+    --muted: var(--ngage-content-tertiary);
+    --line: var(--ngage-border-tertiary);
+    --bg: var(--ngage-background-hover);
+    --white: var(--ngage-background-primary);
+    --black: var(--ngage-background-inverse);
     color: var(--text);
   }
   .night-theme
@@ -1828,16 +1823,25 @@
       .review-section,
       .profile-dropdown,
       .export-options,
-      button:not(.primary):not(.navitem):not(.nav-heading),
-      input,
-      select,
-      textarea
+      button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)):not(
+          .primary
+        ):not(.navitem):not(.nav-heading),
+      input:where(:not(.ngage-control, .ngage-choice)),
+      select:where(:not(.ngage-control, .ngage-choice)),
+      textarea:where(:not(.ngage-control, .ngage-choice))
     ) {
     background: var(--white);
     color: var(--text);
     border-color: var(--line);
   }
-  .night-theme :is(th, tr:hover td, .form-context, .count-pill, input[readonly]) {
+  .night-theme
+    :is(
+      th,
+      tr:hover td,
+      .form-context,
+      .count-pill,
+      input:where(:not(.ngage-control, .ngage-choice))[readonly]
+    ) {
     background: #303949;
     color: var(--text);
   }
@@ -1855,11 +1859,22 @@
     ) {
     color: var(--muted);
   }
-  .night-theme :is(a, .metric-link, .steps button.current, .field-source, .provenance) {
+  .night-theme
+    :is(
+      a,
+      .metric-link,
+      .steps button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)).current,
+      .field-source,
+      .provenance
+    ) {
     color: #ffbd72;
   }
-  .night-theme .profile-tabs button.active,
-  .night-theme .steps button.current {
+  .night-theme
+    .profile-tabs
+    button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)).active,
+  .night-theme
+    .steps
+    button:where(:not([ngageButton], .ngage-nav, .ngage-chip, .ngage-tag-remove)).current {
     border-bottom-color: var(--orange);
   }
   .night-theme .pagination .current {

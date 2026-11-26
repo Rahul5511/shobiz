@@ -1,3 +1,9 @@
+import {
+  NgageInput,
+  NgageButton,
+  NgageAlert,
+  NgageChoice,
+} from '../../../../shared/design-system/index';
 import { ViewEncapsulation, Component, computed, inject, signal, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -39,7 +45,7 @@ const emptyFilters: Filters = {
 @Component({
   selector: 'app-role-reports',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [NgageInput, NgageButton, NgageAlert, NgageChoice, CommonModule, FormsModule],
   templateUrl: './role-reports.component.html',
   // Preserve the existing CSS selectors and native admin scope.
   encapsulation: ViewEncapsulation.None,

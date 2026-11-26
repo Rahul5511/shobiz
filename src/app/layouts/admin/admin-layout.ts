@@ -1,3 +1,4 @@
+import { NgageButton } from '../../shared/design-system/index';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { AuthSession } from '../../core/services/login/auth-session.service';
@@ -5,7 +6,7 @@ import { Brand } from '../../shared/components/brand/brand';
 
 @Component({
   selector: 'app-admin-layout',
-  imports: [Brand, RouterOutlet],
+  imports: [NgageButton, Brand, RouterOutlet],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div class="bg-background min-h-dvh">
@@ -15,7 +16,7 @@ import { Brand } from '../../shared/components/brand/brand';
         <app-brand class="text-brand-deep" />
         <div class="flex items-center gap-5">
           <span class="text-muted hidden text-sm sm:inline">{{ session.user()?.name }}</span>
-          <button type="button" class="secondary-button" (click)="logout()">Sign out</button>
+          <button type="button" (click)="logout()" ngageButton variant="border">Sign out</button>
         </div>
       </header>
       <main class="mx-auto max-w-5xl px-6 py-14 sm:px-12"><router-outlet /></main>

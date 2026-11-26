@@ -1,16 +1,17 @@
-@import '../styles/tokens.css';
-:host {
+:host([ngageButton]) {
   box-sizing: border-box;
   display: inline-flex;
-  width: 194px;
+  width: var(--ngage-button-width, auto);
+  max-width: 100%;
+  min-height: var(--ngage-button-min-height, 44px);
   align-items: center;
   justify-content: center;
   gap: var(--ngage-space-2);
-  padding: var(--ngage-space-3) var(--ngage-space-4);
+  padding: var(--ngage-button-padding, var(--ngage-space-3) var(--ngage-space-4));
   border: 0;
   border-radius: var(--ngage-radius-m);
   background: var(--ngage-background-brand);
-  color: var(--ngage-content-primary-inverse);
+  color: var(--ngage-button-content);
   font: var(--ngage-font-medium) var(--ngage-text-m-size) / var(--ngage-text-m-line-height)
     var(--ngage-font-family);
   letter-spacing: var(--ngage-letter-spacing);
@@ -20,8 +21,13 @@
 :host([data-size='large']) {
   padding: var(--ngage-space-4);
 }
-:host(:hover:not(:disabled)) {
+:host([ngageButton]:hover:not(:disabled)) {
   background: var(--ngage-background-brand-hover);
+  color: var(--ngage-button-hover-content);
+}
+:host([ngageButton]:active:not(:disabled)) {
+  background: var(--ngage-background-brand-pressed);
+  color: var(--ngage-button-hover-content);
 }
 :host([data-variant='ghost']),
 :host([data-variant='border']),
@@ -47,7 +53,12 @@
   gap: 0;
 }
 .label {
-  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ngage-space-2);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 :host([data-variant='icon-solid']) .label,
 :host([data-variant='icon-border']) .label {
@@ -59,11 +70,16 @@
   clip-path: inset(50%);
   white-space: nowrap;
 }
-:host(:disabled) {
+:host([ngageButton]:disabled) {
   background: var(--ngage-background-disabled);
   color: var(--ngage-content-disabled);
   cursor: not-allowed;
   opacity: 1;
+}
+:host([data-variant='ghost']:active:not(:disabled)),
+:host([data-variant='border']:active:not(:disabled)),
+:host([data-variant='icon-border']:active:not(:disabled)) {
+  background: var(--ngage-background-selected);
 }
 :host([data-variant='ghost']:disabled),
 :host([data-variant='border']:disabled),
@@ -74,16 +90,4 @@
 :host(:focus-visible) {
   outline: 2px solid var(--ngage-content-primary);
   outline-offset: 3px;
-}
-.hover-icon,
-.disabled-icon {
-  display: none;
-}
-:host(:hover:not(:disabled)) .normal-icon,
-:host(:disabled) .normal-icon {
-  display: none;
-}
-:host(:hover:not(:disabled)) .hover-icon,
-:host(:disabled) .disabled-icon {
-  display: inline-flex;
 }

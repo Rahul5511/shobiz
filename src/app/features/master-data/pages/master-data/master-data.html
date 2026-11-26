@@ -5,6 +5,7 @@
       aria-describedby="master-selector-hint"
       [ngModel]="s.key"
       (ngModelChange)="s.nav($event)"
+      ngageInput
     >
       @for (key of s.m.masters; track key) {
         <option [value]="key">{{ s.m.entities[key].label }}</option>

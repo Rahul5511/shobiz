@@ -1,3 +1,9 @@
+import {
+  NgageButton,
+  NgageInput,
+  NgageAlert,
+  NgageProgress,
+} from '../../../../shared/design-system/index';
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { WorkspaceService } from '../../../../shared/workspace/data-access/workspace.service';
@@ -16,7 +22,7 @@ import moduleFixtures from '../../models/module-progress.json';
   selector: 'app-dashboard-page',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [FormsModule],
+  imports: [NgageProgress, NgageButton, NgageInput, NgageAlert, FormsModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })

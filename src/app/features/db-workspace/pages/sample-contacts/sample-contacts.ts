@@ -1,3 +1,4 @@
+import { NgageButton, NgageAlert, NgageInput } from '../../../../shared/design-system/index';
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { WorkspaceService } from '../../../../shared/workspace/data-access/workspace.service';
@@ -10,7 +11,7 @@ import { xlsx } from '../../../../shared/utils/platform-admin/export';
   changeDetection: ChangeDetectionStrategy.Eager,
   selector: 'app-sample-contacts-page',
   standalone: true,
-  imports: [FormsModule, DataTableComponent, IconComponent],
+  imports: [NgageButton, NgageAlert, NgageInput, FormsModule, DataTableComponent, IconComponent],
   templateUrl: './sample-contacts.html',
   styleUrl: './sample-contacts.css',
 })

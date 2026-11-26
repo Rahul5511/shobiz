@@ -1,0 +1,188 @@
+/* Keep shell sizing independent of the shared controls' default dimensions. */
+@scope (.platform-admin) {
+  .layout {
+    --ngage-mobile-header-height: 70px;
+    min-width: 0;
+  }
+  .workspace,
+  main,
+  .card,
+  .record-card,
+  .field,
+  .metric,
+  .form-grid > *,
+  .review-grid > *,
+  .search-grid > * {
+    min-width: 0;
+  }
+  .workspace {
+    container: ngage-workspace / inline-size;
+  }
+  .logo {
+    line-height: 1.1;
+  }
+  .logo-wordmark {
+    display: block;
+    white-space: nowrap;
+  }
+  .logo small {
+    display: block;
+    margin-top: 8px;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+  .topbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    height: auto;
+    min-height: 83px;
+    gap: 16px;
+    padding: 16px 24px;
+  }
+  .top-left {
+    min-width: 0;
+    gap: 12px;
+  }
+  .top-left > .portal-title {
+    min-width: 0;
+    font-size: 14px;
+    line-height: 1.45;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+  .header-actions {
+    min-width: 0;
+    gap: 10px;
+  }
+  .topbar .icon-btn {
+    --ngage-button-width: 44px;
+    --ngage-button-min-height: 44px;
+    --ngage-button-padding: 0;
+    flex: 0 0 44px;
+  }
+  .profile-trigger {
+    max-width: 210px;
+    gap: 10px;
+    white-space: normal;
+  }
+  .profile-trigger .user-name {
+    min-width: 0;
+    max-width: 140px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .header-actions .profile-trigger > .profile-chevron {
+    display: inline-flex;
+  }
+  .profile-dropdown {
+    max-width: calc(100vw - 24px);
+  }
+  .page-title {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+  .page-title > div {
+    flex: 1 1 18rem;
+    min-width: 0;
+  }
+  .page-title h1 {
+    line-height: 1.25;
+    font-weight: 600;
+    overflow-wrap: break-word;
+  }
+  .page-title > button {
+    flex-shrink: 0;
+  }
+  .record-top-actions,
+  .export-controls,
+  .form-actions,
+  .profile-form-actions {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+  .table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .form-grid,
+  .review-grid,
+  .profile-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .metric {
+    overflow-wrap: anywhere;
+  }
+  @container ngage-workspace (max-width: 640px) {
+    .header-actions .profile-trigger .user-name {
+      display: none;
+    }
+  }
+  @media (max-width: 1100px) {
+    .topbar {
+      padding-inline: 20px;
+      gap: 12px;
+    }
+    .header-actions {
+      gap: 8px;
+    }
+    .profile-trigger .user-name {
+      max-width: 110px;
+    }
+  }
+  @media (max-width: 720px) {
+    .topbar {
+      min-height: var(--ngage-mobile-header-height);
+      padding: 12px;
+      gap: 8px;
+    }
+    .top-left {
+      gap: 8px;
+    }
+    .top-left > .portal-title {
+      font-size: 12px;
+    }
+    .header-actions {
+      gap: 6px;
+    }
+    .sidebar {
+      top: var(--ngage-mobile-header-height);
+      width: min(280px, calc(100vw - 24px));
+      height: calc(100dvh - var(--ngage-mobile-header-height));
+    }
+    .header-popup {
+      top: calc(var(--ngage-mobile-header-height) + 8px);
+    }
+    .form-grid,
+    .review-grid,
+    .profile-fields {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  @media (max-width: 480px) {
+    .layout {
+      --ngage-mobile-header-height: 120px;
+    }
+    .topbar {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: 44px 44px;
+      height: var(--ngage-mobile-header-height);
+    }
+    .header-actions {
+      justify-content: flex-end;
+    }
+    .metrics,
+    .filters,
+    .permission-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .profile-form-actions > button {
+      flex: 1 1 auto;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav-chevron {
+      transition: none;
+    }
+  }
+}

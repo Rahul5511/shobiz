@@ -1,3 +1,9 @@
+import {
+  NgageAlert,
+  NgageInput,
+  NgageChoice,
+  NgageButton,
+} from '../../../../shared/design-system/index';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -6,7 +12,7 @@ import { WorkspaceService } from '../../../../shared/workspace/data-access/works
   standalone: true,
   host: { class: 'platform-admin' },
   providers: [WorkspaceService],
-  imports: [FormsModule],
+  imports: [NgageAlert, NgageInput, NgageChoice, NgageButton, FormsModule],
   templateUrl: './public-registration.html',
   styleUrl: './public-registration.css',
 })

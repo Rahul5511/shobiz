@@ -1,3 +1,4 @@
+import { NgageInput, NgageButton } from '../../../../shared/design-system/index';
 import {
   Component,
   inject,
@@ -12,7 +13,7 @@ import { WorkspaceService } from '../../../../shared/workspace/data-access/works
   selector: 'app-disable-user',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [FormsModule],
+  imports: [NgageInput, NgageButton, FormsModule],
   templateUrl: './disable-user.html',
   styleUrl: './disable-user.css',
 })

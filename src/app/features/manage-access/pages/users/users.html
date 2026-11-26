@@ -1,8 +1,19 @@
 @if (s.view === 'list') {
   <section class="card padded">
     <div class="user-view-switch">
-      <button (click)="s.userView = 'list'" [attr.aria-pressed]="s.userView === 'list'">List</button
-      ><button (click)="s.userView = 'hierarchy'" [attr.aria-pressed]="s.userView === 'hierarchy'">
+      <button
+        (click)="s.userView = 'list'"
+        [attr.aria-pressed]="s.userView === 'list'"
+        ngageButton
+        variant="border"
+      >
+        List</button
+      ><button
+        (click)="s.userView = 'hierarchy'"
+        [attr.aria-pressed]="s.userView === 'hierarchy'"
+        ngageButton
+        variant="border"
+      >
         Hierarchy
       </button>
     </div>
@@ -19,7 +30,7 @@
           <li>
             {{ item.kind }}: {{ item.title
             }}<label
-              >Assign to<select [(ngModel)]="s.pendingSuccessors[item.id]">
+              >Assign to<select [(ngModel)]="s.pendingSuccessors[item.id]" ngageInput>
                 <option value="">Select active user</option>
                 @for (user of s.successors; track user.id) {
                   <option [value]="user.id">{{ user.values[0] }}</option>
@@ -28,6 +39,8 @@
             ><button
               [disabled]="!s.pendingSuccessors[item.id]"
               (click)="s.assignPending(item, s.pendingSuccessors[item.id])"
+              ngageButton
+              variant="border"
             >
               Assign
             </button>
@@ -39,7 +52,7 @@
   @if (s.userView === 'hierarchy') {
     <section class="card padded">
       <h2>User hierarchy</h2>
-      <label>Search hierarchy<input [(ngModel)]="s.userHierarchyQuery" /></label>
+      <label>Search hierarchy<input [(ngModel)]="s.userHierarchyQuery" ngageInput /></label>
       @for (creator of s.creatorGroups; track creator) {
         <section>
           <h3>Added by {{ creator }}</h3>
@@ -47,7 +60,7 @@
             @for (user of s.addedByUsers(creator); track user.id) {
               <li>
                 {{ user.values[0] }} - {{ user.details.Roles.join(', ') }} - {{ user.values[4] }}
-                <button (click)="s.viewRecord(user)">View</button>
+                <button (click)="s.viewRecord(user)" ngageButton variant="border">View</button>
               </li>
             }
           </ul>

@@ -1,0 +1,89 @@
+{
+  "policy": "First exported component definition wins; foundations fill missing names. Conflicting alternatives are retained here for review.",
+  "conflicts": [
+    {
+      "name": "--ngage-content-primary",
+      "mode": "Light",
+      "selected": "rgba(13, 13, 13, 1)",
+      "alternative": "rgba(26, 26, 26, 1)",
+      "sourceVariable": "--ngage-components-content-primary-4-62"
+    },
+    {
+      "name": "--ngage-content-primary",
+      "mode": "Light",
+      "selected": "rgba(13, 13, 13, 1)",
+      "alternative": "rgba(26, 26, 26, 1)",
+      "sourceVariable": "--ngage-components-content-primary-5-1760"
+    },
+    {
+      "name": "--ngage-icon-inverse",
+      "mode": "Light",
+      "selected": "rgba(255, 255, 255, 1)",
+      "alternative": "rgba(242, 242, 242, 1)",
+      "sourceVariable": "--ngage-foundations-icon-inverse-558-321"
+    },
+    {
+      "name": "--ngage-palette-blue-500",
+      "mode": "Mode 1",
+      "selected": "rgba(51, 156, 255, 1)",
+      "alternative": "rgba(51, 85, 255, 1)",
+      "sourceVariable": "--ngage-foundations-blue-500-580-592"
+    },
+    {
+      "name": "--ngage-palette-blue-400",
+      "mode": "Mode 1",
+      "selected": "rgba(92, 171, 255, 1)",
+      "alternative": "rgba(90, 118, 255, 1)",
+      "sourceVariable": "--ngage-foundations-blue-400-580-593"
+    },
+    {
+      "name": "--ngage-palette-neutral-300",
+      "mode": "Mode 1",
+      "selected": "rgba(178, 178, 178, 1)",
+      "alternative": "rgba(179, 179, 179, 1)",
+      "sourceVariable": "--ngage-foundations-neutral-300-580-598"
+    },
+    {
+      "name": "--ngage-palette-neutral-700",
+      "mode": "Mode 1",
+      "selected": "rgba(77, 77, 77, 1)",
+      "alternative": "rgba(76, 76, 76, 1)",
+      "sourceVariable": "--ngage-foundations-neutral-700-580-599"
+    },
+    {
+      "name": "--ngage-border-primary",
+      "mode": "Light",
+      "selected": "rgba(102, 102, 102, 1)",
+      "alternative": "rgba(179, 179, 179, 1)",
+      "sourceVariable": "--ngage-foundations-border-primary-580-600"
+    },
+    {
+      "name": "--ngage-border-primary",
+      "mode": "Dark",
+      "selected": "rgba(153, 153, 153, 1)",
+      "alternative": "rgba(76, 76, 76, 1)",
+      "sourceVariable": "--ngage-foundations-border-primary-580-600"
+    },
+    {
+      "name": "--ngage-content-primary",
+      "mode": "Light",
+      "selected": "rgba(13, 13, 13, 1)",
+      "alternative": "rgba(26, 26, 26, 1)",
+      "sourceVariable": "--ngage-foundations-content-primary-841-60"
+    },
+    {
+      "name": "--ngage-border-inverse",
+      "mode": "Light",
+      "selected": "rgba(255, 255, 255, 1)",
+      "alternative": "rgba(242, 242, 242, 1)",
+      "sourceVariable": "--ngage-foundations-border-inverse-40000011-4281"
+    },
+    {
+      "name": "--ngage-border-inverse",
+      "mode": "Dark",
+      "selected": "rgba(26, 26, 26, 1)",
+      "alternative": "rgba(51, 51, 51, 1)",
+      "sourceVariable": "--ngage-foundations-border-inverse-40000011-4281"
+    }
+  ]
+}

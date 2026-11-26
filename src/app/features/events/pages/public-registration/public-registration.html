@@ -15,11 +15,13 @@
     </header>
     <div class="padded">
       @if (!found) {
-        <div class="alert error">This event registration URL was not found.</div>
+        <ngage-alert [dismissible]="false" tone="negative"
+          >This event registration URL was not found.</ngage-alert
+        >
       }
       @if (found) {
         @if (s.publicConfig.status === 'Closed') {
-          <div class="alert info">Registration is closed.</div>
+          <ngage-alert [dismissible]="false" tone="info">Registration is closed.</ngage-alert>
         }
         @if (s.publicConfig.status !== 'Closed') {
           @if (s.receipt) {
@@ -55,6 +57,7 @@
                         [ngModel]="values[f.Field]"
                         (ngModelChange)="setLocation(f.Field, $event)"
                         [required]="f.Required"
+                        ngageInput
                       >
                         <option value="">Select…</option>
                         @for (o of geoOptions(f.Field); track o) {
@@ -70,21 +73,28 @@
                         [type]="
                           f.Field === 'Email' ? 'email' : f.Field === 'Mobile' ? 'tel' : 'text'
                         "
+                        ngageInput
                       />
                     }
                   </label>
                 }
               </div>
               <label class="checkbox-label consent"
-                ><input type="checkbox" name="consent" [(ngModel)]="consent" required /><span>{{
+                ><input
+                  type="checkbox"
+                  name="consent"
+                  [(ngModel)]="consent"
+                  required
+                  ngageChoice="checkbox"
+                /><span>{{
                   s.publicConfig.consent ||
                     'I agree to the stated event privacy and communication terms.'
                 }}</span></label
               >
               @if (s.error) {
-                <div class="alert error">{{ s.error }}</div>
+                <ngage-alert [dismissible]="false" tone="negative">{{ s.error }}</ngage-alert>
               }
-              <button class="primary wide" [disabled]="!form.valid">Register</button>
+              <button class="wide" [disabled]="!form.valid" ngageButton>Register</button>
             </form>
           }
         }

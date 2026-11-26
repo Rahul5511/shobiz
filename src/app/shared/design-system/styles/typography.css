@@ -1,23 +1,239 @@
-/* Opt-in typography utilities. No element selectors or global reset. */
-.ngage-theme,
-.ngage-text-s,
-.ngage-text-m,
-.ngage-text-l {
+/* Generated responsive typography utilities. Values inherit the current theme. */
+.ngage-heading-3xl-semibold {
   font-family: var(--ngage-font-family);
-  font-weight: var(--ngage-font-regular);
-  letter-spacing: var(--ngage-letter-spacing);
+  font-size: var(--ngage-type-heading-3xl-semibold-size);
+  line-height: var(--ngage-type-heading-3xl-semibold-line-height);
+  letter-spacing: var(--ngage-type-heading-3xl-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-3xl-semibold-weight, 600);
+}
+.ngage-text-xl-regular {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-text-xl-regular-size);
+  line-height: var(--ngage-type-text-xl-regular-line-height);
+  letter-spacing: var(--ngage-type-text-xl-regular-letter-spacing, 0px);
+  font-weight: var(--ngage-type-text-xl-regular-weight, 400);
+}
+.ngage-text-m-regular {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-text-m-regular-size);
+  line-height: var(--ngage-type-text-m-regular-line-height);
+  letter-spacing: var(--ngage-type-text-m-regular-letter-spacing, 0px);
+  font-weight: var(--ngage-type-text-m-regular-weight, 400);
+}
+.ngage-text-s-regular {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-text-s-regular-size);
+  line-height: var(--ngage-type-text-s-regular-line-height);
+  letter-spacing: var(--ngage-type-text-s-regular-letter-spacing, 0px);
+  font-weight: var(--ngage-type-text-s-regular-weight, 400);
+}
+.ngage-heading-m-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-m-semibold-size);
+  line-height: var(--ngage-type-heading-m-semibold-line-height);
+  letter-spacing: var(--ngage-type-heading-m-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-m-semibold-weight, 600);
+}
+.ngage-text-l-regular {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-text-l-regular-size);
+  line-height: var(--ngage-type-text-l-regular-line-height);
+  letter-spacing: var(--ngage-type-text-l-regular-letter-spacing, 0px);
+  font-weight: var(--ngage-type-text-l-regular-weight, 400);
+}
+.ngage-text-xs-regular {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-text-xs-regular-size);
+  line-height: var(--ngage-type-text-xs-regular-line-height);
+  letter-spacing: var(--ngage-type-text-xs-regular-letter-spacing, 0px);
+  font-weight: var(--ngage-type-text-xs-regular-weight, 400);
+}
+.ngage-heading-5xl-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-5xl-semibold-size);
+  line-height: var(--ngage-type-heading-5xl-semibold-line-height);
+  letter-spacing: var(--ngage-type-heading-5xl-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-5xl-semibold-weight, 600);
+}
+.ngage-heading-4xl-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-4xl-semibold-size);
+  line-height: var(--ngage-type-heading-4xl-semibold-line-height);
+  letter-spacing: var(--ngage-type-heading-4xl-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-4xl-semibold-weight, 600);
+}
+.ngage-heading-2xl-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-2xl-semibold-size);
+  line-height: var(--ngage-type-heading-2xl-semibold-line-height);
+  letter-spacing: var(--ngage-type-heading-2xl-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-2xl-semibold-weight, 600);
+}
+.ngage-heading-xl-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-xl-semibold-size);
+  line-height: var(--ngage-type-heading-xl-semibold-line-height);
+  letter-spacing: var(--ngage-type-heading-xl-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-xl-semibold-weight, 600);
+}
+.ngage-heading-l-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-l-semibold-size);
+  line-height: var(--ngage-type-heading-l-semibold-line-height);
+  letter-spacing: var(--ngage-type-heading-l-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-l-semibold-weight, 600);
+}
+.ngage-heading-s-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-s-semibold-size);
+  line-height: var(--ngage-type-heading-s-semibold-line-height);
+  letter-spacing: var(--ngage-type-heading-s-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-s-semibold-weight, 600);
+}
+.ngage-heading-xs-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-xs-semibold-size);
+  line-height: var(--ngage-type-heading-xs-semibold-line-height);
+  letter-spacing: var(--ngage-type-heading-xs-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-xs-semibold-weight, 600);
+}
+.ngage-heading-2xs-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-2xs-semibold-size);
+  line-height: var(--ngage-type-heading-2xs-semibold-line-height);
+  letter-spacing: var(--ngage-type-heading-2xs-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-2xs-semibold-weight, 600);
+}
+.ngage-text-xl-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-text-xl-semibold-size);
+  line-height: var(--ngage-type-text-xl-semibold-line-height);
+  letter-spacing: var(--ngage-type-text-xl-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-text-xl-semibold-weight, 600);
+}
+.ngage-text-l-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-text-l-semibold-size);
+  line-height: var(--ngage-type-text-l-semibold-line-height);
+  letter-spacing: var(--ngage-type-text-l-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-text-l-semibold-weight, 600);
+}
+.ngage-text-m-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-text-m-semibold-size);
+  line-height: var(--ngage-type-text-m-semibold-line-height);
+  letter-spacing: var(--ngage-type-text-m-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-text-m-semibold-weight, 600);
+}
+.ngage-text-s-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-text-s-semibold-size);
+  line-height: var(--ngage-type-text-s-semibold-line-height);
+  letter-spacing: var(--ngage-type-text-s-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-text-s-semibold-weight, 600);
+}
+.ngage-text-xs-semibold {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-text-xs-semibold-size);
+  line-height: var(--ngage-type-text-xs-semibold-line-height);
+  letter-spacing: var(--ngage-type-text-xs-semibold-letter-spacing, 0px);
+  font-weight: var(--ngage-type-text-xs-semibold-weight, 600);
+}
+.ngage-text-xl-medium {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-text-xl-medium-size);
+  line-height: var(--ngage-type-text-xl-medium-line-height);
+  letter-spacing: var(--ngage-type-text-xl-medium-letter-spacing, 0px);
+  font-weight: var(--ngage-type-text-xl-medium-weight, 500);
+}
+.ngage-text-l-medium {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-text-l-medium-size);
+  line-height: var(--ngage-type-text-l-medium-line-height);
+  letter-spacing: var(--ngage-type-text-l-medium-letter-spacing, 0px);
+  font-weight: var(--ngage-type-text-l-medium-weight, 500);
+}
+.ngage-heading-5xl-medium {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-5xl-medium-size);
+  line-height: var(--ngage-type-heading-5xl-medium-line-height);
+  letter-spacing: var(--ngage-type-heading-5xl-medium-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-5xl-medium-weight, 500);
+}
+.ngage-heading-4xl-medium {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-4xl-medium-size);
+  line-height: var(--ngage-type-heading-4xl-medium-line-height);
+  letter-spacing: var(--ngage-type-heading-4xl-medium-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-4xl-medium-weight, 500);
+}
+.ngage-heading-3xl-medium {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-3xl-medium-size);
+  line-height: var(--ngage-type-heading-3xl-medium-line-height);
+  letter-spacing: var(--ngage-type-heading-3xl-medium-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-3xl-medium-weight, 500);
+}
+.ngage-heading-2xl-medium {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-2xl-medium-size);
+  line-height: var(--ngage-type-heading-2xl-medium-line-height);
+  letter-spacing: var(--ngage-type-heading-2xl-medium-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-2xl-medium-weight, 500);
+}
+.ngage-heading-xl-medium {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-xl-medium-size);
+  line-height: var(--ngage-type-heading-xl-medium-line-height);
+  letter-spacing: var(--ngage-type-heading-xl-medium-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-xl-medium-weight, 500);
+}
+.ngage-heading-l-medium {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-l-medium-size);
+  line-height: var(--ngage-type-heading-l-medium-line-height);
+  letter-spacing: var(--ngage-type-heading-l-medium-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-l-medium-weight, 500);
+}
+.ngage-heading-m-medium {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-m-medium-size);
+  line-height: var(--ngage-type-heading-m-medium-line-height);
+  letter-spacing: var(--ngage-type-heading-m-medium-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-m-medium-weight, 500);
+}
+.ngage-heading-s-medium {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-s-medium-size);
+  line-height: var(--ngage-type-heading-s-medium-line-height);
+  letter-spacing: var(--ngage-type-heading-s-medium-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-s-medium-weight, 500);
+}
+.ngage-heading-xs-medium {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-xs-medium-size);
+  line-height: var(--ngage-type-heading-xs-medium-line-height);
+  letter-spacing: var(--ngage-type-heading-xs-medium-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-xs-medium-weight, 500);
+}
+.ngage-heading-2xs-medium {
+  font-family: var(--ngage-font-family);
+  font-size: var(--ngage-type-heading-2xs-medium-size);
+  line-height: var(--ngage-type-heading-2xs-medium-line-height);
+  letter-spacing: var(--ngage-type-heading-2xs-medium-letter-spacing, 0px);
+  font-weight: var(--ngage-type-heading-2xs-medium-weight, 500);
 }
 .ngage-text-s {
-  font-size: var(--ngage-text-s-size);
-  line-height: var(--ngage-text-s-line-height);
+  font: var(--ngage-font-regular) var(--ngage-text-s-size)/var(--ngage-text-s-line-height)
+    var(--ngage-font-family);
 }
 .ngage-text-m {
-  font-size: var(--ngage-text-m-size);
-  line-height: var(--ngage-text-m-line-height);
+  font: var(--ngage-font-regular) var(--ngage-text-m-size)/var(--ngage-text-m-line-height)
+    var(--ngage-font-family);
 }
 .ngage-text-l {
-  font-size: var(--ngage-text-l-size);
-  line-height: var(--ngage-text-l-line-height);
+  font: var(--ngage-font-regular) var(--ngage-text-l-size)/var(--ngage-text-l-line-height)
+    var(--ngage-font-family);
 }
 .ngage-medium {
   font-weight: var(--ngage-font-medium);

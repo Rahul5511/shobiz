@@ -1,3 +1,4 @@
+import { NgageButton } from '../../../../shared/design-system/index';
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { WorkspaceService } from '../../../../shared/workspace/data-access/workspace.service';
 
@@ -5,7 +6,7 @@ import { WorkspaceService } from '../../../../shared/workspace/data-access/works
   changeDetection: ChangeDetectionStrategy.Eager,
   selector: 'app-registration-qr-page',
   standalone: true,
-  imports: [],
+  imports: [NgageButton],
   templateUrl: './registration-qr.html',
   styleUrl: './registration-qr.css',
 })

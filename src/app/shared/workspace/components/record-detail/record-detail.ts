@@ -1,3 +1,4 @@
+import { NgageButton } from '../../../design-system/index';
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 
 import { WorkspaceService } from '../../data-access/workspace.service';
@@ -8,7 +9,7 @@ import { RecordReviewComponent } from '../record-review/record-review';
   changeDetection: ChangeDetectionStrategy.Eager,
   selector: 'app-workspace-record-detail',
   standalone: true,
-  imports: [DataTableComponent, RecordReviewComponent],
+  imports: [NgageButton, DataTableComponent, RecordReviewComponent],
   templateUrl: './record-detail.html',
   styleUrl: './record-detail.css',
 })

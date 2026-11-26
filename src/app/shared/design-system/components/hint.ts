@@ -11,7 +11,6 @@ import { NgageIcon, NgageIconTone } from './icon';
     }
     <span><ng-content /></span>`,
   styles: `
-    @import '../styles/tokens.css';
     :host {
       display: flex;
       align-items: center;

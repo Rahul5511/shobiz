@@ -1,62 +1,64 @@
-# Shobiz Ngage shared design system (inactive)
+﻿# Shobiz Ngage shared design system
 
-Validation: production build passed; all 72 tests passed, including three shared-component interaction tests. A separate temporary preview compiled with strict Angular template checking and was then removed. All 16 original SVG files are non-empty and parse as SVG with their original root dimensions preserved. Production JS/CSS contains no new design-system selectors, tokens, or Baikal references. Browser visual/focus verification remains pending because browser access was unavailable and the desktop fallback timed out. jsdom modal methods are stubbed in unit tests; those tests do not verify browser focus trapping.
+The application now uses the local `angular-design-library` export through this consolidated Angular layer. `src/styles.css` loads the shared entry point once and maps existing Tailwind color names to Ngage tokens. Login, recovery, public registration, workspace forms, record lists, account screens and report controls import the shared components.
 
-Prepared from [Shobiz Ngage v1.0.0](https://www.figma.com/design/YG6lPwRohd0WklutCitxsj/Shobiz_Ngage_Components__v1.0.0) on 22 November 2026.
+## Source and normalization
 
-Nothing here is imported into application screens, routes, bootstrap, existing shared components, or `src/styles.css`. No packages were added. Original SVGs live in `public/ngage/icons/`; their presence does not activate the styles.
+- `styles/exported-tokens.css`: 542 stable named tokens extracted from both token manifests; lengths have CSS units and textual font weights become numbers. Exported light/dark and desktop/tablet/mobile values are preserved.
+- `styles/tokens.css`: application aliases, spacing/typography compatibility, focus and custom-accent behavior. Component styles inherit tokens instead of resetting them on every host.
+- `styles/typography.css`: 32 responsive heading/text utilities plus the existing S/M/L aliases.
+- `components/icon-assets.ts` and `public/ngage/library/icons/`: 140 reconstructed SVG geometries across 14 icon families. Nested source offsets are retained. Masks inherit current color, including hover/disabled states. The application's icon adapter uses these where matching glyphs exist; other application-specific icons retain their existing geometry.
+- `token-conflicts.json`: 12 conflicting source mode entries. The first exported component definition is canonical; foundation definitions fill missing names. Alternatives are recorded for review rather than silently discarded.
 
-## Available files
+The original export remains a reference and is not imported into the runtime. Its catalog pages, previews, verification images, conversion tooling, node_modules, Figma spacer specimens and entire-frame examples are not application components. Brand image/avatar crop warnings in the source are not treated as verified assets. Existing branding remains in place.
 
-- `styles/tokens.css`: namespaced semantic colors, measured spacing, radii, shadow, typography values.
-- `styles/typography.css`: explicit S/M/L utilities (12/16, 14/20, 16/24 px), regular and medium weights. No global heading/body rules.
-- `styles/forms.css`: opt-in native control styling, focus, disabled, validation states.
-- `index.ts`: standalone Angular buttons, alerts, modal, hint, field wrapper, input directive, original icon assets.
+## Shared component contracts
 
-Components import the central token stylesheet into their encapsulated host styles. The CSS entry point also provides `.ngage-theme` for future plain markup. Existing Tailwind variables remain untouched. Future overrides can target a component host's `--ngage-*` properties.
+| Export family                    | Application API                                                                                                                                                                  |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Button variants/states           | Native `button[ngageButton]` or navigation `a[ngageButton]`; `variant`, `size`, optional leading/trailing icons. Native disabled, click, submit and link behavior remain intact. |
+| Snackbar / notification          | `ngage-alert` with standard, positive, negative, alert or info tone; optional dismissal emits intent to its consumer.                                                            |
+| Basic input / search / textarea  | `ngageInput` on native input, select or textarea. Keep Reactive Forms/ngModel and native attributes on the control.                                                              |
+| Checkbox / radio / toggle        | Native input with `ngageChoice="checkbox"`, `"radio"` or `"switch"`; checked/disabled/value remain owned by Angular forms or the parent.                                         |
+| Tag / status badge               | `ngage-tag` or `span[ngageTag]`, typed tone/size, optional removal and disabled state.                                                                                           |
+| Chip                             | `button[ngageChip]` with parent-owned `selected`, native click/disabled and aria-pressed.                                                                                        |
+| Selected navigation              | `button[ngageNav]` with `selected`. These are navigation buttons, not an ARIA tablist without arrow-key behavior.                                                                |
+| Progress specimens               | Native `progress[ngageProgress]`, numeric value/max and a consumer-provided accessible label. Analytical meters remain meters.                                                   |
+| Avatar                           | `ngage-avatar` with required label, image and initials; failed images fall back to initials.                                                                                     |
+| Divider                          | `ngageDivider` on a separator element.                                                                                                                                           |
+| Hint / form field / popup header | Existing consolidated `ngage-hint`, `ngage-form-field`, `ngageModal` contracts, now using the same global tokens.                                                                |
 
-## Source coverage and limits
+Menus, breadcrumbs, tables, pagination and business-specific panels retain their existing data and interaction logic. Their native controls use shared primitives where applicable; exported static frames are not substituted for working application behavior. Tag inputs can compose native input and removable tags rather than adding one component per exported state. Simple radio/checkbox controls need no custom value accessor because Angular already binds native controls.
 
-| Source node             | Prepared implementation                                                                                     |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Buttons `46:145`        | Primary, ghost, border, icon solid/border; default/large; native hover/disabled; original add/chevron icons |
-| Snackbar `56:1289`      | Standard, positive, negative, alert; optional dismiss output                                                |
-| Hint Container `5:1858` | Default, positive, notice, negative, info                                                                   |
-| Popup header `49:954`   | Exact header typography/padding/divider and close icon inside a native modal dialog                         |
-| Basic Input `5:2444`    | Native text/select/textarea field foundation and label/hint presentation; projected native controls         |
+Hover, focus-visible and pressed use CSS states. Checked and selected use native properties or parent inputs. Inactive/unselected does not mean disabled. Component state does not fetch data or change permissions. One icon per slot inherits color; no hidden default/hover/disabled icon trees are rendered.
 
-The `4:201` Components page is empty; designs are on sibling pages. The Figma tool limit prevented further extraction. This is not a complete export of the file: charts, tables, navigation, chips, avatars, illustrations, templates, advanced dropdowns, and additional typography/variable collections remain for later extraction. No dark palette or unseen heading scale has been invented.
+The exported orange backgrounds are retained. Solid button and positive/warning notification foregrounds are adapted for readability rather than copying low-contrast white text. Custom accent colors remain user configurable and require their own contrast review. Baikal/Inter font files were not supplied: the stack falls back to installed Segoe UI/Arial. Add appropriately licensed local WOFF2 files to obtain font parity.
 
-Baikal Regular and Medium are specified by the design, but webfont files are not supplied. `--ngage-font-family` uses Baikal when available and otherwise falls back to sans-serif. Add licensed WOFF2 files and local `@font-face` declarations before judging typography fidelity. No external font request is configured.
-
-The file specifies a popup header rather than a complete modal. Native dialog behavior, body padding, backdrop, visible focus outlines, responsive text wrapping, and accessible labels are implementation adaptations. The supplied brand/status colors are preserved; assess text contrast before rollout. Large button sizing is designed for primary; other variants retain the shared size API for convenience.
-
-## Future integration (examples only)
-
-Import only the required standalone exports from this directory into a future consumer. Add `styles/index.css` to that consumer's stylesheet (relative path as appropriate), or deliberately import it globally when migration is approved. The `.ngage-control` stylesheet must be available for projected native controls. The rest of the components carry their own CSS. For plain typography markup, put utilities under `.ngage-theme` so token values inherit.
+## Examples
 
 ```html
-<button ngageButton type="button" [leadingIcon]="false" [trailingIcon]="false">Save</button>
-<button ngageButton type="button" variant="icon-solid">Add attendee</button>
-
-@if (showMessage()) {
-<ngage-alert tone="positive" (dismissed)="showMessage.set(false)">Saved successfully</ngage-alert>
-}
-
-<dialog
-  ngageModal
-  heading="Confirm changes"
-  description="Review before saving"
-  [isOpen]="showDialog()"
-  (closeRequested)="showDialog.set(false)"
+<button ngageButton type="submit" [disabled]="saving">Save</button>
+<button ngageButton type="button" variant="border" (click)="cancel()">Cancel</button>
+<input ngageInput formControlName="email" type="email" />
+<input type="checkbox" ngageChoice="switch" formControlName="enabled" />
+<ngage-tag tone="positive">Active</ngage-tag>
+<ngage-tag [removable]="true" removeLabel="Remove Mumbai" (removed)="removeCity()"
+  >Mumbai</ngage-tag
 >
-  <p>Ready to save?</p>
-  <footer ngageModalFooter><!-- consumer-owned actions --></footer>
-</dialog>
-
-<ngage-form-field controlId="email" label="Email" [required]="true" hint="Use your work email">
-  <input ngageInput id="email" type="email" required aria-describedby="email-hint" />
-</ngage-form-field>
+<ngage-alert tone="negative" [dismissible]="false">Save failed</ngage-alert>
 ```
 
-Use native `disabled`, `type`, `required`, Reactive Forms bindings, and input events. The field wrapper's `required` input draws the marker; set `required` on the native control as well. Connect validation to `state` and native `aria-invalid`. Give icon-only buttons descriptive projected text (visually hidden) or an `aria-label`. Notification dismissal and modal visibility stay with the consumer. On `closeRequested`, set `isOpen` false; the browser handles modal focus trapping and focus restoration. Do not manually set the dialog's `open` attribute. Use unique control IDs and associate hint IDs with `aria-describedby`.
+Import only the standalone exports needed by the consuming component from `shared/design-system`. Include the global entry point once, as already configured; do not import raw per-variant CSS globally. Add unique label/control IDs, validation descriptions and accessible names at the consumer boundary.
+
+## Regeneration and verification
+
+```text
+node tools/design-system/generate.mjs
+node tools/design-system/verify.mjs
+npm run build
+npm test -- --watch=false
+```
+
+Regeneration requires the local ignored `angular-design-library` folder. Generated tokens, the conflict report, the icon registry and SVG assets are committed application inputs; builds do not require that source folder. No packages were added. The verifier checks shared CSS token references and nonempty finite SVG geometry. Component tests cover native forms/disabled behavior, chip/navigation selection, tag removal, avatar recovery, icon geometry reuse, notification dismissal and modal intent. Existing integration tests cover authentication and workspace flows.
+
+Browser checks covered the login and workspace at narrow and desktop split-screen widths: the sidebar subtitle, header wrapping, downward profile chevron and stacked filters were inspected. Full keyboard, contrast and all-screen visual verification remain pending. Unit tests do not prove browser layout, focus trapping or visual parity. SVG conversion preserves nested affine transforms; `node --test tools/design-system/svg-geometry.test.mjs` checks arrow direction, clipping and transform origins.

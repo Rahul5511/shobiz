@@ -1,5 +1,6 @@
 <div
   class="layout"
+  [class.ngage-custom-theme]="theme.mode === 'custom'"
   [class.compact-nav]="compact"
   [class.night-theme]="
     theme.mode === 'night' || (theme.mode === 'custom' && theme.base === 'night')
@@ -7,7 +8,10 @@
   [style.--custom-accent]="theme.mode === 'custom' ? theme.accent : null"
 >
   <aside [attr.inert]="guideOpen ? '' : null" class="sidebar" [class.mobile-open]="s.mobileMenu">
-    <div class="logo">sh<span>o</span>biz<small>Audience engagement workspace</small></div>
+    <div class="logo">
+      <div class="logo-wordmark">sh<span>o</span>biz</div>
+      <small>Audience engagement workspace</small>
+    </div>
     <button
       class="navitem"
       title="Dashboard"
@@ -39,7 +43,7 @@
             [attr.aria-expanded]="s.openSection === group.title"
           >
             <app-icon name="access" /><span>{{ group.title }}</span
-            ><app-icon name="chevron" />
+            ><app-icon class="nav-chevron" name="chevron" />
           </button>
           @if (s.openSection === group.title) {
             <div class="nav-children">
@@ -62,14 +66,23 @@
           title="Toggle navigation"
           aria-label="Toggle navigation"
           (click)="toggleNavigation()"
+          ngageButton
+          variant="border"
         >
           <app-icon name="menu" /></button
-        ><span
+        ><span class="portal-title"
           >Shobiz Ngage <span class="muted portal-journey">/ {{ s.roleName }} journey</span></span
         >
       </div>
       <div class="header-actions" (click)="$event.stopPropagation()">
-        <button class="icon-btn" title="Role guide" aria-label="Role guide" (click)="openGuide()">
+        <button
+          class="icon-btn"
+          title="Role guide"
+          aria-label="Role guide"
+          (click)="openGuide()"
+          ngageButton
+          variant="border"
+        >
           <app-icon name="assets" />
         </button>
         <div class="header-control">
@@ -79,6 +92,8 @@
             aria-label="Theme settings"
             [attr.aria-expanded]="headerPanel === 'theme'"
             (click)="toggleHeader('theme')"
+            ngageButton
+            variant="border"
           >
             <app-icon name="settings" />
           </button>
@@ -86,7 +101,11 @@
             <section class="header-popup" aria-label="Theme settings">
               <h3>Theme settings</h3>
               <label
-                >Appearance<select [(ngModel)]="theme.mode" (ngModelChange)="saveTheme()">
+                >Appearance<select
+                  [(ngModel)]="theme.mode"
+                  (ngModelChange)="saveTheme()"
+                  ngageInput
+                >
                   <option value="day">Day</option>
                   <option value="night">Night</option>
                   <option value="custom">Custom</option>
@@ -94,7 +113,7 @@
               >
               @if (theme.mode === 'custom') {
                 <label
-                  >Base<select [(ngModel)]="theme.base" (ngModelChange)="saveTheme()">
+                  >Base<select [(ngModel)]="theme.base" (ngModelChange)="saveTheme()" ngageInput>
                     <option value="day">Day</option>
                     <option value="night">Night</option>
                   </select></label
@@ -117,6 +136,8 @@
               aria-label="Notifications"
               [attr.aria-expanded]="headerPanel === 'notifications'"
               (click)="toggleHeader('notifications')"
+              ngageButton
+              variant="border"
             >
               <app-icon name="notification" />
             </button>
@@ -127,13 +148,20 @@
                   <p class="muted">No notifications yet.</p>
                 }
                 @for (row of notifications; track row) {
-                  <button class="notification-row" (click)="openNotification(row)">
+                  <button
+                    class="notification-row"
+                    (click)="openNotification(row)"
+                    ngageButton
+                    variant="border"
+                  >
                     <b>{{ row.values[2] }}</b
                     ><small>{{ row.values[0] }} · {{ row.values[3] }}</small>
                   </button>
                 }
                 <footer>
-                  <button (click)="viewNotifications()">View all notifications</button>
+                  <button (click)="viewNotifications()" ngageButton variant="border">
+                    View all notifications
+                  </button>
                 </footer>
               </section>
             }
@@ -152,13 +180,11 @@
               <b>{{ profile.name }}</b
               ><small>{{ s.roleName }}</small>
             </div>
-            <span class="avatar">
-              @if (profile.photo) {
-                <img [src]="profile.photo" alt="" />
-              } @else {
-                <app-icon name="profile" />
-              }</span
-            ><app-icon name="chevron" />
+            <ngage-avatar
+              [label]="profile.name"
+              [src]="profile.photo"
+              [initials]="profile.name.slice(0, 1)"
+            /><app-icon class="profile-chevron" name="chevron" />
           </button>
           @if (headerPanel === 'profile') {
             <div class="profile-dropdown" role="menu">
@@ -166,11 +192,13 @@
                 <b>{{ profile.name }}</b
                 ><small>{{ auth.session?.email }}</small>
               </header>
-              <button role="menuitem" (click)="account('account')">
+              <button role="menuitem" (click)="account('account')" ngageButton variant="border">
                 <app-icon name="profile" />View Profile</button
-              ><button role="menuitem" (click)="account('password')">
+              ><button role="menuitem" (click)="account('password')" ngageButton variant="border">
                 <app-icon name="password" />Change Password</button
-              ><button role="menuitem" (click)="logout()"><app-icon name="logout" />Logout</button>
+              ><button role="menuitem" (click)="logout()" ngageButton variant="border">
+                <app-icon name="logout" />Logout
+              </button>
             </div>
           }
         </div>
@@ -178,13 +206,10 @@
     </header>
     <main>
       @if (s.notice) {
-        <div class="alert success" role="status">
-          {{ s.notice
-          }}<button class="dismiss" aria-label="Dismiss message" (click)="s.notice = ''">Ã—</button>
-        </div>
+        <ngage-alert tone="positive" (dismissed)="s.notice = ''">{{ s.notice }}</ngage-alert>
       }
       @if (s.error) {
-        <div class="alert error" role="alert">{{ s.error }}</div>
+        <ngage-alert role="alert" [dismissible]="false" tone="negative">{{ s.error }}</ngage-alert>
       }
       @if (s.view === 'dashboard') {
         <app-dashboard-page />
@@ -262,7 +287,15 @@
             <span class="eyebrow">{{ s.roleName }} journey</span>
             <h2 id="guide-title">Getting Started</h2>
           </div>
-          <button type="button" aria-label="Close guide" (click)="closeGuide()">Close</button>
+          <button
+            type="button"
+            aria-label="Close guide"
+            (click)="closeGuide()"
+            ngageButton
+            variant="border"
+          >
+            Close
+          </button>
         </header>
         <p>{{ guideSummary }}</p>
         <p>
@@ -284,7 +317,7 @@
             }
           </ol>
         </details>
-        <footer><button class="primary" (click)="closeGuide()">Go to workspace</button></footer>
+        <footer><button (click)="closeGuide()" ngageButton>Go to workspace</button></footer>
       </section>
     </div>
   }

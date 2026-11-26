@@ -5,25 +5,30 @@
       <h1>{{ s.selected?.values[0] || 'Sample 1' }} / Contacts</h1>
       <p>{{ s.sampleRows.length }} matching sample contacts</p>
     </div>
-    <button (click)="s.view = 'list'; s.key = 'Sample'">Back to samples</button>
+    <button (click)="s.view = 'list'; s.key = 'Sample'" ngageButton variant="border">
+      Back to samples
+    </button>
   </div>
-  <div class="alert warning">
+  <ngage-alert [dismissible]="false" tone="standard">
     SAMPLE: emails and phone numbers are excluded from screens, shared links and downloads (FRD
     M13).
-  </div>
+  </ngage-alert>
   <section class="card">
     <header class="card-header filters">
-      <label>Search company or title<input [(ngModel)]="s.search" /></label
-      ><label>Additional search<input [(ngModel)]="s.search2" /></label
-      ><label>Export limit<input type="number" min="1" max="100" [(ngModel)]="s.limit" /></label>
+      <label>Search company or title<input [(ngModel)]="s.search" ngageInput /></label
+      ><label>Additional search<input [(ngModel)]="s.search2" ngageInput /></label
+      ><label
+        >Export limit<input type="number" min="1" max="100" [(ngModel)]="s.limit" ngageInput
+      /></label>
     </header>
     <app-data-table [headers]="s.m.sampleHeaders" [data]="s.sampleRows" />
     <footer class="record-footer">
       <span>{{ s.sampleRows.length }} sample contacts</span>
       @if (s.role === 'DB Manager') {
         <div class="row">
-          <button (click)="exportSample()"><app-icon name="download" />Excel</button
-          ><button (click)="printSample()">PDF / Print</button>
+          <button (click)="exportSample()" ngageButton variant="border">
+            <app-icon name="download" />Excel</button
+          ><button (click)="printSample()" ngageButton variant="border">PDF / Print</button>
         </div>
       }
       @if (s.role !== 'DB Manager') {

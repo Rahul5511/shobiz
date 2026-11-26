@@ -13,19 +13,19 @@ import { NgageIcon } from './icon';
   },
   template: `
     @if (showIcon()) {
-      <ngage-icon name="check" tone="inverse" />
+      <ngage-icon [name]="tone() === 'positive' ? 'check' : 'information'" />
     }
     <span class="message"><ng-content /></span>
     @if (dismissible()) {
       <button type="button" [attr.aria-label]="dismissLabel()" (click)="dismissed.emit()">
-        <ngage-icon name="close" tone="inverse" />
+        <ngage-icon name="close" />
       </button>
     }
   `,
   styleUrl: './alert.css',
 })
 export class NgageAlert {
-  readonly tone = input<'standard' | 'positive' | 'negative' | 'alert'>('standard');
+  readonly tone = input<'standard' | 'positive' | 'negative' | 'alert' | 'info'>('standard');
   readonly showIcon = input(true);
   readonly dismissible = input(true);
   readonly dismissLabel = input('Dismiss notification');

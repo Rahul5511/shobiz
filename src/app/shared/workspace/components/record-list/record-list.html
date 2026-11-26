@@ -7,15 +7,15 @@
     </div>
   </div>
   @if (s.key === 'Events' && s.canCreate('Events')) {
-    <div class="alert info">
+    <ngage-alert [dismissible]="false" tone="info">
       Onboard the Client first, assign its users, then create the event. Key Client Contacts are
       client representatives; event audience contacts are managed separately.
-    </div>
+    </ngage-alert>
   }
   @if (s.key === 'Events') {
     <section class="card padded event-list-filters">
       <label
-        >Client<select [(ngModel)]="s.eventClientFilter">
+        >Client<select [(ngModel)]="s.eventClientFilter" ngageInput>
           <option value="">All clients</option>
           @for (client of s.rows.Clients; track client.id) {
             <option [value]="client.details?.['Company Name'] || client.values[0]">
@@ -25,15 +25,19 @@
         </select></label
       >
       <label
-        >Stage<select [(ngModel)]="s.eventStageFilter">
+        >Stage<select [(ngModel)]="s.eventStageFilter" ngageInput>
           <option value="">All stages</option>
           <option>Pitch</option>
           <option>Planning</option>
           <option>Confirmed</option>
         </select></label
-      ><button (click)="s.eventClientFilter = ''; s.eventStageFilter = ''; table.clear()">
+      ><button
+        (click)="s.eventClientFilter = ''; s.eventStageFilter = ''; table.clear()"
+        ngageButton
+        variant="border"
+      >
         Clear event filters</button
-      ><button (click)="table.sort(5)">Sort by Event Date</button>
+      ><button (click)="table.sort(5)" ngageButton variant="border">Sort by Event Date</button>
     </section>
   }
   <app-record-card
@@ -79,7 +83,7 @@
       } @empty {
         <p>No related records saved for this event.</p>
       }
-      <button (click)="s.relatedPanel = null">Close</button>
+      <button (click)="s.relatedPanel = null" ngageButton variant="border">Close</button>
     </section>
   }
 }

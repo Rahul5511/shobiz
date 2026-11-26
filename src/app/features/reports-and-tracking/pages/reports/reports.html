@@ -6,7 +6,7 @@
 </div>
 <section class="card padded">
   <label
-    >Report<select [(ngModel)]="reportKey" (ngModelChange)="selectReport()">
+    >Report<select [(ngModel)]="reportKey" (ngModelChange)="selectReport()" ngageInput>
       @for (report of catalog; track report.key) {
         <option [value]="report.key">{{ report.title }}</option>
       }
@@ -14,9 +14,19 @@
   >
   @if (recordAvailable) {
     <div class="report-view-switch">
-      <button (click)="changeView('summary')" [attr.aria-pressed]="view === 'summary'">
+      <button
+        (click)="changeView('summary')"
+        [attr.aria-pressed]="view === 'summary'"
+        ngageButton
+        variant="border"
+      >
         Summary</button
-      ><button (click)="changeView('records')" [attr.aria-pressed]="view === 'records'">
+      ><button
+        (click)="changeView('records')"
+        [attr.aria-pressed]="view === 'records'"
+        ngageButton
+        variant="border"
+      >
         Underlying records
       </button>
     </div>
@@ -31,7 +41,11 @@
       @for (key of ['client', 'event', 'country', 'state', 'city']; track key) {
         <label
           >{{ key | titlecase
-          }}<select [ngModel]="$any(filters)[key]" (ngModelChange)="setFilter(key, $event)">
+          }}<select
+            [ngModel]="$any(filters)[key]"
+            (ngModelChange)="setFilter(key, $event)"
+            ngageInput
+          >
             <option value="">All</option>
             @for (option of options(key); track option) {
               <option>{{ option }}</option>
@@ -40,7 +54,7 @@
         >
       }
       <label
-        >Status<select [(ngModel)]="filters.status" (ngModelChange)="page = 1">
+        >Status<select [(ngModel)]="filters.status" (ngModelChange)="page = 1" ngageInput>
           <option value="">All</option>
           <option>Approved</option>
           <option>Pending</option>
@@ -48,22 +62,37 @@
           <option>Rejected</option>
         </select></label
       >
-      <label>From<input type="date" [(ngModel)]="filters.from" (ngModelChange)="page = 1" /></label
-      ><label>To<input type="date" [(ngModel)]="filters.to" (ngModelChange)="page = 1" /></label>
-      <label>Search<input [(ngModel)]="filters.search" (ngModelChange)="page = 1" /></label
+      <label
+        >From<input
+          type="date"
+          [(ngModel)]="filters.from"
+          (ngModelChange)="page = 1"
+          ngageInput /></label
       ><label
-        >Additional search<input [(ngModel)]="filters.more" (ngModelChange)="page = 1" /></label
-      ><button (click)="clear()">Clear filters</button>
+        >To<input type="date" [(ngModel)]="filters.to" (ngModelChange)="page = 1" ngageInput
+      /></label>
+      <label
+        >Search<input [(ngModel)]="filters.search" (ngModelChange)="page = 1" ngageInput /></label
+      ><label
+        >Additional search<input
+          [(ngModel)]="filters.more"
+          (ngModelChange)="page = 1"
+          ngageInput /></label
+      ><button (click)="clear()" ngageButton variant="border">Clear filters</button>
     </div>
     @if (invalidRange) {
-      <p class="alert error" role="alert">From must be on or before To.</p>
+      <ngage-alert role="alert" [dismissible]="false" tone="negative"
+        >From must be on or before To.</ngage-alert
+      >
     }
     <fieldset>
       <legend>Columns</legend>
       <div class="column-options">
         @for (header of headers; track header; let i = $index) {
           <label class="checkbox-label"
-            ><input type="checkbox" [(ngModel)]="columns[i]" />{{ header }}</label
+            ><input type="checkbox" [(ngModel)]="columns[i]" ngageChoice="checkbox" />{{
+              header
+            }}</label
           >
         }
       </div>
@@ -82,12 +111,17 @@
   <section class="card">
     <div class="padded report-export">
       <label
-        >Format<select [(ngModel)]="format">
+        >Format<select [(ngModel)]="format" ngageInput>
           <option value="xlsx">Excel</option>
           <option value="csv">CSV</option>
           <option value="pdf">PDF / Print</option>
         </select></label
-      ><button [disabled]="!facts.length || !indexes.length || invalidRange" (click)="download()">
+      ><button
+        [disabled]="!facts.length || !indexes.length || invalidRange"
+        (click)="download()"
+        ngageButton
+        variant="border"
+      >
         Export all matching records
       </button>
     </div>
@@ -118,19 +152,22 @@
     <footer class="record-footer">
       <span>{{ facts.length }} matching records</span
       ><label
-        >Rows<select [(ngModel)]="size" (ngModelChange)="page = 1">
+        >Rows<select [(ngModel)]="size" (ngModelChange)="page = 1" ngageInput>
           <option [ngValue]="5">5</option>
           <option [ngValue]="10">10</option>
           <option [ngValue]="20">20</option>
         </select></label
-      ><button [disabled]="page === 1" (click)="page = page - 1">Previous</button
+      ><button [disabled]="page === 1" (click)="page = page - 1" ngageButton variant="border">
+        Previous</button
       ><span>{{ page }} / {{ pages }}</span
-      ><button [disabled]="page === pages" (click)="page = page + 1">Next</button>
+      ><button [disabled]="page === pages" (click)="page = page + 1" ngageButton variant="border">
+        Next
+      </button>
     </footer>
   </section>
 }
 @if (error) {
-  <p class="alert error" role="alert">{{ error }}</p>
+  <ngage-alert role="alert" [dismissible]="false" tone="negative">{{ error }}</ngage-alert>
 }
 <section class="card padded">
   <h2>Share with client contact</h2>
@@ -139,13 +176,13 @@
     sent.
   </p>
   <label
-    >Client contact<select [(ngModel)]="recipient" [disabled]="!activeClient">
+    >Client contact<select [(ngModel)]="recipient" [disabled]="!activeClient" ngageInput>
       <option value="">Select contact</option>
       @for (contact of contacts; track contact.email) {
         <option [value]="contact.email">{{ contact.name }} ({{ contact.email }})</option>
       }
     </select></label
-  ><button [disabled]="!recipient || !activeClient" (click)="share()">
+  ><button [disabled]="!recipient || !activeClient" (click)="share()" ngageButton variant="border">
     Prepare sharing preview
   </button>
   @for (share of s.shares.slice(0, 3); track share.id) {

@@ -8,7 +8,7 @@
     <div class="report-fields">
       @if (!embedded) {
         <label
-          >Report<select [ngModel]="selected()" (ngModelChange)="select($event)">
+          >Report<select [ngModel]="selected()" (ngModelChange)="select($event)" ngageInput>
             @for (report of catalog; track report) {
               <option [value]="report.key">{{ report.title }}</option>
             }
@@ -16,7 +16,11 @@
         >
       }
       <label
-        >Period<select [ngModel]="grain()" (ngModelChange)="grain.set($event); page.set(1)">
+        >Period<select
+          [ngModel]="grain()"
+          (ngModelChange)="grain.set($event); page.set(1)"
+          ngageInput
+        >
           <option value="daily">Daily</option>
           <option value="monthly">Monthly</option>
           <option value="yearly">Yearly</option>
@@ -26,6 +30,7 @@
         >Break down by<select
           [ngModel]="breakdown()"
           (ngModelChange)="breakdown.set($event); page.set(1)"
+          ngageInput
         >
           @for (key of filterKeys; track key) {
             <option [value]="key">{{ dimensions[key] }}</option>
@@ -37,9 +42,14 @@
           type="date"
           [ngModel]="filters().from"
           (ngModelChange)="setFilter('from', $event)"
+          ngageInput
       /></label>
       <label
-        >To<input type="date" [ngModel]="filters().to" (ngModelChange)="setFilter('to', $event)"
+        >To<input
+          type="date"
+          [ngModel]="filters().to"
+          (ngModelChange)="setFilter('to', $event)"
+          ngageInput
       /></label>
     </div>
     <p class="muted">
@@ -52,7 +62,7 @@
       @for (key of filterKeys; track key) {
         <label
           >{{ dimensions[key]
-          }}<select [ngModel]="filters()[key]" (ngModelChange)="setFilter(key, $event)">
+          }}<select [ngModel]="filters()[key]" (ngModelChange)="setFilter(key, $event)" ngageInput>
             <option value="">All</option>
             @for (option of options()[key]; track option) {
               <option [value]="option">{{ option }}</option>
@@ -65,17 +75,23 @@
           type="search"
           [ngModel]="filters().search"
           (ngModelChange)="setFilter('search', $event)"
+          ngageInput
       /></label>
       <label
         >Additional search<input
           type="search"
           [ngModel]="filters().more"
           (ngModelChange)="setFilter('more', $event)"
+          ngageInput
       /></label>
-      <div class="report-reset"><button (click)="clear()">Clear filters</button></div>
+      <div class="report-reset">
+        <button (click)="clear()" ngageButton variant="border">Clear filters</button>
+      </div>
     </div>
     @if (invalidRange()) {
-      <p class="alert error" role="alert">The From date must be on or before the To date.</p>
+      <ngage-alert role="alert" [dismissible]="false" tone="negative"
+        >The From date must be on or before the To date.</ngage-alert
+      >
     }
   </section>
   <p class="scope-line">{{ current().title }} - {{ scopeTitle }}</p>
@@ -83,7 +99,9 @@
     <legend>Columns</legend>
     @for (header of columnHeaders; track $index; let i = $index) {
       <label class="checkbox-label"
-        ><input type="checkbox" [(ngModel)]="columnFlags[i]" />{{ header }}</label
+        ><input type="checkbox" [(ngModel)]="columnFlags[i]" ngageChoice="checkbox" />{{
+          header
+        }}</label
       >
     }
   </fieldset>
@@ -132,7 +150,7 @@
       </div>
       <div class="reports-export">
         <label
-          >Format<select [(ngModel)]="format">
+          >Format<select [(ngModel)]="format" ngageInput>
             <option value="xlsx">Excel</option>
             <option value="csv">CSV</option>
             <option value="pdf">PDF / Print</option>
@@ -142,21 +160,23 @@
           [disabled]="!pageRows().length"
           (click)="download(false)"
           title="Export rows on the current page"
+          ngageButton
+          variant="border"
         >
           Export
         </button>
         <button
-          class="primary"
           [disabled]="!groups().length || !columnIndexes.length"
           (click)="download(true)"
           title="Export all matching rows across pages"
+          ngageButton
         >
           Export All
         </button>
       </div>
     </header>
     @if (error) {
-      <p class="alert error" role="alert">{{ error }}</p>
+      <ngage-alert role="alert" [dismissible]="false" tone="negative">{{ error }}</ngage-alert>
     }
     <div class="table-scroll">
       <table>
@@ -188,19 +208,38 @@
     <footer class="record-footer">
       <label
         >Rows per page
-        <select [ngModel]="pageSize()" (ngModelChange)="pageSize.set(+$event); page.set(1)">
+        <select
+          [ngModel]="pageSize()"
+          (ngModelChange)="pageSize.set(+$event); page.set(1)"
+          ngageInput
+        >
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="25">25</option>
         </select></label
       >
       <div class="pagination">
-        <button [disabled]="page() <= 1" (click)="page.set(page() - 1)">Previous</button
+        <button
+          [disabled]="page() <= 1"
+          (click)="page.set(page() - 1)"
+          ngageButton
+          variant="border"
+        >
+          Previous</button
         ><span>Page {{ page() }} of {{ pages() }}</span
-        ><button [disabled]="page() >= pages()" (click)="page.set(page() + 1)">Next</button>
+        ><button
+          [disabled]="page() >= pages()"
+          (click)="page.set(page() + 1)"
+          ngageButton
+          variant="border"
+        >
+          Next
+        </button>
       </div>
     </footer>
   </section>
 } @else {
-  <p class="alert info">No reports are configured for this role.</p>
+  <ngage-alert [dismissible]="false" tone="info"
+    >No reports are configured for this role.</ngage-alert
+  >
 }

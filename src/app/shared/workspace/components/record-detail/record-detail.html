@@ -5,7 +5,7 @@
       <h1>{{ s.selected.values[0] }}</h1>
       <p>All saved values and related data.</p>
     </div>
-    <button (click)="s.view = 'list'">Back to list</button>
+    <button (click)="s.view = 'list'" ngageButton variant="border">Back to list</button>
   </div>
   @if (s.key === 'Clients') {
     <section class="card padded">
@@ -25,6 +25,8 @@
     <app-data-table [headers]="['Action', 'User', 'Date']" [data]="s.historyRows()" />
   </section>
   @if (s.key === 'Sample') {
-    <button (click)="s.sample(s.selected)">View sample contacts</button>
+    <button (click)="s.sample(s.selected)" ngageButton variant="border">
+      View sample contacts
+    </button>
   }
 }

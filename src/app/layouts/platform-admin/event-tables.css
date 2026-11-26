@@ -1,0 +1,155 @@
+@scope (.platform-admin) {
+  .event-table-scroll {
+    container: ngage-event-table / inline-size;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline-start: 14rem;
+  }
+  .event-table-scroll:focus-visible {
+    outline: 2px solid var(--ngage-focus-ring);
+    outline-offset: -2px;
+  }
+  .event-table {
+    width: 100%;
+    min-width: 64rem;
+    table-layout: fixed;
+  }
+  .event-table--directory {
+    min-width: 76rem;
+  }
+  .event-table--portfolio {
+    min-width: 42rem;
+  }
+  .event-table--attention {
+    min-width: 48rem;
+  }
+  .event-table > thead > tr > th,
+  .event-table > tbody > tr > td {
+    padding: 12px 14px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    vertical-align: top;
+  }
+  .event-table > thead > tr > .event-name-cell,
+  .event-table > tbody > tr > .event-name-cell {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    width: 14rem;
+    background: var(--ngage-background-primary);
+    box-shadow: 1px 0 0 var(--ngage-border-tertiary);
+  }
+  .event-table > thead > tr > .event-name-cell {
+    z-index: 2;
+    background: var(--ngage-background-hover);
+  }
+  .event-table > tbody > tr:hover > .event-name-cell {
+    background: var(--ngage-background-hover);
+  }
+  .event-table > thead > tr > .event-date-cell {
+    width: 8rem;
+  }
+  .event-table > tbody > tr > .event-date-cell {
+    white-space: nowrap;
+  }
+  .event-table > thead > tr > .event-count-cell {
+    width: 5rem;
+  }
+  .event-table > thead > tr > .event-status-cell {
+    width: 8rem;
+  }
+  .event-status-cell .ngage-tag {
+    white-space: nowrap;
+  }
+  .event-table > thead > tr > .action-col {
+    width: 14rem;
+  }
+  .event-table .sort {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    white-space: normal;
+    text-align: left;
+  }
+  .event-table .sort > span {
+    flex: none;
+  }
+  .event-table button[ngageButton] {
+    --ngage-button-padding: 8px 10px;
+    max-width: 100%;
+    white-space: normal;
+    text-align: left;
+  }
+  .event-table .icon-actions {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .event-name-cell > button + button {
+    margin-top: 6px;
+  }
+  app-record-card .pagination {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  app-record-card .pagination > button,
+  app-record-card .pagination > label {
+    flex-shrink: 0;
+  }
+  app-record-card .pagination > button .label {
+    white-space: nowrap;
+  }
+  app-record-card .pagination select {
+    min-width: 58px;
+  }
+  @container ngage-event-table (max-width: 640px) {
+    .event-table {
+      min-width: 58rem;
+    }
+    .event-table--directory {
+      min-width: 68rem;
+    }
+    .event-table--portfolio {
+      min-width: 36rem;
+    }
+    .event-table--attention {
+      min-width: 42rem;
+    }
+    .event-table > thead > tr > th,
+    .event-table > tbody > tr > td {
+      padding: 10px;
+    }
+    .event-table > thead > tr > .event-name-cell,
+    .event-table > tbody > tr > .event-name-cell {
+      width: 10rem;
+    }
+    .event-table > thead > tr > .action-col {
+      width: 12rem;
+    }
+    .event-table--directory .icon-actions button[ngageButton] {
+      --ngage-button-padding: 8px;
+      min-width: 44px;
+    }
+    /* Each action already has an explicit accessible name and tooltip. */
+    .event-table--directory .icon-actions button[aria-label] .label > span {
+      display: none;
+    }
+  }
+  @media print {
+    .event-table-scroll {
+      overflow: visible;
+    }
+    .event-table {
+      min-width: 0;
+      table-layout: auto;
+    }
+    .event-table > thead > tr > .event-name-cell,
+    .event-table > tbody > tr > .event-name-cell {
+      position: static;
+      box-shadow: none;
+    }
+  }
+}
