@@ -31,8 +31,8 @@
             {{ item.kind }}: {{ item.title
             }}<label
               >Assign to<select [(ngModel)]="s.pendingSuccessors[item.id]" ngageInput>
-                <option value="">Select active user</option>
-                @for (user of s.successors; track user.id) {
+                <option value="">Select qualified active user</option>
+                @for (user of s.successorsFor(item); track user.id) {
                   <option [value]="user.id">{{ user.values[0] }}</option>
                 }
               </select></label
@@ -53,19 +53,28 @@
     <section class="card padded">
       <h2>User hierarchy</h2>
       <label>Search hierarchy<input [(ngModel)]="s.userHierarchyQuery" ngageInput /></label>
-      @for (creator of s.creatorGroups; track creator) {
-        <section>
-          <h3>Added by {{ creator }}</h3>
-          <ul>
-            @for (user of s.addedByUsers(creator); track user.id) {
-              <li>
-                {{ user.values[0] }} - {{ user.details.Roles.join(', ') }} - {{ user.values[4] }}
-                <button (click)="s.viewRecord(user)" ngageButton variant="border">View</button>
-              </li>
-            }
-          </ul>
-        </section>
-      } @empty {
+      <ng-template #branches let-nodes>
+        <ul class="hierarchy-tree">
+          @for (node of nodes; track node.user.id) {
+            <li>
+              <div>
+                <strong>{{ node.user.values[0] }}</strong> -
+                {{ s.roleLabels(node.user.details?.Roles || []) }} - {{ node.user.values[4] }}
+                <button (click)="s.viewRecord(node.user)" ngageButton variant="border">View</button>
+              </div>
+              @if (node.note) {
+                <small>{{ node.note }}</small>
+              }
+              @if (node.children.length) {
+                <ng-container *ngTemplateOutlet="branches; context: { $implicit: node.children }" />
+              }
+            </li>
+          }
+        </ul>
+      </ng-template>
+      @if (s.userHierarchy.length) {
+        <ng-container *ngTemplateOutlet="branches; context: { $implicit: s.userHierarchy }" />
+      } @else {
         <p>No matching users.</p>
       }
     </section>

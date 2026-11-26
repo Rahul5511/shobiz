@@ -180,6 +180,24 @@ export class DataTableComponent {
 }
 @Component({
   selector: 'app-record-card',
+  styles: `
+    :host .event-action-cell {
+      position: sticky;
+      right: 0;
+      z-index: 2;
+      background: var(--white, white);
+      box-shadow: -2px 0 4px #0001;
+    }
+    :host th.event-action-cell {
+      z-index: 3;
+    }
+    :host .event-city-row > td {
+      background: var(--orange-light, #fff5e7);
+    }
+    :host .event-city-row table {
+      width: 100%;
+    }
+  `,
   standalone: true,
   imports: [NgageButton, NgageInput, NgageTag, NgageNav, FormsModule, IconComponent],
   template: ` <section class="record-card">
@@ -290,7 +308,7 @@ export class DataTableComponent {
                 </button>
               </th>
             }
-            <th class="action-col">Actions</th>
+            <th class="action-col" [class.event-action-cell]="event">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -335,7 +353,7 @@ export class DataTableComponent {
                   }
                 </td>
               }
-              <td class="action-col">
+              <td class="action-col" [class.event-action-cell]="event">
                 <div class="icon-actions">
                   <button
                     class="icon-btn"
@@ -384,6 +402,9 @@ export class DataTableComponent {
                       variant="border"
                     >
                       <app-icon name="assets" />
+                      @if (event) {
+                        <span>Requirements</span>
+                      }
                     </button>
                   }
                   @if (canEdit(r)) {
@@ -459,39 +480,60 @@ export class DataTableComponent {
                       variant="border"
                     >
                       <app-icon name="history" />
+                      @if (event) {
+                        <span>History</span>
+                      }
                     </button>
                   }
                 </div>
               </td>
             </tr>
-          }
-          @if (event) {
-            @for (row of visible; track row.id) {
-              @if (expanded.has(row.id)) {
-                <tr>
-                  <td [attr.colspan]="columns.length + 1">
-                    <b>{{ row.values[0] }} - cities</b>
-                    <table>
-                      <thead>
+            @if (event && expanded.has(r.id)) {
+              <tr class="event-city-row">
+                <td [attr.colspan]="columns.length + 1">
+                  <b>{{ r.values[0] }} - city details</b>
+                  <p>
+                    Blank city stage, status and dates use event defaults. Other missing details are
+                    shown as not provided. DRF links show records assigned to that city.
+                  </p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>City</th>
+                        <th>DRF</th>
+                        <th>Stage</th>
+                        <th>Status</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>Pax</th>
+                        <th>Venue</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @for (city of r.cityDetails || []; track city.city) {
                         <tr>
-                          <th>City</th>
-                          <th>Start</th>
-                          <th>End</th>
+                          <td>{{ city.city }}</td>
+                          <td>
+                            <button
+                              (click)="link.emit({ row: r, column: 'DRF', city: city.city })"
+                              ngageButton
+                              variant="border"
+                            >
+                              View DRF - {{ city.city }}
+                            </button>
+                          </td>
+                          <td>{{ city.stage || 'Not provided' }}</td>
+                          <td>{{ city.status || 'Not provided' }}</td>
+                          <td>{{ city.start || 'Not provided' }}</td>
+                          <td>{{ city.end || 'Not provided' }}</td>
+                          <td>{{ city.pax === '' ? 'Not provided' : city.pax }}</td>
+                          <td>{{ city.venue || 'Not provided' }}</td>
                         </tr>
-                      </thead>
-                      <tbody>
-                        @for (city of row.cities; track city) {
-                          <tr>
-                            <td>{{ city }}</td>
-                            <td>{{ row.details?.['Event Start Date'] }}</td>
-                            <td>{{ row.details?.['Event End Date'] }}</td>
-                          </tr>
-                        }
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              }
+                      }
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
             }
           }
           @if (!filtered.length) {
@@ -557,7 +599,7 @@ export class RecordCardComponent {
   @Input() userManagement = false;
   @Output() disableUser = new EventEmitter<any>();
   @Output() enableUser = new EventEmitter<any>();
-  @Output() link = new EventEmitter<{ row: any; column: string }>();
+  @Output() link = new EventEmitter<{ row: any; column: string; city?: string }>();
   expanded = new Set<string>();
   toggleCities(id: string) {
     this.expanded.has(id) ? this.expanded.delete(id) : this.expanded.add(id);

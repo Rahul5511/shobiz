@@ -3,19 +3,36 @@
   <p>Review assigned work before disabling this login.</p>
   <ul>
     @for (item of s.disableAssignments; track item.id) {
-      <li>{{ item.kind }}: {{ item.title }}</li>
+      <li>
+        {{ item.kind }}: {{ item.title }}
+        <label
+          >Reassign this item<select [(ngModel)]="s.disableSuccessors[item.id]" ngageInput>
+            <option value="">Use bulk choice, or leave unassigned and flag</option>
+            @for (user of s.successorsFor(item); track user.id) {
+              <option [value]="user.id">
+                {{ user.values[0] }} - {{ s.roleLabels(user.details.Roles) }}
+              </option>
+            }
+          </select></label
+        >
+      </li>
     } @empty {
       <li>No linked clients, events or calling records.</li>
     }
   </ul>
-  <label
-    >Successor<select [(ngModel)]="s.disableSuccessor" ngageInput>
-      <option value="">Leave unassigned and flag</option>
-      @for (user of s.successors; track user.id) {
-        <option [value]="user.id">{{ user.values[0] }}</option>
-      }
-    </select></label
-  >
+  @if (s.disableAssignments.length) {
+    <label
+      >Bulk successor (qualified for all held work)<select
+        [(ngModel)]="s.disableSuccessor"
+        ngageInput
+      >
+        <option value="">Leave unassigned and flag</option>
+        @for (user of s.successors; track user.id) {
+          <option [value]="user.id">{{ user.values[0] }}</option>
+        }
+      </select></label
+    >
+  }
   <p class="muted">Unassigned work stays flagged until an administrator assigns it.</p>
   @if (s.error) {
     <p role="alert">{{ s.error }}</p>

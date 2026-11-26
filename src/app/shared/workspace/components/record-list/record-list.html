@@ -47,7 +47,7 @@
     [sortIndex]="s.key === 'Events' ? 5 : 0"
     (disableUser)="s.beginDisable($event)"
     (enableUser)="s.enableUser($event)"
-    (link)="s.recordLink($event.row, $event.column)"
+    (link)="s.recordLink($event.row, $event.column, $event.city)"
     [title]="s.m.entities[s.key].label"
     [exportAllowed]="s.canExportList(s.key)"
     [exportReason]="s.exportReason(s.key)"

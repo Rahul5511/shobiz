@@ -43,7 +43,7 @@ export const PLATFORM_ADMIN_WORKFLOWS: readonly string[] = [
 export function isPlatformAdmin(role: string | undefined): boolean {
   return role === PLATFORM_ADMIN_ROLE;
 }
-/** Event updates remain available; Platform Admin cannot create events. */
+/** Creation uses the existing Platform Admin workflow policy. */
 export function canCreatePlatformAdminRecord(key: string): boolean {
-  return key !== 'Events' && PLATFORM_ADMIN_WORKFLOWS.includes(key);
+  return PLATFORM_ADMIN_WORKFLOWS.includes(key);
 }

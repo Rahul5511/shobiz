@@ -1423,6 +1423,13 @@
               "options": [],
               "kind": "number",
               "multi": false
+            },
+            {
+              "label": "City details",
+              "value": [],
+              "kind": "eventcities",
+              "required": false,
+              "source": "Follow-up review F-11"
             }
           ]
         },

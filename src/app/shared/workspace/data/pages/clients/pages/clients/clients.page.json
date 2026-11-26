@@ -743,15 +743,6 @@
               "options": [],
               "kind": "image",
               "multi": false
-            },
-            {
-              "label": "Client banner",
-              "value": "Client banner placeholder",
-              "source": "User-requested client branding",
-              "required": false,
-              "options": [],
-              "kind": "image",
-              "multi": false
             }
           ]
         },

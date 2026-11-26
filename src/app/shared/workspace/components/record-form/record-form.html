@@ -16,17 +16,19 @@
       </div>
     </header>
     @if (w.key !== 'RolePermissions') {
-      <nav class="steps">
+      <nav class="steps" aria-label="Form steps">
         @for (st of w.flow.steps; track st; let i = $index) {
           <button
+            type="button"
+            [attr.aria-label]="'Step ' + (i + 1) + ': ' + st.label"
             [class.current]="w.step === i"
             [disabled]="i > w.visited"
             (click)="s.tab(i)"
             ngageNav
             [selected]="w.step === i"
           >
-            <span>{{ i + 1 | number: '2.0' }}</span
-            >{{ st.label }}
+            <span class="step-number" aria-hidden="true">{{ i + 1 | number: '2.0' }}</span>
+            <span class="step-label">{{ st.label }}</span>
           </button>
         }
       </nav>
@@ -38,266 +40,314 @@
       @if (s.step.label !== 'Review') {
         <div class="form-grid">
           @for (f of s.step.fields; track f) {
-            <div
-              class="field"
-              [class.full-width]="['permissions', 'records', 'fieldrules'].includes(f.kind)"
-            >
-              <label [for]="f.label"
-                >{{ f.label }}
-                @if (f.required) {
-                  <span class="required">*</span>
-                }
-              </label>
-              @switch (f.kind) {
-                @case ('permissions') {
-                  <input
-                    class="permission-search"
-                    [(ngModel)]="s.permissionQuery"
-                    placeholder="Search module or permission"
-                  />
-                  <div class="permission-grid">
-                    @for (mod of s.permissionModules; track mod) {
-                      <section class="permission-module">
-                        <h3>{{ mod }}</h3>
-                        @for (p of s.modulePermissions(mod); track p) {
-                          <label class="checkbox-label"
-                            ><input
-                              type="checkbox"
-                              [checked]="s.hasGrant(p.code)"
-                              (change)="s.grant(p.code, $any($event.target).checked)"
-                            /><span
-                              >{{ p.label }}<small>{{ p.code }}</small></span
-                            ></label
-                          >
-                        }
-                      </section>
-                    }
-                  </div>
-                }
-                @case ('contacts') {
-                  @for (contact of w.values[f.label]; track contact; let i = $index) {
-                    <div class="review-contact-fields">
-                      <label>Name<input [(ngModel)]="contact.Name" required /></label>
-                      <label
-                        >Email<input type="email" [(ngModel)]="contact.Email" required
-                      /></label>
-                      <label>Designation<input [(ngModel)]="contact.Designation" /></label>
-                      <label>Phone<input [(ngModel)]="contact.Phone" /></label>
-                      <button type="button" (click)="w.values[f.label].splice(i, 1)">
-                        Remove contact
-                      </button>
-                    </div>
+            @if (s.fieldVisible(f)) {
+              <div
+                class="field"
+                [class.full-width]="
+                  ['permissions', 'records', 'fieldrules', 'eventcities'].includes(f.kind)
+                "
+              >
+                <label [for]="f.label"
+                  >{{ s.fieldLabel(f) }}
+                  @if (f.required) {
+                    <span class="required">*</span>
                   }
-                  <button type="button" (click)="s.addContact(f)">Add secondary contact</button>
-                }
-                @case ('managers') {
-                  @for (manager of w.values[f.label]; track manager; let i = $index) {
-                    <div class="review-contact-fields">
-                      <label>Name<input [(ngModel)]="manager.Name" required /></label
-                      ><label
-                        >Email<input type="email" [(ngModel)]="manager.Email" required /></label
-                      ><button type="button" (click)="w.values[f.label].splice(i, 1)">
-                        Remove manager
-                      </button>
-                    </div>
-                  }
-                  <button type="button" (click)="s.addContact(f)">
-                    Add CS Manager by name and email
-                  </button>
-                  <p class="muted">Notifications are prepared locally and are not sent.</p>
-                }
-                @case ('fieldrules') {
-                  <div class="alert info">
-                    Client defaults can be overridden per event. Hidden fields automatically become
-                    optional.
-                  </div>
-                  <div class="table-scroll">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Field</th>
-                          <th>Visible</th>
-                          <th>Mandatory</th>
-                          <th>Order</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @for (rule of w.values[f.label]; track rule; let i = $index) {
-                          <tr>
-                            <td>{{ rule.Field }}</td>
-                            <td>
-                              <input
+                </label>
+                @switch (f.kind) {
+                  @case ('permissions') {
+                    <input
+                      class="permission-search"
+                      [(ngModel)]="s.permissionQuery"
+                      placeholder="Search module or permission"
+                    />
+                    <div class="permission-grid">
+                      @for (mod of s.permissionModules; track mod) {
+                        <section class="permission-module">
+                          <h3>{{ mod }}</h3>
+                          @for (p of s.modulePermissions(mod); track p) {
+                            <label class="checkbox-label"
+                              ><input
                                 type="checkbox"
-                                [checked]="rule.Visible"
-                                (change)="s.updateRule(i, 'Visible', $any($event.target).checked)"
-                              />
-                            </td>
-                            <td>
-                              <input
-                                type="checkbox"
-                                [disabled]="!rule.Visible"
-                                [checked]="rule.Required"
-                                (change)="s.updateRule(i, 'Required', $any($event.target).checked)"
-                              />
-                            </td>
-                            <td>
-                              <input
-                                type="number"
-                                min="1"
-                                [ngModel]="rule.Order"
-                                (ngModelChange)="s.updateRule(i, 'Order', $event)"
-                              />
-                            </td>
-                          </tr>
-                        }
-                      </tbody>
-                    </table>
-                  </div>
-                  <button (click)="s.addRule()"><app-icon name="plus" />Add catalogue field</button>
-                }
-                @case ('records') {
-                  <div class="table-scroll">
-                    <table>
-                      <thead>
-                        <tr>
-                          @for (h of s.recordHeaders(w.values[f.label]); track h) {
-                            <th>
-                              {{ h }}
-                            </th>
+                                [checked]="s.hasGrant(p.code)"
+                                (change)="s.grant(p.code, $any($event.target).checked)"
+                              /><span
+                                >{{ p.label }}<small>{{ p.code }}</small></span
+                              ></label
+                            >
                           }
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @for (r of w.values[f.label]; track r; let i = $index) {
+                        </section>
+                      }
+                    </div>
+                  }
+                  @case ('contacts') {
+                    @for (contact of w.values[f.label]; track contact; let i = $index) {
+                      <div class="review-contact-fields">
+                        <label>Name<input [(ngModel)]="contact.Name" required /></label>
+                        <label
+                          >Email<input type="email" [(ngModel)]="contact.Email" required
+                        /></label>
+                        <label>Designation<input [(ngModel)]="contact.Designation" /></label>
+                        <label>Phone<input [(ngModel)]="contact.Phone" /></label>
+                        <button type="button" (click)="w.values[f.label].splice(i, 1)">
+                          Remove contact
+                        </button>
+                      </div>
+                    }
+                    <button type="button" (click)="s.addContact(f)">Add secondary contact</button>
+                  }
+                  @case ('managers') {
+                    @for (manager of w.values[f.label]; track manager; let i = $index) {
+                      <div class="review-contact-fields">
+                        <label>Name<input [(ngModel)]="manager.Name" required /></label
+                        ><label
+                          >Email<input type="email" [(ngModel)]="manager.Email" required /></label
+                        ><button type="button" (click)="w.values[f.label].splice(i, 1)">
+                          Remove manager
+                        </button>
+                      </div>
+                    }
+                    <button type="button" (click)="s.addContact(f)">
+                      Add CS Manager by name and email
+                    </button>
+                    <p class="muted">Notifications are prepared locally and are not sent.</p>
+                  }
+                  @case ('fieldrules') {
+                    <div class="alert info">
+                      Client defaults can be overridden per event. Hidden fields automatically
+                      become optional.
+                    </div>
+                    <div class="table-scroll">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Field</th>
+                            <th>Visible</th>
+                            <th>Mandatory</th>
+                            <th>Order</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @for (rule of w.values[f.label]; track rule; let i = $index) {
+                            <tr>
+                              <td>{{ rule.Field }}</td>
+                              <td>
+                                <input
+                                  type="checkbox"
+                                  [checked]="rule.Visible"
+                                  (change)="s.updateRule(i, 'Visible', $any($event.target).checked)"
+                                />
+                              </td>
+                              <td>
+                                <input
+                                  type="checkbox"
+                                  [disabled]="!rule.Visible"
+                                  [checked]="rule.Required"
+                                  (change)="
+                                    s.updateRule(i, 'Required', $any($event.target).checked)
+                                  "
+                                />
+                              </td>
+                              <td>
+                                <input
+                                  type="number"
+                                  min="1"
+                                  [ngModel]="rule.Order"
+                                  (ngModelChange)="s.updateRule(i, 'Order', $event)"
+                                />
+                              </td>
+                            </tr>
+                          }
+                        </tbody>
+                      </table>
+                    </div>
+                    <button (click)="s.addRule()">
+                      <app-icon name="plus" />Add catalogue field
+                    </button>
+                  }
+                  @case ('records') {
+                    <div class="table-scroll">
+                      <table>
+                        <thead>
                           <tr>
                             @for (h of s.recordHeaders(w.values[f.label]); track h) {
-                              <td>
-                                <input [(ngModel)]="r[h]" />
-                              </td>
+                              <th>
+                                {{ h }}
+                              </th>
                             }
-                            <td>
-                              <button
-                                class="icon-btn danger"
-                                aria-label="Remove row"
-                                (click)="w.values[f.label].splice(i, 1)"
-                              >
-                                <app-icon name="delete" />
-                              </button>
-                            </td>
+                            <th>Action</th>
                           </tr>
-                        }
-                      </tbody>
-                    </table>
-                  </div>
-                  <button (click)="s.addSocial(f)">Add social profile</button>
-                }
-                @case ('image') {
-                  @if (w.values[f.label + ' preview']) {
-                    <img
-                      class="upload-preview"
-                      [src]="w.values[f.label + ' preview']"
-                      alt="Uploaded preview"
-                    />
+                        </thead>
+                        <tbody>
+                          @for (r of w.values[f.label]; track r; let i = $index) {
+                            <tr>
+                              @for (h of s.recordHeaders(w.values[f.label]); track h) {
+                                <td>
+                                  <input [(ngModel)]="r[h]" />
+                                </td>
+                              }
+                              <td>
+                                <button
+                                  class="icon-btn danger"
+                                  aria-label="Remove row"
+                                  (click)="w.values[f.label].splice(i, 1)"
+                                >
+                                  <app-icon name="delete" />
+                                </button>
+                              </td>
+                            </tr>
+                          }
+                        </tbody>
+                      </table>
+                    </div>
+                    <button (click)="s.addSocial(f)">Add social profile</button>
                   }
-                  @if (!w.values[f.label + ' preview']) {
-                    <div class="upload-placeholder">Image preview</div>
+                  @case ('eventcities') {
+                    <p>
+                      Set each city's details. Blank stage, status and dates use the event defaults.
+                    </p>
+                    @for (city of w.values['City details']; track city.city) {
+                      <fieldset class="city-detail-fields">
+                        <legend>{{ city.city }}</legend>
+                        <label
+                          >Stage<select [(ngModel)]="city.stage" ngageInput>
+                            <option value="">Event default</option>
+                            <option>Pitch</option>
+                            <option>Planning</option>
+                            <option>Confirmed</option>
+                          </select></label
+                        >
+                        <label
+                          >Status<select [(ngModel)]="city.status" ngageInput>
+                            <option value="">Event default</option>
+                            <option>Upcoming</option>
+                            <option>Ongoing</option>
+                            <option>Completed</option>
+                            <option>On Hold</option>
+                            <option>Cancelled</option>
+                          </select></label
+                        >
+                        <label
+                          >Start<input type="date" [(ngModel)]="city.start" ngageInput
+                        /></label>
+                        <label>End<input type="date" [(ngModel)]="city.end" ngageInput /></label>
+                        <label
+                          >Pax<input type="number" min="0" [(ngModel)]="city.pax" ngageInput
+                        /></label>
+                        <label>Venue<input [(ngModel)]="city.venue" ngageInput /></label>
+                      </fieldset>
+                    } @empty {
+                      <p>Select the event's cities first.</p>
+                    }
                   }
-                  <input type="file" accept="image/*" (change)="upload(f, $event)" /><span
-                    class="muted"
-                    >{{ w.values[f.label] }}</span
-                  >
-                }
-                @case ('file') {
-                  <input
-                    type="file"
-                    accept=".pdf,.docx,.png,.jpg"
-                    (change)="upload(f, $event)"
-                  /><span class="muted">{{ w.values[f.label] }}</span>
-                }
-                @case ('qr') {
-                  <div class="alert info">
-                    The event registration URL generates a QR on the event's Public Registration
-                    page. It does not record attendance.
-                  </div>
-                }
-                @default {
-                  @if (f.label === 'Account Manager') {
-                    <input
-                      [id]="f.label"
-                      list="account-manager-options"
-                      [ngModel]="w.values[f.label]"
-                      (ngModelChange)="s.setField(f, $event)"
-                      placeholder="Search account managers"
-                    />
-                    <datalist id="account-manager-options">
-                      @for (option of s.options(f); track option) {
-                        <option [value]="option"></option>
-                      }
-                    </datalist>
-                  } @else if (f.options?.length) {
-                    @if (f.multi) {
-                      <select
-                        multiple
-                        [id]="f.label"
-                        [disabled]="s.locked(f)"
-                        [ngModel]="w.values[f.label]"
-                        (ngModelChange)="s.setField(f, $event)"
-                      >
-                        @for (opt of s.options(f); track opt) {
-                          <option [ngValue]="opt">
-                            {{ s.optionLabel(f, opt) }}
-                          </option>
-                        }
-                      </select>
-                    } @else {
-                      <select
-                        [id]="f.label"
-                        [disabled]="s.locked(f)"
-                        [ngModel]="w.values[f.label]"
-                        (ngModelChange)="s.setField(f, $event)"
-                      >
-                        <option value="">Select…</option>
-                        @for (opt of s.options(f); track opt) {
-                          <option [ngValue]="opt">
-                            {{ s.optionLabel(f, opt) }}
-                          </option>
-                        }
-                      </select>
-                    }
-                    @if (!s.options(f).length) {
-                      <small>{{ s.optionHint(f) }}</small>
-                    }
-                  } @else {
-                    @if (s.isTextarea(f)) {
-                      <textarea
-                        [id]="f.label"
-                        [readonly]="s.locked(f)"
-                        [ngModel]="w.values[f.label]"
-                        (ngModelChange)="s.setField(f, $event)"
-                      ></textarea>
-                    } @else {
-                      <input
-                        [id]="f.label"
-                        [type]="
-                          f.kind === 'email'
-                            ? 'email'
-                            : f.kind === 'number'
-                              ? 'number'
-                              : f.kind === 'date'
-                                ? 'date'
-                                : 'text'
-                        "
-                        [readonly]="s.locked(f)"
-                        [ngModel]="w.values[f.label]"
-                        (ngModelChange)="s.setField(f, $event)"
+                  @case ('image') {
+                    @if (w.values[f.label + ' preview']) {
+                      <img
+                        class="upload-preview"
+                        [src]="w.values[f.label + ' preview']"
+                        alt="Uploaded preview"
                       />
                     }
+                    @if (!w.values[f.label + ' preview']) {
+                      <div class="upload-placeholder">Image preview</div>
+                    }
+                    <small>Optional PNG, JPEG or WebP, up to 2 MB.</small>
+                    <input
+                      type="file"
+                      accept="image/png,image/jpeg,image/webp"
+                      (change)="upload(f, $event)"
+                    /><span class="muted">{{ w.values[f.label] }}</span>
+                  }
+                  @case ('file') {
+                    <input
+                      type="file"
+                      accept=".pdf,.docx,.png,.jpg"
+                      (change)="upload(f, $event)"
+                    /><span class="muted">{{ w.values[f.label] }}</span>
+                  }
+                  @case ('qr') {
+                    <div class="alert info">
+                      The event registration URL generates a QR on the event's Public Registration
+                      page. It does not record attendance.
+                    </div>
+                  }
+                  @default {
+                    @if (f.label === 'Account Manager') {
+                      <input
+                        [id]="f.label"
+                        list="account-manager-options"
+                        [ngModel]="w.values[f.label]"
+                        (ngModelChange)="s.setField(f, $event)"
+                        placeholder="Search account managers"
+                      />
+                      <datalist id="account-manager-options">
+                        @for (option of s.options(f); track option) {
+                          <option [value]="option"></option>
+                        }
+                      </datalist>
+                    } @else if (f.options?.length) {
+                      @if (f.multi) {
+                        <select
+                          multiple
+                          [id]="f.label"
+                          [disabled]="s.locked(f)"
+                          [ngModel]="w.values[f.label]"
+                          (ngModelChange)="s.setField(f, $event)"
+                        >
+                          @for (opt of s.options(f); track opt) {
+                            <option [ngValue]="opt">
+                              {{ s.optionLabel(f, opt) }}
+                            </option>
+                          }
+                        </select>
+                      } @else {
+                        <select
+                          [id]="f.label"
+                          [disabled]="s.locked(f)"
+                          [ngModel]="w.values[f.label]"
+                          (ngModelChange)="s.setField(f, $event)"
+                        >
+                          <option value="">Select…</option>
+                          @for (opt of s.options(f); track opt) {
+                            <option [ngValue]="opt">
+                              {{ s.optionLabel(f, opt) }}
+                            </option>
+                          }
+                        </select>
+                      }
+                      @if (!s.options(f).length) {
+                        <small>{{ s.optionHint(f) }}</small>
+                      }
+                    } @else {
+                      @if (s.isTextarea(f)) {
+                        <textarea
+                          [id]="f.label"
+                          [readonly]="s.locked(f)"
+                          [ngModel]="w.values[f.label]"
+                          (ngModelChange)="s.setField(f, $event)"
+                        ></textarea>
+                      } @else {
+                        <input
+                          [id]="f.label"
+                          [type]="
+                            f.kind === 'email'
+                              ? 'email'
+                              : f.kind === 'number'
+                                ? 'number'
+                                : f.kind === 'date'
+                                  ? 'date'
+                                  : 'text'
+                          "
+                          [readonly]="s.locked(f)"
+                          [ngModel]="w.values[f.label]"
+                          (ngModelChange)="s.setField(f, $event)"
+                        />
+                      }
+                    }
                   }
                 }
-              }
-              <small class="field-source">{{ f.source }}</small>
-            </div>
+                <small class="field-source">{{ f.source }}</small>
+              </div>
+            }
           }
         </div>
       }
@@ -313,8 +363,12 @@
           assigned role remains active until the replacement permission model is specified.
         </p>
         <p>Roles: {{ s.roleLabels(w.values.Roles) || 'Choose a role' }}</p>
-        <p>Events: {{ w.values.Event?.join(', ') || 'No event assignments' }}</p>
-        <p>Cities: {{ w.values.City?.join(', ') || 'No city assignments' }}</p>
+        @if (s.hasAssignedUserScope(w.values.Roles)) {
+          <p>Events: {{ w.values.Event?.join(', ') || 'No event assignments' }}</p>
+          <p>Cities: {{ w.values.City?.join(', ') || 'No city assignments' }}</p>
+        } @else {
+          <p>No client, event or city assignment is required for the selected scope.</p>
+        }
         <p class="muted">
           Assigned access without assignments has no event/city records. Invitation prepared locally
           - not sent.

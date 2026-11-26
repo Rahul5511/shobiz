@@ -21,7 +21,8 @@
   :scope {
     --orange: var(--ngage-background-brand);
     --orange-light: var(--ngage-background-selected);
-    --black: var(--ngage-background-inverse);
+    /* Navigation stays dark in both themes; inverse surfaces turn white at night. */
+    --black: var(--ngage-palette-neutral-950);
     --text: var(--ngage-content-primary);
     --muted: var(--ngage-content-tertiary);
     --line: var(--ngage-border-tertiary);
@@ -1808,7 +1809,7 @@
     --line: var(--ngage-border-tertiary);
     --bg: var(--ngage-background-hover);
     --white: var(--ngage-background-primary);
-    --black: var(--ngage-background-inverse);
+    --black: var(--ngage-palette-neutral-950);
     color: var(--text);
   }
   .night-theme

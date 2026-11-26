@@ -12,7 +12,7 @@
       @for (f of section.fields; track f) {
         <div [class.full-width]="s.isRecordArray(s.value(f)) || f.kind === 'permissions'">
           <dt>
-            {{ f.label }}<small>{{ f.source }}</small>
+            {{ s.fieldLabel(f) }}<small>{{ f.source }}</small>
           </dt>
           <dd>
             @if (f.kind === 'permissions') {

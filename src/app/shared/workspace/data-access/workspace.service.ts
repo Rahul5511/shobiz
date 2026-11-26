@@ -8,6 +8,7 @@ import { Injectable, inject, signal } from '@angular/core';
 import { AuthService } from '../../../core/services/login/platform-admin-session';
 import model from '../data/model';
 import QRCode from 'qrcode';
+import { buildUserHierarchy } from '../models/user-hierarchy';
 import {
   isPlatformAdmin,
   PLATFORM_ADMIN_ENTITIES,
@@ -64,6 +65,7 @@ export class WorkspaceService {
   pendingAssignments: (RelatedAssignment & { previousUser: string })[] = [];
   disableTarget: any = null;
   disableSuccessor = '';
+  disableSuccessors: Record<string, string> = {};
   disableAssignments: RelatedAssignment[] = [];
   relatedPanel: { title: string; rows: unknown[][] } | null = null;
   constructor() {
@@ -436,7 +438,8 @@ export class WorkspaceService {
     const w = this.wizard;
     if (!w) return;
     w.values[f.label] = value;
-    if (w.key === 'Events' && f.label === 'Event Type') this.configureEventCities();
+    if (w.key === 'Events' && ['Event Type', 'City'].includes(f.label)) this.configureEventCities();
+    if (w.key === 'Admin' && f.label === 'Event') w.values.City = [];
     if (w.key === 'Admin' && f.label === 'Email' && !w.row) {
       const existing = this.userRow(String(value).trim().toLowerCase());
       if (existing) {
@@ -479,6 +482,7 @@ export class WorkspaceService {
     if (f.label === 'Role Name' && !w.row)
       w.values['Role Code'] = value.toUpperCase().replace(/[^A-Z0-9]+/g, '_');
     this.clearLocationChildren(f.label, w.values, this.fields(w.flow));
+    if (w.key === 'Events' && ['Country', 'State'].includes(f.label)) this.configureEventCities();
     if (f.label === 'Selected role') w.grants = copy(this.grants[value] || []);
     if (f.label === 'Wishlist targeted')
       w.values.Approach = value === 'No' ? 'Criteria-based only' : 'Wishlist only';
@@ -533,7 +537,8 @@ export class WorkspaceService {
     const { key, values } = this.wizard;
     const active = (entity: string) =>
       this.rows[entity].filter((row: any) => row.values[4] === 'Active');
-    if (this.isLocation(f.label)) return this.locationOptions(f.label, values);
+    if (this.isLocation(f.label) && !(key === 'Admin' && f.label === 'City'))
+      return this.locationOptions(f.label, values);
     const master: any = {
       Industry: ['Industries', 'Industry name'],
       Segment: ['Segments', 'Segment name'],
@@ -589,11 +594,26 @@ export class WorkspaceService {
               .filter(
                 (row) =>
                   !['RegistrationForm', 'UserRoleGrant', 'Admin'].includes(key) ||
-                  (!!values['Client'] && row.details?.Client === values['Client']),
+                  !values['Client'] ||
+                  row.details?.Client === values['Client'],
               )
               .map((row) => row.values[0]),
           ];
         break;
+    }
+    if (key === 'Admin' && f.label === 'City') {
+      const selected = [values.Event].flat().filter(Boolean);
+      choices = [
+        ...new Set(
+          this.scopedEvents
+            .filter(
+              (row) =>
+                (!values.Client || row.details?.Client === values.Client) &&
+                (!selected.length || selected.includes(row.values[0])),
+            )
+            .flatMap((row) => this.recordCities(row)),
+        ),
+      ];
     }
     if (f.label === 'Key Client Contacts')
       choices = [...choices, ...this.clientContacts(values.Client).map((contact) => contact.name)];
@@ -690,7 +710,7 @@ export class WorkspaceService {
     return /remark|description|brief|instruction|consent text/i.test(f.label);
   }
   valid() {
-    for (const f of this.step.fields) {
+    for (const f of this.step.fields.filter((field: any) => this.fieldVisible(field))) {
       const v = this.wizard.values[f.label];
       if (
         f.required &&
@@ -729,6 +749,32 @@ export class WorkspaceService {
       if (f.kind === 'email' && v && !/^[^ @]+@[^ @]+\.[^ @]+$/.test(v)) {
         this.error = 'Enter a valid ' + f.label + '.';
         return false;
+      }
+    }
+    if (
+      this.wizard.key === 'Events' &&
+      this.step.fields.some((field: any) => field.label === 'Event website')
+    ) {
+      const website = String(this.wizard.values['Event website'] || '').trim();
+      if (website) {
+        try {
+          const url = new URL(website);
+          if (!['https:', 'http:'].includes(url.protocol) || !url.hostname) throw new Error();
+        } catch {
+          this.error = 'Enter a valid http or https Event website address.';
+          return false;
+        }
+      }
+    }
+    if (this.wizard.key === 'Events') {
+      for (const city of this.wizard.values['City details'] || []) {
+        if (
+          (city.start && city.end && city.start > city.end) ||
+          (city.pax !== '' && (!Number.isFinite(Number(city.pax)) || Number(city.pax) < 0))
+        ) {
+          this.error = 'Check the dates and Pax for ' + city.city + '.';
+          return false;
+        }
       }
     }
     const v = this.wizard.values;
@@ -1107,6 +1153,7 @@ export class WorkspaceService {
         values,
         source: r,
         cities: this.recordCities(r),
+        cityDetails: this.eventCityDetails(r),
         lastAdmin:
           this.key === 'Admin' &&
           r.values[4] === 'Active' &&
@@ -1160,7 +1207,12 @@ export class WorkspaceService {
   }
   get reviewSections() {
     const f = this.wizard?.flow || this.m.flows[this.selected?.flow];
-    return (f?.steps || []).filter((s: any) => s.label !== 'Review');
+    return (f?.steps || [])
+      .filter((step: any) => step.label !== 'Review')
+      .map((step: any) => ({
+        ...step,
+        fields: step.fields.filter((field: any) => this.fieldVisible(field)),
+      }));
   }
   get reviewValues() {
     return this.wizard?.values || this.selected?.details || {};
@@ -1230,8 +1282,8 @@ export class WorkspaceService {
       this.error = 'Choose a file smaller than 2 MB for the local demo.';
       return;
     }
-    if (f.kind === 'image' && !file.type.startsWith('image/')) {
-      this.error = 'Choose an image file.';
+    if (f.kind === 'image' && !['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) {
+      this.error = 'Choose a PNG, JPEG or WebP image smaller than 2 MB.';
       return;
     }
     this.setField(f, file.name);
@@ -1529,6 +1581,9 @@ export class WorkspaceService {
   }
   get publicLogo() {
     return (
+      this.rows.Events.find((row: any) => row.values[0] === this.publicEvent)?.details?.[
+        'Event logo preview'
+      ] ||
       this.publicConfig.logo ||
       this.rows.Clients.find((r: any) => r.values[0] === this.publicClient)?.details?.[
         'Client logo preview'
@@ -1537,10 +1592,9 @@ export class WorkspaceService {
   }
   get publicBanner() {
     return (
-      this.publicConfig.banner ||
-      this.rows.Clients.find((r: any) => r.values[0] === this.publicClient)?.details?.[
-        'Client banner preview'
-      ]
+      this.rows.Events.find((row: any) => row.values[0] === this.publicEvent)?.details?.[
+        'Event banner preview'
+      ] || this.publicConfig.banner
     );
   }
   get publicFields() {
@@ -1660,10 +1714,44 @@ export class WorkspaceService {
         ? 'Own'
         : 'Assigned';
   }
+  hasAssignedUserScope(roles: string[] = []): boolean {
+    return roles.length > 0 && !['Super User', 'Telecaller'].includes(roles[0]);
+  }
+  fieldVisible(field: { label: string; kind?: string }): boolean {
+    const key = this.wizard?.key || this.selected?.flow;
+    if (key === 'Admin' && ['Client', 'Event', 'Country', 'State', 'City'].includes(field.label))
+      return this.hasAssignedUserScope(this.reviewValues.Roles || []);
+    return (
+      field.kind !== 'eventcities' ||
+      this.wizard?.values['Event Type'] === 'Multi City' ||
+      this.recordCities(this.selected || {}).length > 1
+    );
+  }
+  fieldLabel(field: { label: string }): string {
+    return field.label === 'PIN Code' &&
+      (this.wizard?.values || this.reviewValues).Country !== 'India'
+      ? 'Postal code'
+      : field.label;
+  }
+  eventCityDetails(row: any) {
+    return this.recordCities(row).map((city) => {
+      const saved = (row.details?.['City details'] || []).find((item: any) => item.city === city);
+      return {
+        city,
+        stage: saved?.stage || row.details?.Stage || row.values?.[3] || '',
+        status: saved?.status || row.details?.['Event Status'] || row.values?.[4] || '',
+        start: saved?.start || row.details?.['Event Start Date'] || '',
+        end: saved?.end || row.details?.['Event End Date'] || '',
+        pax: saved?.pax ?? '',
+        venue: saved?.venue || '',
+        inherited: !saved,
+      };
+    });
+  }
   recordCities(row: any): string[] {
     return [
       ...new Set<string>(
-        [row.details?.Cities || row.details?.City || row.values[2]].flat().filter(Boolean),
+        [row.details?.City || row.details?.Cities || row.values?.[2]].flat().filter(Boolean),
       ),
     ];
   }
@@ -1679,6 +1767,24 @@ export class WorkspaceService {
       : Array.isArray(city)
         ? city[0] || ''
         : city;
+    const previous = w.values['City details'] || [];
+    w.values['City details'] = field.multi
+      ? [w.values.City]
+          .flat()
+          .filter(Boolean)
+          .map(
+            (name: string) =>
+              previous.find((item: any) => item.city === name) || {
+                city: name,
+                stage: '',
+                status: '',
+                start: '',
+                end: '',
+                pax: '',
+                venue: '',
+              },
+          )
+      : [];
   }
   migrateReviewData() {
     const seen = new Set<string>();
@@ -1781,7 +1887,7 @@ export class WorkspaceService {
   saveReviewedUser() {
     const snapshot = this.reviewSnapshot();
     const w = this.wizard,
-      v = w.values,
+      v = copy(w.values),
       email = String(v.Email).trim().toLowerCase();
     const existing = w.row || this.userRow(email);
     const currentRoles = existing?.details?.Roles || [];
@@ -1825,6 +1931,11 @@ export class WorkspaceService {
             ...[v.City].flat().filter(Boolean),
           ]),
         ];
+    if (!this.hasAssignedUserScope(roles)) {
+      for (const key of ['Client', 'Country', 'State']) v[key] = '';
+      events.length = 0;
+      cities.length = 0;
+    }
     const name = existing && !w.row ? existing.values[0] : String(v.Name).trim();
     row.details = {
       ...row.details,
@@ -1886,6 +1997,9 @@ export class WorkspaceService {
     return this.rows.Admin.filter((r: any) =>
       [r.values[0], r.values[1], r.addedBy || ''].join(' ').toLowerCase().includes(query),
     );
+  }
+  get userHierarchy() {
+    return buildUserHierarchy(this.rows.Admin, this.userHierarchyQuery);
   }
   get creatorGroups(): string[] {
     return [
@@ -1961,10 +2075,44 @@ export class WorkspaceService {
     this.disableTarget = row;
     this.disableAssignments = this.relatedAssignments(row);
     this.disableSuccessor = '';
+    this.disableSuccessors = {};
     this.error = '';
   }
   get successors() {
-    return this.rows.Admin.filter((r: any) => r !== this.disableTarget && r.values[4] === 'Active');
+    return this.rows.Admin.filter(
+      (row: any) =>
+        row !== this.disableTarget &&
+        row.values[4] === 'Active' &&
+        this.disableAssignments.every((item) =>
+          this.successorsFor(item).some((candidate) => candidate.id === row.id),
+        ),
+    );
+  }
+  successorsFor(assignment: RelatedAssignment): any[] {
+    const record = this.rows[assignment.entity]?.find((row: any) => row.id === assignment.recordId);
+    const source =
+      assignment.entity === 'user-access'
+        ? this.rows.Admin.find((row: any) => row.id === assignment.recordId)
+        : null;
+    const required =
+      assignment.kind === 'Calling'
+        ? ['Telecaller']
+        : assignment.field === 'Account Manager'
+          ? ['Account Manager']
+          : assignment.field === 'CS Managers'
+            ? ['Client Servicing Manager']
+            : assignment.field === 'Event Executives'
+              ? ['Event Executive']
+              : assignment.entity === 'Assignment'
+                ? [record?.details?.['Manager role']].filter(Boolean)
+                : (source?.details?.Roles || []).slice(0, 1);
+    return this.rows.Admin.filter(
+      (row: any) =>
+        row.id !== this.disableTarget?.id &&
+        row.values[4] === 'Active' &&
+        required.length &&
+        required.includes(row.details?.Roles?.[0]),
+    );
   }
   enableUser(candidate: any) {
     const row = candidate.source || candidate;
@@ -1998,10 +2146,22 @@ export class WorkspaceService {
     }
     const successor = this.successors.find((r: any) => r.id === this.disableSuccessor);
     if (this.disableSuccessor && !successor) {
-      this.error = 'Choose an active successor.';
+      this.error = 'Choose a qualified active successor.';
       return;
     }
-    for (const assignment of this.disableAssignments) {
+    const transfers = this.disableAssignments.map((assignment) => {
+      const id = this.disableSuccessors[assignment.id] || this.disableSuccessor;
+      return {
+        assignment,
+        id,
+        user: id ? this.successorsFor(assignment).find((user) => user.id === id) : undefined,
+      };
+    });
+    if (transfers.some((item) => item.id && !item.user)) {
+      this.error = 'Choose a qualified active successor for each item.';
+      return;
+    }
+    for (const { assignment, user: successor } of transfers) {
       this.moveAssignment(assignment, row.values[1], successor);
       if (!successor && !this.pendingAssignments.some((item) => item.id === assignment.id))
         this.pendingAssignments.push({ ...assignment, previousUser: row.values[1] });
@@ -2027,8 +2187,8 @@ export class WorkspaceService {
     )
       return;
     this.disableTarget = null;
-    this.notice = successor
-      ? 'User disabled and work reassigned.'
+    this.notice = transfers.some((item) => item.user)
+      ? 'User disabled. Selected work was reassigned; any remaining work is flagged.'
       : 'User disabled. Unassigned work is flagged.';
     if (self) this.auth.logout();
   }
@@ -2069,11 +2229,9 @@ export class WorkspaceService {
       : successor?.values[0] || '';
   }
   assignPending(assignment: RelatedAssignment, userId: string) {
-    const user = this.rows.Admin.find(
-      (row: any) => row.id === userId && row.values[4] === 'Active',
-    );
+    const user = this.successorsFor(assignment).find((row: any) => row.id === userId);
     if (!user) {
-      this.error = 'Choose an active successor.';
+      this.error = 'Choose a qualified active successor.';
       return;
     }
     const snapshot = this.reviewSnapshot();
@@ -2083,7 +2241,7 @@ export class WorkspaceService {
     this.pendingAssignments = this.pendingAssignments.filter((item) => item.id !== assignment.id);
     if (this.commitReview(snapshot)) this.notice = 'Pending work reassigned.';
   }
-  recordLink(candidate: any, column: string) {
+  recordLink(candidate: any, column: string, city = '') {
     const row = candidate.source || candidate;
     if (column === 'Events') {
       this.eventClientFilter = row.details?.['Company Name'] || row.values[0];
@@ -2092,9 +2250,13 @@ export class WorkspaceService {
     }
     const entity = column === 'DRF' ? 'DRF' : 'Assets';
     this.relatedPanel = {
-      title: column + ' ? ' + row.values[0],
+      title: column + ' - ' + row.values[0] + (city ? ' - ' + city : ''),
       rows: (this.rows[entity] || [])
-        .filter((r: any) => r.details?.Event === row.values[0])
+        .filter(
+          (r: any) =>
+            r.details?.Event === row.values[0] &&
+            (!city || [r.details?.City].flat().includes(city)),
+        )
         .map((r: any) => [r.values[0], r.values[4]]),
     };
   }

@@ -41,17 +41,17 @@ describe('Approved Platform Admin review workflows', () => {
     s.openTask('Clients', saved);
     expect(s.wizard.values['Client logo preview']).toBe('data:image/png;base64,example');
   });
-  it('restores Organisation fields and persists them through the combined user flow', () => {
+  it('preserves legacy organisation values while omitting removed fields from onboarding', () => {
     s.openTask('Admin');
     expect(s.wizard.flow.steps.map((step: any) => step.label)).toEqual([
       'Identity',
-      'Organisation',
       'Roles & Assignment',
       'Review',
     ]);
     s.wizard.values.Name = 'Organisation user';
     s.wizard.values.Email = 'organisation@example.com';
     s.wizard.values.Roles = ['DB Head'];
+    expect(s.fields(s.wizard.flow).map((field: any) => field.label)).not.toContain('Department');
     s.wizard.values.Department = 'Database';
     s.wizard.values['Employee code'] = 'EMP-NEW';
     s.wizard.values['Reporting manager'] = 'Manager';
@@ -65,13 +65,15 @@ describe('Approved Platform Admin review workflows', () => {
       1,
     );
   });
-  it('rejects a direct event creation save and keeps standalone Role Reports paused', () => {
+  it('creates events while keeping standalone Role Reports paused', () => {
     const count = s.rows.Events.length;
-    s.openTask('Events', s.rows.Events[0]);
-    s.wizard.row = null;
+    s.openTask('Events');
+    s.wizard.values['Event Name'] = 'Created follow-up event';
+    fill();
+    s.wizard.values['Public registration path'] = '/created-follow-up';
     s.save();
-    expect(s.error).toContain('cannot be changed');
-    expect(s.rows.Events).toHaveLength(count);
+    expect(s.error).toBe('');
+    expect(s.rows.Events).toHaveLength(count + 1);
     s.openRoleReports();
     expect(s.key).toBe('Reports');
     expect(s.view).toBe('reports');
@@ -94,7 +96,7 @@ describe('Approved Platform Admin review workflows', () => {
   }
   it('keeps only approved access changes and the seven report catalogues', () => {
     expect(s.can('Events')).toBe(true);
-    expect(s.canCreate('Events')).toBe(false);
+    expect(s.canCreate('Events')).toBe(true);
     expect(s.can('Requirements')).toBe(true);
     expect(s.can('RolePermissions')).toBe(false);
     for (const key of ['RegApproval', 'AttendanceCheckin', 'Reports', 'Assignment']) {
@@ -182,12 +184,9 @@ describe('Approved Platform Admin review workflows', () => {
       website,
     );
   });
-  it('blocks event creation but retains Multi City editing and the list projection', () => {
+  it('supports Multi City creation and editing with the list projection', () => {
     const count = s.rows.Events.length;
     s.openTask('Events');
-    expect(s.wizard).toBeNull();
-    expect(s.error).toContain('cannot create');
-    s.openTask('Events', s.rows.Events[0]);
     s.setField({ label: 'Event Name' }, 'Review event');
     s.setField({ label: 'Event Type' }, 'Multi City');
     fill();
@@ -197,7 +196,7 @@ describe('Approved Platform Admin review workflows', () => {
     s.nav('Events');
     const event = s.rows.Events.find((r: { values: string[] }) => r.values[0] === 'Review event');
     expect(event).toBeTruthy();
-    expect(s.rows.Events.length).toBe(count);
+    expect(s.rows.Events.length).toBe(count + 1);
     expect(Array.isArray(event.details.City)).toBe(true);
     expect(s.fields(s.m.flows.Events).map((field: { label: string }) => field.label)).not.toContain(
       'Capacity',
@@ -253,21 +252,28 @@ describe('Approved Platform Admin review workflows', () => {
     s.save();
     expect(s.error).toContain('already exists');
   });
-  it('disables and transfers calling and client work to an active successor', () => {
+  it('disables and transfers mixed work only to qualified successors', () => {
     create();
     const user = s.userRow('new@example.com');
-    const successor = s.rows.Admin.find(
-      (r: { values: string[] }) => r.values[1] === auth.session.email,
+    const manager = s.rows.Admin.find(
+      (row: any) => row.values[4] === 'Active' && row.details.Roles.includes('Account Manager'),
     );
+    create('caller@example.com', ['Telecaller']);
+    const caller = s.userRow('caller@example.com');
+    caller.values[0] = 'Caller successor';
     s.rows.Clients[0].details['Account Manager'] = 'New User';
     s.regs[0].telecaller = 'New User';
     s.beginDisable(user);
-    expect(s.disableAssignments.length).toBeGreaterThan(0);
-    s.disableSuccessor = successor.id;
+    const client = s.disableAssignments.find((item) => item.kind === 'Client')!;
+    const calling = s.disableAssignments.find((item) => item.kind === 'Calling')!;
+    expect(s.successorsFor(calling).some((row) => row.id === manager.id)).toBe(false);
+    s.disableSuccessors[client.id] = manager.id;
+    s.disableSuccessors[calling.id] = caller.id;
     s.confirmDisable();
+    expect(s.error).toBe('');
     expect(s.userRow('new@example.com').values[4]).toBe('Disabled');
-    expect(s.rows.Clients[0].details['Account Manager']).toBe(successor.values[0]);
-    expect(s.regs[0].telecaller).toBe(successor.values[0]);
+    expect(s.rows.Clients[0].details['Account Manager']).toBe(manager.values[0]);
+    expect(s.regs[0].telecaller).toBe(caller.values[0]);
   });
   it('flags unassigned work and allows it to be assigned later', () => {
     create();
@@ -277,7 +283,8 @@ describe('Approved Platform Admin review workflows', () => {
     expect(s.pendingAssignments.length).toBeGreaterThan(0);
     expect(s.regs[0].telecaller).toBe('');
     const pending = s.pendingAssignments.find((row) => row.kind === 'Calling')!;
-    const successor = s.userRow(auth.session.email);
+    create('pending-caller@example.com', ['Telecaller']);
+    const successor = s.userRow('pending-caller@example.com');
     s.assignPending(pending, successor.id);
     expect(s.regs[0].telecaller).toBe(successor.values[0]);
     expect(s.pendingAssignments.some((row) => row.id === pending.id)).toBe(false);
@@ -363,7 +370,6 @@ describe('Approved Platform Admin review workflows', () => {
     expect(restored.wizard.values.Event).toEqual(['Northstar Roadshow']);
     expect(restored.wizard.flow.steps.map((step: { label: string }) => step.label)).toEqual([
       'Identity',
-      'Organisation',
       'Roles & Assignment',
       'Review',
     ]);
@@ -408,5 +414,129 @@ describe('Approved Platform Admin review workflows', () => {
     });
     expect(s.prepareShare('Report', 'contact@example.com', 'One client', {}, ['Name'])).toBe(false);
     expect(s.shares).toEqual([]);
+  });
+  it('shows assignment fields only for Assigned scope and offers events without requiring Client', () => {
+    s.openTask('Admin');
+    s.wizard.values.Roles = ['Super User'];
+    expect(s.fieldVisible({ label: 'Client' })).toBe(false);
+    expect(s.fieldVisible({ label: 'City' })).toBe(false);
+    s.wizard.values.Roles = ['DB Head'];
+    expect(s.fieldVisible({ label: 'Client' })).toBe(true);
+    const field = s.fields(s.wizard.flow).find((field: any) => field.label === 'Event');
+    expect(s.options(field).length).toBeGreaterThan(0);
+    const event = s.rows.Events.find((row: any) => s.recordCities(row).length > 1);
+    s.setField({ label: 'Event' }, [event.values[0]]);
+    expect(s.options({ label: 'City' })).toEqual(s.recordCities(event));
+    s.wizard.values.Roles = ['Super User'];
+    s.wizard.values.Name = 'All scope';
+    s.wizard.values.Email = 'all@example.com';
+    s.wizard.values.City = ['Mumbai'];
+    s.save();
+    expect(s.error).toBe('');
+    expect(s.userRow('all@example.com').details['Access assignment'].Event).toEqual([]);
+    expect(s.userRow('all@example.com').details['Access assignment'].City).toEqual([]);
+  });
+  it('saves distinct city details and filters city DRF links', () => {
+    s.openTask('Events');
+    s.setField({ label: 'Event Name' }, 'City test');
+    fill();
+    s.setField({ label: 'Event Type' }, 'Multi City');
+    s.setField({ label: 'City' }, ['Mumbai', 'Pune']);
+    s.wizard.values['City details'][0] = {
+      city: 'Mumbai',
+      stage: 'Confirmed',
+      status: 'Upcoming',
+      start: '2026-12-01',
+      end: '2026-12-02',
+      pax: 40,
+      venue: 'Mumbai Hall',
+    };
+    s.wizard.values['City details'][1] = {
+      city: 'Pune',
+      stage: 'Planning',
+      status: 'Upcoming',
+      start: '2026-12-04',
+      end: '2026-12-05',
+      pax: 70,
+      venue: 'Pune Hall',
+    };
+    s.wizard.values['Public registration path'] = '/city-test';
+    s.save();
+    expect(s.error).toBe('');
+    const row = s.rows.Events.find((row: any) => row.values[0] === 'City test');
+    expect(s.eventCityDetails(row).map((city: any) => city.pax)).toEqual([40, 70]);
+    s.rows.DRF = [
+      {
+        id: 'm',
+        values: ['Mumbai DRF', '', '', '', 'Active'],
+        details: { Event: 'City test', City: 'Mumbai' },
+      },
+      {
+        id: 'p',
+        values: ['Pune DRF', '', '', '', 'Active'],
+        details: { Event: 'City test', City: 'Pune' },
+      },
+    ];
+    s.recordLink(row, 'DRF', 'Pune');
+    expect(s.relatedPanel!.rows).toEqual([['Pune DRF', 'Active']]);
+    s.openTask('Events', row);
+    s.wizard.values['City details'][0].end = '2026-11-01';
+    s.save();
+    expect(s.error).toContain('Mumbai');
+  });
+  it('keeps logo optional, removes client banner from the form and changes postal label by country', () => {
+    s.openTask('Clients', s.rows.Clients[0]);
+    const fields = s.fields(s.wizard.flow);
+    expect(fields.some((field: any) => field.label === 'Client banner')).toBe(false);
+    expect(fields.find((field: any) => field.label === 'Client logo').required).toBe(false);
+    s.wizard.values.Country = 'India';
+    expect(s.fieldLabel({ label: 'PIN Code' })).toBe('PIN Code');
+    s.wizard.values.Country = 'United Arab Emirates';
+    expect(s.fieldLabel({ label: 'PIN Code' })).toBe('Postal code');
+  });
+  it('rejects invalid event websites and unsupported or oversized images', async () => {
+    s.openTask('Events');
+    fill();
+    s.wizard.values['Event Name'] = 'Website test';
+    s.wizard.values['Event website'] = 'javascript:alert(1)';
+    s.save();
+    expect(s.error).toContain('http or https');
+    const before = s.wizard.values['Event logo'];
+    await s.file(
+      { label: 'Event logo', kind: 'image' },
+      { target: { files: [new File(['svg'], 'test.svg', { type: 'image/svg+xml' })] } },
+    );
+    expect(s.error).toContain('PNG');
+    expect(s.wizard.values['Event logo']).toBe(before);
+    await s.file(
+      { label: 'Event logo', kind: 'image' },
+      { target: { files: [{ name: 'large.png', type: 'image/png', size: 3 * 1024 * 1024 }] } },
+    );
+    expect(s.error).toContain('2 MB');
+  });
+  it('refuses an unrelated successor before changing held work or account status', () => {
+    create();
+    s.regs[0].telecaller = 'New User';
+    s.beginDisable(s.userRow('new@example.com'));
+    const assignment = s.disableAssignments.find((item) => item.kind === 'Calling')!;
+    s.disableSuccessors[assignment.id] = s.userRow(auth.session.email).id;
+    s.confirmDisable();
+    expect(s.error).toContain('qualified');
+    expect(s.userRow('new@example.com').values[4]).toBe('Active');
+    expect(s.regs[0].telecaller).toBe('New User');
+  });
+  it('uses event branding with the client logo fallback but never the retired client banner', () => {
+    const client = s.rows.Clients.find((row: any) => row.values[0] === s.publicClient);
+    client.details['Client logo preview'] = 'client-logo';
+    client.details['Client banner preview'] = 'retired-banner';
+    const event = s.rows.Events.find((row: any) => row.values[0] === s.publicEvent);
+    event.details['Event logo preview'] = 'event-logo';
+    event.details['Event banner preview'] = 'event-banner';
+    expect(s.publicLogo).toBe('event-logo');
+    expect(s.publicBanner).toBe('event-banner');
+    delete event.details['Event logo preview'];
+    delete event.details['Event banner preview'];
+    expect(s.publicLogo).toBe('client-logo');
+    expect(s.publicBanner).not.toBe('retired-banner');
   });
 });

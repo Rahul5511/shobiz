@@ -1,4 +1,5 @@
 import { NgageButton, NgageInput } from '../../../../shared/design-system/index';
+import { NgTemplateOutlet } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DisableUserDialog } from '../../components/disable-user/disable-user';
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
@@ -17,6 +18,7 @@ import { RecordDetailComponent } from '../../../../shared/workspace/components/r
     RecordFormComponent,
     RecordDetailComponent,
     FormsModule,
+    NgTemplateOutlet,
     DisableUserDialog,
   ],
   templateUrl: './users.html',
