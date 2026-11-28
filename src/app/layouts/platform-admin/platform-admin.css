@@ -1510,12 +1510,14 @@
   }
   .sidebar .navitem > span,
   .sidebar .nav-heading > span {
+    grid-column: 2;
     min-width: 0;
     width: 100%;
     text-align: left;
     line-height: 1.45;
     white-space: normal;
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: normal;
   }
   .sidebar .navitem > app-icon,
   .sidebar .nav-heading > app-icon {
