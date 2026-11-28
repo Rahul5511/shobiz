@@ -16,3 +16,4 @@ export {
   NgageAvatar,
 } from './components/primitives';
 export type { NgageTone } from './components/primitives';
+export { NgagePopover } from './components/popover';

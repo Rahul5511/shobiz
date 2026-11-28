@@ -1,3 +1,283 @@
-<app-workspace-record-list />
-<app-workspace-record-form />
-<app-workspace-record-detail></app-workspace-record-detail>
+﻿@if (!store.canConfigure) {
+  <ngage-alert tone="negative" [dismissible]="false"
+    >Only Platform Admin can configure permissions.</ngage-alert
+  >
+} @else {
+  <section class="permissions-page" [attr.aria-busy]="store.status() === 'loading' || saving">
+    <header class="permissions-heading">
+      <div>
+        <h1>Roles &amp; Permissions</h1>
+        <p>Configure and manage feature-level access across the organization.</p>
+      </div>
+      <span ngageTag tone="brand"><ngage-icon name="user-lock-02" />Platform Admin</span>
+    </header>
+    <div class="permission-stats">
+      <section>
+        <span>Total Roles</span><strong class="text-2xl">{{ store.roles().length }}</strong>
+      </section>
+      <section>
+        <span>Total Features</span><strong class="text-2xl">{{ store.features().length }}</strong>
+      </section>
+      <section [class.has-changes]="store.changes().length">
+        <span>Modified Permissions</span
+        ><strong class="text-2xl" aria-live="polite">{{ store.changes().length }}</strong>
+      </section>
+    </div>
+    @if (store.error() && dialog() !== 'review') {
+      <ngage-alert tone="negative" [dismissible]="false">{{ store.error() }}</ngage-alert>
+    }
+    @if (store.status() === 'saved') {
+      <ngage-alert tone="positive" [dismissible]="false"
+        >Permissions saved successfully.</ngage-alert
+      >
+    }
+    @if (store.status() === 'loading') {
+      <section class="permission-empty" role="status">Loading roles and permissions...</section>
+    } @else if (!store.roles().length) {
+      <section class="permission-empty">
+        <h2 class="text-xl">Unable to load permissions</h2>
+        <button ngageButton variant="border" (click)="store.load()">Retry</button>
+      </section>
+    } @else {
+      <fieldset class="permission-toolbar" [disabled]="saving">
+        <legend class="sr-only">Permission view and filters</legend>
+        <!-- View switch temporarily hidden; retain both views for later use.
+        <div class="view-switch" role="group" aria-label="Permission view">
+          <button
+            type="button"
+            ngageButton
+            variant="border"
+            [attr.aria-pressed]="store.mode() === 'matrix'"
+            (click)="setMode('matrix')"
+          >
+            Matrix View
+          </button>
+          <button
+            type="button"
+            ngageButton
+            variant="border"
+            [attr.aria-pressed]="store.mode() === 'role'"
+            (click)="setMode('role')"
+          >
+            Role-wise View
+          </button>
+        </div>
+        -->
+        <label class="search-field"
+          >Search<input
+            type="search"
+            ngageInput
+            placeholder="Feature or module name"
+            [ngModel]="store.search()"
+            (ngModelChange)="search($event)"
+        /></label>
+        <label
+          >Module<select
+            ngageInput
+            [ngModel]="store.moduleFilter()"
+            (ngModelChange)="filterModule($event)"
+          >
+            <option value="">All modules</option>
+            @for (module of store.modules(); track module) {
+              <option>{{ module }}</option>
+            }
+          </select></label
+        >
+        <button
+          type="button"
+          ngageButton
+          variant="border"
+          aria-haspopup="dialog"
+          [attr.aria-expanded]="!!roleFilterAnchor()"
+          (click)="openRoleFilter($event)"
+        >
+          <ngage-icon name="filter-mail" />{{ roleFilterLabel }}
+        </button>
+        <button
+          type="button"
+          ngageButton
+          variant="ghost"
+          (click)="closePopover(); store.expandAll()"
+        >
+          Expand All</button
+        ><button
+          type="button"
+          ngageButton
+          variant="ghost"
+          (click)="closePopover(); store.collapseAll()"
+        >
+          Collapse All
+        </button>
+        <label class="changed-filter"
+          ><input
+            type="checkbox"
+            ngageChoice="checkbox"
+            [ngModel]="store.changedOnly()"
+            (ngModelChange)="closePopover(); store.setChangedOnly($event)"
+          />Show Changed Only</label
+        ><button type="button" ngageButton variant="ghost" (click)="clearFilters()">
+          Clear Filters
+        </button>
+      </fieldset>
+      <div class="permission-legend" aria-label="Permission legend">
+        <span class="legend-badge" data-level="M">M</span><span>Manage</span
+        ><span class="legend-badge" data-level="V">V</span><span>View</span
+        ><span class="legend-badge" data-level="N">N</span><span>None</span
+        ><ngage-icon name="user-lock-02" /><span>Protected permission</span
+        ><span class="modified-swatch" aria-hidden="true"></span><span>Unsaved modification</span>
+      </div>
+      @if (store.mode() === 'role') {
+        <label class="role-select"
+          >Role<select
+            ngageInput
+            [ngModel]="store.selectedRole()?.id || ''"
+            (ngModelChange)="store.selectedRoleId.set($event)"
+            [disabled]="saving"
+          >
+            @for (role of store.visibleRoles(); track role.id) {
+              <option [value]="role.id">{{ role.name }}</option>
+            }
+          </select></label
+        >
+      }
+      @if (!store.visibleRoles().length) {
+        <section class="permission-empty">
+          <h2 class="text-xl">No roles selected</h2>
+          <p>Select at least one role. Your unsaved changes are retained.</p>
+          <button ngageButton variant="border" (click)="store.roleIds.set(null)">
+            Show all roles
+          </button>
+        </section>
+      } @else if (!store.groups().length) {
+        <section class="permission-empty">
+          <ngage-icon name="search-01" />
+          <h2 class="text-xl">No matching permissions</h2>
+          <p>Adjust the search or filters. Your unsaved changes are retained.</p>
+          <button ngageButton variant="border" (click)="clearFilters()">Clear Filters</button>
+        </section>
+      } @else if (store.mode() === 'matrix') {
+        <app-permission-matrix
+          [roles]="store.visibleRoles()"
+          [activeKey]="activeCellKey()"
+          [groups]="store.groups()"
+          [values]="store.values()"
+          [changedKeys]="store.changedKeys()"
+          [collapsed]="store.collapsed()"
+          [disabled]="saving"
+          (selected)="openCell($event)"
+          (toggled)="toggleModule($event)"
+        />
+      } @else {
+        @if (store.selectedRole(); as role) {
+          <app-permission-role-view
+            [role]="role"
+            [groups]="store.groups()"
+            [values]="store.values()"
+            [changedKeys]="store.changedKeys()"
+            [collapsed]="store.collapsed()"
+            [disabled]="saving"
+            (toggled)="toggleModule($event)"
+            (changed)="store.setPermission(role, $event.feature, $event.level)"
+          />
+        }
+      }
+    }
+    <footer class="permission-footer flex flex-wrap items-center justify-between gap-4">
+      <div class="min-w-0 flex-1" role="status" aria-live="polite">
+        @if (saving) {
+          Saving changes...
+        } @else if (store.changes().length) {
+          <span class="unsaved-indicator"
+            >{{ store.changes().length }} unsaved permission
+            {{ store.changes().length === 1 ? 'change' : 'changes' }}</span
+          >
+        } @else {
+          <span>{{ store.status() === 'saved' ? 'All changes saved' : 'No unsaved changes' }}</span>
+        }
+      </div>
+      <div class="ml-auto flex max-w-full flex-wrap justify-end gap-2">
+        <button
+          type="button"
+          ngageButton
+          variant="border"
+          [disabled]="!store.changes().length || saving"
+          (click)="requestDiscard()"
+        >
+          Discard Changes</button
+        ><button
+          type="button"
+          ngageButton
+          [disabled]="!store.changes().length || saving"
+          (click)="requestReview()"
+        >
+          {{ saving ? 'Saving...' : 'Save Changes' }}
+        </button>
+      </div>
+    </footer>
+  </section>
+  <ngage-popover
+    [isOpen]="!!popoverAnchor"
+    [anchor]="popoverAnchor"
+    [heading]="popoverHeading"
+    [description]="
+      cell()?.role?.name || 'Select the roles to compare. Changes to hidden roles are retained.'
+    "
+    [restoreFocus]="popoverRestore() && dialog() === null"
+    (dismissed)="closePopover(true)"
+  >
+    @if (cell(); as selected) {
+      <app-permission-options
+        [value]="store.level(selected.role.id, selected.feature.id)"
+        [label]="'Permission for ' + selected.feature.name + ' and ' + selected.role.name"
+        [options]="validOptions(selected.role, selected.feature)"
+        (changed)="selectPermission($event)"
+      />
+    } @else if (roleFilterAnchor()) {
+      <div class="role-filter-actions">
+        <button type="button" ngageButton variant="ghost" (click)="store.roleIds.set(null)">
+          Select all</button
+        ><button type="button" ngageButton variant="ghost" (click)="store.roleIds.set([])">
+          Clear selection
+        </button>
+      </div>
+      <div class="role-filter-options">
+        @for (role of store.roles(); track role.id) {
+          <label
+            ><input
+              type="checkbox"
+              ngageChoice="checkbox"
+              [checked]="roleChecked(role.id)"
+              (change)="store.toggleRole(role.id, $any($event.target).checked)"
+            />{{ role.name }} <small>{{ role.abbreviation }}</small></label
+          >
+        }
+      </div>
+    }
+  </ngage-popover>
+  <app-permission-review
+    [changes]="reviewing()"
+    [isOpen]="dialog() === 'review'"
+    [saving]="saving"
+    [error]="store.error()"
+    (continued)="closeDialog()"
+    (confirmed)="confirmSave()"
+  />
+  <dialog
+    ngageModal
+    heading="Discard permission changes?"
+    [description]="
+      'Discard all ' +
+      store.changes().length +
+      ' unsaved modifications and restore saved permissions?'
+    "
+    [isOpen]="dialog() === 'discard'"
+    (closeRequested)="closeDialog()"
+  >
+    <p>Your saved permissions will remain unchanged.</p>
+    <footer ngageModalFooter>
+      <button type="button" ngageButton variant="border" (click)="closeDialog()">
+        Continue Editing</button
+      ><button type="button" ngageButton (click)="discard()">Discard Changes</button>
+    </footer>
+  </dialog>
+}

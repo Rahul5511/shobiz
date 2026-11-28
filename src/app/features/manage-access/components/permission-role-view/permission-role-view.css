@@ -1,0 +1,53 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+.module-modified {
+  color: var(--ngage-content-alert-bold);
+  font-weight: 600;
+}
+.role-permission-scroll {
+  height: clamp(240px, calc(100dvh - 480px), 640px);
+  overflow: auto;
+  border: 1px solid var(--ngage-border-tertiary);
+  border-radius: 8px;
+  background: var(--ngage-background-primary);
+}
+.role-module header {
+  display: flex;
+  align-items: center;
+  gap: var(--ngage-space-m);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: var(--ngage-space-s);
+  background: var(--ngage-background-hover);
+  border-bottom: 1px solid var(--ngage-border-tertiary);
+  font-size: var(--ngage-text-s-size);
+}
+.role-feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ngage-space-m);
+  padding: var(--ngage-space-m) var(--ngage-space-l);
+  border-bottom: 1px solid var(--ngage-border-tertiary);
+  border-left: 3px solid transparent;
+}
+.role-feature p {
+  font-size: var(--ngage-text-s-size);
+  color: var(--ngage-content-secondary);
+  margin: var(--ngage-space-xs) 0;
+}
+.role-feature.is-modified {
+  border-left-color: var(--ngage-content-alert-bold);
+}
+.role-feature > div {
+  flex: 1;
+}
+@media (max-width: 640px) {
+  .role-feature {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

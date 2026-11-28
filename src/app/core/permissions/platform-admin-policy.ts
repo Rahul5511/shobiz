@@ -47,3 +47,8 @@ export function isPlatformAdmin(role: string | undefined): boolean {
 export function canCreatePlatformAdminRecord(key: string): boolean {
   return PLATFORM_ADMIN_WORKFLOWS.includes(key);
 }
+
+/** Platform Admin permission configuration page; user assignment remains a separate workflow. */
+export function canOpenPlatformAdminPage(role: string | undefined, key: string): boolean {
+  return isPlatformAdmin(role) && key === 'RolePermissions';
+}

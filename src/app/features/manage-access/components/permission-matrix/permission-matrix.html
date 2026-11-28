@@ -1,0 +1,110 @@
+<div
+  class="matrix-scroll"
+  tabindex="0"
+  role="region"
+  aria-label="Feature permissions matrix; scroll horizontally and vertically"
+  (keydown)="onKey($event)"
+>
+  <table>
+    <caption class="sr-only">
+      Feature permissions by role. Use arrow keys between editable cells, then Enter or Space to
+      choose a permission.
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col" class="feature-column">Module / Feature</th>
+        @for (role of roles(); track role.id) {
+          <th scope="col" class="role-column" [class.admin-column]="role.fixed">
+            <span tabindex="0" [title]="role.name" [attr.aria-label]="role.name">{{
+              role.abbreviation
+            }}</span>
+            @if (role.fixed) {
+              <ngage-icon name="user-lock-02" />
+            }
+          </th>
+        }
+      </tr>
+    </thead>
+    @for (group of groups(); track group.id) {
+      <tbody>
+        <tr class="module-row">
+          <th scope="rowgroup" class="feature-column">
+            <button
+              type="button"
+              ngageButton
+              variant="ghost"
+              (click)="toggled.emit(group.id)"
+              [attr.aria-expanded]="!collapsed().has(group.id)"
+            >
+              <ngage-icon
+                [name]="collapsed().has(group.id) ? 'arrow-right-01' : 'arrow-down-01'"
+              /><span>{{ group.name }}</span>
+            </button>
+          </th>
+          <td [attr.colspan]="roles().length">
+            <span>{{ group.total }} {{ group.total === 1 ? 'feature' : 'features' }}</span>
+            @if (group.features.length !== group.total) {
+              <span> � {{ group.features.length }} shown</span>
+            }
+            @if (group.modified) {
+              <span class="module-modified">{{ group.modified }} modified</span>
+            }
+          </td>
+        </tr>
+        @if (!collapsed().has(group.id)) {
+          @for (feature of group.features; track feature.id) {
+            <tr>
+              <th scope="row" class="feature-column" [title]="feature.description">
+                {{ feature.name }}
+              </th>
+              @for (role of roles(); track role.id) {
+                <td [class.admin-column]="role.fixed" [title]="explanation(role, feature)">
+                  @if (protected(role, feature)) {
+                    <span
+                      class="permission-badge protected"
+                      [attr.data-level]="level(role, feature)"
+                      tabindex="0"
+                      [attr.aria-label]="
+                        role.name +
+                        ', ' +
+                        feature.name +
+                        ', ' +
+                        labels[level(role, feature)] +
+                        '. ' +
+                        explanation(role, feature)
+                      "
+                      >{{ level(role, feature) }}</span
+                    >
+                  } @else {
+                    <button
+                      type="button"
+                      class="permission-badge"
+                      data-permission-cell
+                      [attr.data-role]="role.id"
+                      [attr.data-level]="level(role, feature)"
+                      [class.modified]="modified(role, feature)"
+                      [attr.aria-label]="
+                        role.name +
+                        ', ' +
+                        feature.name +
+                        ': ' +
+                        labels[level(role, feature)] +
+                        (modified(role, feature) ? ', unsaved modification' : '')
+                      "
+                      [attr.aria-haspopup]="'dialog'"
+                      [attr.aria-expanded]="activeKey() === key(role.id, feature.id)"
+                      [disabled]="disabled()"
+                      (click)="open(role, feature, $event)"
+                    >
+                      {{ level(role, feature) }}
+                    </button>
+                  }
+                </td>
+              }
+            </tr>
+          }
+        }
+      </tbody>
+    }
+  </table>
+</div>

@@ -1,10 +1,10 @@
-# Platform Admin
+﻿# Platform Admin
 
 The `/app` workspace adapts the supplied design and Platform Admin flow, with the approved Word review changes. Demo sign-in: `superadmin@demo.local` / `Demo@123`. The internal Platform Admin role remains `Super User`.
 
 ## Screens and architecture
 
-- The sidebar contains Dashboard, Clients, Events, Reports, Manage Access (Users and Role & Permission), and Master Data. Notifications and account actions remain in the header. Master Data selects among the existing 11 screens through a highlighted dropdown that receives focus when opened.
+- The sidebar contains Dashboard, Clients, Events, Reports, Manage Access (Users and Role & Permission), and Master Data. Permission Settings / Role Permissions contains the feature permission matrix and synchronized role-wise view. Notifications and account actions remain in the header. Master Data selects among the existing 11 screens through a highlighted dropdown that receives focus when opened.
 - Screens keep separate TypeScript, HTML and CSS files under their feature folders. The shell owns navigation within `/app`; shared record forms, lists and reviews reuse the existing schema renderer. Styles remain scoped to the admin workspace or individual component.
 - The shell provides one `WorkspaceService` for shared records, drafts, assignments and browser persistence. Public registration retains its standalone provider. Async QR/upload actions continue to delegate to the shell.
 - Mutable workspace renderers use `ChangeDetectionStrategy.Eager`; analytics use local Signals where already established. `AuthSession` owns the live session, with `LoginService` providing the dummy account adapter.
@@ -21,7 +21,9 @@ The `/app` workspace adapts the supplied design and Platform Admin flow, with th
 
 ## Deferred integration
 
-The proposed 22-feature None/View/Manage model, new module scopes, PII settings, Can-add switches, role types, copy-role and licensing controls are deferred until the v0.2 permission specification is supplied. Existing permission definitions and first-role sign-in semantics remain in use.
+Permission Settings now supports the 22 feature access levels using the exact 12 Shobiz starting-role matrix from Portal Access, Roles and Permissions v1.0. Existing custom roles are included with stable record IDs and conservatively mapped legacy permissions. New features default to None (Reports remains View); Platform Admin starts at Manage and can be edited like other roles. Matrix and role-wise views share one Signals store; filters never alter drafts. Edits are saved together only after the review confirmation. Failed persistence preserves unsaved edits and rolls back committed values. User role assignments remain in Manage Access and are not changed by this page.
+
+The matrix uses a reusable native top-layer NgagePopover with anchored positioning, keyboard controls, light dismissal and focus restoration. NgageModal supplies review/discard confirmation. Frontend configuration persists in the existing dummy workspace storage; backend authorization, multi-role runtime aggregation, PII/scope enforcement and licensor switches remain separate integration work. Existing first-role sign-in semantics remain in use.
 
 Supplied JSON and browser storage remain the data sources. Seed additions do not reset existing browser records. APIs, production authentication, real invitations, notification delivery and report sending are not connected. Login, recovery, public registration and theme behavior remain in place.
 
@@ -30,3 +32,4 @@ Supplied JSON and browser storage remain the data sources. Seed additions do not
 Run `npm.cmd run build` and `npm.cmd test -- --watch=false`. Tests cover authentication/status persistence, approved capabilities, user onboarding and reassignment, protected Admin access, data/draft migration, rollback on storage failures, event log permissions, analytics boundaries, report filters/columns and exports.
 
 Live-browser visual verification was unavailable because the Computer Use browser host was unavailable. Automated Angular DOM and behavior tests provide local verification; no live-browser visual pass is claimed.
+

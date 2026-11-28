@@ -1,0 +1,37 @@
+dialog[ngageModal] {
+  width: min(900px, calc(100vw - 32px));
+}
+.review-scroll {
+  max-height: 50vh;
+  overflow: auto;
+}
+.review-scroll table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--ngage-text-s-size);
+}
+.review-scroll :is(th, td) {
+  padding: var(--ngage-space-m);
+  border-bottom: 1px solid var(--ngage-border-tertiary);
+  text-align: left;
+}
+.review-scroll th {
+  position: sticky;
+  top: 0;
+  background: var(--ngage-background-hover);
+}
+.previous-value {
+  color: var(--ngage-content-tertiary);
+}
+.next-value {
+  font-weight: 600;
+}
+footer[ngageModalFooter] {
+  padding: var(--ngage-space-l);
+  border-top: 1px solid var(--ngage-border-tertiary);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--ngage-space-s);
+  flex-wrap: wrap;
+}

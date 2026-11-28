@@ -1,3 +1,200 @@
-:host {
-  display: contents;
+﻿:host {
+  display: block;
+  min-width: 0;
+  color: var(--ngage-content-primary);
+}
+.permissions-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ngage-space-l);
+  min-width: 0;
+}
+.permissions-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--ngage-space-l);
+}
+.permissions-heading h1 {
+  margin: 0;
+  font-size: 26px;
+}
+.permissions-heading p {
+  margin: var(--ngage-space-xs) 0 0;
+  color: var(--ngage-content-secondary);
+}
+.permissions-heading > span {
+  white-space: nowrap;
+  gap: var(--ngage-space-s);
+}
+.permission-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ngage-space-m);
+}
+.permission-stats section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ngage-space-m);
+  padding: var(--ngage-space-m) var(--ngage-space-l);
+  background: var(--ngage-background-primary);
+  border: 1px solid var(--ngage-border-tertiary);
+  border-radius: 8px;
+}
+.permission-stats span {
+  font-size: var(--ngage-text-s-size);
+  color: var(--ngage-content-secondary);
+}
+.permission-stats .has-changes {
+  border-color: var(--ngage-content-alert-bold);
+}
+.permission-toolbar {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--ngage-space-s);
+  margin: 0;
+  padding: var(--ngage-space-m);
+  border: 1px solid var(--ngage-border-tertiary);
+  border-radius: 8px;
+  background: var(--ngage-background-primary);
+}
+.permission-toolbar label,
+.role-select {
+  display: grid;
+  gap: var(--ngage-space-xs);
+  font-size: var(--ngage-text-s-size);
+}
+.search-field {
+  flex: 1;
+  min-width: 190px;
+}
+.permission-toolbar :is(input, select).ngage-control,
+.role-select select.ngage-control {
+  min-height: 36px;
+  height: 36px;
+  padding: var(--ngage-space-s) var(--ngage-space-m);
+}
+.permission-toolbar button {
+  min-height: 36px;
+}
+.permission-toolbar .changed-filter {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  gap: var(--ngage-space-s);
+}
+.view-switch {
+  display: flex;
+  gap: var(--ngage-space-xs);
+}
+.view-switch [aria-pressed='true'] {
+  background: var(--ngage-background-selected);
+  border-color: var(--ngage-border-brand);
+  font-weight: 600;
+}
+.permission-legend {
+  display: flex;
+  align-items: center;
+  gap: var(--ngage-space-s);
+  flex-wrap: wrap;
+  font-size: var(--ngage-text-s-size);
+  color: var(--ngage-content-secondary);
+}
+.legend-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  background: var(--ngage-background-hover);
+}
+.legend-badge[data-level='M'] {
+  background: var(--ngage-background-brand);
+  color: var(--ngage-button-content);
+}
+.legend-badge[data-level='V'] {
+  background: var(--ngage-background-info-subtle);
+  color: var(--ngage-content-info);
+}
+.modified-swatch {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--ngage-content-alert-bold);
+  border-radius: 4px;
+}
+.permission-empty {
+  padding: var(--ngage-space-2xl);
+  text-align: center;
+  border: 1px solid var(--ngage-border-tertiary);
+  background: var(--ngage-background-primary);
+  border-radius: 8px;
+}
+.permission-empty p {
+  color: var(--ngage-content-secondary);
+}
+.permission-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  padding: var(--ngage-space-m) var(--ngage-space-l);
+  background: var(--ngage-background-primary);
+  border: 1px solid var(--ngage-border-tertiary);
+  border-radius: 8px;
+  font-size: var(--ngage-text-s-size);
+}
+.permission-footer button {
+  white-space: nowrap;
+}
+.unsaved-indicator,
+.module-modified {
+  color: var(--ngage-content-alert-bold);
+  font-weight: 600;
+}
+.role-select {
+  max-width: 320px;
+}
+.role-filter-actions {
+  display: flex;
+  justify-content: space-between;
+}
+.role-filter-options {
+  max-height: 300px;
+  overflow: auto;
+  display: grid;
+  gap: var(--ngage-space-m);
+  padding-top: var(--ngage-space-m);
+}
+.role-filter-options label {
+  display: flex;
+  align-items: center;
+  gap: var(--ngage-space-s);
+}
+.role-filter-options small {
+  color: var(--ngage-content-tertiary);
+  margin-left: auto;
+}
+footer[ngageModalFooter] {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--ngage-space-s);
+}
+@media (max-width: 720px) {
+  .permissions-heading {
+    flex-wrap: wrap;
+  }
+  .permission-stats section {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--ngage-space-xs);
+  }
+  .permission-footer {
+    padding: var(--ngage-space-m);
+  }
+  footer[ngageModalFooter] {
+    flex-wrap: wrap;
+  }
 }

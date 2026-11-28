@@ -1,0 +1,53 @@
+@let selected = role();
+<section
+  class="role-permission-scroll"
+  tabindex="0"
+  role="region"
+  [attr.aria-label]="selected.name + ' feature permissions'"
+>
+  @for (group of groups(); track group.id) {
+    <section class="role-module">
+      <header>
+        <button
+          ngageButton
+          variant="ghost"
+          [attr.aria-expanded]="!collapsed().has(group.id)"
+          (click)="toggled.emit(group.id)"
+        >
+          <ngage-icon [name]="collapsed().has(group.id) ? 'arrow-right-01' : 'arrow-down-01'" />{{
+            group.name
+          }}</button
+        ><span>{{ group.total }} {{ group.total === 1 ? 'feature' : 'features' }}</span>
+        @if (group.modified) {
+          <span class="module-modified">{{ group.modified }} modified</span>
+        }
+      </header>
+      @if (!collapsed().has(group.id)) {
+        @for (feature of group.features; track feature.id) {
+          <div class="role-feature" [class.is-modified]="isChanged(feature)">
+            <div>
+              <strong>{{ feature.name }}</strong>
+              <p>{{ feature.description }}</p>
+            </div>
+            @if (selected.fixed) {
+              <span
+                ngageTag
+                [title]="'Platform Admin always has Manage access and cannot be modified.'"
+                ><ngage-icon name="user-lock-02" />M - Manage</span
+              >
+            } @else {
+              <app-permission-options
+                [label]="feature.name + ' permission for ' + selected.name"
+                [value]="level(feature)"
+                [options]="validOptions(selected, feature)"
+                [compact]="true"
+                [disabled]="disabled() || validOptions(selected, feature).length < 2"
+                (changed)="changed.emit({ feature, level: $event })"
+              />
+            }
+          </div>
+        }
+      }
+    </section>
+  }
+</section>

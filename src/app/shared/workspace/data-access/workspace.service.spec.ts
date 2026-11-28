@@ -111,6 +111,7 @@ describe('Approved Platform Admin review workflows', () => {
       'Reports',
       'Manage Access',
       'Master Data',
+      'Permission Settings',
     ]);
     const reports = TestBed.runInInjectionContext(() => new RoleReportsComponent());
     expect(reports.catalog).toHaveLength(7);

@@ -1,0 +1,24 @@
+<div
+  class="permission-options"
+  role="group"
+  [attr.aria-label]="label()"
+  [class.compact]="compact()"
+>
+  @for (level of options(); track level) {
+    <button
+      type="button"
+      ngageButton
+      variant="border"
+      [attr.aria-pressed]="value() === level"
+      [attr.aria-label]="labels[level]"
+      [title]="labels[level]"
+      [disabled]="disabled()"
+      (click)="changed.emit(level)"
+    >
+      <span>{{ level }}</span>
+      @if (!compact()) {
+        <span>{{ labels[level] }}</span>
+      }
+    </button>
+  }
+</div>

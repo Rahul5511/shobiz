@@ -148,6 +148,22 @@ describe('App', () => {
     detect();
     expect(element(harness, '.form-card').textContent).toContain('Role Name');
     state.cancel();
+    detect();
+    const permissionHeading = Array.from(
+      harness.routeNativeElement!.querySelectorAll<HTMLButtonElement>('.nav-heading'),
+    ).find((button) => button.textContent?.includes('Permission Settings'))!;
+    permissionHeading.click();
+    detect();
+    const permissionLink = Array.from(
+      harness.routeNativeElement!.querySelectorAll<HTMLButtonElement>('.navitem.sub'),
+    ).find((button) => button.textContent?.trim() === 'Role Permissions')!;
+    permissionLink.click();
+    expectScreen('app-role-permissions-page');
+    expect(element(harness, 'app-role-permissions-page').textContent).toContain(
+      'Roles & Permissions',
+    );
+    expect(state.wizard).toBeNull();
+    expect(state.can('RolePermissions')).toBe(false);
     state.nav('Reports');
     expectScreen('app-reports-page');
     expect(harness.routeNativeElement?.textContent).toContain('Underlying records');

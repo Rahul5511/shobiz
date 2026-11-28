@@ -1,0 +1,26 @@
+.permission-options {
+  display: grid;
+  gap: var(--ngage-space-s);
+}
+.permission-options.compact {
+  display: flex;
+  gap: var(--ngage-space-xs);
+  flex-wrap: wrap;
+}
+button {
+  display: flex;
+  gap: var(--ngage-space-s);
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 36px;
+}
+.compact button {
+  justify-content: center;
+  min-width: 36px;
+  padding: var(--ngage-space-s);
+}
+.permission-options button[aria-pressed='true'] {
+  background: var(--ngage-background-brand);
+  border-color: var(--ngage-border-brand);
+  color: var(--ngage-button-content);
+}

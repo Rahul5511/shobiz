@@ -1,0 +1,65 @@
+<dialog
+  ngageModal
+  heading="Review permission changes"
+  [description]="changes().length + ' modified permissions. Confirm to save all changes together.'"
+  [isOpen]="isOpen()"
+  (closeRequested)="continued.emit()"
+>
+  @if (error()) {
+    <ngage-alert tone="negative" [dismissible]="false">{{ error() }}</ngage-alert>
+  }
+  <div class="review-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Role</th>
+          <th>Previous Permission</th>
+          <th>New Permission</th>
+          <th>Change</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (change of changes(); track change.roleId + '::' + change.featureId) {
+          <tr>
+            <td>{{ change.feature }}</td>
+            <td>{{ change.role }}</td>
+            <td class="previous-value">{{ labels[change.previous] }}</td>
+            <td class="next-value">{{ labels[change.next] }}</td>
+            <td>
+              <span
+                ngageTag
+                [tone]="
+                  change.kind === 'Granted'
+                    ? 'positive'
+                    : change.kind === 'Removed'
+                      ? 'negative'
+                      : 'alert'
+                "
+                >{{ change.kind }}</span
+              >
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  <footer ngageModalFooter>
+    <button
+      type="button"
+      ngageButton
+      variant="border"
+      [disabled]="saving()"
+      (click)="continued.emit()"
+    >
+      Continue Editing</button
+    ><button
+      type="button"
+      ngageButton
+      [disabled]="saving() || !changes().length"
+      (click)="confirmed.emit()"
+    >
+      {{ saving() ? 'Saving...' : 'Confirm & Save' }}
+    </button>
+  </footer>
+</dialog>

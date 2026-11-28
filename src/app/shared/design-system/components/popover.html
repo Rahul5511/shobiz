@@ -1,0 +1,28 @@
+<div
+  #panel
+  popover="auto"
+  role="dialog"
+  tabindex="-1"
+  [attr.aria-labelledby]="titleId"
+  (toggle)="onToggle($event)"
+>
+  <header>
+    <div>
+      <h2 [id]="titleId">{{ heading }}</h2>
+      @if (description) {
+        <p>{{ description }}</p>
+      }
+    </div>
+    <button
+      type="button"
+      ngageButton
+      variant="border"
+      data-close
+      aria-label="Close popover"
+      (click)="dismissed.emit()"
+    >
+      <ngage-icon name="close" />
+    </button>
+  </header>
+  <div class="popover-body"><ng-content /></div>
+</div>

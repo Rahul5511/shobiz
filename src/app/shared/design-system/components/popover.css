@@ -1,0 +1,52 @@
+:host {
+  display: contents;
+}
+[data-popover-panel] {
+  display: none;
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  padding: 0;
+  width: 320px;
+  max-width: calc(100vw - 16px);
+  border: 1px solid var(--ngage-border-secondary);
+  border-radius: 8px;
+  background: var(--ngage-background-primary);
+  color: var(--ngage-content-primary);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
+  overflow: auto;
+  z-index: 1000;
+}
+[data-popover-panel]:popover-open,
+[data-popover-panel][data-open='true'] {
+  display: block;
+}
+header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--ngage-space-m);
+  padding: var(--ngage-space-l);
+  border-bottom: 1px solid var(--ngage-border-tertiary);
+}
+h2 {
+  font-size: var(--ngage-text-m-size);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+}
+p {
+  font-size: var(--ngage-text-s-size);
+  color: var(--ngage-content-secondary);
+  margin: var(--ngage-space-xs) 0 0;
+}
+.popover-body {
+  padding: var(--ngage-space-l);
+}
+
+header button {
+  flex: 0 0 auto;
+  width: 32px;
+  --ngage-button-min-height: 32px;
+  --ngage-button-padding: 4px;
+}

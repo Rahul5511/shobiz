@@ -1,0 +1,170 @@
+:host {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+}
+.matrix-scroll {
+  overflow: auto;
+  height: clamp(420px, 62dvh, 760px);
+  scrollbar-gutter: stable;
+  overscroll-behavior: contain;
+  border: 1px solid var(--ngage-border-tertiary);
+  border-radius: 8px;
+  background: var(--ngage-background-primary);
+}
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: var(--ngage-text-s-size);
+}
+th,
+td {
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--ngage-border-tertiary);
+  border-right: 1px solid var(--ngage-border-tertiary);
+  padding: var(--ngage-space-s);
+  height: 48px;
+  vertical-align: middle;
+}
+th {
+  color: var(--ngage-content-primary);
+  font-size: inherit;
+  letter-spacing: normal;
+}
+td {
+  text-align: center;
+  min-width: 66px;
+}
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--ngage-background-hover);
+  text-align: center;
+  height: 52px;
+  font-weight: 600;
+}
+.feature-column {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  min-width: 260px;
+  max-width: 280px;
+  width: 260px;
+  text-align: left;
+  background: var(--ngage-background-primary);
+  font-weight: 500;
+  white-space: normal;
+  padding-inline: var(--ngage-space-m);
+}
+tbody tr:not(.module-row):hover > :is(th, td) {
+  background: var(--ngage-background-hover);
+}
+thead .feature-column {
+  z-index: 4;
+  background: var(--ngage-background-hover);
+  font-weight: 600;
+}
+.role-column {
+  min-width: 66px;
+}
+.role-column > span {
+  display: inline-block;
+}
+.role-column ngage-icon {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: var(--ngage-space-xs);
+  width: 14px;
+  height: 14px;
+}
+.module-row th,
+.module-row td {
+  background: var(--ngage-background-hover);
+  height: 44px;
+}
+.module-row td {
+  text-align: left;
+  color: var(--ngage-content-secondary);
+}
+.module-row button {
+  justify-content: flex-start;
+  padding: var(--ngage-space-xs);
+  font-weight: 600;
+  min-height: 32px;
+}
+.module-modified {
+  display: inline-block;
+  margin-left: var(--ngage-space-m);
+  color: var(--ngage-content-alert-bold);
+  font-weight: 600;
+}
+.admin-column {
+  background: var(--ngage-background-hover);
+}
+.permission-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 28px;
+  padding: 0 var(--ngage-space-s);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font: 600 var(--ngage-text-s-size)/1 var(--ngage-font-family);
+  cursor: pointer;
+}
+.permission-badge[data-level='M'] {
+  background: var(--ngage-background-brand);
+  color: var(--ngage-button-content);
+}
+.permission-badge[data-level='V'] {
+  background: var(--ngage-background-info-subtle);
+  color: var(--ngage-content-info);
+}
+.permission-badge[data-level='N'] {
+  background: var(--ngage-background-hover);
+  color: var(--ngage-content-secondary);
+  border-color: var(--ngage-border-negative);
+}
+.permission-badge.modified {
+  border: 2px solid var(--ngage-content-alert-bold);
+  box-shadow: 0 0 0 1px var(--ngage-background-primary);
+}
+.permission-badge.protected {
+  cursor: default;
+  opacity: 0.7;
+}
+.permission-badge:hover:not(.protected):not(:disabled) {
+  filter: brightness(0.96);
+}
+.permission-badge:focus-visible,
+.role-column > span:focus-visible {
+  outline: 2px solid var(--ngage-border-brand);
+  outline-offset: 3px;
+}
+.permission-badge:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .feature-column {
+    min-width: 190px;
+    width: 190px;
+  }
+  .matrix-scroll {
+    height: 60dvh;
+    min-height: 320px;
+  }
+}

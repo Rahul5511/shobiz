@@ -1,4 +1,13 @@
 import {
+  PermissionValues,
+  PermissionChange,
+  PERMISSION_FEATURES,
+  permissionRoles,
+  initialPermissionValues,
+  validPermissionOptions,
+  permissionCellKey,
+} from '../../../core/permissions/feature-permissions';
+import {
   InvitationPreview,
   RelatedAssignment,
   ExportContext,
@@ -14,6 +23,7 @@ import {
   PLATFORM_ADMIN_ENTITIES,
   PLATFORM_ADMIN_WORKFLOWS,
   canCreatePlatformAdminRecord,
+  canOpenPlatformAdminPage,
 } from '../../../core/permissions/platform-admin-policy';
 export const copy = (x: any) => JSON.parse(JSON.stringify(x));
 @Injectable()
@@ -25,6 +35,7 @@ export class WorkspaceService {
   drafts: any = {};
   grants: any = {};
   configs: any = {};
+  featurePermissionValues: PermissionValues = {};
   view = 'dashboard';
   key = '';
   wizard: any = null;
@@ -78,6 +89,7 @@ export class WorkspaceService {
         this.drafts = saved.drafts || {};
         this.grants = saved.grants || {};
         this.configs = saved.configs || {};
+        this.featurePermissionValues = saved.featurePermissionValues || {};
         this.preparedNotifications = saved.preparedNotifications || [];
         this.invitations = saved.invitations || [];
         this.shares = saved.shares || [];
@@ -109,7 +121,7 @@ export class WorkspaceService {
   }
   masterFocusRequest = signal(0);
   accessible(k: string) {
-    return this.entities.includes(k);
+    return this.entities.includes(k) || canOpenPlatformAdminPage(this.role, k);
   }
   resetData(persist = true) {
     this.rows = Object.fromEntries(
@@ -119,6 +131,7 @@ export class WorkspaceService {
     this.drafts = {};
     this.grants = {};
     this.configs = {};
+    this.featurePermissionValues = {};
     this.notice = 'Demo data reset.';
     if (persist) this.persist();
   }
@@ -132,6 +145,7 @@ export class WorkspaceService {
           drafts: this.drafts,
           grants: this.grants,
           configs: this.configs,
+          featurePermissionValues: this.featurePermissionValues,
           preparedNotifications: this.preparedNotifications,
           invitations: this.invitations,
           shares: this.shares,
@@ -164,15 +178,17 @@ export class WorkspaceService {
     this.relatedPanel = null;
     this.key = k;
     this.view =
-      k === 'Reports'
-        ? 'reports'
-        : k === 'CallingTracker'
-          ? 'report'
-          : k === 'AttendanceReport'
+      k === 'RolePermissions'
+        ? 'role-permissions'
+        : k === 'Reports'
+          ? 'reports'
+          : k === 'CallingTracker'
             ? 'report'
-            : k === 'Reports'
+            : k === 'AttendanceReport'
               ? 'report'
-              : 'list';
+              : k === 'Reports'
+                ? 'report'
+                : 'list';
     this.reportType =
       k === 'CallingTracker'
         ? 'calling'
@@ -191,6 +207,10 @@ export class WorkspaceService {
     this.openSection = this.openSection === title ? null : title;
   }
   openFor(k: string) {
+    if (k === 'RolePermissions') {
+      this.openSection = 'Permission Settings';
+      return;
+    }
     this.openSection =
       this.m.menuGroups.find(([title, keys]: any) => keys.includes(k))?.[0] || null;
   }
@@ -1684,6 +1704,9 @@ export class WorkspaceService {
       { title: 'Reports', key: 'Reports', keys: [] },
       { title: 'Manage Access', key: '', keys: ['Admin', 'RoleBuilder'] },
       { title: 'Master Data', key: 'MasterData', keys: [] },
+      ...(canOpenPlatformAdminPage(this.role, 'RolePermissions')
+        ? [{ title: 'Permission Settings', key: '', keys: ['RolePermissions'] }]
+        : []),
     ];
   }
   openMaster() {
@@ -2342,6 +2365,53 @@ export class WorkspaceService {
     return true;
   }
 
+  saveFeaturePermissions(changes: PermissionChange[]): { success: boolean; error?: string } {
+    if (!canOpenPlatformAdminPage(this.role, 'RolePermissions'))
+      return { success: false, error: 'Only Platform Admin can configure permissions.' };
+    const roles = permissionRoles(this.rows.RoleBuilder);
+    const current = initialPermissionValues(
+      roles,
+      PERMISSION_FEATURES,
+      this.featurePermissionValues,
+    );
+    const keys = new Set<string>();
+    for (const change of changes) {
+      const role = roles.find((role) => role.id === change.roleId);
+      const feature = PERMISSION_FEATURES.find((feature) => feature.id === change.featureId);
+      const key = permissionCellKey(change.roleId, change.featureId);
+      if (
+        !role ||
+        !feature ||
+        role.fixed ||
+        !validPermissionOptions(role, feature).includes(change.next) ||
+        keys.has(key)
+      )
+        return {
+          success: false,
+          error: 'The changes contain a protected or invalid permission. Review the selection.',
+        };
+      if (current[role.id][feature.id] !== change.previous)
+        return {
+          success: false,
+          error:
+            'Permissions changed since this view was loaded. Discard changes to reload the latest saved permissions.',
+        };
+      keys.add(key);
+    }
+    const before = this.featurePermissionValues;
+    const next = copy(before) as PermissionValues;
+    for (const change of changes)
+      next[change.roleId] = { ...next[change.roleId], [change.featureId]: change.next };
+    this.featurePermissionValues = next;
+    const priorError = this.error;
+    if (!this.persist()) {
+      this.featurePermissionValues = before;
+      const error = this.error;
+      this.error = priorError;
+      return { success: false, error };
+    }
+    return { success: true };
+  }
   private reviewSnapshot() {
     return {
       rows: copy(this.rows),
@@ -2352,6 +2422,7 @@ export class WorkspaceService {
       shares: copy(this.shares),
       grants: copy(this.grants),
       configs: copy(this.configs),
+      featurePermissionValues: copy(this.featurePermissionValues),
       preparedNotifications: copy(this.preparedNotifications),
       raw: localStorage.getItem('ngage-demo-data'),
     };
@@ -2369,6 +2440,7 @@ export class WorkspaceService {
       this.shares = snapshot.shares;
       this.grants = snapshot.grants;
       this.configs = snapshot.configs;
+      this.featurePermissionValues = snapshot.featurePermissionValues;
       this.preparedNotifications = snapshot.preparedNotifications;
       if (this.wizard?.row)
         this.wizard.row =

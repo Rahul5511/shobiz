@@ -49,7 +49,16 @@
             <div class="nav-children">
               @for (key of group.keys; track key) {
                 <button class="navitem sub" [class.active]="s.key === key" (click)="s.nav(key)">
-                  {{ key === 'Admin' ? 'Users' : 'Role & Permission' }}
+                  @if (key === 'RolePermissions') {
+                    <app-icon name="access" />
+                  }
+                  <span>{{
+                    key === 'Admin'
+                      ? 'Users'
+                      : key === 'RolePermissions'
+                        ? 'Role Permissions'
+                        : 'Role & Permission'
+                  }}</span>
                 </button>
               }
             </div>
@@ -230,6 +239,9 @@
       }
       @if (s.view === 'password') {
         <app-change-password-page [context]="this" />
+      }
+      @if (s.view === 'role-permissions') {
+        <app-role-permissions-page />
       }
       @if (s.view === 'reports') {
         <app-reports-page />
